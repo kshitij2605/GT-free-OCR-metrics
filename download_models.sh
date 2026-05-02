@@ -14,7 +14,7 @@ command -v huggingface-cli >/dev/null 2>&1 || {
     exit 1
 }
 
-HF_MODEL_REPO="puku128/docsim-lora"
+HF_MODEL_REPO="gt-free-ocr-metrics/docsim-lora"
 
 echo "=== Downloading DocSim LoRA weights ==="
 huggingface-cli download "$HF_MODEL_REPO" \

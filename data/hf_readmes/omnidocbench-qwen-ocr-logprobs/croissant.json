@@ -52,7 +52,7 @@
       "@id": "repo",
       "name": "repo",
       "description": "The Hugging Face git repository.",
-      "contentUrl": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs/tree/refs%2Fconvert%2Fparquet",
+      "contentUrl": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs/tree/refs%2Fconvert%2Fparquet",
       "encodingFormat": "git+https",
       "sha256": "https://github.com/mlcommons/croissant/issues/80"
     },
@@ -92,7 +92,7 @@
     {
       "@type": "cr:RecordSet",
       "@id": "default",
-      "description": "puku128/omnidocbench-qwen-ocr-logprobs - 'default' subset",
+      "description": "gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs - 'default' subset",
       "field": [
         {
           "@type": "cr:Field",
@@ -289,14 +289,14 @@
   ],
   "conformsTo": "http://mlcommons.org/croissant/1.1",
   "name": "omnidocbench-qwen-ocr-logprobs",
-  "description": "\n\t\n\t\t\n\t\tOmniDocBench Qwen OCR Log-Probabilities\n\t\n\nThis dataset provides token-level and bounding-box-level OCR log-probabilities produced by\nrunning Qwen3.5-122B-A10B (via vLLM) on the original page scans of the\nOmniDocBench benchmark.\nIt is a reference-free auxiliary signal — no ground-truth text is used — and is released\nas part of the OmniDocBench Render-and-Compare research project.\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Structure\n\t\n\nocr_logprobs/\n  <page_id>/\n    ocr_logprobs.json   # full per-token… See the full description on the dataset page: https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs.",
+  "description": "\n\t\n\t\t\n\t\tOmniDocBench Qwen OCR Log-Probabilities\n\t\n\nThis dataset provides token-level and bounding-box-level OCR log-probabilities produced by\nrunning Qwen3.5-122B-A10B (via vLLM) on the original page scans of the\nOmniDocBench benchmark.\nIt is a reference-free auxiliary signal — no ground-truth text is used — and is released\nas part of the OmniDocBench Render-and-Compare research project.\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Structure\n\t\n\nocr_logprobs/\n  <page_id>/\n    ocr_logprobs.json   # full per-token… See the full description on the dataset page: https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs.",
   "alternateName": [
-    "puku128/omnidocbench-qwen-ocr-logprobs"
+    "gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs"
   ],
   "creator": {
     "@type": "Person",
     "name": "Kshitij S",
-    "url": "https://huggingface.co/puku128"
+    "url": "https://huggingface.co/gt-free-ocr-metrics"
   },
   "keywords": [
     "other",
@@ -315,7 +315,7 @@
     "document-quality"
   ],
   "license": "https://creativecommons.org/licenses/by-nc/4.0/",
-  "url": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs",
+  "url": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs",
   "rai:dataLimitations": "This dataset is limited to token-level log-probabilities produced by a single OCR model, Qwen3.5-122B-A10B. Log-probability magnitudes are calibrated to this specific model's tokenizer and output distribution and cannot be compared to or transferred to other OCR systems. Coverage is restricted to the 1,355 pages of OmniDocBench (English and Chinese only); generalisation to other languages, scripts, or document domains outside this distribution has not been validated. The dataset is not suitable for: training OCR systems; evaluating OCR accuracy (logprobs reflect model confidence, not transcription correctness); or deployment in production OCR pipelines. A high-confidence token may still be transcribed incorrectly. Formula and CJK character tokenisation artefacts from the Qwen tokenizer affect per-token statistics for those content types.",
   "rai:dataBiases": "All log-probabilities originate from a single model (Qwen3.5-122B-A10B), introducing model-specific calibration bias: pages on which this model is systematically over- or under-confident will skew aggregate statistics. The underlying OmniDocBench covers ten document categories with the following approximate page counts derived from page-ID prefix analysis across the 1,355 pages: textbooks / course materials 226 pages, research reports and financial documents 319 pages (covering Chinese financial research reports and EastMoney financial platform documents), newspapers 151 pages, academic papers 209 pages, study / lecture notes 116 pages, slide presentations 108 pages, books 72 pages, exam papers 70 pages, magazines 43 pages, and mixed-layout coloured documents 42 pages. English documents are more numerous than Chinese. Information-dense layouts (newspapers, dense financial tables) tend to produce more variable logprob distributions due to OCR model uncertainty on complex page structure. No annotation was performed by human raters; all logprob values are machine-generated.",
   "rai:personalSensitiveInformation": "No personally identifiable information (PII) was intentionally collected. OmniDocBench draws from public academic and professional documents. Financial report pages may incidentally reference company names or executive names. No medical, legal, biometric, or demographic data is present. Applicable sensitive categories: none intentionally present. No de-identification steps were applied beyond what is already present in the source OmniDocBench dataset.",
@@ -375,7 +375,7 @@
       "prov:wasAttributedTo": [
         {
           "@type": "prov:SoftwareAgent",
-          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs",
+          "@id": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs",
           "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
         }
       ]

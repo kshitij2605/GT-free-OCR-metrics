@@ -119,8 +119,8 @@ research/                        # Literature review and technical notes
 | Dataset | Description | HF link |
 |---|---|---|
 | OmniDocBench | 1 355 real-world document pages, GT annotations | [opendatalab/OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench) |
-| Render-and-Compare | Pre-computed OCR artifacts for all 5 variants | [puku128/omnidocbench-render-compare](https://huggingface.co/datasets/puku128/omnidocbench-render-compare) |
-| OCR Log-probabilities | Token-level Qwen OCR confidence scores | [puku128/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs) |
+| Render-and-Compare | Pre-computed OCR artifacts for all 5 variants | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
+| OCR Log-probabilities | Token-level Qwen OCR confidence scores | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
 
 ---
 

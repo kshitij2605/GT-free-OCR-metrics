@@ -26,14 +26,14 @@ echo "=== Downloading pre-computed render-and-compare OCR artifacts ==="
 # Contains: masked_original.png, reconstructed.png, ocr_html.html,
 #           ocr_elements.json, ocr_formula_elements.json, ocr_table_elements.json
 # Also includes OmniDocBench.json for convenience.
-huggingface-cli download puku128/omnidocbench-render-compare \
+huggingface-cli download gt-free-ocr-metrics/omnidocbench-render-compare \
     --repo-type dataset \
     --local-dir data/omnidocbench/ocr \
     --local-dir-use-symlinks False
 
 echo ""
 echo "=== Downloading OCR log-probabilities ==="
-huggingface-cli download puku128/omnidocbench-qwen-ocr-logprobs \
+huggingface-cli download gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs \
     --repo-type dataset \
     --local-dir data/omnidocbench/ocr_logprobs \
     --local-dir-use-symlinks False
