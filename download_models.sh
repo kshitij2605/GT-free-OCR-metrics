@@ -14,7 +14,7 @@ command -v huggingface-cli >/dev/null 2>&1 || {
     exit 1
 }
 
-HF_MODEL_REPO="puku128/docsim-lora"  # TODO: update once model is published
+HF_MODEL_REPO="puku128/docsim-lora"
 
 echo "=== Downloading DocSim LoRA weights ==="
 huggingface-cli download "$HF_MODEL_REPO" \
