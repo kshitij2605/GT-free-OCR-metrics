@@ -60,6 +60,12 @@ bash download_data.sh
 > [`gt-free-ocr-metrics/omnidocbench-render-compare-sample`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample).
 > Open `explore_datasets.ipynb` in this repository for an interactive walkthrough
 > that downloads only the sample data.
+>
+> **Sampling methodology:** 5 pages drawn uniformly at random from each of 12 document
+> categories (slides, book, academic paper, financial, newspaper, exam, textbook/notes,
+> notes, magazine, DocStructBench, colorful, other), inferred from `page_id` prefix
+> (random seed 42). Up to 5 extra pages added to cover the sparse `ocr_formula` and
+> `ocr_table` variants. Full per-category counts are in the sample dataset README.
 
 ---
 
