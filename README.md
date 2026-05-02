@@ -122,6 +122,8 @@ research/                        # Literature review and technical notes
 | Render-and-Compare | Pre-computed OCR artifacts for all 5 variants | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
 | OCR Log-probabilities | Token-level Qwen OCR confidence scores | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
 
+**Collection page:** <https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models>
+
 ---
 
 ## Citation

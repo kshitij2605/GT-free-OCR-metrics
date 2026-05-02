@@ -1121,5 +1121,11 @@
         }
       ]
     }
-  ]
+  ],
+  "isPartOf": {
+    "@type": "sc:DataCatalog",
+    "@id": "https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models",
+    "name": "GT-Free OCR Metrics — Datasets & Models",
+    "url": "https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models"
+  }
 }
