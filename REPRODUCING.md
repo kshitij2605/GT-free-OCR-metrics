@@ -55,6 +55,12 @@ export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 bash download_data.sh
 ```
 
+> **Quick exploration (no full download required):** a 60-page stratified sample (~370 MB)
+> is available at
+> [`gt-free-ocr-metrics/omnidocbench-render-compare-sample`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample).
+> Open `explore_datasets.ipynb` in this repository for an interactive walkthrough
+> that downloads only the sample data.
+
 ---
 
 ## Step 3 — Download DocSim LoRA weights

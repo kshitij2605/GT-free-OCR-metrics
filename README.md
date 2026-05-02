@@ -120,9 +120,12 @@ research/                        # Literature review and technical notes
 |---|---|---|
 | OmniDocBench | 1 355 real-world document pages, GT annotations | [opendatalab/OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench) |
 | Render-and-Compare | Pre-computed OCR artifacts for all 5 variants | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
+| Render-and-Compare (sample) | 60-page stratified sample (~370 MB) for quick exploration | [gt-free-ocr-metrics/omnidocbench-render-compare-sample](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample) |
 | OCR Log-probabilities | Token-level Qwen OCR confidence scores | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
 
 **Collection page:** <https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models>
+
+A **60-page stratified sample** of the full render-and-compare dataset (~370 MB) is available for reviewers who want to explore the data without downloading the full 10 GB dataset. An interactive exploration notebook (`explore_datasets.ipynb`) is included in this repository.
 
 ---
 
