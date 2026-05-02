@@ -25,7 +25,7 @@ import torch
 import torch.nn.functional as F
 from PIL import Image
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P1_066_hashes"
@@ -43,9 +43,9 @@ if variant not in {"all", "text", "formula", "table", "all_no_mask"}:
     print(f"Unknown variant: {variant}", file=sys.stderr)
     sys.exit(1)
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

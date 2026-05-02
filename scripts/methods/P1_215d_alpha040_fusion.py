@@ -38,7 +38,7 @@ import torchvision.transforms as T
 from PIL import Image, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P1_215d_alpha040_fusion"
@@ -48,10 +48,10 @@ DINO_SIZE = 224
 WINDOW_K = 10
 ALPHA_ENTROPY = 0.4  # fusion weight on confidence_min; 1-alpha = production cc weight
 
-ADAPTER_DIR = Path("/home/mac/test/r1-p2/models/docsim_lora/lora_adapter_best")
-HEAD_STATE_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/head_state_best.pt")
-HEAD_CONFIG_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/config.json")
-LOGPROBS_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
+ADAPTER_DIR = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "lora_adapter_best"
+HEAD_STATE_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "head_state_best.pt"
+HEAD_CONFIG_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "config.json"
+LOGPROBS_ROOT = Path(__file__).parent.parent.parent / "data" / "ocr_logprobs"
 
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <variant>", file=sys.stderr)
@@ -69,9 +69,9 @@ USE_DOCSIM_BBOX = variant == "table"
 NEED_DOCSIM = USE_DOCSIM_PAGE or USE_DOCSIM_BBOX
 NEED_DINO = variant != "table" or USE_DOCSIM_BBOX
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

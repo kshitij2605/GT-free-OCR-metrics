@@ -106,7 +106,7 @@ def main():
 
     # Logger name = variant derived from output path (e.g. "formula" from comparison_formula.json)
     log_name = args.output.stem.removeprefix("comparison_") or "comparison"
-    error_log = Path("/home/mac/test/r1-p2/logs") / f"comparison_{log_name}.error.log"
+    error_log = Path(__file__).parent.parent / "logs" / f"comparison_{log_name}.error.log"
     log = _setup_logging(log_name, error_log)
 
     t_total = time.time()

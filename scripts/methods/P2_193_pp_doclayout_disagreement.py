@@ -43,7 +43,7 @@ if variant not in {"all", "text", "formula", "table", "all_no_mask"}:
 METHOD_ID = "P2_193_pp_doclayout_disagreement"
 BASELINE_METHOD_ID = "P1_120c3b_all_no_mask_baseline_preproc"
 
-BASE = Path("/home/mac/test/r1-p2")
+BASE = Path(__file__).parent.parent.parent
 DATA_BASE = BASE / "data" / "omnidocbench"
 var_root = DATA_BASE / f"ocr_{variant}"
 OUT_DIR = BASE / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
@@ -86,7 +86,7 @@ import torch
 from doclayout_yolo import YOLOv10
 
 MODEL_PATH = (
-    "/home/mac/.cache/huggingface/hub/models--juliozhao--DocLayout-YOLO-DocStructBench"
+    "~/.cache/huggingface/hub/models--juliozhao--DocLayout-YOLO-DocStructBench"
     "/snapshots/8c3299a30b8ff29a1503c4431b035b93220f7b11"
     "/doclayout_yolo_docstructbench_imgsz1024.pt"
 )

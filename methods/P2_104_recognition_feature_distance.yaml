@@ -70,6 +70,6 @@ description: >
     Features are NOT all-zeros, NOT all-ones — sanity PASSED.
 
   Model: microsoft/trocr-small-printed (ViT-S/16 encoder, 384-dim, ~239 MB).
-  Weights cached to /home/mac/.cache/huggingface/hub after first run.
+  Weights cached to ~/.cache/huggingface/hub after first run.
 
 date: "2026-04-28"

@@ -8,7 +8,7 @@ parameters:
   encoder: dinov2_vitb14+openclip_vitb32
   dino_size: 224
   batch_size: 16
-  gt_json_path: "/home/mac/test/r1-p2/data/omnidocbench/OmniDocBench.json"
+  gt_json_path: "data/omnidocbench/OmniDocBench.json"
 dependencies: []
 results_path: results/method_runs/ocr_{variant}/P1_158_gtpoly_content_mask_all_no_mask/results.json
 correlations_path: results/method_runs/ocr_{variant}/P1_158_gtpoly_content_mask_all_no_mask/correlations.json

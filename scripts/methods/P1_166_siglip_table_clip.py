@@ -40,7 +40,7 @@ from PIL import Image, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 from transformers import AutoModel, AutoProcessor
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P1_166_siglip_table_clip"
@@ -63,9 +63,9 @@ USE_CLIP_ONLY = variant == "table"    # CLIP-only cosine for 'table' variant (H4
 USE_TABLE_PREPROC = variant == "table"  # H6.1: restore baseline preprocessing for table CLIP path
 USE_SIGLIP = variant == "table"       # H12.1: SigLIP for table variant only
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

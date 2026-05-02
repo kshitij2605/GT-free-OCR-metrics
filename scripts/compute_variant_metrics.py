@@ -21,10 +21,10 @@ SSIM_WORKERS = 8  # parallel SSIM threads (skimage releases GIL)
 MIN_GPU_FREE_MB = 1500  # CLIP ViT-B-32 + LPIPS + batch buffers
 
 variant = sys.argv[1]
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor  # noqa: E402
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
 
 import lpips as lpips_lib  # noqa: E402
@@ -46,7 +46,7 @@ def _setup_logging(name: str) -> logging.Logger:
     logger.addHandler(sh)
 
     # ERROR+ → dedicated error log for quick grep
-    error_path = Path("/home/mac/test/r1-p2/logs") / f"metrics_{name}.error.log"
+    error_path = Path(__file__).parent.parent / "logs" / f"metrics_{name}.error.log"
     error_path.parent.mkdir(parents=True, exist_ok=True)
     error_path.write_text("")  # truncate on new run
     fh = logging.FileHandler(error_path)
@@ -236,7 +236,7 @@ with ThreadPoolExecutor(max_workers=SSIM_WORKERS) as pool:
             )
 
 # Output path consolidated to results/method_runs/ocr_<v>/baseline/ — same scheme as all other methods.
-out_dir = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / "baseline"
+out_dir = Path(__file__).parent.parent / "results" / "method_runs" / f"ocr_{variant}" / "baseline"
 out_dir.mkdir(parents=True, exist_ok=True)
 out = out_dir / "results.json"
 json.dump(results, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

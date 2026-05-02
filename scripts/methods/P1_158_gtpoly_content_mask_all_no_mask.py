@@ -49,7 +49,7 @@ import torchvision.transforms as T
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P1_158_gtpoly_content_mask_all_no_mask"
@@ -75,9 +75,9 @@ USE_PREPROC = variant in ("table", "all_no_mask")
 # H14.1.diag: GT-polygon content mask — only for all_no_mask (CEILING DIAGNOSTIC)
 USE_CONTENT_MASK = variant == "all_no_mask"
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

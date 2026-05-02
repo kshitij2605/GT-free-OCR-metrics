@@ -48,13 +48,13 @@ sys.modules["reference_free_ocr_metric.reconstruction.html_parser"] = _hp
 _spec.loader.exec_module(_mod)  # type: ignore[union-attr]
 QwenVLClient = _mod.QwenVLClient
 
-API_BASE = "http://difgpu01.tdc.otsuka-shokai.co.jp:9000/v1"
+API_BASE = os.environ.get("OCR_ENDPOINT_URL", "http://localhost:9000/v1")
 API_KEY = "tensorflow"
 MODEL = "Qwen/Qwen3.5-122B-A10B"
 
-DATA_ROOT = Path("/home/mac/test/r1-p2/data/omnidocbench")
+DATA_ROOT = Path(__file__).parent.parent / "data" / "omnidocbench"
 IMAGES_DIR = DATA_ROOT / "images"
-OUT_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
+OUT_ROOT = Path(__file__).parent.parent / "data" / "ocr_logprobs"
 
 
 def process_one(image_path: Path, client: QwenVLClient) -> tuple[str, str, float]:

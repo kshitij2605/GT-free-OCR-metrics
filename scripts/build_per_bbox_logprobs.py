@@ -50,7 +50,7 @@ import traceback
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
-DATA_ROOT = Path("/home/mac/test/r1-p2/data")
+DATA_ROOT = Path(__file__).parent.parent / "data"
 SRC = DATA_ROOT / "ocr_logprobs"
 OUT = DATA_ROOT / "ocr_logprobs_per_bbox"
 

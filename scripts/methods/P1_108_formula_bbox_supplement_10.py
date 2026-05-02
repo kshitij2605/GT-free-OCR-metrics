@@ -52,7 +52,7 @@ import torchvision.transforms as T
 from PIL import Image, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P1_108_formula_bbox_supplement_10"
@@ -65,11 +65,11 @@ DINO_SIZE = 224
 # - text/formula/all_no_mask: alpha=0.4 (still climbing at sweep top)
 # - all: alpha=0.3 (peak at 0.4061 vs 0.4057 at alpha=0.4 — within noise, use 0.3)
 
-ADAPTER_DIR = Path("/home/mac/test/r1-p2/models/docsim_lora/lora_adapter_best")
-HEAD_STATE_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/head_state_best.pt")
-HEAD_CONFIG_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/config.json")
-LOGPROBS_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
-PER_BBOX_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs_per_bbox")
+ADAPTER_DIR = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "lora_adapter_best"
+HEAD_STATE_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "head_state_best.pt"
+HEAD_CONFIG_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "config.json"
+LOGPROBS_ROOT = Path(__file__).parent.parent.parent / "data" / "ocr_logprobs"
+PER_BBOX_ROOT = Path(__file__).parent.parent.parent / "data" / "ocr_logprobs_per_bbox"
 TOP_K = 5
 _LOG_K_TOP = math.log(TOP_K)
 
@@ -168,9 +168,9 @@ BETA_FORMULA_BBOX = {
     "all_no_mask": 0.10, # 0.30*page_DocSim + 0.40*entropy + 0.20*table_cell + 0.10*formula_bbox
 }[variant]
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

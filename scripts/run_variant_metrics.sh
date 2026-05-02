@@ -30,12 +30,12 @@ for i in "${!VARIANTS[@]}"; do
     if [ $i -lt ${#GPUS[@]} ]; then
         g="${GPUS[$i]}"
         echo "Launching $v on GPU $g"
-        CUDA_VISIBLE_DEVICES=$g nohup /home/mac/.local/bin/uv run python "$SCRIPT" $v \
+        CUDA_VISIBLE_DEVICES=$g nohup $(command -v uv 2>/dev/null || echo uv) run python "$SCRIPT" $v \
             > logs/metrics_${v}.log 2>&1 &
     else
         # No GPU available for this variant — Python script will use CPU
         echo "Launching $v on CPU (no free GPU)"
-        CUDA_VISIBLE_DEVICES="" nohup /home/mac/.local/bin/uv run python "$SCRIPT" $v \
+        CUDA_VISIBLE_DEVICES="" nohup $(command -v uv 2>/dev/null || echo uv) run python "$SCRIPT" $v \
             > logs/metrics_${v}.log 2>&1 &
     fi
 done

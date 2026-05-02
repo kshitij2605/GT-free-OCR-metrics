@@ -52,7 +52,7 @@ CROP_BATCH_SIZE = 32
 MIN_CROP_PX = 4          # skip degenerate bboxes
 NEUTRAL_SCORE = 0.5      # for pages with no text elements
 
-BASE = Path("/home/mac/test/r1-p2")
+BASE = Path(__file__).parent.parent.parent
 DATA_BASE = BASE / "data" / "omnidocbench"
 var_root = DATA_BASE / f"ocr_{variant}"
 OUT_DIR = BASE / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID

@@ -24,7 +24,7 @@ Original Image → Qwen3-VL OCR → HTML (text + bboxes)
 
 **Qwen3.5-122B-A10B** via vLLM (OpenAI-compatible API endpoint).
 
-- Hosted at: `difgpu01.tdc.otsuka-shokai.co.jp`
+- Hosted at: `<your-vllm-host>`
 - Output format: HTML with `data-bbox="x1 y1 x2 y2"` attributes per element
 - Element classes: `text`, `formula`, `table`, `image`
 - Pixel budget: 2048×32×32 = 2,097,152 pixels (configurable via `max_pixels`)

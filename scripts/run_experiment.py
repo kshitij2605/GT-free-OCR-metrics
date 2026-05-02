@@ -68,7 +68,7 @@ def collect_images(input_path: Path) -> Generator[list[Path]]:
 
         yield images
 
-VLM_API_BASE = "http://difgpu01.tdc.otsuka-shokai.co.jp:9000/v1"
+VLM_API_BASE = os.environ.get("OCR_ENDPOINT_URL", "http://localhost:9000/v1")
 VLM_API_KEY = "tensorflow"
 VLM_MODEL = "Qwen/Qwen3.5-122B-A10B"
 

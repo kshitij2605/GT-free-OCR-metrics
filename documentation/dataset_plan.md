@@ -7,7 +7,7 @@ OmniDocBench is a comprehensive document understanding benchmark containing 1355
 
 ### Location
 ```
-/home/mac/test/OmniDocBench/OpenDataLab___OmniDocBench/
+<omnidocbench-data-dir>/
 ```
 
 ### Document Types
@@ -145,7 +145,7 @@ Result: no spaces, no punctuation — only alphanumeric and CJK characters.
 
 ## Edit Distance Formula
 
-Source: `/home/mac/test/OmniDocBench/metrics/cal_metric.py` lines 139–184
+Source: `<omnidocbench-data-dir>/metrics/cal_metric.py` lines 139–184
 
 ```python
 edit_dist = Levenshtein.distance(pred, gt)
@@ -217,7 +217,7 @@ Source: `end2end_dataset.py` lines 125–143
 | Text normalization | `utils/data_preprocess.py` |
 | Ground truth demo JSON | `demo_data/omnidocbench_demo/OmniDocBench_demo.json` |
 
-All paths relative to `/home/mac/test/OmniDocBench/`.
+All paths relative to `<omnidocbench-data-dir>/`.
 
 ---
 

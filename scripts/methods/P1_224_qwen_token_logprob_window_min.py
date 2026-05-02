@@ -23,7 +23,7 @@ import numpy as np
 
 METHOD_ID = "P1_224_qwen_token_logprob_window_min"
 WINDOW_K = 10
-LOGPROBS_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
+LOGPROBS_ROOT = Path(__file__).parent.parent.parent / "data" / "ocr_logprobs"
 
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <variant>", file=sys.stderr)
@@ -34,9 +34,9 @@ if variant not in {"all", "text", "formula", "table", "all_no_mask"}:
     print(f"Unknown variant: {variant}", file=sys.stderr)
     sys.exit(1)
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

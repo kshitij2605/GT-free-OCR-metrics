@@ -29,7 +29,7 @@ import torchvision.transforms as T
 from PIL import Image, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P2_060c_docsim_baseline_5050_fusion"
@@ -39,9 +39,9 @@ DINO_SIZE = 224
 W_DOCSIM = 0.5
 W_BASELINE = 0.5
 
-ADAPTER_DIR = Path("/home/mac/test/r1-p2/models/docsim_lora/lora_adapter_best")
-HEAD_STATE_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/head_state_best.pt")
-HEAD_CONFIG_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/config.json")
+ADAPTER_DIR = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "lora_adapter_best"
+HEAD_STATE_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "head_state_best.pt"
+HEAD_CONFIG_PATH = Path(__file__).parent.parent.parent / "models" / "docsim_lora" / "config.json"
 
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <variant>", file=sys.stderr)
@@ -57,9 +57,9 @@ USE_CLIP_ONLY = variant == "table"
 USE_PREPROC = variant in ("table", "all_no_mask")
 USE_DOCSIM = variant in ("all", "all_no_mask")
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data" / "omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results" / "method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(

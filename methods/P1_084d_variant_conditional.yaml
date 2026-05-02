@@ -22,6 +22,6 @@ description: >
   CLIP-only table=0.278), while preserving formula strength (DINOv2=0.5429).
   Control: H4.c CLIP+DINOv2 50/50 average (5a6ea4c, spearman_mean=0.3526).
   Predicted: spearman_mean ~ 0.355 (table recovers +0.028, formula unchanged).
-  DINOv2 pre-cached at /home/mac/.cache/torch/hub/facebookresearch_dinov2_main.
+  DINOv2 pre-cached at ~/.cache/torch/hub/facebookresearch_dinov2_main.
   OpenCLIP ViT-B-32 laion2b_s34b_b79k uses its own preprocess pipeline (224x224 + CLIP norm).
 date: "2026-04-25"

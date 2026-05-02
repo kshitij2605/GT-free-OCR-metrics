@@ -29,7 +29,7 @@ for variant in $VARIANTS; do
         [ "$variant" = "text" ]    && focus_arg="--focus text"
         [ "$variant" = "table" ]   && focus_arg="--focus table"
         echo "  Running correlation: $variant/$method"
-        /home/mac/.local/bin/uv run python scripts/run_comparison.py \
+        $(command -v uv 2>/dev/null || echo uv) run python scripts/run_comparison.py \
             --experiment-results "$results" \
             --annotations-json "$ANNOT" \
             --artifacts-dir "$OCR_DIR" \
@@ -50,7 +50,7 @@ for pair in $YAML_MAP; do
     yaml_path="methods/${yaml_id}.yaml"
     if [ -f "$yaml_path" ]; then
         echo "  Updating leaderboard: $yaml_id"
-        /home/mac/.local/bin/uv run python scripts/update_leaderboard.py --technique-yaml "$yaml_path"
+        $(command -v uv 2>/dev/null || echo uv) run python scripts/update_leaderboard.py --technique-yaml "$yaml_path"
     else
         echo "  SKIP: $yaml_path not found"
     fi
