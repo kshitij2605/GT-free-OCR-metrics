@@ -43,7 +43,7 @@ Five OCR extraction variants:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/PLACEHOLDER/gt-free-ocr-metrics
+git clone https://github.com/kshitij2605/GT-free-OCR-metrics
 cd gt-free-ocr-metrics
 pip install -e .
 
