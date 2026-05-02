@@ -1,0 +1,44 @@
+id: P1_024_deepwsd_wasserstein_metric
+name: "D24 / H_DeepWSD — msswd (Multi-Scale Sliced Wasserstein) as 4th term REPLACING DISTS for variant=all only"
+category: deep_feature
+script: scripts/methods/P1_024_deepwsd_wasserstein_metric.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_024_deepwsd_wasserstein_metric/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_024_deepwsd_wasserstein_metric/correlations.json
+description: >
+  D24 / H_DeepWSD: Sibling REFINE under H5.b confirmed slot. Replaces DISTS with a
+  Wasserstein-family metric as the 4th term in the variant=all multi_composite formula.
+
+  DeepWSD was specified in D24 but is NOT available in pyiqa (list_models() does not
+  include "deepwsd" and has no other "deepwsd" or "wasserstein" named metric). The
+  closest Wasserstein-family substitute available is msswd (Multi-Scale Sliced
+  Wasserstein Distance), which is FR, lower_better=True, score_range=[0,~10].
+  msswd scores are normalised to [0,1] via clipping before insertion into the
+  composite formula.
+
+  Note: H2 tested msswd as 4th term for variant=TABLE mc (where mc < cc anyway).
+  This experiment tests msswd as 4th term for variant=ALL mc (where DISTS gave the
+  only confirmed H5.b lift). Different variant = different test.
+
+  multi_composite formulas:
+    variant=all (USE_MSSWD=True):
+      composite = 0.3*SSIM + 0.2*(1-MSE) + 0.2*(1-LPIPS) + 0.3*(1-msswd_normed)
+      (same shape as H5.b DISTS slot: 0.3*SSIM + 0.2*(1-MSE) + 0.2*(1-LPIPS) + 0.3*(1-DISTS))
+    all other variants (USE_MSSWD=False):
+      composite = 0.4*SSIM + 0.3*(1-MSE) + 0.3*(1-LPIPS)  (original, unchanged)
+
+  clip_cosine strategy (UNCHANGED from H4.e + H6.1 + H11.2 baseline = P1_120c3b):
+    variant=table: CLIP cosine ONLY, with grayscale+SHARPEN+autocontrast preprocessing (H6.1)
+    variant=all_no_mask: 0.5 * DINOv2_vitb14_CLS + 0.5 * OpenCLIP_ViT-B/32,
+                         both encoders receive preprocessed image (H11.2)
+    all other variants: 0.5 * DINOv2_vitb14_CLS + 0.5 * OpenCLIP_ViT-B/32, raw RGB
+
+  Control: H11.2 (89aee86, spearman_mean=0.3600).
+  Predicted: spearman_mean ~ 0.358 +/- 0.003. KEEP if >= 0.3605.
+date: "2026-04-27"

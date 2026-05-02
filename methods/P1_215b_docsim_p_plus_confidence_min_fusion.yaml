@@ -1,0 +1,46 @@
+id: P1_215b_docsim_p_plus_confidence_min_fusion
+name: "D215.b — D60.p production cc fused with window-MIN confidence (alpha=0.2)"
+category: self_uncertainty
+script: scripts/methods/P1_215b_docsim_p_plus_confidence_min_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_entropy: 0.2
+  window_k: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional + qwen_logprobs
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+  logprobs_root: data/ocr_logprobs
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215b_docsim_p_plus_confidence_min_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215b_docsim_p_plus_confidence_min_fusion/correlations.json
+description: >
+  D215.b — fusion test: clip_cosine_new = 0.8 * production_cc + 0.2 *
+  window_min_confidence. production_cc = D60.p stack per-variant: per-cell-MIN
+  DocSim for table; page-level DocSim for {text, all, all_no_mask};
+  50/50 CLIP+DINOv2 for formula. window_min_confidence = same signal as D224
+  (MIN over rolling K=10 token-window means of exp(token_logprob) from Qwen
+  logprobs).
+  Tests whether the entropy axis adds COMPLEMENTARY signal beyond the D60.p
+  ceiling. D215 (page-level mean) and D224 (window-MIN standalone) both
+  REFUTED. D224 showed window-MIN lifts entropy axis +0.08-0.16 vs page-mean
+  on 4/5 variants but standalone is still 0.16-0.36 below per-variant
+  ceilings. Fusion at alpha=0.2 is the definitive complementarity test.
+  multi_composite preserved from D60.p (H5.b composite [+ DISTS for
+  variant=all]) so eval has the production fallback path.
+  Predicted: 0.4453 +/- 0.005 (most likely 0.4438, slight regression as
+  fusion noise dominates over residual complementarity). KEEP if >= 0.450
+  (strictly above noise band of best=0.4453). Hit probability: 15-20%.
+  Kill switch: NONE (test is purely informative).
+  If KEEP: alpha sweep next (D215.c at 0.1, D215.d at 0.3) then per-bbox
+  D224.b. If REVERT: entropy axis structurally closed at all granularities
+  (page-mean dead, window-MIN standalone dead, fusion dead) -> emit
+  COMPLETE. Combined with D60-axis exhaustion + sum-of-per-variant-bests
+  structural ceiling, 0.4453 is established as the Lead-scope ceiling.
+  Control: D60.p (commit 0770856, spearman_mean 0.4453).
+date: "2026-04-30"

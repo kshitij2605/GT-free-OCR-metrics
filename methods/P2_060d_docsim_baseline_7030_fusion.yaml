@@ -1,0 +1,30 @@
+id: P2_060d_docsim_baseline_7030_fusion
+name: "D60.d — DocSim + baseline 70/30 cc fusion for {all, all_no_mask}"
+category: deep_feature
+script: scripts/methods/P2_060d_docsim_baseline_7030_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  fusion_weight_docsim: 0.7
+  fusion_weight_baseline: 0.3
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060d_docsim_baseline_7030_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060d_docsim_baseline_7030_fusion/correlations.json
+description: >
+  D60.d — asymmetric refinement of D60.b. For variants {all, all_no_mask},
+  the clip_cosine slot returns 0.7*DocSim_cos + 0.3*baseline_cos,
+  weighting the proven winner (DocSim) more heavily but admitting a small
+  baseline contribution. Other variants unchanged.
+  Predicted spearman_mean: 0.388-0.398.
+  - If DocSim is strictly optimal: ~0.385 (slight regress; 30% baseline dilutes)
+  - If small baseline adds info: ~0.395-0.40 (lift)
+  KEEP if >= 0.395.
+  Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
+date: "2026-04-28"

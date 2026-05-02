@@ -1,0 +1,38 @@
+id: P1_215i_variant_alpha_and_k
+name: "D215.i — variant-conditional alpha AND window_k (combine all per-variant peaks)"
+category: self_uncertainty
+script: scripts/methods/P1_215i_variant_alpha_and_k.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  k_table: 10
+  k_all: 5
+  k_text: 5
+  k_formula: 20
+  k_all_no_mask: 5
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215i_variant_alpha_and_k/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215i_variant_alpha_and_k/correlations.json
+description: >
+  D215.i — combine per-variant alpha + per-variant window_k from sweeps.
+  D215.e (variant-conditional alpha, K=10) achieved 0.4638. K-sweep
+  (D215.g K=5, D215.h K=20) revealed per-variant K optima: K=5 lifts
+  text/all/all_no_mask, K=20 lifts formula. Sum-of-per-variant-bests:
+    text K=5 alpha=0.4 -> 0.4403
+    formula K=20 alpha=0.4 -> 0.5784
+    table alpha=0 -> 0.4767
+    all K=5 alpha=0.3 -> 0.4088
+    all_no_mask K=5 alpha=0.4 -> 0.4306
+  Mean = 0.4670 projected (+0.0032 vs D215.e 0.4638).
+  Predicted: 0.4660-0.4685. KEEP if >= 0.466.
+  Tests whether per-variant K and alpha optima compose without interaction
+  effects (D215.e showed alpha routes did so cleanly).
+  Control: D215.e (0.4638).
+date: "2026-04-30"

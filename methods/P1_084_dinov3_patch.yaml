@@ -1,0 +1,26 @@
+id: P1_084_dinov3_patch
+name: "DINOv2 vitb14 CLS-token cosine (DINOv3 fallback — weights 403 Forbidden)"
+category: deep_feature
+script: scripts/methods/P1_084_dinov3_patch.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084_dinov3_patch/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084_dinov3_patch/correlations.json
+description: >
+  REPLACES CLIP encoder for clip_cosine slot; multi_composite (SSIM/MSE/LPIPS) UNCHANGED
+  — additive approach. Uses DINOv2 vitb14 (pre-cached) instead of OpenCLIP ViT-B/32.
+  DINOv3 (Meta, 2025) weights returned HTTP 403 on the remote host; DINOv2 vitb14 is
+  the structurally equivalent fallback (same patch-feature architecture, same ImageNet
+  pretraining lineage). CLS-token features (B, 768), L2-normalised, cosine similarity.
+  Image preprocessing: RGB, resize to 224x224, ImageNet mean/std normalisation.
+  multi_composite formula unchanged: 0.4*ssim + 0.3*(1-mse) + 0.3*(1-lpips),
+  where ssim/mse are on binarized 512x512, lpips on 512x512 grayscale.
+  Hypothesis: DINOv2's stronger patch semantics should improve formula/table
+  variants where CLIP already beats multi_composite (formula 0.42, table 0.28),
+  while the variant-conditional evaluation prevents regression on text.
+date: "2026-04-25"

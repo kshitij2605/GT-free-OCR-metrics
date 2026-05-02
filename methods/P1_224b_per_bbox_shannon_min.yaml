@@ -1,0 +1,42 @@
+id: P1_224b_per_bbox_shannon_min
+name: "D224.b — true per-bbox Shannon-confidence MIN aggregation (mirror of D60.m on entropy axis)"
+category: self_uncertainty
+script: scripts/methods/P1_224b_per_bbox_shannon_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  source: "shannon_entropy_top_logprobs"
+  granularity: "per_bbox_element_min"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_224b_per_bbox_shannon_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_224b_per_bbox_shannon_min/correlations.json
+description: >
+  D224.b — replaces the rolling-K-token window-MIN entropy aggregation
+  (current D215.l best 0.4742) with TRUE per-bbox-element MIN aggregation.
+  For each Qwen-OCR HTML element identified by `data-bbox="..."` in the
+  token stream, compute the MEAN Shannon-confidence over tokens within
+  that element. Aggregate per-page via MIN across elements.
+  Mechanism mirrors D60.m's per-cell-MEAN DocSim breakthrough (which
+  later improved to D60.p per-cell-MIN). The structural argument:
+  worst-element similarity correlates with total OCR error count when
+  element-level errors are independent. D215.l proved Shannon source >
+  mean-confidence source on 4/5 variants; D224.b tests whether
+  element-aligned granularity beats rolling-K-window granularity.
+  Per-variant alpha unchanged from D215.l (table=0, all=0.3, others=0.4)
+  so table is byte-equal to D60.p; lift only possible on the 4 entropy-
+  weighted variants.
+  Predicted: 0.470-0.490, most likely 0.478. KEEP if > 0.4742.
+  Kill switch: NONE (purely diagnostic of granularity hypothesis).
+  Decision rule: if KEEP, PROCEED to per-element rolling-K-MIN refine
+  (within-element K-window then MIN across elements). If REVERT, the
+  granularity hypothesis on entropy axis is closed and we PIVOT to
+  D213 (sliding-window heat-map area-weighted) as last entropy probe.
+  Control: D215.l (Shannon + variant-cond alpha + rolling-K window-MIN, 0.4742).
+date: "2026-04-30"

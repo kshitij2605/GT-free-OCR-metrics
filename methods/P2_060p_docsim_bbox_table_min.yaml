@@ -1,0 +1,36 @@
+id: P2_060p_docsim_bbox_table_min
+name: "D60.p — D60.m with MIN aggregation over per-table-bbox DocSim cosines (variant=table only)"
+category: deep_feature
+script: scripts/methods/P2_060p_docsim_bbox_table_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MIN)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060p_docsim_bbox_table_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060p_docsim_bbox_table_min/correlations.json
+description: >
+  D60.p — single-line variation of D60.m: aggregate per-table-bbox DocSim
+  cosines via MIN instead of MEAN. Hypothesis: MIN aligns with edit-distance
+  behavior — "OCR is bad if any cell is bad" — capturing worst-rendered
+  cell as quality indicator. For pages with 1 bbox (259/351), MIN = MEAN
+  (no change); the divergence appears on pages with 2-6 bboxes.
+  Predicted spearman_mean: 0.435-0.460, most likely 0.448 (+0.005). MIN
+  is theoretically aligned with edit-distance because OCR errors are
+  cell-independent: any cell with bad rendering contributes to total
+  error, so worst-cell similarity should correlate with total error
+  count. Run as parallel sibling to D60.o (MAX).
+  KEEP if >= 0.450. Kill switch: table cc <= 0.40.
+  Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
+date: "2026-04-29"

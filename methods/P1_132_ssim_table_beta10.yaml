@@ -1,0 +1,27 @@
+id: P1_132_ssim_table_beta10
+name: "D132 — SSIM table β sweep 0.05→0.10"
+category: composite
+script: scripts/methods/P1_132_ssim_table_beta10.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.10
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_132_ssim_table_beta10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_132_ssim_table_beta10/correlations.json
+description: >
+  D132 — SSIM table β sweep step 2: 0.05→0.10. Based on D128 (NEW BEST 0.4918).
+  D128 KEEP table SSIM β=0.05 (+0.005 table Spearman, +0.001 mean). D132 tests β=0.10.
+  table: 0.80*per_cell_MIN + 0.10*IQ + 0.10*ssim (vs 0.85/0.10/0.05 in D128).
+  Predicted: marginal gain if table β-axis has headroom; revert if 0.05 is optimal.
+  KEEP if spearman_mean > 0.4918 (D128 NEW BEST).
+date: "2026-05-02"

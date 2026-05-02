@@ -1,0 +1,28 @@
+id: P1_142_elem_mean_all
+name: "D142 — per-element CLIP MEAN (instead of P10) for all/all_no_mask"
+category: composite
+script: scripts/methods/P1_142_elem_mean_all.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_142_elem_mean_all/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_142_elem_mean_all/correlations.json
+description: >
+  D142 — Test MEAN aggregation instead of P10 for per-element CLIP on all/all_no_mask.
+  D137 (P10) helped all (+0.0023) but not all_no_mask. Testing if MEAN captures different signal.
+  Same β=0.10 for all and all_no_mask; only aggregation changes (mean vs percentile).
+  KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
+date: "2026-05-02"

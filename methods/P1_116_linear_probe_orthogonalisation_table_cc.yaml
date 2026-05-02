@@ -1,0 +1,36 @@
+id: P1_116_linear_probe_orthogonalisation_table_cc
+name: "H15 / D116 PCA orthogonalisation of CLIP features for variant=table cc only"
+category: deep_feature
+script: scripts/methods/P1_116_linear_probe_orthogonalisation_table_cc.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+  pca_k: 3
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_116_linear_probe_orthogonalisation_table_cc/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_116_linear_probe_orthogonalisation_table_cc/correlations.json
+description: >
+  H15 / D116: PCA-based feature orthogonalisation for variant=table cc only.
+  All other 4 variants (text, formula, all, all_no_mask) are bit-identical to H11.2
+  (P1_120c3b_all_no_mask_baseline_preproc, spearman_mean=0.3600).
+
+  Mechanism: For variant=table, encode all GT+reconstruction images with OpenCLIP
+  ViT-B/32 + H6.1 preprocessing (grayscale+SHARPEN+autocontrast->RGB, unchanged).
+  Two-pass approach: first encode all pages to build feature matrix F (shape N_pages*2,
+  512), compute PCA and identify top-k (default k=3) nuisance principal components,
+  then project all features onto orthogonal complement before cosine computation.
+  This is unsupervised (no labels used) — only high-variance directions are removed.
+
+  Hypothesis: The 5 consecutive table-cc swap failures suggest OpenCLIP ViT-B/32
+  *does* contain table-discriminative signal at cc=0.277, but it is entangled with
+  nuisance directions (scanner profile, brightness, font color) concentrated in the
+  top PC directions. Projecting these out may lift table cc toward 0.29-0.31,
+  giving spearman_mean 0.362-0.366. Kill switch: if table cc <= 0.260, bottleneck
+  is information-absence not entanglement; pivot to D30 HSIC.
+
+  Control: H11.2 P1_120c3b (spearman_mean=0.3600, table cc=0.2766).
+  Predicted: spearman_mean ~ 0.362-0.366. KEEP threshold >= 0.3618.
+date: "2026-04-27"

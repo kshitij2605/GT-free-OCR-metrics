@@ -1,0 +1,28 @@
+id: P1_106n_iq_per_formula_bbox_min
+name: "D106.n — per-formula-bbox IQ MIN replaces page-level IQ (from D106.h best 0.4814)"
+category: self_uncertainty
+script: scripts/methods/P1_106n_iq_per_formula_bbox_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  gamma_diqa_formula: 0.5
+  gamma_diqa_table: 0.1
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106n_iq_per_formula_bbox_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106n_iq_per_formula_bbox_min/correlations.json
+description: >
+  D106.n — replaces page-level IQ similarity with per-formula-bbox IQ MIN for
+  variant=formula. Mirrors D60.m structural breakthrough: per-element MIN >
+  page-level aggregation when elements are content-homogeneous. Formula bboxes
+  from ocr_formula_elements.json; IQ features computed on each crop; MIN taken;
+  fallback to page-level if no valid crops (< 20px). Same γ=0.50 as D106.h
+  (keeps comparison clean: IQ signal changes, weight unchanged). Table γ=0.10
+  and all other variants byte-equal to D106.h. Predicted formula cc 0.605-0.615
+  if per-bbox IQ is more targeted; could tie or regress if crop IQ is noisy.
+  KEEP if > 0.4814. Decision: KEEP→sweep γ on per-bbox IQ axis;
+  REVERT-tie→per-bbox IQ doesn't improve on page-level IQ for formula, close axis.
+date: "2026-05-01"

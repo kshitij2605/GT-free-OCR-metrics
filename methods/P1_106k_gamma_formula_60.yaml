@@ -1,0 +1,29 @@
+id: P1_106k_gamma_formula_60
+name: "D106.k — γ=0.60 boundary push on formula (from D106.h γ=0.50 best 0.6044)"
+category: self_uncertainty
+script: scripts/methods/P1_106k_gamma_formula_60.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  alpha_table: 0.0
+  gamma_diqa_formula: 0.6
+  gamma_diqa_table: 0.1
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106k_gamma_formula_60/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106k_gamma_formula_60/correlations.json
+description: >
+  D106.k — γ_formula=0.60 boundary push from D106.h γ=0.50 (new best 0.4814).
+  Formula trajectory γ=0/0.20/0.30/0.40/0.50 = 0.5872/0.6011/0.6028/0.6036/
+  0.6044, deltas +0.0139/+0.0017/+0.0008/+0.0008 (plateau since γ=0.40).
+  At γ=0.60: prod_cc weight drops to 0.10 (very low), entropy=0.30, IQ=0.60.
+  Peak may already be bracketed at γ∈[0.50,0.60] given plateau. Expected
+  formula: 0.6040-0.6050 (plateau or slight peak). Other variants byte-equal
+  to D106.h (table γ=0.10 retained). Predicted spearman_mean: 0.4812-0.4818.
+  KEEP if > 0.4814 (current best). Decision: KEEP → sweep γ=0.70 (very rare,
+  prod_cc weight = 0.0 — likely diminishing); REVERT or tie → peak bracketed,
+  formula γ-axis closes at D106.h (γ=0.50). Control: D106.h (0.4814).
+date: "2026-05-01"

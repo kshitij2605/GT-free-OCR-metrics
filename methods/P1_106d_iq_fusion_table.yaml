@@ -1,0 +1,32 @@
+id: P1_106d_iq_fusion_table
+name: "D106.d — first IQ-fusion attempt on variant=table at gamma=0.10 (table previously alpha=0)"
+category: self_uncertainty
+script: scripts/methods/P1_106d_iq_fusion_table.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  gamma_diqa_table: 0.1
+  gamma_diqa_formula: 0.2
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106d_iq_fusion_table/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106d_iq_fusion_table/correlations.json
+description: >
+  D106.d — first fusion attempt on variant=table. Table has been
+  alpha_entropy=0 (no entropy fusion) since D215.b — the table channel
+  is purely D60.p per-cell-MIN DocSim cosine (0.4767). Test whether
+  hand-crafted IQ features add complementary signal to per-cell DocSim:
+      table clip_cosine = 0.9 * prod_cc + 0.1 * D106_iq_similarity
+  Other variants byte-equal to D106.b (formula keeps gamma=0.2).
+  D106 alone on table=0.2966, much weaker than prod_cc=0.4767, but
+  small gamma might still add via independence.
+  Predicted: table 0.4760-0.4800 (likely +0-0.003); spearman_mean:
+  0.4795-0.4810 (likely +0-0.001). KEEP if > 0.4804.
+  Decision: KEEP -> NEW BEST -> PROCEED to broader IQ-fusion sweep;
+  REVERT-tie -> table fusion structurally infeasible at this gamma;
+  table is locked at D60.p 0.4767.
+  Control: D106.b (0.4804, table gamma=0).
+date: "2026-05-01"

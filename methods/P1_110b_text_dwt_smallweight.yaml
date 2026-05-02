@@ -1,0 +1,24 @@
+id: P1_110b_text_dwt_smallweight
+name: "H7.1b DWT 4th-term with SSIM-preserving weights (0.40/0.25/0.25/0.10) for variant=text only"
+category: deep_feature
+script: scripts/methods/P1_110b_text_dwt_smallweight.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_110b_text_dwt_smallweight/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_110b_text_dwt_smallweight/correlations.json
+description: >
+  H7.1b: REFINE of H7.1 (refuted). H7.1 used equal 4-way split (0.25/0.25/0.25/0.25) which
+  diluted SSIM below its dominant 0.40 weight, regressing text Spearman 0.389->0.375.
+  This experiment uses asymmetric weights that PRESERVE SSIM at 0.40 and only add DWT at
+  small weight (0.10) taken equally from MSE and LPIPS (0.30->0.25 each):
+    composite = 0.40*SSIM + 0.25*(1-MSE) + 0.25*(1-LPIPS) + 0.10*dwt_detail_sim
+  DWT helper: db2 wavelet, levels 2+3 detail subbands, cosine similarity, mapped to [0,1].
+  All other variants keep H6.1 logic exactly.
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
+  Predicted: text Spearman 0.389->0.392+; spearman_mean 0.3598->0.359-0.362.
+date: "2026-04-26"

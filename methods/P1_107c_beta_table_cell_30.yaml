@@ -1,0 +1,24 @@
+id: P1_107c_beta_table_cell_30
+name: "D107c — per-table-cell MIN DocSim supplement β=0.30 sweep (from D107b β=0.20)"
+category: per_element_structure
+script: scripts/methods/P1_107c_beta_table_cell_30.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_all: 0.3
+  alpha_all_no_mask: 0.4
+  beta_table_cell: 0.30
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_107c_beta_table_cell_30/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_107c_beta_table_cell_30/correlations.json
+description: >
+  D107c — sweeps β=0.30 for per-table-cell MIN DocSim supplement on all/all_no_mask.
+  D107b at β=0.20 to be evaluated; if KEEP > 0.4818, β=0.30 is the next step.
+  For pages with table bboxes:
+    all: 0.40*page_DocSim + 0.30*entropy + 0.30*cell_MIN
+    all_no_mask: 0.30*page_DocSim + 0.40*entropy + 0.30*cell_MIN
+  KEEP if > D107b result. Decision: KEEP→sweep β=0.40; REVERT→β peaked earlier.
+date: "2026-05-01"

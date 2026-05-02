@@ -1,0 +1,23 @@
+id: P1_120c3_table_clip_baseline_preproc
+name: "H6.1 Table-CLIP baseline preprocessing (grayscale+SHARPEN+autocontrast) — recover -0.010 cc loss"
+category: deep_feature
+script: scripts/methods/P1_120c3_table_clip_baseline_preproc.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c3_table_clip_baseline_preproc/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c3_table_clip_baseline_preproc/correlations.json
+description: >
+  H6.1: REFINE of H6.0. Restore baseline's grayscale+SHARPEN+autocontrast->RGB preprocessing
+  (from src/reference_free_ocr_metric/metrics/clip_compare/clip_similarity.py:44-49) for the
+  table-variant CLIP path ONLY. All other variants keep H4.e+H5.b unchanged. Hypothesis:
+  the H4 series replaced this preprocessing with raw RGB pass-through, costing -0.010 cc
+  on table specifically (baseline=0.2775 vs P1_120b=0.2681). Re-applying preprocessing
+  for table only should recover that.
+  Control: H5.b (bedac9a, P1_120b, spearman_mean=0.3581).
+  Predicted: spearman_mean ~ 0.3597-0.3605 (table cc 0.268->0.276-0.280, +0.008-0.012).
+date: "2026-04-26"

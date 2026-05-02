@@ -1,0 +1,24 @@
+id: P1_120c_dists_all_and_all_no_mask
+name: "H5.c Variant-conditional DISTS extended: all + all_no_mask both DISTS-augmented"
+category: deep_feature
+script: scripts/methods/P1_120c_dists_all_and_all_no_mask.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c_dists_all_and_all_no_mask/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c_dists_all_and_all_no_mask/correlations.json
+description: >
+  H5.c: Extend H5.b — DISTS-augmented composite (0.3 SSIM/0.2 MSE/0.2 LPIPS/0.3 DISTS)
+  applied to BOTH variant=all and variant=all_no_mask. Other variants (text, formula,
+  table) keep original composite (0.4/0.3/0.3). clip_cosine strategy unchanged from H4.e
+  (CLIP-only for table, 50/50 CLIP+DINOv2 for others).
+  Hypothesis: all_no_mask multi_composite (baseline 0.201) should respond similarly to
+  DISTS as 'all' did (mc 0.218 -> 0.283). If multi_composite for all_no_mask rises above
+  the current clip_cosine winner 0.307, spearman_mean will improve.
+  Control: H5.b (bedac9a, spearman_mean=0.3581).
+  Predicted: spearman_mean 0.358-0.365 (likely tied if mc still loses to cc; gain if mc beats cc).
+date: "2026-04-26"

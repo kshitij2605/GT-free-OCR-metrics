@@ -1,0 +1,28 @@
+id: P1_139_elem_p10_all_beta15
+name: "D139 — per-element CLIP P10 β sweep: all β=0.10→0.15"
+category: composite
+script: scripts/methods/P1_139_elem_p10_all_beta15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.15
+  beta_content_elem_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_139_elem_p10_all_beta15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_139_elem_p10_all_beta15/correlations.json
+description: >
+  D139 — per-element CLIP P10 β sweep step 2 for all: β=0.10→0.15.
+  D137 KEEP NEW BEST (0.4932): all improved 0.4461→0.4484 (+0.0023) at β=0.10.
+  all: 0.20*DocSim + 0.30*entropy + 0.15*table_cell + 0.20*ssim + 0.15*elem_p10
+  KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
+date: "2026-05-02"

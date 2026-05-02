@@ -1,0 +1,36 @@
+id: P2_060o_docsim_bbox_table_max
+name: "D60.o — D60.m with MAX aggregation over per-table-bbox DocSim cosines (variant=table only)"
+category: deep_feature
+script: scripts/methods/P2_060o_docsim_bbox_table_max.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MAX)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: max
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060o_docsim_bbox_table_max/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060o_docsim_bbox_table_max/correlations.json
+description: >
+  D60.o — single-line variation of D60.m: aggregate per-table-bbox DocSim
+  cosines via MAX instead of MEAN. Hypothesis: MAX captures the
+  best-performing cell as a quality indicator for pages where some cells
+  are noisy and some are clean. For pages with 1 bbox (259/351), MAX = MEAN
+  (no change); the divergence appears on pages with 2-6 bboxes.
+  Predicted spearman_mean: 0.430-0.450, most likely 0.443 (+0.000 noise
+  to +0.003). MAX is intuitively too lenient on edit-distance correlation
+  (one good cell hides bad-rendered cells), so most-likely outcome is
+  small regression or noise tie. Run as parallel sibling to D60.p (MIN)
+  to pin down which aggregation aligns best with edit-distance.
+  KEEP if >= 0.450. Kill switch: table cc <= 0.40.
+  Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
+date: "2026-04-29"

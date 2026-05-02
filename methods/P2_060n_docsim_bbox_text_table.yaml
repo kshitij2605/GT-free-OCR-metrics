@@ -1,0 +1,44 @@
+id: P2_060n_docsim_bbox_text_table
+name: "D60.n — DocSim per-bbox cosine for {text, table}; D60.m other 3 variants"
+category: deep_feature
+script: scripts/methods/P2_060n_docsim_bbox_text_table.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox
+  docsim_variants: "text (per-bbox), table (per-bbox), all (page-level), all_no_mask (page-level)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes); text-fallback (page-level DocSim)"
+  bbox_source_text: ocr_elements.json
+  bbox_source_table: ocr_table_elements.json
+  bbox_aggregation: mean
+  empty_bbox_fallback_text: page_level_docsim
+  empty_bbox_fallback_table: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060n_docsim_bbox_text_table/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060n_docsim_bbox_text_table/correlations.json
+description: >
+  D60.n — extend D60.m's per-bbox aggregation from variant=table to
+  variant=text. Per-element supervised content-similarity is the new
+  mechanism class confirmed by D60.m (table cc 0.2966 -> 0.4665, +0.17).
+  D60.n tests whether the same mechanism transfers to variant=text where
+  ocr_elements.json provides text-element bboxes (5-50 per page typical).
+  Pages with no text bboxes (~176 / 1000+ pages) fall back to page-level
+  DocSim (NOT H6.1 CLIP-only — matches D60.m's text path) so the fallback
+  never regresses below D60.m text=0.4139. Other 3 variants (formula,
+  all, all_no_mask) byte-equal to D60.m.
+  Predicted spearman_mean: 0.443-0.475, most likely 0.450 (+0.007 vs D60.m
+  0.4432). Justification: text page-level DocSim cc=0.4139; per-bbox
+  could go either way: text bboxes are running-text segments (less
+  structurally homogeneous than table cells), so per-bbox transfer may
+  be smaller than table's +0.17 — expected text cc lift +0.02 to +0.10
+  most-likely +0.04 → text cc ~0.45 → mean += 0.008.
+  KEEP if >= 0.450. Kill switch: text cc <= 0.40 (per-bbox text
+  off-distribution; revert).
+  Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
+date: "2026-04-29"

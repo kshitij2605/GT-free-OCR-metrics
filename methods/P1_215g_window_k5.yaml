@@ -1,0 +1,28 @@
+id: P1_215g_window_k5
+name: "D215.g — variant-conditional fusion with smaller window K=5"
+category: self_uncertainty
+script: scripts/methods/P1_215g_window_k5.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  window_k: 5
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215g_window_k5/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215g_window_k5/correlations.json
+description: >
+  D215.g — same variant-conditional alpha as D215.e but with smaller window
+  K=5 (instead of K=10) for the rolling-window MIN of per-token confidence.
+  Smaller window captures shorter error bursts (single-cell or few-token
+  errors) more granularly. May lift if errors are typically clustered into
+  <10-token spans; may hurt if shorter window introduces noise.
+  Predicted: 0.460-0.470, most likely 0.464 (+0.001 vs D215.e 0.4638).
+  KEEP if >= 0.466.
+  Control: D215.e (window K=10, 0.4638).
+date: "2026-04-30"

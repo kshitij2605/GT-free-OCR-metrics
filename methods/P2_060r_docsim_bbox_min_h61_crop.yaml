@@ -1,0 +1,40 @@
+id: P2_060r_docsim_bbox_min_h61_crop
+name: "D60.r — D60.p + H6.1 preproc applied to per-table-bbox crops (variant=table only)"
+category: deep_feature
+script: scripts/methods/P2_060r_docsim_bbox_min_h61_crop.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox_h61_crop
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MIN, H6.1 on crops)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  bbox_preprocessing: h61_grayscale_sharpen_autocontrast
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060r_docsim_bbox_min_h61_crop/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060r_docsim_bbox_min_h61_crop/correlations.json
+description: >
+  D60.r — refine D60.p by applying H6.1 preprocessing (grayscale -> SHARPEN
+  -> autocontrast -> RGB) to per-table-bbox crops before passing to DocSim
+  head. Hypothesis: H6.1 enhances text legibility on small cell crops by
+  sharpening edges and increasing contrast — supervised head may benefit
+  more on small crops than on full pages (where D60.e/D60.l showed
+  noise-tie). Other 4 variants byte-equal to D60.p.
+  Predicted spearman_mean: 0.443-0.460, most likely 0.450 (+0.005).
+  Justification: H6.1 was specifically designed for text rendering;
+  applied to whole pages it diluted, but on cropped table cells the
+  preproc effect should sharpen the supervised head's ability to detect
+  rendering errors. Risk: H6.1 was tuned for the unsupervised CLIP head's
+  preferences, not DocSim's training distribution (raw RGB). Could go
+  either way.
+  KEEP if >= 0.450. Kill switch: table cc <= 0.45 (regression).
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, table cc 0.4767).
+date: "2026-04-29"

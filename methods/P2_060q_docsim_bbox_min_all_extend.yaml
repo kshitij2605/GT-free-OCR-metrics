@@ -1,0 +1,41 @@
+id: P2_060q_docsim_bbox_min_all_extend
+name: "D60.q — D60.p extended: per-table-bbox MIN DocSim for variant=all (where table bboxes exist)"
+category: deep_feature
+script: scripts/methods/P2_060q_docsim_bbox_min_all_extend.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox
+  docsim_variants: "text, all_no_mask (page-level); table, all (per-bbox MIN)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only); all-fallback (page-level DocSim)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  empty_bbox_fallback_table: clip_only_h61
+  empty_bbox_fallback_all: page_level_docsim
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060q_docsim_bbox_min_all_extend/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060q_docsim_bbox_min_all_extend/correlations.json
+description: >
+  D60.q — extend D60.p's per-table-bbox MIN DocSim from variant=table
+  to variant=all (using ocr_table_elements.json which is also present in
+  ocr_all data dir; 344/1349 pages have non-empty table bboxes). For
+  the 344 pages with tables, replace page-level DocSim with per-table-bbox
+  MIN DocSim. For the 1011 pages without tables, fall back to page-level
+  DocSim (matches D60.p variant=all path). Other 3 variants (text,
+  formula, all_no_mask) byte-equal to D60.p.
+  Hypothesis: table-cell content-similarity is a stronger edit-distance
+  signal than whole-page DocSim for pages dominated by tables. The 344
+  bbox-pages may be exactly those whose page-level DocSim is most
+  diluted by non-table content.
+  Predicted spearman_mean: 0.443-0.460, most likely 0.450 (+0.005). Risk:
+  for variant=all, the per-bbox MIN sees only table cells while edit
+  distance scores include text/formula content too — could regress.
+  KEEP if >= 0.450. Kill switch: variant=all cc <= 0.38 (regression).
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453).
+date: "2026-04-29"

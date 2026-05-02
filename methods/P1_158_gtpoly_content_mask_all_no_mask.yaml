@@ -1,0 +1,49 @@
+id: P1_158_gtpoly_content_mask_all_no_mask
+name: "H14.1.diag / P1_158 GT-polygon content masks for variant=all_no_mask — CEILING DIAGNOSTIC of mask-based preprocessing axis"
+category: deep_feature
+script: scripts/methods/P1_158_gtpoly_content_mask_all_no_mask.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+  gt_json_path: "/home/mac/test/r1-p2/data/omnidocbench/OmniDocBench.json"
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_158_gtpoly_content_mask_all_no_mask/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_158_gtpoly_content_mask_all_no_mask/correlations.json
+description: >
+  H14.1.diag CEILING DIAGNOSTIC for mask-based preprocessing axis.
+
+  This experiment answers: can ANY mask-based preprocessing on variant=all_no_mask preserve
+  (or improve) correlation? Uses GT-perfect polygon annotations from OmniDocBench.json
+  (layout_dets[*].poly, excluding category_type=="abandon") to build per-page binary content
+  masks. Before metric computation, both GT and reconstructed images are masked: content
+  regions (mask=255) keep original pixels, non-content regions (mask=0) are zeroed out.
+
+  If even GT-perfect masks fail (spearman_mean < 0.3580), ALL mask-based preprocessing on
+  all_no_mask is structurally dead. Hi-SAM/CRAFT-mask experiments can then be confidently
+  abandoned — they can only produce noisier versions of this GT-perfect mask.
+
+  If GT-perfect masks succeed (spearman_mean >= 0.3618), the mask-based preprocessing axis
+  is alive and Hi-SAM (imperfect learned masks) becomes the next priority.
+
+  Mechanism: mask is applied as Image.composite(image, black_image, mask) — content pixels
+  unchanged, background zeroed. Applied to BOTH orig and recon before SSIM/LPIPS/CLIP/DINOv2.
+
+  For all OTHER variants (text, formula, table, all): byte-identical passthrough to H11.2
+  baseline (P1_120c3b_all_no_mask_baseline_preproc). No regression risk on other variants.
+
+  Decision rule:
+    KEEP if spearman_mean >= 0.3618 (mask-axis confirmed alive — try Hi-SAM next)
+    REFUTED-TIE if 0.3580-0.3617 (noise floor — mask-axis inconclusive, avoid Hi-SAM)
+    REFUTED if < 0.3580 (mask-axis structurally dead — abandon Hi-SAM/CRAFT experiments)
+
+  Predicted: spearman_mean ~ 0.354-0.362 (most likely 0.356-0.360). Mild regression expected
+  because zeroing non-content background pixels slightly shifts SSIM/LPIPS distribution
+  without destroying correlation-bearing content signal. This is milder than LaMa white-fill
+  (H14.0 crashed to 0.1597) because content pixels are unmodified and zero-background is
+  a neutral fill for binarized-SSIM computation.
+
+  Control: H11.2 (P1_120c3b_all_no_mask_baseline_preproc, spearman_mean=0.3600, commit 89aee86).
+date: "2026-04-27"

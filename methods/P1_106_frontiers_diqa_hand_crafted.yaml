@@ -1,0 +1,27 @@
+id: P1_106_frontiers_diqa_hand_crafted
+name: "D106 — Frontiers-DIQA hand-crafted features (focus/contrast/edge/gradient) standalone"
+category: nr_iqa_classical
+script: scripts/methods/P1_106_frontiers_diqa_hand_crafted.py
+script_args: ""
+parameters:
+  vram_gb: 2
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_106_frontiers_diqa_hand_crafted/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106_frontiers_diqa_hand_crafted/correlations.json
+description: >
+  D106 — first PIVOT after entropy axis saturated at D224.e 0.4776.
+  Hand-crafted classical IQ features per page: focus (Laplacian variance),
+  mean gradient magnitude (Sobel), grayscale contrast (std), edge density
+  (Canny), brightness (mean), color variance (std across RGB).
+  Distance = mean over features of |orig_f - recon_f| / max(orig_f, recon_f, eps).
+  Similarity = exp(-distance) in (0, 1], stored as clip_compare.clip_cosine.
+  multi_composite preserved.
+  STANDALONE diagnostic — predicted alone-spearman 0.15-0.30 across variants.
+  Decision: any variant with alone-spearman >= 0.20 is a fusion candidate;
+  if all variants <0.20, the D106 mechanism class is exhausted and we
+  PIVOT to D104 (recognition-feature distance via TrOCR).
+  Truly orthogonal mechanism vs current stack (CLIP/DINOv2/DocSim
+  learned features + token-level Shannon entropy). Pure-OpenCV Python,
+  no GPU model.
+  Predicted spearman_mean: 0.15-0.30 (below 0.4776, REVERT expected).
+date: "2026-05-01"

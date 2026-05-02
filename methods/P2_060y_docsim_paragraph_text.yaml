@@ -1,0 +1,60 @@
+id: P2_060y_docsim_paragraph_text
+name: "D60.y — paragraph-grouped per-bbox MIN DocSim for variant=text (cluster ocr_elements text-lines into paragraphs)"
+category: deep_feature
+script: scripts/methods/P2_060y_docsim_paragraph_text.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_paragraph
+  docsim_variants: "all, all_no_mask (page-level); text (per-paragraph MIN); table (per-cell MIN, D60.p)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes); text-fallback (page-level DocSim when no paragraphs)"
+  bbox_source: "ocr_elements.json (text-line) + paragraph clustering"
+  bbox_aggregation: "min over paragraph bboxes"
+  paragraph_clustering: "vertical proximity (gap <= 1.6x line-height) + x-overlap >= 50% (same column)"
+  empty_bbox_fallback: page_level_docsim
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060y_docsim_paragraph_text/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060y_docsim_paragraph_text/correlations.json
+description: >
+  D60.y — paragraph-level per-bbox MIN DocSim for variant=text only. Distinct
+  from D60.n (REVERTED -0.005) which used raw text-line bboxes from
+  ocr_elements.json: those are individual line segments, off-distribution for
+  the page-trained DocSim head. D60.y clusters those lines into paragraph
+  blocks via vertical-proximity + x-overlap heuristics, producing fewer,
+  larger, internally homogeneous bboxes that better match the supervised
+  head's training distribution.
+
+  Clustering algorithm: sort text-line bboxes by y_center; group consecutive
+  lines where (vertical gap <= 1.6 * median_line_height) AND (x-overlap >=
+  50%); paragraph bbox = union of cluster.
+
+  Per-paragraph DocSim cosine, MIN-aggregated. Empty/no-paragraph pages fall
+  back to page-level DocSim (preserves D60.j routing). Other 4 variants
+  byte-equal to D60.p (table per-cell MIN; formula H4.e; all/all_no_mask
+  page-level DocSim cc).
+
+  Hypothesis: paragraph-level matches per-element homogeneity (k38) while
+  preserving DocSim's content-similarity training distribution. If the
+  D60.n failure was about granularity-mismatch (text-line too small/noisy)
+  rather than running-text being structurally wrong, paragraph clusters
+  should perform between baseline page-level (0.4139) and per-cell-table
+  level (which is structurally different).
+
+  Predicted spearman_mean: 0.443-0.452, most likely 0.446 (+0.0007 vs D60.p
+  0.4453). Per-variant: text cc 0.41-0.45 most likely ~0.43 (+0.02 over
+  page-level 0.4139). Other variants byte-equal.
+  KEEP if >= 0.4475. Kill switch: text cc <= 0.40 (worse than baseline
+  mc 0.3886 indicates paragraph clustering off-distribution).
+  Hit probability: 20-30%.
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, text cc 0.4139).
+
+  This is the LAST D60-axis lever per synthesizer 2026-04-30 digest. If
+  REFUTES, structural ceiling at 0.4453 is established and Lead emits
+  <promise>COMPLETE</promise> per pre-committed escalation.
+date: "2026-04-30"

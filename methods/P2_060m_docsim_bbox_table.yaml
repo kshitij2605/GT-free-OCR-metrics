@@ -1,0 +1,48 @@
+id: P2_060m_docsim_bbox_table
+name: "D60.m — DocSim per-table-bbox cosine for variant=table; D60.j stack for other 4 variants"
+category: deep_feature
+script: scripts/methods/P2_060m_docsim_bbox_table.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: mean
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060m_docsim_bbox_table/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060m_docsim_bbox_table/correlations.json
+description: >
+  D60.m — last D60-axis lever in Lead-session scope. Extends D60.j by
+  changing variant=table from full-page CLIP-only-with-H6.1-preproc to
+  per-table-bbox DocSim cosine, mean-aggregated across cells. For each
+  page, load ocr_table_elements.json, crop both masked_original.png and
+  reconstructed.png to each table bbox, run DocSim LoRA head on each
+  crop pair, take the mean. Pages with no table bboxes (18/351) fall
+  back to the D60.j baseline path (H6.1 CLIP-only) so they are not
+  zeroed.
+  Other 4 variants (text, formula, all, all_no_mask) byte-equal to D60.j.
+  Mechanism class: supervised triplet head (k32/k35 trap survivor) +
+  per-element granularity (new aggregation axis). Table provides the
+  cleanest per-element supervision signal of any variant because table
+  cells are visually well-segmented bboxes. Prior table-cc swaps (5×) all
+  failed at the page-level signal-source axis; D60.m operates at a
+  different granularity, not a different signal source.
+  Predicted spearman_mean: 0.4078–0.4143, most likely 0.4112 (+0.002 vs
+  D60.j). Justification: table cc currently 0.2966 (H6.1 page-level CLIP);
+  per-bbox cropping eliminates non-table noise on the content-similarity
+  signal → expect modest +0.005 to +0.020 lift on table cc which adds
+  +0.001 to +0.004 to spearman_mean.
+  KEEP if >= 0.412. Kill switch: table cc <= 0.2900 (worse than baseline
+  — bbox-aggregation off-distribution for DocSim training; D60-axis fully
+  closed if so).
+  Control: D60.j (P2_060j_docsim_text_all_anomask, 0.4093).
+date: "2026-04-29"

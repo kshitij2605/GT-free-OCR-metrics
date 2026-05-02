@@ -1,0 +1,49 @@
+id: P1_224c_class_filtered_per_bbox_max_entropy_min
+name: "D224.c — class-filtered MIN over per-bbox shannon_entropy_max (class-aware self-uncertainty)"
+category: self_uncertainty
+script: scripts/methods/P1_224c_class_filtered_per_bbox_max_entropy_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  source: "shannon_entropy_max_per_bbox_logprobs"
+  granularity: "class_filtered_per_bbox_min"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_224c_class_filtered_per_bbox_max_entropy_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_224c_class_filtered_per_bbox_max_entropy_min/correlations.json
+description: >
+  D224.c — first test of CLASS-AWARE entropy aggregation, leveraging the
+  newly available `data/ocr_logprobs_per_bbox/` per-bbox stats with div
+  class labels. Mechanism: for each page, read per_bbox_logprobs.json,
+  filter bboxes to a variant-specific target_classes set, then compute
+  page confidence = MIN across filtered bboxes of (1 - shannon_entropy_max
+  / log(K_top)) where K_top=5. This captures "the most uncertain single
+  token in any element whose class matches the variant's evaluation
+  focus".
+  target_classes per variant:
+    - text:        text, title, plain_text, header, footer (and Chinese
+                   variants 普通文字, 标题, 页眉文字, 页脚文字)
+    - formula:     formula (and isolate_formula, inline_formula, 公式)
+    - table:       table (and 表格)
+    - all:         all classes (no filter)
+    - all_no_mask: all classes (no filter)
+  Fallback: if no class-matched bbox exists for a page, use page-level
+  MIN over all bboxes. If JSON missing, return 0.5 (neutral).
+  Per-variant alpha matches D215.l (table=0/all=0.3/others=0.4) so
+  table is byte-equal to D60.p. multi_composite preserved.
+  Hypothesis: D224.b/D213 failed because aggregating across ALL bboxes
+  mixes class-irrelevant noise (e.g., header/title bboxes always
+  confident). Class-filtering should sharpen the signal.
+  Predicted: 0.460-0.490, most likely 0.470. KEEP if > 0.4742.
+  Decision: KEEP -> PROCEED to refinements (try logprob_min reduction,
+  per-bbox MEAN within class). REVERT -> entropy mechanism fully
+  exhausted; PIVOT to non-entropy mechanism class (D104 recognition-
+  feature distance, D165 MaskCLIP, or D106 Frontiers-DIQA).
+  Control: D215.l (window-MIN over all tokens, no class filter, 0.4742).
+date: "2026-04-30"

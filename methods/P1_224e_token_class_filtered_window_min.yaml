@@ -1,0 +1,57 @@
+id: P1_224e_token_class_filtered_window_min
+name: "D224.e — token-level class-filtered window-MIN for variant=all/all_no_mask"
+category: self_uncertainty
+script: scripts/methods/P1_224e_token_class_filtered_window_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  window_k_all: 3
+  window_k_all_no_mask: 3
+  source_text: "class_filtered_per_bbox_max_entropy_min"
+  source_formula: "window_min_mean_shannon"
+  source_table: "window_min_mean_shannon"
+  source_all: "token_class_filtered_window_min"
+  source_all_no_mask: "token_class_filtered_window_min"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_224e_token_class_filtered_window_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_224e_token_class_filtered_window_min/correlations.json
+description: >
+  D224.e — generalize D224.c's class-filter signal to variant=all and
+  variant=all_no_mask via TOKEN-LEVEL filtering on the rolling-K window-
+  MIN stream. For each token in ocr_logprobs.json, look up its containing
+  bbox (i-th `data-bbox=` marker → i-th bbox in per_bbox_logprobs.json
+  ordered list), get its div_class, drop tokens whose class is in
+  page-meta (page_header / page_footer / page_number / footnote /
+  watermark) — keep tokens in TARGET_CLASSES_CONTENT (text/title/caption/
+  formula/table/image-content). Then apply rolling-K window-MIN over the
+  filtered token stream.
+  Per-variant SOURCE routing:
+    - text: D224.c source (class-filtered MIN over per-bbox shannon_entropy_max)
+    - formula: D215.l source (uniform window-MIN, no class filter)
+    - table: alpha=0 (D60.p per-cell-MIN)
+    - all: NEW token-class-filtered window-MIN
+    - all_no_mask: NEW token-class-filtered window-MIN
+  Fallback: if either JSON missing or filtered stream too short, fall
+  back to unfiltered window-MIN (D215.l behavior). This guarantees
+  D224.e is a strict superset of D224.d safety-wise.
+  Hypothesis: page-meta tokens (headers/footers/page numbers) are
+  always high-confidence and dilute the body-uncertainty signal in
+  the unfiltered window-MIN. Token-level filtering should sharpen
+  signal on variant=all/all_no_mask the way it did on text.
+  Predicted: 0.476-0.486, most likely 0.480 (+0.003 to +0.013 vs
+  D224.d 0.4772). KEEP if > 0.4772.
+  Decision: KEEP -> NEW BEST -> PROCEED to D224.f (try same token-
+  filter for variant=formula with formula-specific class set; or
+  refine TARGET_CLASSES_CONTENT). REVERT-or-tie -> token-level filter
+  doesn't generalize past variant=text; D224.d is the entropy-axis
+  ceiling; PIVOT to non-entropy class (D104 / D165 / D106).
+  Control: D224.d (window-MIN unfiltered for all/all_no_mask, 0.4772).
+date: "2026-05-01"

@@ -1,0 +1,49 @@
+id: P1_215n_three_way_fusion
+name: "D215.n — Three-way fusion: production cc + window-MIN(mean-conf) + window-MIN(Shannon-top-logprobs)"
+category: self_uncertainty
+script: scripts/methods/P1_215n_three_way_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_mean_table: 0.0
+  alpha_shannon_table: 0.0
+  alpha_mean_all: 0.15
+  alpha_shannon_all: 0.15
+  alpha_mean_text: 0.20
+  alpha_shannon_text: 0.20
+  alpha_mean_formula: 0.20
+  alpha_shannon_formula: 0.20
+  alpha_mean_all_no_mask: 0.20
+  alpha_shannon_all_no_mask: 0.20
+  k_text: 3
+  k_all: 3
+  k_all_no_mask: 3
+  k_formula: 20
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215n_three_way_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215n_three_way_fusion/correlations.json
+description: >
+  D215.n — three-way blend that splits each variant's D215.k α-budget evenly
+  between the two confidence SOURCES that independently outperformed
+  production cc (D215.k mean-conf 0.4701; D215.l Shannon-top-logprobs 0.4742).
+  Per-variant total α matches D215.k (table=0, all=0.3, others=0.4) but
+  divided 50/50 across mean-conf and Shannon-top-logprobs.
+
+  fused_cc = (1 - α_mean - α_shannon) * production_cc
+             + α_mean * window_min_mean_conf
+             + α_shannon * window_min_shannon_top_logprobs
+
+  Hypothesis: the two SOURCES capture different facets of self-uncertainty
+  (mean-magnitude vs distribution-shape) and are mutually complementary;
+  a 50/50 blend at the per-variant α budget beats either source alone.
+
+  KEEP threshold: > 0.4742 (current best D215.l). Per-variant ceiling
+  projection (max of D215.k vs D215.l): text=0.4489, formula=0.5872,
+  table=0.4767, all=0.4221, all_no_mask=0.4382 → 0.4746. D215.n exceeds
+  this only if complementarity is real (nonlinear blend > linear max).
+  Predicted: 0.470-0.480, most likely 0.4748.
+
+  Control: D215.l (Shannon source alone, 0.4742, current best).
+date: "2026-04-30"

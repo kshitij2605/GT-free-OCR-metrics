@@ -1,0 +1,27 @@
+id: P1_134_ssim_allnm_beta15
+name: "D134 — all_no_mask SSIM β sweep 0.10→0.15"
+category: composite
+script: scripts/methods/P1_134_ssim_allnm_beta15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.10
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.15
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_134_ssim_allnm_beta15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_134_ssim_allnm_beta15/correlations.json
+description: >
+  D134 — all_no_mask SSIM β sweep 0.10→0.15. Based on D132 (NEW BEST 0.4924).
+  all_no_mask has been stuck at 0.4461 across many experiments. Text β=0.15 works well.
+  Test whether matching text's SSIM weight on all_no_mask helps: 0.35*DocSim + 0.40*entropy
+  + 0.10*table_cell + 0.15*ssim (vs 0.40/0.40/0.10/0.10 in D132).
+  KEEP if spearman_mean > 0.4924 (D132 NEW BEST).
+date: "2026-05-02"

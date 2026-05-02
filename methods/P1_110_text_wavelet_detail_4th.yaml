@@ -1,0 +1,26 @@
+id: P1_110_text_wavelet_detail_4th
+name: "H7.1 Text-DWT detail 4th term — multi-scale db2 wavelet detail-subband cosine similarity for variant=text only"
+category: deep_feature
+script: scripts/methods/P1_110_text_wavelet_detail_4th.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32+dwt_db2_levels2_3
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_110_text_wavelet_detail_4th/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_110_text_wavelet_detail_4th/correlations.json
+description: >
+  H7.1: Add multi-scale 2D-DWT detail-subband cosine similarity as a 4th additive term in
+  multi_composite ONLY for variant=text. Wavelet detail subbands (HH/HL/LH at levels 2 and 3,
+  db2 wavelet) capture high-frequency stroke/edge structure that SSIM (binarised 512^2) and
+  LPIPS (alex-net features) aggregate over.
+  New formula for variant=text: 0.25*SSIM + 0.25*(1-MSE) + 0.25*(1-LPIPS) + 0.25*dwt_detail_sim.
+  All other variants keep H6.1 logic exactly:
+  - variant=all: DISTS-augmented composite (0.3/0.2/0.2/0.3)
+  - variant=table: original 0.4/0.3/0.3 mc + CLIP-only cc with baseline grayscale+SHARPEN+autocontrast->RGB
+  - variant=formula/all_no_mask: original 0.4/0.3/0.3 mc + 50/50 DINOv2+CLIP fusion cc (raw RGB)
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
+  Predicted: text mc 0.389->0.40-0.42; spearman_mean 0.3598->0.362-0.366.
+date: "2026-04-26"

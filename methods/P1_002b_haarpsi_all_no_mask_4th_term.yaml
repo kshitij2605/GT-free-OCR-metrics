@@ -1,0 +1,30 @@
+id: P1_002b_haarpsi_all_no_mask_4th_term
+name: "H13.1 HaarPSI as 4th term in mc for variant=all_no_mask only"
+category: frequency
+script: scripts/methods/P1_002b_haarpsi_all_no_mask_4th_term.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_002b_haarpsi_all_no_mask_4th_term/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_002b_haarpsi_all_no_mask_4th_term/correlations.json
+description: >
+  H13.1 (linear-strategy queue, builds on P1_120c3b H11.2 best=0.3600): adds piq.haarpsi
+  as a 4th term in multi_composite for variant=all_no_mask only. HaarPSI uses 6 discrete
+  2D Haar wavelet filters and weights local similarity by low-frequency coefficients —
+  responds to horizontal/vertical edges (text glyph edges). Direction D2 in program.md
+  (priority #2, Low effort, High expected impact). HaarPSI was previously dead-ended ONLY
+  as SSIM-slot replacement (-0.04 to -0.06 on text); additive use as a 4th term in mc has
+  not been tested. H5.b proved DISTS-as-4th-term for variant=all lifted mc by +0.065;
+  same mechanism applied to all_no_mask with a fundamentally different signal (Haar
+  wavelets vs DISTS deep-feature stats) targets the smallest gap-to-overtake (all_no_mask
+  mc=0.264 vs cc=0.308, gap=0.044).
+  Composite for variant=all_no_mask: 0.30*SSIM + 0.20*(1-MSE) + 0.20*(1-LPIPS) + 0.30*HaarPSI.
+  All other variants UNCHANGED from H11.2 (variant=all uses DISTS, others original).
+  H6.1+H11.2 preprocessing for table+all_no_mask cc paths preserved.
+  Predicted: all_no_mask mc 0.264->0.29-0.32; spearman_mean 0.3600->0.361-0.371.
+  Control: H11.2 P1_120c3b (best=0.3600).
+date: "2026-04-27"

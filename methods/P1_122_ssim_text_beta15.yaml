@@ -1,0 +1,27 @@
+id: P1_122_ssim_text_beta15
+name: "D122 — SSIM text β=0.15 (text=0.15, all=0.15, all_no_mask=0.10)"
+category: composite
+script: scripts/methods/P1_122_ssim_text_beta15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_122_ssim_text_beta15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_122_ssim_text_beta15/correlations.json
+description: >
+  D122 — SSIM text β sweep step 3: text=0.15 (up from D121's 0.10).
+  D121 confirmed text SSIM at β=0.10 lifts text Spearman 0.4710→0.4769 (+0.0059, mean 0.4903 NEW BEST).
+  D122 tests whether β=0.15 continues the trend (diminishing: β=0.05 +0.0070, β=0.10 +0.0059).
+  text: 0.45*DocSim + 0.40*entropy + 0.15*ssim (reduces DocSim 0.50→0.45)
+  all: 0.35*DocSim + 0.30*entropy + 0.15*table_cell + 0.15*ssim (unchanged from D121)
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim (unchanged from D121)
+  KEEP if spearman_mean > 0.4903 (D121 baseline).
+date: "2026-05-02"

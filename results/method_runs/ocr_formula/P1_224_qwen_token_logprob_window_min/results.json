@@ -1,0 +1,4602 @@
+[
+  {
+    "image": "PPT_CalculusReview_page_014",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6256736292682245
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_CalculusReview_page_033",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6035519042265249
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_MMAT5390Lecture1_page_023",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.595578205594332
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_MMAT5390Lecture1_page_024",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6754662051052689
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6106051935241681
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_010",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6313374623899899
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_012",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6111590230556121
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_014",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6863249747748114
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_015",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6077025788657806
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_04_09_page_018",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6178665318046799
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_020",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5883916939652878
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_021",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6383476588651575
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_030",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6124549987662562
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_034",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.580220760698461
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5494390545309941
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_057",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.556723306813734
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_090",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6029461013418598
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_132",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5723066843497449
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_136",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6477217203093104
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_ch7_page_142",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6137928182585028
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_fundamental_theorem_of_calculus___page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6458464464800816
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_fundamental_theorem_of_calculus___page_013",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7355185143211784
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6521354332121788
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.513873963542386
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5832506150123049
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.604772337161745
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6055669238403028
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lecture1_page_009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5114727544783616
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_lecture1_page_022",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5049870352547373
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5573522660369903
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5325927832769878
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_016",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6067100253781408
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_40.Puzzles.and.Problems.in.Probability.and.Mathematical.Statistics,.Schwarz,.Springer,.2008_page_115",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6625321891804031
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_5.Advanced.Modern.Algebra.-.J.Rotman.2003_page_572",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7637763402079358
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_5.Advanced.Modern.Algebra.-.J.Rotman.2003_page_887",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7662051142722703
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_6.Complex.Analysis.-.Elias.M..Stein_page_051",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7376871347083978
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_6.Complex.Analysis.-.Elias.M..Stein_page_205",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6841277255134635
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_A.Concise.Introduction.to.Linear.Algebra,.Geza.Schay,.Birkhauser,.2012_page_065",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5675397898313577
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_A.Concise.Introduction.to.Linear.Algebra,.Geza.Schay,.Birkhauser,.2012_page_194",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6469259533657027
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_A.Course.in.Abstract.Harmonic.Analysis.-.Gerald.B.Folland.0849384907_page_119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5916919649071153
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7609220236728043
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6755662556034323
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6632552096020845
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5992853143448883
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7175323942059233
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6952506194025133
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.726121618425816
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0017",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6406324679657697
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7069239962208929
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5912937622358481
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6792104384108996
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6741512939584954
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5918637870776144
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6803155658464164
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5804318810818456
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0451",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.569504404044381
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7537356660960313
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0017",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6887994533925536
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6965607220307533
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.623285185110646
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6861555547279679
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7087696601789617
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6906122385502386
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.649478739335164
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7254262025703934
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0451",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6503744588759333
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0072018_extracted_page_48",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.42844783248641105
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_69",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.474767078453441
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_70",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.43615587143237455
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_73",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5468586976305346
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0262018_extracted_page_82",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.45446649860434113
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_CNASGL082006_extracted_page_50",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.430860570250519
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_DLT10562007_extracted_page_17",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5109436404706059
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_DLT10902008_extracted_page_8",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5002268786243377
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GB115041989_extracted_page_9",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6917516504399487
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GB12082006_extracted_page_8",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.47167474387073227
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GB14536.11998_extracted_page_145",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4842859494072048
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GB14930.21994_extracted_page_4",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.40114275649524805
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GB149361994_extracted_page_7",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7379062719279318
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_GBT 50744-2011_extracted_page_67",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5731639499713495
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_HGT51022016_extracted_page_12",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5345302680893438
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_JGJ1022003_extracted_page_27",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4239107327263433
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_JJD10031991_extracted_page_6",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4397150759537197
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_SYT57941993_extracted_page_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4710782350044882
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_TB100782001_extracted_page_21",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.44733901009292365
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "book_zh_YDT10512018_extracted_page_30",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5835496730567385
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_dianzishu_zhongwenzaixian-o.O-61520788.pdf_391",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7894751945735493
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_dianzishu_zhongwenzaixian-o.O-61569751.pdf_155",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7305895314205827
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_enbook-zlib-o.O-19091739.pdf_181",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7052598778289877
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-ceat.200407001.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7133123889514991
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-ceat.200600410.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6546910760846231
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.jcp.2010.12.006.pdf_14",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6672334873280974
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.jcp.2010.12.006.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6419374320679708
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.physletb.2004.06.101.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7611660762412811
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.physletb.2004.11.060.pdf_2",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6915633437863562
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.snb.2004.05.025.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6608194539210956
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-s00128-008-9367-z.pdf_4",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7657450492996446
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-s00348-006-0117-x.pdf_11",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5674447010475546
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1991_Problems_1991_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7121806378546921
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1993_Problems_1993_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7296423651650571
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1994_Problems_1994_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7311556654424762
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1995_Solutions_1995s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7438150944507231
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Problems_1996_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6869972699656728
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7320299810820738
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6027430595913075
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7516945547651257
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Problems_1997_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7376010875007182
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7595571712162901
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7617704431160977
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7589028823023682
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1998_Solutions_1998s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7474690679580054
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7541667063122652
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7406783697930678
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.743332876464126
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Problems_2000_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6867044384879876
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7149862601370692
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7678797203193426
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7292442161668987
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2001_Solutions_2001s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7557063309726125
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2001_Solutions_2001s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7172254071373647
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7532360519883785
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7517359002539308
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7454563306307808
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2003_Solutions_2003s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7633567414826757
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2003_Solutions_2003s_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6581572454232003
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2004_Problems_2004_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7330750990359945
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2004_Solutions_2004s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.716421624330232
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7529960165795394
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7571800934587827
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.735985028237792
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Problems_2006_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7422217949666902
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Solutions_2006s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7447012402868722
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Solutions_2006s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7630140678115765
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Problems_2007_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.742802358281574
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7356960030119353
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7579988934995079
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7678047764287333
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.72761561542059
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Problems_2008_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7217900688517442
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7457221626127932
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7791370370462459
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7563453772635285
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Problems_2009_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7146675181608202
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7532597034936213
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7355890540542077
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6866261427478435
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2010_Solutions_2010s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7259300292408912
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2010_Solutions_2010s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7400242269832475
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Problems_2011_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6583686627394059
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Solutions_2011s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7365434698638577
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Solutions_2011s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7416976751975479
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2012_Solutions_2012s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.73180316476396
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2013_Problems_2013_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7520118038157776
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2014_Problems_2014_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7314337076312171
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2014_Solutions_2014s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7652008926398096
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Problems_2015_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7361675031251081
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Solutions_2015s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7150613954222816
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Solutions_2015s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.760713334338152
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2016_Solutions_2016s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.786774347685855
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocai_71434495.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6470887285348524
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_20608808.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7155704105985933
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_33137159.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7050266523241117
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_38247658.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5647334945099374
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_42351289.pdf_1",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7198604457591443
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_AMC8_V5.pdf_64",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7019932684075286
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_Evans_PDE_Solution_Chapter_6_Second-Order_Elliptic_Equations.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7683009414285606
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_chem-203343.pdf_121",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7344830548196114
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_chem-97961.pdf_128",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7134790039013013
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_j70ke43p.pdf_69",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7117688830414082
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1198",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6959832922959166
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1253",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6442223872481943
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1276",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6586973734230526
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1290",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6786808119715431
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1349",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.46256242906074474
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7331712567559407
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1496",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6643239460837819
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1539",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7222167157098834
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1910",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7434868670862897
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2211",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5634512684491403
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_250",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6755627503143273
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2718",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7211692960338099
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2893",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6204500062749375
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6846439744574127
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3063",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6923912067376932
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3303",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6164754925105967
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3458",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6944985448435546
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_541",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6560483866601373
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_546",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7032891382307025
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_913",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7005756844370851
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_999",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.709868892021708
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "jiaocaineedrop_math-134115.pdf_670",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6894541262132066
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "notes_1ba14cb325bc448f7201b20502ecf2b5_16",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6593381322927584
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "scihub_j.conbuildmat.2019.117698.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7153453749632945
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_3aa9b6677e17fd012b0a7a230b9f18db.pdf_1327",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7175115160469232
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_9081a70ff98b3e7d640660a9412c447d.pdf_1287",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6882063548814358
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_abef2a4978ae4d13e931f0392502bd40.pdf_1287",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6954186321486645
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_d4fc7cba428625974e93183edfccea73.pdf_89",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7901615775443019
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_2460",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6428787512192955
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_4310",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4915981328206243
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_4710",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.0,
+      "mse": 0.0,
+      "lpips": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.541041103784002
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    }
+  }
+]

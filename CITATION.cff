@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite our work."
+type: software
+title: "GT-Free OCR Metrics: Reference-Free OCR Evaluation via Render-and-Compare"
+version: "1.0.0"
+license: Apache-2.0
+abstract: >
+  A framework for evaluating OCR systems without ground-truth text.
+  The pipeline renders OCR output back to images and measures visual
+  similarity against masked originals, using a suite of 109+ methods
+  spanning pixel-level, perceptual, and learned similarity metrics.
+  Validated on OmniDocBench (1355 pages, EN/ZH).
+references:
+  - type: dataset
+    title: "OmniDocBench: Benchmarking Document Parsing with Diverse Layouts"
+    authors:
+      - family-names: Hu
+        given-names: Linke
+    year: 2024
+    url: "https://arxiv.org/abs/2412.07626"

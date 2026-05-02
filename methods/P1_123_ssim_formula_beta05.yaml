@@ -1,0 +1,28 @@
+id: P1_123_ssim_formula_beta05
+name: "D123 — SSIM formula β=0.05 (formula=0.05, text=0.10, all=0.15, all_no_mask=0.10)"
+category: composite
+script: scripts/methods/P1_123_ssim_formula_beta05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_text: 0.10
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_123_ssim_formula_beta05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_123_ssim_formula_beta05/correlations.json
+description: >
+  D123 — SSIM supplement extended to formula variant at β=0.05.
+  Base: D121 stack (text=0.10, all=0.15, all_no_mask=0.10, D121 NEW BEST 0.4903).
+  D123 tests whether formula also benefits from SSIM structural supplement.
+  formula currently: 0.20*DocSim + 0.30*entropy + 0.50*D106_iq (D106.h best).
+  D123 formula: 0.15*DocSim + 0.30*entropy + 0.50*D106_iq + 0.05*ssim.
+  Parallel test alongside D122 (text β=0.15) — independent mechanism.
+  KEEP if spearman_mean > 0.4903 (D121 baseline).
+date: "2026-05-02"

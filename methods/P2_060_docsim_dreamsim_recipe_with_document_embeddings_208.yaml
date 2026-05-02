@@ -1,0 +1,37 @@
+id: P2_060_docsim_dreamsim_recipe_with_document_embeddings_208
+name: "D60 / DocSim — DreamSim recipe (LoRA-fine-tuned CLIP+DINOv2 fusion) replaces clip_cosine"
+category: deep_feature
+script: scripts/methods/P2_060_docsim_dreamsim_recipe_with_document_embeddings_208.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060_docsim_dreamsim_recipe_with_document_embeddings_208/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060_docsim_dreamsim_recipe_with_document_embeddings_208/correlations.json
+description: >
+  D60 / DocSim — DreamSim recipe applied to documents.
+  Frozen OpenCLIP ViT-B/32 + DINOv2 vitb14 CLS embeddings (1280-dim concat) →
+  LoRA-wrapped MLP head (256-dim) trained on 20,280 edit-distance triplets
+  (3 epochs, val_acc=0.999 on triplet-ranking task).
+  At inference: cosine distance between LoRA-projected anchor and recon
+  embeddings replaces the standard CLIP cosine in clip_cosine slot.
+  multi_composite (SSIM/MSE/LPIPS) is UNCHANGED vs baseline.
+  Backbone choice avoids trained-invariance trap that killed D104 TrOCR /
+  D193 DocLayout / D10 ColPali — these vision-only models are not task-trained
+  for OCR, and the LoRA head explicitly learns the edit-distance-aligned
+  projection from triplets.
+  Triplet structure: anchor=GT page, positive=same-page recon, negative=
+  different-page recon. Note: this trains content-matching more than OCR-
+  fidelity discrimination directly; the empirical question is whether the
+  resulting metric correlates with text_edit_distance better than the
+  H4.e static-fusion baseline (0.3562).
+  Control: H4.e (541a8c9, spearman_mean=0.3562).
+  Predicted: spearman_mean ~ 0.36-0.38. KEEP if >= 0.361.
+date: "2026-04-28"

@@ -1,0 +1,34 @@
+id: P1_011_phase_cong_table_cc
+name: "H_phasecong / D11 phase congruency replaces CLIP cosine for variant=table cc only"
+category: classical_signal
+script: scripts/methods/P1_011_phase_cong_table_cc.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: phase_congruency_mono
+  pc_size: 512
+  batch_size: 16
+dependencies: ["phasepack"]
+results_path: results/method_runs/ocr_{variant}/P1_011_phase_cong_table_cc/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_011_phase_cong_table_cc/correlations.json
+description: >
+  H_phasecong / D11: Mechanism-orthogonal probe of the table_cc_encoder_swap_universal
+  dead_end. All 4 prior table-cc encoder swaps (H6.2 ViT-L/14, H6.4 ViT-B/32@336,
+  H9.1 MaskCLIP, H12.1 SigLIP) collapsed to 0.22-0.25 vs baseline 0.2766, confirming
+  that neural encoder CLS-token cosine cannot separate table quality for this dataset.
+  This experiment replaces the CLIP cosine path for variant=table ONLY with phase
+  congruency (phasecongmono from phasepack): a Fourier-domain, non-neural, contrast-
+  invariant edge-significance map. The PC map is computed at 512x512 on images
+  preprocessed with the H6.1 pipeline (grayscale+SHARPEN+autocontrast), then similarity
+  is cosine of the L2-normalized flattened PC vectors. Phase congruency captures
+  contrast-invariant edge presence — theoretically well-suited to table cell-grid
+  structure regardless of rendering variations (font, color, background). Runtime:
+  ~0.5-1s per image pair (CPU-only); ~3-7 min for variant=table (~400 pages). VRAM
+  usage is lower than baseline (no CLIP/DINOv2 load for table variant).
+
+  Control: H11.2 (P1_120c3b_all_no_mask_baseline_preproc), spearman_mean=0.3600,
+  table cc=0.2766. All non-table variants (text, formula, all, all_no_mask) are
+  byte-identical to H11.2. Decision rule: KEEP only if spearman_mean >= 0.3618
+  (clear lift above noise floor); else REFUTED-TIE / REFUTED.
+  Predicted: spearman_mean ~ 0.358-0.366 (most likely 0.358-0.362).
+date: "2026-04-27"

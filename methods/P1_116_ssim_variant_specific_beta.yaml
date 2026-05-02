@@ -1,0 +1,26 @@
+id: P1_116_ssim_variant_specific_beta
+name: "D116 — SSIM variant-specific β (all=0.15, all_no_mask=0.10)"
+category: composite
+script: scripts/methods/P1_116_ssim_variant_specific_beta.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_116_ssim_variant_specific_beta/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_116_ssim_variant_specific_beta/correlations.json
+description: >
+  D116 — Variant-specific SSIM β: all=0.15 (D113 per-variant best), all_no_mask=0.10 (D112 per-variant best).
+  Combines each variant's individual β optimum in one run, expected to exceed D113 mean 0.4872.
+  Expected: all=0.4452 (D113), all_no_mask=0.4461 (D112), mean~0.4876.
+  all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*ssim
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim
+  text/formula/table: unchanged from D107b.
+  KEEP if spearman_mean > 0.4872 (D113 best).
+date: "2026-05-01"

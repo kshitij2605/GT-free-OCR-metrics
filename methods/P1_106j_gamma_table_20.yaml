@@ -1,0 +1,31 @@
+id: P1_106j_gamma_table_20
+name: "D106.j — γ_table=0.20 sweep step from D106.d γ=0.10"
+category: self_uncertainty
+script: scripts/methods/P1_106j_gamma_table_20.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  alpha_table: 0.0
+  gamma_diqa_formula: 0.4
+  gamma_diqa_table: 0.2
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106j_gamma_table_20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106j_gamma_table_20/correlations.json
+description: >
+  D106.j — γ_table=0.20 sweep step from D106.d γ=0.10. D106.d
+  proved table fusion structurally feasible (table 0.4767→0.4784
+  at γ=0.10, +0.0017). Question: is the peak at γ=0.10 or higher?
+  D106 alone on table=0.2966 (much weaker than prod_cc=0.4767),
+  so heavier weight on D106 may dilute the prod_cc signal.
+  table clip_cosine = 0.8*prod_cc + 0.2*D106_iq. Other variants
+  byte-equal to D106.f (formula γ=0.40 retained).
+  Predicted table: 0.4775-0.4795 (likely flat or slight decay).
+  Predicted spearman_mean: 0.4805-0.4818. KEEP if > 0.4812.
+  Decision: KEEP -> NEW BEST -> try γ_table=0.30; REVERT-tie ->
+  peak at γ_table=0.10, table γ-axis closes at D106.f.
+  Control: D106.f (0.4812, table γ=0.10).
+date: "2026-05-01"

@@ -1,0 +1,33 @@
+id: P2_060f_docsim_table_5050_fusion
+name: "D60.f — DocSim+baseline 50/50 cc fusion for variant=table only"
+category: deep_feature
+script: scripts/methods/P2_060f_docsim_table_5050_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  fusion_weight_docsim: 0.5
+  fusion_weight_baseline: 0.5
+  fusion_variants: "table only"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060f_docsim_table_5050_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060f_docsim_table_5050_fusion/correlations.json
+description: >
+  D60.f — variant=table fusion experiment. Apply 50/50 DocSim+baseline cc
+  fusion ONLY to variant=table; {all, all_no_mask} keep pure DocSim
+  (D60.b winner); {text, formula} keep baseline H4.e.
+  Critical asymmetry vs D60.c/d: for table, baseline cc=0.2766 BEATS
+  DocSim cc=0.2511 (D60-uniform). Fusion math inverts: if mixing helps,
+  it's because the (relative) loser still adds info to the winner.
+  Predicted spearman_mean: 0.392-0.395 (Synthesizer's range).
+  KEEP if >= 0.395.
+  Kill switch: table cc <= 0.265 closes the loser-fusion-rescue mechanism
+  for table (just take pure baseline).
+  Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
+date: "2026-04-28"

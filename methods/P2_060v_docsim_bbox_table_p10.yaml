@@ -1,0 +1,37 @@
+id: P2_060v_docsim_bbox_table_p10
+name: "D60.v — D60.p with P10 (10th-percentile) aggregation over per-table-bbox DocSim cosines (variant=table only)"
+category: deep_feature
+script: scripts/methods/P2_060v_docsim_bbox_table_p10.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox_p10
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox P10)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: p10
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060v_docsim_bbox_table_p10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060v_docsim_bbox_table_p10/correlations.json
+description: >
+  D60.v — single-line variation of D60.p: aggregate per-table-bbox
+  DocSim cosines via 10th-percentile (P10) instead of MIN. Hypothesis:
+  P10 is "almost MIN but trims outliers" — if MIN's strength is
+  worst-cell signal but the absolute worst is sometimes a rendering
+  artifact (single-pixel cell, OCR mis-detection), P10 may better
+  capture the worst-real-cell. For pages with 1-9 bboxes (vast
+  majority), P10 == MIN, so divergence appears only on pages with
+  many cells where the floor of the distribution is more meaningful
+  than a single extreme.
+  Other 4 variants byte-equal to D60.p.
+  Predicted spearman_mean: 0.443-0.460, most likely 0.4458 (~tie or
+  slight improvement). KEEP if >= 0.450. Kill switch: table cc <= 0.45.
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, table cc 0.4767).
+date: "2026-04-29"

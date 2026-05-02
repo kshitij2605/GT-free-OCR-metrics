@@ -1,0 +1,22 @@
+id: P1_082_st_lpips
+name: "ST-LPIPS (shift-tolerant LPIPS) drop-in for LPIPS slot in multi_composite"
+category: perceptual
+script: scripts/methods/P1_082_st_lpips.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  backbone: alex
+  variant: shift_tolerant
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_082_st_lpips/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_082_st_lpips/correlations.json
+description: >
+  Replaces standard LPIPS with ST-LPIPS (Ghildyal & Liu, ECCV 2022) in the
+  multi_composite formula: 0.4*SSIM + 0.3*(1-MSE) + 0.3*(1-ST_LPIPS). SSIM
+  and MSE slots are unchanged; ST-LPIPS result is stored in the 'lpips' key
+  for downstream compute_variant_metrics.py compatibility. ST-LPIPS uses
+  anti-aliased (blur-pooled) intermediate feature maps so small positional
+  shifts (font reflow, OCR re-layout) do not dominate the perceptual distance
+  signal. SSIM computed via skimage on binarized 512x512 grayscale images.
+  Backbone: AlexNet. CLIP cosine batch unchanged.
+date: "2026-04-25"

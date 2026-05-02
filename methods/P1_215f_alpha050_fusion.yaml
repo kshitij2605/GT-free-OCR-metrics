@@ -1,0 +1,28 @@
+id: P1_215f_alpha050_fusion
+name: "D215.f — alpha=0.5 uniform fusion (sanity check on text/formula/all_no_mask continued lift)"
+category: self_uncertainty
+script: scripts/methods/P1_215f_alpha050_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_entropy: 0.5
+  window_k: 10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215f_alpha050_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215f_alpha050_fusion/correlations.json
+description: >
+  D215.f — alpha=0.5 uniform fusion. D215.b/c/d sweep showed text/formula/all_no_mask
+  still climbing at alpha=0.4. Tests whether lift continues to alpha=0.5 or starts
+  to decay. Will REVERT vs D215.c overall (table will tank further) but per-variant
+  diagnostic for non-table variants is the goal — informs whether D215.e should use
+  alpha>0.4 for those variants.
+  Predicted: 0.435-0.460, most likely 0.448. REVERT vs D215.c. KEEP if >= 0.461
+  (improbable). Diagnostic value not in spearman_mean but in per-variant cc — if
+  text/formula/all_no_mask continue rising at alpha=0.5, D215.e variant-conditional
+  should use alpha=0.5 for those three.
+  Kill switch: NONE.
+  Control: D215.c (alpha=0.3 uniform 0.4600).
+date: "2026-04-30"

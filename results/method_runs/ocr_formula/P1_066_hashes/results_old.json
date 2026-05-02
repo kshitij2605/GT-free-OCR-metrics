@@ -1,0 +1,4602 @@
+[
+  {
+    "image": "PPT_CalculusReview_page_014",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.76328125,
+      "mse": 0.019283294677734375,
+      "lpips": 0.16873326897621155,
+      "composite": 0.8489075309038162
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.938798725605011
+    }
+  },
+  {
+    "image": "PPT_CalculusReview_page_033",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.778125,
+      "mse": 0.0309219378978014,
+      "lpips": 0.1636868268251419,
+      "composite": 0.8528673705831169
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9443149566650391
+    }
+  },
+  {
+    "image": "PPT_MMAT5390Lecture1_page_023",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.610546875,
+      "mse": 0.0317688025534153,
+      "lpips": 0.4892813265323639,
+      "composite": 0.6879037112742663
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.789128303527832
+    }
+  },
+  {
+    "image": "PPT_MMAT5390Lecture1_page_024",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.707421875,
+      "mse": 0.0143241873010993,
+      "lpips": 0.3678835332393646,
+      "composite": 0.7683064338378608
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7549001574516296
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7453125,
+      "mse": 0.039279937744140625,
+      "lpips": 0.2514630854129791,
+      "composite": 0.8109020930528641
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8821795582771301
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_010",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.67578125,
+      "mse": 0.019359586760401726,
+      "lpips": 0.332244336605072,
+      "composite": 0.7648313229903578
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8126598596572876
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_012",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7828125,
+      "mse": 0.01729583740234375,
+      "lpips": 0.18486520648002625,
+      "composite": 0.8524766868352891
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8041073083877563
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_014",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6265624999999999,
+      "mse": 0.028560640290379524,
+      "lpips": 0.40815579891204834,
+      "composite": 0.7196100682392716
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7957613468170166
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_03_02_page_015",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.596484375,
+      "mse": 0.038272857666015625,
+      "lpips": 0.3142157196998596,
+      "composite": 0.7328471767902374
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8703883290290833
+    }
+  },
+  {
+    "image": "PPT_StewartCalcET7e_04_09_page_018",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.723828125,
+      "mse": 0.02508545108139515,
+      "lpips": 0.24559316039085388,
+      "composite": 0.8083276665583252
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8389879465103149
+    }
+  },
+  {
+    "image": "PPT_ch7_page_020",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7015625,
+      "mse": 0.056121826171875,
+      "lpips": 0.337943434715271,
+      "composite": 0.7624054217338563
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8658757209777832
+    }
+  },
+  {
+    "image": "PPT_ch7_page_021",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.716796875,
+      "mse": 0.0348052941262722,
+      "lpips": 0.38807472586631775,
+      "composite": 0.759854744002223
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7263092994689941
+    }
+  },
+  {
+    "image": "PPT_ch7_page_030",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.63046875,
+      "mse": 0.04183197021484375,
+      "lpips": 0.40797317028045654,
+      "composite": 0.7172459578514099
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8216037154197693
+    }
+  },
+  {
+    "image": "PPT_ch7_page_034",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.636328125,
+      "mse": 0.0535125732421875,
+      "lpips": 0.43651607632637024,
+      "composite": 0.7075226551294327
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8519576787948608
+    }
+  },
+  {
+    "image": "PPT_ch7_page_035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.641796875,
+      "mse": 0.03568267822265625,
+      "lpips": 0.4523692727088928,
+      "composite": 0.7103031647205353
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7642176151275635
+    }
+  },
+  {
+    "image": "PPT_ch7_page_057",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.626953125,
+      "mse": 0.04447174072265625,
+      "lpips": 0.44783613085746765,
+      "composite": 0.7030888885259629
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.781673014163971
+    }
+  },
+  {
+    "image": "PPT_ch7_page_090",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.68671875,
+      "mse": 0.07388687133789062,
+      "lpips": 0.4619028866291046,
+      "composite": 0.7139505726099014
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8708118200302124
+    }
+  },
+  {
+    "image": "PPT_ch7_page_132",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.669921875,
+      "mse": 0.06792450696229935,
+      "lpips": 0.370540976524353,
+      "composite": 0.7364291049540044
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7819611430168152
+    }
+  },
+  {
+    "image": "PPT_ch7_page_136",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.618359375,
+      "mse": 0.032215118408203125,
+      "lpips": 0.48332852125167847,
+      "composite": 0.6926806581020355
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6106522083282471
+    }
+  },
+  {
+    "image": "PPT_ch7_page_142",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.56484375,
+      "mse": 0.049587249755859375,
+      "lpips": 0.5201919078826904,
+      "composite": 0.655003752708435
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6439614295959473
+    }
+  },
+  {
+    "image": "PPT_fundamental_theorem_of_calculus___page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.826171875,
+      "mse": 0.014465332962572575,
+      "lpips": 0.09269824624061584,
+      "composite": 0.8983196762390435
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8471682071685791
+    }
+  },
+  {
+    "image": "PPT_fundamental_theorem_of_calculus___page_013",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.5859375,
+      "mse": 0.02483367919921875,
+      "lpips": 0.37710389494895935,
+      "composite": 0.7137937277555466
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7775452733039856
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.661328125,
+      "mse": 0.0201492328196764,
+      "lpips": 0.3428526222705841,
+      "composite": 0.755630693472922
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8416157960891724
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6714843749999999,
+      "mse": 0.039287567138671875,
+      "lpips": 0.4122377038002014,
+      "composite": 0.733136168718338
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9322916865348816
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.665625,
+      "mse": 0.032192230224609375,
+      "lpips": 0.44043871760368347,
+      "composite": 0.7244607156515123
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8659061193466187
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.768359375,
+      "mse": 0.023578645661473274,
+      "lpips": 0.3241887390613556,
+      "composite": 0.8030135345831513
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9150317907333374
+    }
+  },
+  {
+    "image": "PPT_lay_linalg5_01_05_page_009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.703125,
+      "mse": 0.0401763878762722,
+      "lpips": 0.4008239805698395,
+      "composite": 0.7489498894661665
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8697649240493774
+    }
+  },
+  {
+    "image": "PPT_lecture1_page_009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6140625,
+      "mse": 0.005245208740234375,
+      "lpips": 0.4912389814853668,
+      "composite": 0.6966797429323197
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7449150085449219
+    }
+  },
+  {
+    "image": "PPT_lecture1_page_022",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.787109375,
+      "mse": 0.037853240966796875,
+      "lpips": 0.20520968735218048,
+      "composite": 0.8419248715043068
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9465222358703613
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.640625,
+      "mse": 0.02182769775390625,
+      "lpips": 0.3796565532684326,
+      "composite": 0.7358047246932984
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7975476980209351
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6675781249999999,
+      "mse": 0.02259826846420765,
+      "lpips": 0.365182101726532,
+      "composite": 0.750697138942778
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8819355964660645
+    }
+  },
+  {
+    "image": "PPT_linear-algebra primer_page_016",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7390625,
+      "mse": 0.023162841796875,
+      "lpips": 0.3152622580528259,
+      "composite": 0.7940974700450897
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.866539478302002
+    }
+  },
+  {
+    "image": "book_en_40.Puzzles.and.Problems.in.Probability.and.Mathematical.Statistics,.Schwarz,.Springer,.2008_page_115",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.792578125,
+      "mse": 0.00887298583984375,
+      "lpips": 0.05768052488565445,
+      "composite": 0.8970651967823504
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.920690655708313
+    }
+  },
+  {
+    "image": "book_en_5.Advanced.Modern.Algebra.-.J.Rotman.2003_page_572",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.87421875,
+      "mse": 0.002960205078125,
+      "lpips": 0.053831178694963455,
+      "composite": 0.9326500848680734
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6780297756195068
+    }
+  },
+  {
+    "image": "book_en_5.Advanced.Modern.Algebra.-.J.Rotman.2003_page_887",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8203125,
+      "mse": 0.004302978515625,
+      "lpips": 0.03796403855085373,
+      "composite": 0.9154448948800563
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8972022533416748
+    }
+  },
+  {
+    "image": "book_en_6.Complex.Analysis.-.Elias.M..Stein_page_051",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.681640625,
+      "mse": 0.001190185546875,
+      "lpips": 0.11292706429958344,
+      "composite": 0.8384210750460623
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8688099384307861
+    }
+  },
+  {
+    "image": "book_en_6.Complex.Analysis.-.Elias.M..Stein_page_205",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.818359375,
+      "mse": 0.0139007568359375,
+      "lpips": 0.09112436324357986,
+      "composite": 0.8958362139761449
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8830310702323914
+    }
+  },
+  {
+    "image": "book_en_A.Concise.Introduction.to.Linear.Algebra,.Geza.Schay,.Birkhauser,.2012_page_065",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.638671875,
+      "mse": 0.00586700439453125,
+      "lpips": 0.37250763177871704,
+      "composite": 0.7419563591480256
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.586765706539154
+    }
+  },
+  {
+    "image": "book_en_A.Concise.Introduction.to.Linear.Algebra,.Geza.Schay,.Birkhauser,.2012_page_194",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.723828125,
+      "mse": 0.008560181595385075,
+      "lpips": 0.18300385773181915,
+      "composite": 0.8320620382018388
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8853638172149658
+    }
+  },
+  {
+    "image": "book_en_A.Course.in.Abstract.Harmonic.Analysis.-.Gerald.B.Folland.0849384907_page_119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.587890625,
+      "mse": 0.0230178814381361,
+      "lpips": 0.399436354637146,
+      "composite": 0.7084199791774153
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6635856628417969
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.856640625,
+      "mse": 0.004055023193359375,
+      "lpips": 0.14282798767089844,
+      "composite": 0.8985913467407227
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9199265837669373
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.69609375,
+      "mse": 0.0165176410228014,
+      "lpips": 0.18250514566898346,
+      "composite": 0.8187306639924645
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9229217171669006
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.859765625,
+      "mse": 0.019992828369140625,
+      "lpips": 0.10964792966842651,
+      "composite": 0.9050140225887298
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9537884593009949
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.75078125,
+      "mse": 0.02129364013671875,
+      "lpips": 0.20199039578437805,
+      "composite": 0.8333272892236708
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8739315867424011
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.885546875,
+      "mse": 0.002231597900390625,
+      "lpips": 0.013844180852174759,
+      "composite": 0.9493960163742304
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9081482291221619
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-An Excursion through Elementary Mathematics\uff08\u521d\u7b49\u6570\u5b66\u6f2b\u6e38\uff09-An excursion through elementary mathematics, Vol.3 (Caminha Muniz Neto A)_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.713671875,
+      "mse": 0.02272796630859375,
+      "lpips": 0.15058842301368713,
+      "composite": 0.8334738332033158
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.926170825958252
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.723828125,
+      "mse": 0.0018310546875,
+      "lpips": 0.16651104390621185,
+      "composite": 0.8390286204218864
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9221789836883545
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0017",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.774609375,
+      "mse": 0.0019187926081940532,
+      "lpips": 0.11512646079063416,
+      "composite": 0.8747301739803516
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9225500226020813
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7164062499999999,
+      "mse": 0.0082550048828125,
+      "lpips": 0.16819240152835846,
+      "composite": 0.8336282780766487
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9173418283462524
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.637890625,
+      "mse": 0.008270264603197575,
+      "lpips": 0.2408483326435089,
+      "composite": 0.780420670825988
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8873768448829651
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.784375,
+      "mse": 0.007110595703125,
+      "lpips": 0.15903522074222565,
+      "composite": 0.8639062550663947
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9135698080062866
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7859375,
+      "mse": 0.006004333030432463,
+      "lpips": 0.05594458803534508,
+      "composite": 0.8957903236802667
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9391999244689941
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.744921875,
+      "mse": 0.006809235084801912,
+      "lpips": 0.18992802500724792,
+      "composite": 0.8389475719723851
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.935610294342041
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6515625,
+      "mse": 0.0005645751953125,
+      "lpips": 0.1053050309419632,
+      "composite": 0.8288641181588173
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8985381126403809
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7265625,
+      "mse": 0.01034927275031805,
+      "lpips": 0.13742277026176453,
+      "composite": 0.8462933870963752
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9283189177513123
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u6570\u8bba-Melvyn B. Nathanson\u2014Elementary Methods in Number Theory_0451",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.68828125,
+      "mse": 0.029949190095067024,
+      "lpips": 0.23177671432495117,
+      "composite": 0.7967947286739946
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9694945216178894
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.805859375,
+      "mse": 0.0025863649789243937,
+      "lpips": 0.10367290675640106,
+      "composite": 0.8904659684794024
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9085131287574768
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0017",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7457031249999999,
+      "mse": 0.0032844545785337687,
+      "lpips": 0.2675253748893738,
+      "composite": 0.8170383011596277
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7771580219268799
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0035",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.81640625,
+      "mse": 0.007339478004723787,
+      "lpips": 0.09259261190891266,
+      "composite": 0.8965828730259091
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8654249906539917
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0085",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.88125,
+      "mse": 0.0034561159554868937,
+      "lpips": 0.03449064493179321,
+      "composite": 0.941115971733816
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9283111691474915
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0092",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.5925781250000001,
+      "mse": 0.011470794677734375,
+      "lpips": 0.3351840674877167,
+      "composite": 0.7330347913503646
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.49802136421203613
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0100",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.771875,
+      "mse": 0.0040283203125,
+      "lpips": 0.04646506905555725,
+      "composite": 0.8936019831895827
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8953672647476196
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0119",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.746484375,
+      "mse": 0.010746002197265625,
+      "lpips": 0.1860065758228302,
+      "composite": 0.8395679765939712
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8971956372261047
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0242",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.883984375,
+      "mse": 0.007484435569494963,
+      "lpips": 0.10238845646381378,
+      "composite": 0.9206318823900075
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9300277233123779
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.795703125,
+      "mse": 0.017452239990234375,
+      "lpips": 0.08296049386262894,
+      "composite": 0.888157429844141
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.941565990447998
+    }
+  },
+  {
+    "image": "book_en_\u56fd\u5916\u6570\u5b66\u6559\u6750-\u975e\u6570\u5b66\u4e13\u4e1a\u6559\u6750-\u7ebf\u6027\u4ee3\u6570-Gilbert Strang\u2014Linear Algebra and Its Applications 4e_0451",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.798046875,
+      "mse": 0.013301849365234375,
+      "lpips": 0.16878707706928253,
+      "composite": 0.864592072069645
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8864662051200867
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0072018_extracted_page_48",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6593749999999999,
+      "mse": 0.0272979736328125,
+      "lpips": 0.3611144721508026,
+      "composite": 0.7472262662649155
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8188460469245911
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_69",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.604296875,
+      "mse": 0.0362548865377903,
+      "lpips": 0.35408395528793335,
+      "composite": 0.7246170974522829
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.717481255531311
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_70",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.622265625,
+      "mse": 0.0333709679543972,
+      "lpips": 0.35406890511512756,
+      "composite": 0.7326742880791426
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6784344911575317
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0092018_extracted_page_73",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.596484375,
+      "mse": 0.02642059326171875,
+      "lpips": 0.43685176968574524,
+      "composite": 0.6996120411157608
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7197097539901733
+    }
+  },
+  {
+    "image": "book_zh_CNASGL0262018_extracted_page_82",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.5640624999999999,
+      "mse": 0.04312514886260033,
+      "lpips": 0.4497716724872589,
+      "composite": 0.6777559535950421
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8267478942871094
+    }
+  },
+  {
+    "image": "book_zh_CNASGL082006_extracted_page_50",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.58359375,
+      "mse": 0.017726898193359375,
+      "lpips": 0.35406264662742615,
+      "composite": 0.7219006365537644
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7809185981750488
+    }
+  },
+  {
+    "image": "book_zh_DLT10562007_extracted_page_17",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.59921875,
+      "mse": 0.05306244269013405,
+      "lpips": 0.42992132902145386,
+      "composite": 0.6947923684865237
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5922030806541443
+    }
+  },
+  {
+    "image": "book_zh_DLT10902008_extracted_page_8",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.618359375,
+      "mse": 0.050750732421875,
+      "lpips": 0.42284339666366577,
+      "composite": 0.7052655112743378
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.577088475227356
+    }
+  },
+  {
+    "image": "book_zh_GB115041989_extracted_page_9",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.65859375,
+      "mse": 0.0102996826171875,
+      "lpips": 0.29311588406562805,
+      "composite": 0.7724128299951554
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8100531101226807
+    }
+  },
+  {
+    "image": "book_zh_GB12082006_extracted_page_8",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.5375,
+      "mse": 0.05027008056640625,
+      "lpips": 0.6513503789901733,
+      "composite": 0.6045138621330262
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4145449995994568
+    }
+  },
+  {
+    "image": "book_zh_GB14536.11998_extracted_page_145",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.538671875,
+      "mse": 0.021068571135401726,
+      "lpips": 0.5938349366188049,
+      "composite": 0.6309976976737379
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.41719841957092285
+    }
+  },
+  {
+    "image": "book_zh_GB14930.21994_extracted_page_4",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.55859375,
+      "mse": 0.017925262451171875,
+      "lpips": 0.529272735118866,
+      "composite": 0.6592781007289886
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5980584621429443
+    }
+  },
+  {
+    "image": "book_zh_GB149361994_extracted_page_7",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.640234375,
+      "mse": 0.022991182282567024,
+      "lpips": 0.527927041053772,
+      "composite": 0.6908182829990983
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.484774112701416
+    }
+  },
+  {
+    "image": "book_zh_GBT 50744-2011_extracted_page_67",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.61484375,
+      "mse": 0.018016815185546875,
+      "lpips": 0.4156242311000824,
+      "composite": 0.7158451861143114
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7029126882553101
+    }
+  },
+  {
+    "image": "book_zh_HGT51022016_extracted_page_12",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.640234375,
+      "mse": 0.018283843994140625,
+      "lpips": 0.5563994646072388,
+      "composite": 0.6836887574195861
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6631624698638916
+    }
+  },
+  {
+    "image": "book_zh_JGJ1022003_extracted_page_27",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.5824218750000001,
+      "mse": 0.024257661774754524,
+      "lpips": 0.5164819955825806,
+      "composite": 0.6707468527927996
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7845374345779419
+    }
+  },
+  {
+    "image": "book_zh_JJD10031991_extracted_page_6",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.622265625,
+      "mse": 0.0171051025390625,
+      "lpips": 0.42524203658103943,
+      "composite": 0.7162021082639694
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6866085529327393
+    }
+  },
+  {
+    "image": "book_zh_SYT57941993_extracted_page_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.55703125,
+      "mse": 0.035610198974609375,
+      "lpips": 0.5255102515220642,
+      "composite": 0.6544763648509979
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6541492938995361
+    }
+  },
+  {
+    "image": "book_zh_TB100782001_extracted_page_21",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.61015625,
+      "mse": 0.0314178466796875,
+      "lpips": 0.48814064264297485,
+      "composite": 0.6881949532032012
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6265708208084106
+    }
+  },
+  {
+    "image": "book_zh_YDT10512018_extracted_page_30",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.686328125,
+      "mse": 0.01776122860610485,
+      "lpips": 0.37033212184906006,
+      "composite": 0.7581032448634505
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7184075117111206
+    }
+  },
+  {
+    "image": "docstructbench_dianzishu_zhongwenzaixian-o.O-61520788.pdf_391",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.643359375,
+      "mse": 0.006851196754723787,
+      "lpips": 0.1719900667667389,
+      "composite": 0.8036913709435611
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8509246110916138
+    }
+  },
+  {
+    "image": "docstructbench_dianzishu_zhongwenzaixian-o.O-61569751.pdf_155",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.645703125,
+      "mse": 0.0031890869140625,
+      "lpips": 0.17391854524612427,
+      "composite": 0.8051489603519439
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8488685488700867
+    }
+  },
+  {
+    "image": "docstructbench_enbook-zlib-o.O-19091739.pdf_181",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6011718749999999,
+      "mse": 0.09838486462831497,
+      "lpips": 0.4947142004966736,
+      "composite": 0.6625390304625034
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7023650407791138
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-ceat.200407001.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.64921875,
+      "mse": 0.01408767607063055,
+      "lpips": 0.31460392475128174,
+      "composite": 0.7610800197534263
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.850637674331665
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-ceat.200600410.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.678515625,
+      "mse": 0.0013236998347565532,
+      "lpips": 0.10401681810617447,
+      "composite": 0.8398040946177208
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9075719118118286
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.jcp.2010.12.006.pdf_14",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.80234375,
+      "mse": 0.006343841087073088,
+      "lpips": 0.06443803012371063,
+      "composite": 0.899702938636765
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9071550965309143
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.jcp.2010.12.006.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.798046875,
+      "mse": 0.03084564208984375,
+      "lpips": 0.14676034450531006,
+      "composite": 0.8659369540214539
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9076617956161499
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.physletb.2004.06.101.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.77734375,
+      "mse": 0.017398834228515625,
+      "lpips": 0.1700758934020996,
+      "composite": 0.8546950817108154
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8832123279571533
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.physletb.2004.11.060.pdf_2",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7703125,
+      "mse": 0.01251220703125,
+      "lpips": 0.15349505841732025,
+      "composite": 0.858322820365429
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9027246236801147
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-j.snb.2004.05.025.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8140625,
+      "mse": 0.005451201926916838,
+      "lpips": 0.18244941532611847,
+      "composite": 0.8692548148240894
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9082746505737305
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-s00128-008-9367-z.pdf_4",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.67265625,
+      "mse": 0.004398345947265625,
+      "lpips": 0.15001271665096283,
+      "composite": 0.8227391812205314
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7379410266876221
+    }
+  },
+  {
+    "image": "docstructbench_llm-raw-scihub-o.O-s00348-006-0117-x.pdf_11",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.81015625,
+      "mse": 0.004470824729651213,
+      "lpips": 0.10570290684700012,
+      "composite": 0.8910103805270047
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.931069016456604
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1991_Problems_1991_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.82578125,
+      "mse": 0.009361268021166325,
+      "lpips": 0.05162909999489784,
+      "composite": 0.9120153895951808
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8740332126617432
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1993_Problems_1993_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7828124999999999,
+      "mse": 0.00689697265625,
+      "lpips": 0.08502544462680817,
+      "composite": 0.8855482748150826
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.930598258972168
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1994_Problems_1994_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.894140625,
+      "mse": 0.0028572084847837687,
+      "lpips": 0.02065618336200714,
+      "composite": 0.9506022324459626
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.924256443977356
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1995_Solutions_1995s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.780078125,
+      "mse": 0.011005401611328125,
+      "lpips": 0.08723486959934235,
+      "composite": 0.8825591686367988
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9464483261108398
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Problems_1996_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.822265625,
+      "mse": 0.006412506103515625,
+      "lpips": 0.057440318167209625,
+      "composite": 0.9097504027187824
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9465414881706238
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.759375,
+      "mse": 0.004581451416015625,
+      "lpips": 0.10208608210086823,
+      "composite": 0.8717497399449349
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9200012683868408
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.703125,
+      "mse": 0.04302215576171875,
+      "lpips": 0.3871948719024658,
+      "composite": 0.7521848917007445
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7135798931121826
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1996_Solutions_1996s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.819921875,
+      "mse": 0.0114288330078125,
+      "lpips": 0.11343260854482651,
+      "composite": 0.8905103175342083
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.948165774345398
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Problems_1997_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.836328125,
+      "mse": 0.008258819580078125,
+      "lpips": 0.05970460921525955,
+      "composite": 0.9141422213613987
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9320555925369263
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.87265625,
+      "mse": 0.01218414306640625,
+      "lpips": 0.06700578331947327,
+      "composite": 0.9253055220842361
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9346287250518799
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7875,
+      "mse": 0.011585235595703125,
+      "lpips": 0.09184791892766953,
+      "composite": 0.8839700536429882
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9322277307510376
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1997_Solutions_1997s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.77890625,
+      "mse": 0.007343292236328125,
+      "lpips": 0.07946238666772842,
+      "composite": 0.885520796328783
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9284620881080627
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1998_Solutions_1998s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.822265625,
+      "mse": 0.005634307861328125,
+      "lpips": 0.057400383055210114,
+      "composite": 0.9099958427250385
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9255592226982117
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.764453125,
+      "mse": 0.016139984130859375,
+      "lpips": 0.09927777945995331,
+      "composite": 0.8711559209227562
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.915317714214325
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.851953125,
+      "mse": 0.0137176513671875,
+      "lpips": 0.08956830203533173,
+      "composite": 0.9097954639792443
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.92722088098526
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_1999_Solutions_1999s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.809375,
+      "mse": 0.017993928864598274,
+      "lpips": 0.14642083644866943,
+      "composite": 0.8744255704060196
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9167001247406006
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Problems_2000_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.880078125,
+      "mse": 0.002593994140625,
+      "lpips": 0.045776233077049255,
+      "composite": 0.9375201818346978
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8628857135772705
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.81875,
+      "mse": 0.0137786865234375,
+      "lpips": 0.07534714788198471,
+      "composite": 0.9007622496783734
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8237565159797668
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.833203125,
+      "mse": 0.010932923294603825,
+      "lpips": 0.06998039036989212,
+      "composite": 0.9090072559006512
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9247009754180908
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2000_Solutions_2000s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.697265625,
+      "mse": 6.4849853515625e-05,
+      "lpips": 0.037589602172374725,
+      "composite": 0.8676099143922329
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8947327136993408
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2001_Solutions_2001s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.848046875,
+      "mse": 0.005657196510583162,
+      "lpips": 0.0780455619096756,
+      "composite": 0.9141079224739224
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9282413721084595
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2001_Solutions_2001s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.817578125,
+      "mse": 0.01688385009765625,
+      "lpips": 0.09466564655303955,
+      "composite": 0.8935664010047912
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9288685917854309
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.819140625,
+      "mse": 0.00579071044921875,
+      "lpips": 0.13025416433811188,
+      "composite": 0.8868427875638007
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9077916145324707
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.756640625,
+      "mse": 0.01476287841796875,
+      "lpips": 0.11214296519756317,
+      "composite": 0.8645844969153405
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9054943323135376
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2002_Solutions_2002s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.84375,
+      "mse": 0.0176925640553236,
+      "lpips": 0.1336868554353714,
+      "composite": 0.8920861741527915
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9099962115287781
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2003_Solutions_2003s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.81640625,
+      "mse": 0.014057159423828125,
+      "lpips": 0.09922725707292557,
+      "composite": 0.8925771750509739
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9568535089492798
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2003_Solutions_2003s_page_008",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.725390625,
+      "mse": 0.016979215666651726,
+      "lpips": 0.14131493866443634,
+      "composite": 0.8426680037006735
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9613275527954102
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2004_Problems_2004_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8167968750000001,
+      "mse": 0.010074615478515625,
+      "lpips": 0.06462735682725906,
+      "composite": 0.9043081583082676
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9405232667922974
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2004_Solutions_2004s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.790234375,
+      "mse": 0.01541900634765625,
+      "lpips": 0.09353328496217728,
+      "composite": 0.88340806260705
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9442175030708313
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7453125,
+      "mse": 0.005649566650390625,
+      "lpips": 0.12476906180381775,
+      "composite": 0.8589994114637376
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9233626127243042
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.801171875,
+      "mse": 0.015987396240234375,
+      "lpips": 0.0926542580127716,
+      "composite": 0.8878762537240981
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9415780305862427
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2005_Solutions_2005s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.891015625,
+      "mse": 0.011863709427416325,
+      "lpips": 0.07293300330638885,
+      "composite": 0.9309672361798584
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9592664241790771
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Problems_2006_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.856640625,
+      "mse": 0.002773284912109375,
+      "lpips": 0.06508857756853104,
+      "composite": 0.9222976912558078
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9324819445610046
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Solutions_2006s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.810546875,
+      "mse": 0.01342010498046875,
+      "lpips": 0.06461386382579803,
+      "composite": 0.9008085593581199
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9331972002983093
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2006_Solutions_2006s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.845703125,
+      "mse": 0.020969390869140625,
+      "lpips": 0.06545770913362503,
+      "composite": 0.9123531199991703
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9456421136856079
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Problems_2007_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.771484375,
+      "mse": 0.004848480224609375,
+      "lpips": 0.10712017118930817,
+      "composite": 0.8750031545758248
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.932235598564148
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.823828125,
+      "mse": 0.005054473876953125,
+      "lpips": 0.09064111858606339,
+      "composite": 0.9008225722610952
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8951759934425354
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7378906249999999,
+      "mse": 0.0033721923828125,
+      "lpips": 0.17015250027179718,
+      "composite": 0.8430988422036171
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9275406002998352
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.817578125,
+      "mse": 0.012123106978833675,
+      "lpips": 0.08823827654123306,
+      "composite": 0.89692283494398
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9439843893051147
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2007_Solutions_2007s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.96328125,
+      "mse": 0.005672454833984375,
+      "lpips": 0.020562782883644104,
+      "composite": 0.9774419286847114
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9477648735046387
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Problems_2008_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.78828125,
+      "mse": 0.00182342529296875,
+      "lpips": 0.05509903281927109,
+      "composite": 0.8982357625663281
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9158338308334351
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_004",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8078125,
+      "mse": 0.00829315185546875,
+      "lpips": 0.13300269842147827,
+      "composite": 0.880736244916916
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9299748539924622
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.718359375,
+      "mse": 0.00615692138671875,
+      "lpips": 0.10391926765441895,
+      "composite": 0.8543208932876587
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9390526413917542
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2008_Solutions_2008s_page_007",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.815234375,
+      "mse": 0.004898070823401213,
+      "lpips": 0.030393298715353012,
+      "composite": 0.9155063391383736
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9522043466567993
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Problems_2009_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8484375,
+      "mse": 0.007472991943359375,
+      "lpips": 0.06008155271410942,
+      "composite": 0.9191086366027593
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8529813289642334
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.824609375,
+      "mse": 0.01199722196906805,
+      "lpips": 0.058880385011434555,
+      "composite": 0.9085804679058491
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9017876982688904
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7828125,
+      "mse": 0.00902557373046875,
+      "lpips": 0.07796964794397354,
+      "composite": 0.8870264334976672
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8557436466217041
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2009_Solutions_2009s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.805859375,
+      "mse": 0.00595855712890625,
+      "lpips": 0.10866732895374298,
+      "composite": 0.8879559841752053
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8312085866928101
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2010_Solutions_2010s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.77890625,
+      "mse": 0.009567259810864925,
+      "lpips": 0.13538913428783417,
+      "composite": 0.8680755817703902
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9198710918426514
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2010_Solutions_2010s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6929687499999999,
+      "mse": 0.01679229736328125,
+      "lpips": 0.25369590520858765,
+      "composite": 0.7960410392284393
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8368431925773621
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Problems_2011_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.8296875,
+      "mse": 0.00871658232063055,
+      "lpips": 0.09334385395050049,
+      "composite": 0.9012568691186607
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8685091733932495
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Solutions_2011s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.798046875,
+      "mse": 0.013378143310546875,
+      "lpips": 0.08240918070077896,
+      "composite": 0.8904825527966023
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9608123898506165
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2011_Solutions_2011s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.825,
+      "mse": 0.013042449951171875,
+      "lpips": 0.09283439815044403,
+      "composite": 0.8982369455695153
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9387608766555786
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2012_Solutions_2012s_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.755078125,
+      "mse": 0.004383086692541838,
+      "lpips": 0.2130729854106903,
+      "composite": 0.8367944283690304
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8725748062133789
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2013_Problems_2013_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.796875,
+      "mse": 0.002880096435546875,
+      "lpips": 0.030202332884073257,
+      "composite": 0.908825271204114
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8688341379165649
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2014_Problems_2014_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.78359375,
+      "mse": 0.004550934303551912,
+      "lpips": 0.09386353939771652,
+      "composite": 0.8839131578896195
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8740392327308655
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2014_Solutions_2014s_page_003",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.824609375,
+      "mse": 0.01136398408561945,
+      "lpips": 0.10298311710357666,
+      "composite": 0.8955396196432412
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8954750895500183
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Problems_2015_page_001",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.79296875,
+      "mse": 0.00567626953125,
+      "lpips": 0.06955526769161224,
+      "composite": 0.8946180388331413
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9272767901420593
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Solutions_2015s_page_005",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.822265625,
+      "mse": 0.0148468017578125,
+      "lpips": 0.13639800250530243,
+      "composite": 0.8835328087210654
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9320112466812134
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2015_Solutions_2015s_page_006",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.84140625,
+      "mse": 0.03415679931640625,
+      "lpips": 0.1008143275976181,
+      "composite": 0.8960711619257928
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9520758986473083
+    }
+  },
+  {
+    "image": "exam_paper_en-file-putnam-archive_2016_Solutions_2016s_page_002",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.646875,
+      "mse": 0.000278472900390625,
+      "lpips": 0.0929667204618454,
+      "composite": 0.8307764419913292
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8261620998382568
+    }
+  },
+  {
+    "image": "jiaocai_71434495.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.66328125,
+      "mse": 0.019317626953125,
+      "lpips": 0.21643872559070587,
+      "composite": 0.7945855942368508
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8894995450973511
+    }
+  },
+  {
+    "image": "jiaocaineedrop_20608808.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.72421875,
+      "mse": 0.0108184814453125,
+      "lpips": 0.24317601323127747,
+      "composite": 0.813489151597023
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8194543123245239
+    }
+  },
+  {
+    "image": "jiaocaineedrop_33137159.pdf_3",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.776953125,
+      "mse": 0.013668060302734375,
+      "lpips": 0.13734525442123413,
+      "composite": 0.8654772555828094
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8906877040863037
+    }
+  },
+  {
+    "image": "jiaocaineedrop_38247658.pdf_0",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.825390625,
+      "mse": 0.0150794992223382,
+      "lpips": 0.10311654210090637,
+      "composite": 0.8946974376030267
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9244782328605652
+    }
+  },
+  {
+    "image": "jiaocaineedrop_42351289.pdf_1",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.796484375,
+      "mse": 0.005428314208984375,
+      "lpips": 0.10859976708889008,
+      "composite": 0.8843853256106375
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8080467581748962
+    }
+  },
+  {
+    "image": "jiaocaineedrop_AMC8_V5.pdf_64",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.662890625,
+      "mse": 0.0229949951171875,
+      "lpips": 0.3166635036468506,
+      "composite": 0.7632587003707885
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7309783697128296
+    }
+  },
+  {
+    "image": "jiaocaineedrop_Evans_PDE_Solution_Chapter_6_Second-Order_Elliptic_Equations.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.709765625,
+      "mse": 0.022792816162109375,
+      "lpips": 0.11254478991031647,
+      "composite": 0.8433049681782723
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8961502313613892
+    }
+  },
+  {
+    "image": "jiaocaineedrop_chem-203343.pdf_121",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.709375,
+      "mse": 0.03106689266860485,
+      "lpips": 0.3000043034553528,
+      "composite": 0.7844286411628126
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8433861136436462
+    }
+  },
+  {
+    "image": "jiaocaineedrop_chem-97961.pdf_128",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.666015625,
+      "mse": 0.014057161286473274,
+      "lpips": 0.2666570842266083,
+      "composite": 0.7821919763460755
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8500074744224548
+    }
+  },
+  {
+    "image": "jiaocaineedrop_j70ke43p.pdf_69",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6480468749999999,
+      "mse": 0.003021240234375,
+      "lpips": 0.10415483266115189,
+      "composite": 0.8270659281313419
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9137409329414368
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1198",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.740234375,
+      "mse": 0.04918289557099342,
+      "lpips": 0.24988532066345215,
+      "composite": 0.8063732851296663
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7843412756919861
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1253",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.629296875,
+      "mse": 0.00656890869140625,
+      "lpips": 0.2470225989818573,
+      "composite": 0.7756412976980208
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.6970168352127075
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1276",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.573046875,
+      "mse": 0.0296249408274889,
+      "lpips": 0.5750459432601929,
+      "composite": 0.6478174847736955
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7921414375305176
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1290",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.594140625,
+      "mse": 0.019718170166015625,
+      "lpips": 0.49058565497398376,
+      "composite": 0.6845651024580002
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.45344337821006775
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1349",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.54140625,
+      "mse": 0.02529144287109375,
+      "lpips": 0.5511565804481506,
+      "composite": 0.6436280930042267
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.3834415674209595
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1363",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.695703125,
+      "mse": 0.020412446931004524,
+      "lpips": 0.3133303225040436,
+      "composite": 0.7781584191694856
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7009605169296265
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1496",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.631640625,
+      "mse": 0.043956756591796875,
+      "lpips": 0.3227519690990448,
+      "composite": 0.7426436322927474
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8810548782348633
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1539",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.615234375,
+      "mse": 0.010730743408203125,
+      "lpips": 0.38324281573295593,
+      "composite": 0.7279016822576523
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7375266551971436
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_1910",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.74296875,
+      "mse": 0.012008666060864925,
+      "lpips": 0.14725448191165924,
+      "composite": 0.8494085556082427
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8035746812820435
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2211",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.58828125,
+      "mse": 0.0138092041015625,
+      "lpips": 0.4568057954311371,
+      "composite": 0.69412800014019
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5410841703414917
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_250",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.628515625,
+      "mse": 0.0315399207174778,
+      "lpips": 0.4783957600593567,
+      "composite": 0.6984255457669496
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5157680511474609
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2718",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.63359375,
+      "mse": 0.03740692511200905,
+      "lpips": 0.2705390155315399,
+      "composite": 0.7610537178069353
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7350539565086365
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_2893",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.573046875,
+      "mse": 0.016025545075535774,
+      "lpips": 0.5489227771759033,
+      "composite": 0.6597342533245683
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.4813746511936188
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3009",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.697265625,
+      "mse": 0.006317138206213713,
+      "lpips": 0.20613843202590942,
+      "composite": 0.8151695789303631
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7060209512710571
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3063",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6457031249999999,
+      "mse": 0.003692626953125,
+      "lpips": 0.1591234803199768,
+      "composite": 0.8094364178180694
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8602641820907593
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3303",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.733203125,
+      "mse": 0.0177764892578125,
+      "lpips": 0.2125452756881714,
+      "composite": 0.8241847205162048
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8203351497650146
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_3458",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.794140625,
+      "mse": 0.019908905029296875,
+      "lpips": 0.11140678822994232,
+      "composite": 0.8782615420222282
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8716646432876587
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_541",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6011718749999999,
+      "mse": 0.02932739444077015,
+      "lpips": 0.4515742063522339,
+      "composite": 0.6961982697620988
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7389578819274902
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_546",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.61640625,
+      "mse": 0.021099088713526726,
+      "lpips": 0.3980092704296112,
+      "composite": 0.7208299922570587
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.5900039672851562
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_913",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6363281249999999,
+      "mse": 0.033870697021484375,
+      "lpips": 0.23778316378593445,
+      "composite": 0.7730350917577743
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8733956813812256
+    }
+  },
+  {
+    "image": "jiaocaineedrop_jiaocai_needrop_en_999",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.528515625,
+      "mse": 0.03768539801239967,
+      "lpips": 0.6078958511352539,
+      "composite": 0.6177318752557039
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.428398072719574
+    }
+  },
+  {
+    "image": "jiaocaineedrop_math-134115.pdf_670",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.63203125,
+      "mse": 0.029865263029932976,
+      "lpips": 0.3657549321651459,
+      "composite": 0.7341264414414763
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.788837730884552
+    }
+  },
+  {
+    "image": "notes_1ba14cb325bc448f7201b20502ecf2b5_16",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6328125,
+      "mse": 0.012428282760083675,
+      "lpips": 0.3548145890235901,
+      "composite": 0.7429521384648978
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7547451257705688
+    }
+  },
+  {
+    "image": "scihub_j.conbuildmat.2019.117698.pdf_5",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.704296875,
+      "mse": 0.002048492431640625,
+      "lpips": 0.11817145347595215,
+      "composite": 0.845652766227722
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9080812931060791
+    }
+  },
+  {
+    "image": "yanbaopptmerge_3aa9b6677e17fd012b0a7a230b9f18db.pdf_1327",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.7375,
+      "mse": 0.007472991477698088,
+      "lpips": 0.1694035530090332,
+      "composite": 0.8419370366539807
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8499186038970947
+    }
+  },
+  {
+    "image": "yanbaopptmerge_9081a70ff98b3e7d640660a9412c447d.pdf_1287",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6304687499999999,
+      "mse": 0.00213623046875,
+      "lpips": 0.30549922585487366,
+      "composite": 0.7598968631029128
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8506851196289062
+    }
+  },
+  {
+    "image": "yanbaopptmerge_abef2a4978ae4d13e931f0392502bd40.pdf_1287",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.62578125,
+      "mse": 0.0024948122445493937,
+      "lpips": 0.3465729057788849,
+      "composite": 0.7455921845929697
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.8177345991134644
+    }
+  },
+  {
+    "image": "yanbaopptmerge_d4fc7cba428625974e93183edfccea73.pdf_89",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.764453125,
+      "mse": 0.003360748291015625,
+      "lpips": 0.11192461848258972,
+      "composite": 0.8711956399679184
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7897201180458069
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_2460",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6265624999999999,
+      "mse": 0.08155059814453125,
+      "lpips": 0.5326813459396362,
+      "composite": 0.6663554167747499
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7202342748641968
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_4310",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.55,
+      "mse": 0.013439178466796875,
+      "lpips": 0.21948274970054626,
+      "composite": 0.750123421549797
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.9002115726470947
+    }
+  },
+  {
+    "image": "yanbaopptmerge_yanbaoPPT_4710",
+    "text_elements": 0,
+    "image_regions": 0,
+    "table_regions": 0,
+    "text_length": 0,
+    "plain_text_length": 0,
+    "multi_metric": {
+      "ssim": 0.6187499999999999,
+      "mse": 0.027027130126953125,
+      "lpips": 0.3314627408981323,
+      "composite": 0.7399530386924743
+    },
+    "lm_perplexity": {
+      "ngram_score": 0.0,
+      "transformer_score": 0.0,
+      "perplexity": 0.0,
+      "composite": 0.0
+    },
+    "clip_compare": {
+      "clip_cosine": 0.7937519550323486
+    }
+  }
+]

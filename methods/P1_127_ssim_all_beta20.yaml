@@ -1,0 +1,26 @@
+id: P1_127_ssim_all_beta20
+name: "D127 — SSIM all β=0.20 + all_no_mask β=0.15 sweep"
+category: composite
+script: scripts/methods/P1_127_ssim_all_beta20.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.15
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_127_ssim_all_beta20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_127_ssim_all_beta20/correlations.json
+description: >
+  D127 — SSIM all/all_no_mask beta sweep: all 0.15→0.20, all_no_mask 0.10→0.15.
+  Based on D124 stack (NEW BEST 0.49084). Text/formula SSIM unchanged.
+  all/all_no_mask Spearman stuck at 0.4458/0.4461 for 5 experiments. Tests whether
+  increasing SSIM weight for mixed-content pages provides additional structural signal.
+  KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
+date: "2026-05-02"

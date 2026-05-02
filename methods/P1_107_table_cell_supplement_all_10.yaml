@@ -1,0 +1,29 @@
+id: P1_107_table_cell_supplement_all_10
+name: "D107 — per-table-cell MIN DocSim supplement for all/all_no_mask at β=0.10"
+category: per_element_structure
+script: scripts/methods/P1_107_table_cell_supplement_all_10.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_all: 0.3
+  alpha_all_no_mask: 0.4
+  beta_table_cell: 0.10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_107_table_cell_supplement_all_10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_107_table_cell_supplement_all_10/correlations.json
+description: >
+  D107 — adds per-table-cell MIN DocSim as β=0.10 supplement for variant=all
+  and all_no_mask. For pages with table bboxes (ocr_table_elements.json),
+  pre-computes per-cell MIN DocSim score using _docsim_per_bbox_score and
+  blends into the fusion:
+    clip_cosine = (1-alpha-beta)*page_DocSim + alpha*entropy + beta*cell_MIN_DocSim
+  Pages without table bboxes fall back to standard 2-term fusion (tcs=0.0).
+  All other variants unchanged from D106.h best (formula γ=0.50, table γ=0.10).
+  Hypothesis: table cells are content-homogeneous; per-cell MIN DocSim captures
+  local reconstruction failures better than page-level for all/all_no_mask.
+  26% of pages have table bboxes. Predicted +0.002-0.005 on all/all_no_mask cc.
+  KEEP if > 0.4814. Decision: KEEP→sweep β; REVERT→close D107 axis.
+date: "2026-05-01"

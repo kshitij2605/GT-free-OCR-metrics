@@ -1,0 +1,27 @@
+id: P1_136_ssim_all_beta20
+name: "D136 — all SSIM β sweep 0.15→0.20"
+category: composite
+script: scripts/methods/P1_136_ssim_all_beta20.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_136_ssim_all_beta20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_136_ssim_all_beta20/correlations.json
+description: >
+  D136 — all SSIM β=0.15→0.20 diagnostic. all variant stuck at 0.4458 across many experiments.
+  D134 showed all_no_mask insensitive to SSIM; D136 tests all variant.
+  all: 0.35*DocSim + 0.30*entropy + 0.15*table_cell + 0.20*ssim
+  If REVERT: all/all_no_mask SSIM axes are both closed; pivot to new mechanism class.
+  KEEP if spearman_mean > 0.4927 (D133 NEW BEST).
+date: "2026-05-02"

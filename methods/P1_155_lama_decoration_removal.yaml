@@ -1,0 +1,47 @@
+id: P1_155_lama_decoration_removal
+name: "H14.0 LaMa decoration removal preprocessing (variant=all_no_mask + variant=all)"
+category: preprocessing
+script: scripts/methods/P1_155_lama_decoration_removal.py
+script_args: ""
+parameters:
+  vram_gb: 6
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+  lama_model: big-lama
+  lama_package: simple-lama-inpainting==0.1.2
+dependencies: ["simple-lama-inpainting"]
+results_path: results/method_runs/ocr_{variant}/P1_155_lama_decoration_removal/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_155_lama_decoration_removal/correlations.json
+description: >
+  H14.0: FIRST preprocessing-axis experiment after 10-refute slot-interior streak.
+  LaMa (big-lama, Places2 prior) is applied to masked_original.png BEFORE the
+  metric pipeline runs, using a pixel-level diff mask derived by comparing
+  ocr_all_no_mask/masked_original.png (decorations present) against
+  ocr_all/masked_original.png (decorations white-filled). Where pixels differ by
+  >5 intensity units, those are decoration regions — LaMa inpaints them with
+  FFC-globality background fill.
+
+  Variant-conditional application:
+  - variant=all_no_mask: LaMa applied (decorations present; mask from ocr_all diff)
+  - variant=all: LaMa applied (residual decoration pixels; same mask logic)
+  - variant=text, formula, table: PASS-THROUGH (no LaMa; risk avoidance)
+
+  Metric pipeline (unchanged from H11.2 P1_120c3b control):
+  - multi_composite: variant=all uses DISTS 4th-term (0.3/0.2/0.2/0.3); others 0.4/0.3/0.3
+  - clip_cosine: table=CLIP-only+H6.1 preproc; all_no_mask=50/50 CLIP+DINOv2+H6.1 preproc;
+    others=50/50 CLIP+DINOv2 raw RGB
+
+  Sanity probe (2026-04-27, 5 pages tested):
+  - LaMa model loads in 12.5s (one-time), inpainting 1.0s/page
+  - Inpainted region mean color [254,254,254], std [6,7,6] — clean white-fill, no hallucinations
+  - File hash differs from input confirming actual change
+  - Page coverage: most pages have 0 decoration pixels; only pages with header/banner decorations
+    get inpainting applied (expected: <30% of pages)
+
+  Control: H11.2 P1_120c3b_all_no_mask_baseline_preproc (spearman_mean=0.3600)
+  Predicted: spearman_mean ~ 0.375 (range 0.37-0.39)
+  - all_no_mask cc 0.3082 -> 0.32-0.36
+  - table cc 0.277 -> unchanged (pass-through)
+  - all mc 0.283 -> 0.29-0.31
+date: "2026-04-27"

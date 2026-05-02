@@ -1,0 +1,21 @@
+id: P1_121_dists_baseline
+name: "DISTS shift-tolerant baseline (DISTS replaces LPIPS slot)"
+category: deep_feature
+script: scripts/methods/P1_121_dists_baseline.py
+script_args: ""
+parameters:
+  vram_gb: 8
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_121_dists_baseline/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_121_dists_baseline/correlations.json
+description: >
+  Replaces the LPIPS slot in multi_composite with DISTS (Deep Image Structure
+  and Texture Similarity, Ding et al. TPAMI 2020). DISTS averages structure
+  and texture statistics over VGG feature maps, giving translation-tolerance
+  by construction (global spatial averages ignore minor reflow shifts).
+  Composite = 0.4*SSIM + 0.3*(1-MSE) + 0.3*(1-DISTS). SSIM is computed
+  with skimage.metrics.structural_similarity on 512x512 grayscale binarized
+  images. DISTS operates on 256x256 RGB, tensors in [0,1]. CLIP cosine
+  batch handling unchanged. DISTS distance stored in the lpips slot for
+  pipeline compatibility.
+date: "2026-04-25"

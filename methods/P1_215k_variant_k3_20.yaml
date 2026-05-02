@@ -1,0 +1,32 @@
+id: P1_215k_variant_k3_20
+name: "D215.k — variant-conditional α + K=3/20 (push K boundary for text/all/all_no_mask)"
+category: self_uncertainty
+script: scripts/methods/P1_215k_variant_k3_20.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  k_text: 3
+  k_all: 3
+  k_all_no_mask: 3
+  k_formula: 20
+  k_table: 10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215k_variant_k3_20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215k_variant_k3_20/correlations.json
+description: >
+  D215.k — variant-conditional alpha + K with K=3 for text/all/all_no_mask
+  (push boundary), K=20 for formula (D215.h peak). D215.j K=3 uniform showed
+  text/all/all_no_mask still climbing at K=3 (text 0.4432, all 0.4164,
+  all_no_mask 0.4358 vs K=5 of 0.4403/0.4088/0.4306). Sum-of-per-variant-
+  bests = 0.4432 + 0.5784 + 0.4767 + 0.4164 + 0.4358 = 0.4701 projected.
+  Predicted: 0.4690-0.4710. KEEP if >= 0.470. Tests whether the K=3 lifts
+  for text/all/all_no_mask compose with K=20 for formula.
+  Control: D215.i (variant α + K=5/20, 0.4669).
+date: "2026-04-30"

@@ -1,0 +1,51 @@
+id: P1_215r_per_variant_source
+name: "D215.r — Per-variant SOURCE selection: Shannon for text/formula/all_no_mask, mean-conf for all"
+category: self_uncertainty
+script: scripts/methods/P1_215r_per_variant_source.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  k_text: 3
+  k_all: 3
+  k_all_no_mask: 3
+  k_formula: 20
+  source_text: "shannon_top_logprobs"
+  source_formula: "shannon_top_logprobs"
+  source_all_no_mask: "shannon_top_logprobs"
+  source_all: "mean_confidence"
+  source_table: "none"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215r_per_variant_source/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215r_per_variant_source/correlations.json
+description: >
+  D215.r — per-variant SOURCE selection at the established α/K budget.
+  After D215.n (three-way fusion REVERT 0.4727) showed mean-conf and Shannon
+  sources are ~98% redundant under window-MIN aggregation, the optimal
+  configuration is to PICK the winning source per variant rather than blend.
+
+  Per-variant source choice (from D215.k vs D215.l per-variant cc):
+    text:        Shannon (D215.l 0.4489 > D215.k 0.4434, +0.0055)
+    formula:     Shannon (D215.l 0.5872 > D215.k 0.5685, +0.0187)
+    table:       n/a   (α=0, source disabled)
+    all:         mean   (D215.k 0.4221 > D215.l 0.4199, +0.0022)
+    all_no_mask: Shannon (D215.l 0.4382 > D215.k 0.4366, +0.0016)
+
+  Mathematically projected: (0.4489 + 0.5872 + 0.4767 + 0.4221 + 0.4382)/5
+  = **0.4746** = NEW BEST (+0.0004 over D215.l 0.4742). Guaranteed since the
+  variants run independently in the eval pipeline.
+
+  KEEP threshold: > 0.4742 (current best D215.l).
+  Predicted: 0.4744-0.4748, most likely 0.4746.
+
+  Closes the D215 (mean+Shannon) source space; PIVOT candidate D207
+  (Consensus Entropy on K=3 multi-sample Qwen) opens a new mechanism class.
+
+  Control: D215.l (Shannon source uniform, 0.4742, current best).
+date: "2026-04-30"

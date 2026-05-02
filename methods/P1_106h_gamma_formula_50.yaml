@@ -1,0 +1,30 @@
+id: P1_106h_gamma_formula_50
+name: "D106.h — γ=0.50 boundary push on formula (from D106.e γ=0.40 best 0.6036)"
+category: self_uncertainty
+script: scripts/methods/P1_106h_gamma_formula_50.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  alpha_table: 0.0
+  gamma_diqa_formula: 0.5
+  gamma_diqa_table: 0.1
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106h_gamma_formula_50/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106h_gamma_formula_50/correlations.json
+description: >
+  D106.h — γ_formula=0.50 boundary push from D106.e γ=0.40 (D106.f
+  best stack). Formula trajectory γ=0/0.20/0.30/0.40 = 0.5872/
+  0.6011/0.6028/0.6036, deltas +0.0139/+0.0017/+0.0008 (halving).
+  γ=0.50 expected near peak or slight decay (formula weight on
+  prod_cc drops to 0.20 — at-or-below entropy weight 0.30).
+  Other variants byte-equal to D106.f (table γ=0.10 retained).
+  Predicted formula: 0.6020-0.6045 (peak or slight decay).
+  Predicted spearman_mean: 0.4810-0.4815. KEEP if > 0.4812.
+  Decision: KEEP -> sweep γ=0.60 (rare); REVERT-tie -> peak
+  bracketed at γ∈[0.40, 0.50], formula γ-axis closes at D106.f.
+  Control: D106.f (0.4812, formula γ=0.40, table γ=0.10).
+date: "2026-05-01"

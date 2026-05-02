@@ -1,0 +1,52 @@
+id: P1_213_sliding_window_heatmap_area_weighted
+name: "D213 — sliding-window Shannon-confidence heat-map → per-bbox MEAN, area-weighted page aggregation"
+category: self_uncertainty
+script: scripts/methods/P1_213_sliding_window_heatmap_area_weighted.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  window_k_text: 3
+  window_k_all: 3
+  window_k_all_no_mask: 3
+  window_k_formula: 20
+  source: "shannon_entropy_top_logprobs"
+  granularity: "heatmap_per_bbox_area_weighted_mean"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_213_sliding_window_heatmap_area_weighted/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_213_sliding_window_heatmap_area_weighted/correlations.json
+description: >
+  D213 — final entropy-axis probe. Computes per-token Shannon-confidence
+  (1 - H/log_K) over the renormalized top_logprobs distribution, then
+  applies a sliding-window MEAN of size K (variant-conditional: 3 for
+  text/all/all_no_mask, 20 for formula — matching D215.k/l findings) to
+  build a per-token "heat-map" of smoothed confidence. Tokens are
+  partitioned into bbox-elements via `data-bbox="..."` markers; each
+  element's score is the MEAN heat-map value over its tokens. Page-level
+  aggregation is area-weighted MEAN across elements (weights = bbox area
+  parsed from `data-bbox="x1,y1,x2,y2"` strings; element with no bbox
+  gets weight = 0 / dropped, except the leading pre-bbox segment which
+  gets a flat fallback weight equal to the median bbox area).
+  Per-variant alpha unchanged from D215.l (table=0, all=0.3, others=0.4)
+  so table is byte-equal to D60.p.
+  Mechanism is structurally complementary to both D215.l (which does
+  window-MEAN → MIN-across-windows, page-level scalar) and D224.b
+  (raw per-token → element-MEAN → MIN-across-elements). D213 combines
+  windowed smoothing with element-aware MEAN aggregation weighted by
+  visual area — the natural extension of "uncertainty heat-map weighted
+  by where on the page the uncertainty lives".
+  Predicted: 0.450-0.480, most likely 0.465. KEEP if > 0.4742.
+  Decision rule: if KEEP, PROCEED to D213 refinements (try MIN-across-
+  elements with heat-map smoothing, or alternative weight schemes).
+  If REVERT, ENTROPY-axis fully exhausted → PIVOT to non-entropy
+  mechanism class (next candidates: D207 K=3 OCR resample [needs
+  operator OCR resample, defer], or new direction from program.md
+  Phase 2 backlog).
+  Control: D215.l (window-MIN of mean-confidence, alpha=variant-cond, 0.4742).
+date: "2026-04-30"

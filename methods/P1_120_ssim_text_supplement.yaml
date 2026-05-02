@@ -1,0 +1,28 @@
+id: P1_120_ssim_text_supplement
+name: "D120 — SSIM text supplement (text=0.05, all=0.15, all_no_mask=0.10)"
+category: composite
+script: scripts/methods/P1_120_ssim_text_supplement.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_text: 0.05
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_120_ssim_text_supplement/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120_ssim_text_supplement/correlations.json
+description: >
+  D120 — SSIM page supplement extended to the text variant at β_text=0.05.
+  D116 only applied SSIM to all/all_no_mask. D120 keeps D116's all/all_no_mask β values
+  and adds text variant SSIM at a small β=0.05 to test whether structural similarity
+  helps text-only OCR quality prediction.
+  text: 0.55*DocSim + 0.40*entropy + 0.05*ssim
+  all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*ssim (unchanged from D116)
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim (unchanged from D116)
+  KEEP if spearman_mean > 0.4877 (D116 baseline).
+date: "2026-05-01"

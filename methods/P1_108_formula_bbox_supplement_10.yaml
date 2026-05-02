@@ -1,0 +1,29 @@
+id: P1_108_formula_bbox_supplement_10
+name: "D108 — per-formula-bbox MIN DocSim supplement β_f=0.10 on top of D107b β_table=0.20"
+category: per_element_structure
+script: scripts/methods/P1_108_formula_bbox_supplement_10.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_all: 0.3
+  alpha_all_no_mask: 0.4
+  beta_table_cell: 0.20
+  beta_formula_bbox: 0.10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_108_formula_bbox_supplement_10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_108_formula_bbox_supplement_10/correlations.json
+description: >
+  D108 — adds per-formula-bbox MIN DocSim as β_f=0.10 supplement on top of D107b's
+  table-cell supplement (β_table=0.20). For pages with formula bboxes in all/all_no_mask:
+    all: 0.40*page_DocSim + 0.30*entropy + 0.20*table_cell + 0.10*formula_bbox
+    all_no_mask: 0.30*page_DocSim + 0.40*entropy + 0.20*table_cell + 0.10*formula_bbox
+  Pages with only table bboxes: 3-term blend from D107b.
+  Pages with only formula bboxes: 3-term blend with formula supplement only.
+  Pages with both: 4-term blend. 15.8% of all-variant pages have formula bboxes.
+  Hypothesis: formula-bbox MIN DocSim correlates with CDM quality in end_to_end,
+  independently from table-cell MIN which correlates with TEDS.
+  KEEP if > 0.4820 (D107b best). Decision: KEEP→sweep β_f=0.20; REVERT→formula supplement closed.
+date: "2026-05-01"

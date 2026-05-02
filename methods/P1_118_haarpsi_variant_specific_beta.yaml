@@ -1,0 +1,27 @@
+id: P1_118_haarpsi_variant_specific_beta
+name: "D118 — HaarPSI structural supplement (all=0.15, all_no_mask=0.10, replaces SSIM)"
+category: composite
+script: scripts/methods/P1_118_haarpsi_variant_specific_beta.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_haar_all: 0.15
+  beta_haar_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_118_haarpsi_variant_specific_beta/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_118_haarpsi_variant_specific_beta/correlations.json
+description: >
+  D118 — HaarPSI (Haar Perceptual Similarity Index via piq.haarpsi) as structural supplement,
+  replacing raw grayscale SSIM at the same variant-specific β as D116 (all=0.15, all_no_mask=0.10).
+  HaarPSI uses Haar wavelet coefficients for multi-scale structural similarity — better edge sensitivity
+  than single-scale SSIM. Direct comparison to D116 (SSIM same β): if HaarPSI > SSIM at same β,
+  it becomes the preferred structural supplement.
+  all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*haar_psi
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*haar_psi
+  KEEP if spearman_mean > 0.4877 (D116 SSIM baseline). If REVERTS: SSIM confirmed superior to HaarPSI.
+date: "2026-05-01"

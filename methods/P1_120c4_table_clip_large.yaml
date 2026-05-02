@@ -1,0 +1,26 @@
+id: P1_120c4_table_clip_large
+name: "H6.2 Table-CLIP ViT-L/14 (finer patches for cell-grid) — encoder upgrade over H6.1"
+category: deep_feature
+script: scripts/methods/P1_120c4_table_clip_large.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  encoder: dinov2_vitb14+openclip_vitl14_table_only
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c4_table_clip_large/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c4_table_clip_large/correlations.json
+description: >
+  H6.2: REFINE of H6.1. Replace OpenCLIP ViT-B-32 (laion2b_s34b_b79k) with ViT-L-14
+  (laion2b_s32b_b82k) for variant=table ONLY. Isolation via variant-conditional model loading:
+  the gpu_dispatch.sh launcher spawns one process per variant, so each process sees exactly
+  one variant. For variant=table: ViT-L/14 + H6.1 baseline preprocessing
+  (grayscale+SHARPEN+autocontrast->RGB). For all other variants: ViT-B-32 + 50/50 DINO+CLIP
+  fusion (raw RGB) — unchanged from H6.1. multi_composite formulas unchanged from H5.b/H6.1
+  (DISTS-augmented for variant=all, original 0.4/0.3/0.3 for others).
+  Hypothesis: ViT-L/14 has 14-pixel patches (~256 tokens at 224x224 input) vs B/32's 32-pixel
+  patches (~50 tokens) — finer spatial resolution should better capture table cell-grid structure.
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
+  Predicted: spearman_mean ~ 0.363-0.369 (table cc 0.277->0.29-0.32).
+date: "2026-04-26"

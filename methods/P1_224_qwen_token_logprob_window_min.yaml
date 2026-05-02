@@ -1,0 +1,42 @@
+id: P1_224_qwen_token_logprob_window_min
+name: "D224 — Window-MIN of per-token Qwen confidence (per-bbox entropy proxy, MIN aggregation)"
+category: self_uncertainty
+script: scripts/methods/P1_224_qwen_token_logprob_window_min.py
+script_args: ""
+parameters:
+  vram_gb: 0
+  encoder: "qwen_logprobs (no model load, no image encoder)"
+  logprobs_root: data/ocr_logprobs
+  window_size: 10
+  aggregation: "min over rolling window means"
+dependencies:
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_224_qwen_token_logprob_window_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_224_qwen_token_logprob_window_min/correlations.json
+description: >
+  D224 — DIAGNOSTIC entropy-axis probe at finer granularity than D215.
+  D215 (page-level mean) was universally REFUTED: confidence_mean per-variant
+  Spearman max was 0.3782 (formula), with table at -0.0503 (anti-correlated).
+  D224 tests the structural mirror of D60.m's per-cell-MIN breakthrough:
+  apply MIN aggregation over a rolling K=10 token window of per-token
+  confidence (exp(logprob)). Captures the WORST SUSTAINED REGION of the
+  page's OCR confidence — token-level analogue of "worst cell" reasoning
+  that broke the table ceiling +0.18.
+  Cheap design: set multi_composite + lm_composite to constants (NaN
+  Spearman) so the eval picks clip_cosine for every variant. Total wall ~5
+  min vs D215's 30 min (no SSIM/MSE/LPIPS/DISTS computation). Diagnostic
+  efficiency — we want the per-variant entropy-MIN signal in isolation.
+  Per-variant cc to BEAT (D60.p production):
+    text=0.4139, formula=0.5488, table=0.4767, all=0.3934, all_no_mask=0.3937
+  D215's per-variant clip_cosine Spearman (page-level mean baseline):
+    text=0.1724, formula=0.3782, table=-0.0503, all=0.1029, all_no_mask=0.1029
+  Predicted spearman_mean: 0.18-0.30, most likely 0.24 (since cc dominates
+  best-of). Per-variant entropy-MIN cc: predicted +0.05-0.15 over D215 mean
+  baseline. If ANY variant's window-MIN cc > corresponding D215 mean cc by
+  > 0.05, the granularity hypothesis is supported -> proceed to true
+  per-bbox D224.b. If no granularity lift across all variants, the entropy
+  axis is structurally exhausted at any per-page aggregation -> consider
+  D213 (sliding-window heat-map area-weighted) or emit COMPLETE.
+  Kill switch: NONE (purely diagnostic).
+  Control: D215 (commit 213f53a journaled REVERT 0.3290).
+date: "2026-04-30"

@@ -1,0 +1,42 @@
+id: P2_060x_docsim_h4e_5050_formula
+name: "D60.x — DocSim+H4.e 50/50 cc fusion for variant=formula only; D60.p stack for other 4 variants"
+category: deep_feature
+script: scripts/methods/P2_060x_docsim_h4e_5050_formula.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_formula_fusion
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MIN); formula (50/50 fuse with H4.e)"
+  baseline_variants: "table-fallback (H6.1 CLIP-only when no bboxes)"
+  formula_fusion: "0.5 * (0.5*CLIP + 0.5*DINOv2) + 0.5 * DocSim_cc = 25%/25%/50% effective for formula"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060x_docsim_h4e_5050_formula/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060x_docsim_h4e_5050_formula/correlations.json
+description: >
+  D60.x — 50/50 fusion of H4.e (current formula winner: 50/50 CLIP+DINOv2)
+  with DocSim cc for variant=formula only. Other 4 variants byte-equal to
+  D60.p. Hypothesis: the previously-failing D60 uniform on formula
+  (-0.21 from baseline 0.5429) hides potential complementarity at
+  fusion-weight angle. DocSim alone is wrong for formula (formula GT is
+  glyph-disentangled, supervised head trained on edit-distance has wrong
+  invariance). But fusion may pick up complementary discrimination at
+  half-weight if formula's failure was rendering-style sensitivity, not
+  zero-information.
+  Inverted-fusion-math test analogous to D60.f for table — D60.f tested
+  fusion at the WINNING side (DocSim-baseline for {all,all_no_mask}); here
+  we test at the LOSING side (DocSim-baseline for formula).
+  Predicted spearman_mean: 0.4453-0.4475, most likely 0.4465 (formula cc
+  shifts from 0.5488 to ~0.5500-0.5530 if DocSim adds +0.005-0.015
+  complementarity; mean lift = +0.0010-0.0020).
+  KEEP if >= 0.4475. Kill switch: formula cc <= 0.5400 (loses to H4.e
+  baseline). Hit prob: 15-20%.
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, formula cc 0.5488).
+date: "2026-04-30"

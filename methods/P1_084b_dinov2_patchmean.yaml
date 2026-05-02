@@ -1,0 +1,24 @@
+id: P1_084b_dinov2_patchmean
+name: "DINOv2 vitb14 patch-mean cosine (mean-pool over patch tokens, not CLS)"
+category: deep_feature
+script: scripts/methods/P1_084b_dinov2_patchmean.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14
+  dino_size: 224
+  batch_size: 16
+  feature: patch_mean
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084b_dinov2_patchmean/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084b_dinov2_patchmean/correlations.json
+description: >
+  Refinement of H4 (P1_084_dinov3_patch). Instead of the CLS token, uses mean-pooling
+  over all patch tokens from DINOv2 vitb14's forward_features() output
+  ('x_norm_patchtokens', shape B x N_patches x 768). Mean-pooled across N -> (B, 768),
+  L2-normalised, cosine similarity stored in clip_cosine slot.
+  Hypothesis H4.b: patch-mean preserves spatial granularity that CLS collapses,
+  recovering the table regression (-0.027 in H4) while maintaining the formula gain
+  (+0.117 in H4). multi_composite (SSIM/MSE/LPIPS) is UNCHANGED vs baseline.
+  Image preprocessing: RGB, resize to 224x224, ImageNet mean/std normalisation.
+date: "2026-04-25"

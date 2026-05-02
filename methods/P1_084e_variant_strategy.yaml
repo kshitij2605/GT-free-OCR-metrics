@@ -1,0 +1,23 @@
+id: P1_084e_variant_strategy
+name: "H4.e Per-variant strategy: table=CLIP-only, others=50/50 CLIP+DINOv2"
+category: deep_feature
+script: scripts/methods/P1_084e_variant_strategy.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084e_variant_strategy/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084e_variant_strategy/correlations.json
+description: >
+  H4.e: Per-variant strategy selection. For variant=table: clip_cosine = OpenCLIP_ViT-B/32 only
+  (recovering H4.d's table improvement: 0.2681 vs H4.c's 0.2500). For all other variants:
+  clip_cosine = 0.5 * DINOv2_vitb14_CLS + 0.5 * OpenCLIP_ViT-B/32 (preserving H4.c's
+  all_no_mask improvement: 0.3073 vs H4.d's 0.2893). Best-of-both composition:
+  H4.c won all_no_mask (+0.018), H4.d won table (+0.018), H4.e should compound both.
+  multi_composite (SSIM/MSE/LPIPS) UNCHANGED vs baseline.
+  Control: H4.c (5a6ea4c, spearman_mean=0.3526).
+  Predicted: spearman_mean ~ 0.357.
+date: "2026-04-25"

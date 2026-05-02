@@ -1,0 +1,44 @@
+GT-Free OCR Metrics
+Copyright [year] [Author(s)]
+
+This product includes or is derived from the following third-party works:
+
+OmniDocBench
+  Copyright 2024 OpenDataLab / Shanghai Jiao Tong University
+  License: Creative Commons Attribution-NonCommercial 4.0 International
+           https://creativecommons.org/licenses/by-nc/4.0/
+  Source:  https://huggingface.co/datasets/opendatalab/OmniDocBench
+
+Qwen2.5 / Qwen3.5 (used for OCR inference; pre-computed outputs included)
+  Copyright 2024 Alibaba Cloud
+  License: Apache 2.0
+  Source:  https://huggingface.co/Qwen
+
+OpenCLIP
+  Copyright 2021 mlfoundations
+  License: MIT
+  Source:  https://github.com/mlfoundations/open_clip
+
+DINOv2
+  Copyright 2023 Meta AI
+  License: Apache 2.0
+  Source:  https://github.com/facebookresearch/dinov2
+
+LPIPS (Learned Perceptual Image Patch Similarity)
+  Copyright 2018 Richard Zhang, Phillip Isola, Alexei A. Efros, Eli Shechtman, Oliver Wang
+  License: BSD 2-Clause
+  Source:  https://github.com/richzhang/PerceptualSimilarity
+
+ST-LPIPS (Shift-Tolerant LPIPS)
+  Copyright 2022 Shuntaro Okada and Justin Johnson
+  License: MIT
+  Source:  https://github.com/abhijay9/ShiftTolerant-LPIPS
+
+DreamSim
+  Copyright 2023 Carnegie Mellon University
+  License: MIT
+  Source:  https://github.com/ssundaram21/dreamsim
+
+The dataset cards in data/hf_readmes/ are released under CC-BY-4.0.
+The source dataset (OmniDocBench) is CC-BY-NC-4.0; users must comply
+with those terms when using the original page scans.

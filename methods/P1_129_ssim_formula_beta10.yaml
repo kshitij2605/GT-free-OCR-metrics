@@ -1,0 +1,27 @@
+id: P1_129_ssim_formula_beta10
+name: "D129 — SSIM formula β=0.10 (sweep from D123's β=0.05)"
+category: composite
+script: scripts/methods/P1_129_ssim_formula_beta10.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.0
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_129_ssim_formula_beta10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_129_ssim_formula_beta10/correlations.json
+description: >
+  D129 — SSIM formula β sweep step 2: 0.05→0.10. Based on D124 stack (NEW BEST 0.49084).
+  D123 KEEP formula SSIM β=0.05 (+0.002 formula Spearman, +0.0003 mean). D129 tests β=0.10.
+  Formula: (1-0.3-0.5-0.10)*avg_cos + 0.30*entropy + 0.50*IQ + 0.10*ssim = 0.10*avg_cos + ...
+  Predicted: marginal gain if β-axis has headroom, revert if diminishing returns at 0.05 already.
+  KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
+date: "2026-05-02"

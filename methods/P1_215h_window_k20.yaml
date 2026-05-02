@@ -1,0 +1,28 @@
+id: P1_215h_window_k20
+name: "D215.h — variant-conditional fusion with larger window K=20"
+category: self_uncertainty
+script: scripts/methods/P1_215h_window_k20.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  window_k: 20
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215h_window_k20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215h_window_k20/correlations.json
+description: >
+  D215.h — same variant-conditional alpha as D215.e but with larger window
+  K=20 (instead of K=10) for the rolling-window MIN of per-token confidence.
+  Larger window smooths token-level noise — captures sustained low-confidence
+  regions only. May lift if K=10 was too noisy; may hurt if it smears short
+  error bursts.
+  Predicted: 0.460-0.470, most likely 0.464 (+0.001 vs D215.e 0.4638).
+  KEEP if >= 0.466.
+  Control: D215.e (window K=10, 0.4638).
+date: "2026-04-30"

@@ -1,0 +1,40 @@
+id: P1_215_qwen_logprob_confidence_mean
+name: "D215 — Raw Qwen confidence_mean as cc replacement (per-page logprob mean)"
+category: self_uncertainty
+script: scripts/methods/P1_215_qwen_logprob_confidence_mean.py
+script_args: ""
+parameters:
+  vram_gb: 6
+  encoder: "qwen_logprobs (no model load) + ssim/mse/lpips for multi_composite"
+  logprobs_root: data/ocr_logprobs
+  batch_size: 16
+dependencies:
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215_qwen_logprob_confidence_mean/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215_qwen_logprob_confidence_mean/correlations.json
+description: >
+  D215 — Phase-1 carried direction, UNBLOCKED 2026-04-30 by operator's logprob
+  OCR re-run (data/ocr_logprobs/<page>/ocr_logprobs.json now populated for
+  1355/1355 pages). Tests the simplest token-level self-uncertainty signal:
+  per-page confidence_mean = mean(exp(token_logprob)) over Qwen OCR tokens.
+  This is a UNIVERSAL per-page scalar (variant-independent), so each variant
+  gets the same ranking; per-variant Spearman differs only because each
+  variant's GT dimension differs.
+  Strategy: replace clip_compare.clip_cosine with confidence_mean for ALL 5
+  variants; preserve production multi_composite (H5.b/H4.e baseline path,
+  i.e. SSIM+MSE+LPIPS [+ DISTS for variant=all]). Eval picks per-variant
+  best of (multi_composite, confidence_mean). Where confidence_mean Spearman
+  > current production cc per-variant, that's a NEW PER-VARIANT CEILING
+  candidate for fusion in a follow-up experiment.
+  Diagnostic outcome — the per-variant breakdown matters more than the
+  spearman_mean. Even if mean regresses vs 0.4453, a single variant ceiling
+  break opens the entropy axis for follow-up D213/D217/D224 experiments.
+  Production-stack per-variant cc to BEAT (D60.p anchors):
+    text=0.4139 (DocSim cc), formula=0.5488 (H4.e), table=0.4767 (per-cell-MIN),
+    all=0.3934 (DocSim cc), all_no_mask=0.3937 (DocSim cc).
+  Predicted spearman_mean: 0.30-0.42, most likely 0.35 (REVERT vs 0.4453,
+  but per-variant breakdown is the actual signal).
+  Kill switch: NONE — this is purely diagnostic; we want the per-variant
+  numbers regardless of overall direction.
+  Control: D60.p (commit 0770856, spearman_mean 0.4453).
+date: "2026-04-30"

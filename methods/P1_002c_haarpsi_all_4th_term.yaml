@@ -1,0 +1,32 @@
+id: P1_002c_haarpsi_all_4th_term
+name: "H13.2 HaarPSI as 4th term in mc REPLACING DISTS for variant=all only"
+category: frequency
+script: scripts/methods/P1_002c_haarpsi_all_4th_term.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_002c_haarpsi_all_4th_term/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_002c_haarpsi_all_4th_term/correlations.json
+description: >
+  H13.2 (linear-strategy queue, sibling REFINE under H5.b confirmed 4th-term mechanism):
+  HaarPSI replaces DISTS as 4th term in multi_composite for variant=all only.
+  H5.b confirmed DISTS-as-4th-term lifted variant=all mc by +0.065 (the only confirmed
+  mc 4th-term win across all 5 variants). HaarPSI (D2, priority #2, Reisenhofer et al.
+  Signal Processing 2018) uses 6 discrete 2D Haar wavelet filters and weights local
+  similarity by low-frequency coefficients — fundamentally orthogonal to DISTS's
+  untrained-VGG-statistics signal class. Test if HaarPSI beats DISTS in the variant=all
+  4th-term slot.
+  Composite for variant=all: 0.30*SSIM + 0.20*(1-MSE) + 0.20*(1-LPIPS) + 0.30*HaarPSI.
+  All other variants UNCHANGED from H11.2 (variant=table+all_no_mask cc: H6.1+H11.2
+  preprocessing; text/formula/all_no_mask mc: original 3-term composite).
+  Note: H13.1 showed HaarPSI as 4th-term for variant=all_no_mask DROPPED mc 0.264->0.259
+  (refuted), but all_no_mask is cc-bound. variant=all is mc-bound (mc=0.283 > cc=0.203),
+  so a 4th-term mc lift here directly raises spearman_mean.
+  Predicted: variant=all mc 0.283 -> 0.27-0.30 (HaarPSI may match or beat DISTS).
+  spearman_mean 0.3600 -> 0.357-0.366.
+  Control: H11.2 P1_120c3b (best=0.3600).
+date: "2026-04-27"

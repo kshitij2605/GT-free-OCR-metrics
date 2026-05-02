@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# autoresearch_eval.sh — LOCAL SSH SHIM
+#
+# Runs on the local Windows machine where outer_loop.sh lives.
+# Pushes method/script edits to the remote GPU host, invokes the real eval
+# there, pulls results back, and emits the same structured metric block the
+# remote version produces. The Lead and Experiment Runner never see the ssh
+# boundary — they just call this and get back a scalar.
+#
+# Usage:
+#   bash scripts/autoresearch_eval.sh                      # auto-detect latest method
+#   bash scripts/autoresearch_eval.sh --method-id haarpsi
+#   METHOD_ID=haarpsi bash scripts/autoresearch_eval.sh
+#   bash scripts/autoresearch_eval.sh --skip-metrics       # reuse cached results.json
+set -euo pipefail
+
+REMOTE="mac@iitgpu11.hon.otsuka-shokai.co.jp"
+REMOTE_DIR="/home/mac/test/r1-p2"
+
+cd "$(dirname "$0")/.."
+
+METHOD_ID="${METHOD_ID:-}"
+EXTRA_FLAGS=()
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --method-id) METHOD_ID="$2"; shift 2 ;;
+        --skip-metrics|--full) EXTRA_FLAGS+=("$1"); shift ;;
+        *) echo "autoresearch_eval (local): unknown flag $1" >&2; exit 64 ;;
+    esac
+done
+
+if [[ -z "$METHOD_ID" ]]; then
+    latest=$(ls -t methods/*.yaml 2>/dev/null | head -1 || true)
+    [[ -z "$latest" ]] && { echo "autoresearch_eval (local): no methods/*.yaml found" >&2; exit 65; }
+    METHOD_ID="$(basename "$latest" .yaml)"
+    echo "autoresearch_eval (local): auto-detected METHOD_ID=$METHOD_ID" >&2
+fi
+
+YAML="methods/${METHOD_ID}.yaml"
+[[ -f "$YAML" ]] || { echo "autoresearch_eval (local): $YAML not found" >&2; exit 66; }
+
+# ── Push the current method to the remote ──────────────────────────────────
+push_method() {
+    local yaml_rel="methods/${METHOD_ID}.yaml"
+    local script_rel
+    script_rel=$(grep -E "^script:" "$YAML" | head -1 | awk '{print $2}' | tr -d '"'"'")
+    [[ -z "$script_rel" ]] && { echo "autoresearch_eval (local): no 'script:' in $YAML" >&2; exit 67; }
+
+    echo "autoresearch_eval (local): pushing $yaml_rel and $script_rel to $REMOTE" >&2
+    local files_to_push=("$yaml_rel")
+    [[ -f "$script_rel" ]] && files_to_push+=("$script_rel")
+    tar cf - "${files_to_push[@]}" | ssh "$REMOTE" "cd $REMOTE_DIR && tar xf -"
+}
+
+pull_results() {
+    echo "autoresearch_eval (local): pulling results from $REMOTE" >&2
+    local paths=()
+    # Unified output layout: results/method_runs/ocr_<v>/<method_id>/{results,correlations,comparison}.json
+    for v in text formula table all all_no_mask; do
+        paths+=("results/method_runs/ocr_${v}/${METHOD_ID}/results.json")
+        paths+=("results/method_runs/ocr_${v}/${METHOD_ID}/correlations.json")
+        paths+=("results/method_runs/ocr_${v}/${METHOD_ID}/comparison.json")
+    done
+    paths+=("results/leaderboard.json")
+    ssh "$REMOTE" "cd $REMOTE_DIR && tar cf - --ignore-failed-read ${paths[*]} 2>/dev/null" | tar xf - || true
+}
+
+push_method
+
+REMOTE_CMD="cd $REMOTE_DIR && bash scripts/autoresearch_eval.sh --method-id $METHOD_ID"
+for f in "${EXTRA_FLAGS[@]}"; do
+    REMOTE_CMD="$REMOTE_CMD $f"
+done
+
+STDOUT_TMP=$(mktemp)
+trap 'rm -f "$STDOUT_TMP"' EXIT
+
+if ! ssh "$REMOTE" "$REMOTE_CMD" > "$STDOUT_TMP" 2> >(tee /dev/stderr >&2); then
+    echo "autoresearch_eval (local): remote eval failed" >&2
+    pull_results || true
+    exit 1
+fi
+
+pull_results
+
+cat "$STDOUT_TMP"

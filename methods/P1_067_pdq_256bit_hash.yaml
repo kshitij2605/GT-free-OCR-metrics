@@ -1,0 +1,21 @@
+id: P1_067_pdq_256bit_hash
+name: "D67 — PDQ 256-bit perceptual hash (page-level standalone)"
+category: hash_metric
+script: scripts/methods/P1_067_pdq_256bit_hash.py
+script_args: ""
+parameters:
+  vram_gb: 0
+  hash_size: 16
+  hash_bits: 256
+dependencies:
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_067_pdq_256bit_hash/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_067_pdq_256bit_hash/correlations.json
+description: >
+  D67 — Page-level 256-bit pHash as PDQ proxy. Uses imagehash.phash(hash_size=16)
+  for 256-bit hash similarity as standalone metric. Unlike D68 (4x4 grid MIN
+  supplement), this is a full-page comparison without spatial subdivision.
+  Unlike D66 (hash composite in multi_composite slot), this is the primary
+  clip_cosine signal. Programmatic requirement from program.md D67 (critical priority).
+  CPU-only, very fast. KEEP if spearman_mean > 0.4820 (D107b best).
+date: "2026-05-01"

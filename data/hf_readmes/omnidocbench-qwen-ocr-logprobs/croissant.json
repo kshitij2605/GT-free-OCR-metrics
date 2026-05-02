@@ -1,0 +1,384 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "arrayShape": "cr:arrayShape",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "containedIn": "cr:containedIn",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isArray": "cr:isArray",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rai": "http://mlcommons.org/croissant/RAI/"
+  },
+  "@type": "sc:Dataset",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "repo",
+      "name": "repo",
+      "description": "The Hugging Face git repository.",
+      "contentUrl": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs/tree/refs%2Fconvert%2Fparquet",
+      "encodingFormat": "git+https",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-default",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "default/*/*.parquet"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "default_splits/split_name"
+      },
+      "@id": "default_splits",
+      "name": "default_splits",
+      "description": "Splits for the default config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "default_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "default_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "default",
+      "description": "puku128/omnidocbench-qwen-ocr-logprobs - 'default' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "default/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "default/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "default_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/n_total_tokens",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "n_total_tokens"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/n_bboxes",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "n_bboxes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/n_text_bboxes",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "n_text_bboxes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/n_formula_bboxes",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "n_formula_bboxes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/n_table_bboxes",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "n_table_bboxes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/logprob_mean",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "logprob_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/logprob_min",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "logprob_min"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/logprob_max",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "logprob_max"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/shannon_entropy_mean",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "shannon_entropy_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/shannon_entropy_max",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "shannon_entropy_max"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ocr_logprobs_file",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "ocr_logprobs_file"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/per_bbox_logprobs_file",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "per_bbox_logprobs_file"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "omnidocbench-qwen-ocr-logprobs",
+  "description": "\n\t\n\t\t\n\t\tOmniDocBench Qwen OCR Log-Probabilities\n\t\n\nThis dataset provides token-level and bounding-box-level OCR log-probabilities produced by\nrunning Qwen3.5-122B-A10B (via vLLM) on the original page scans of the\nOmniDocBench benchmark.\nIt is a reference-free auxiliary signal — no ground-truth text is used — and is released\nas part of the OmniDocBench Render-and-Compare research project.\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Structure\n\t\n\nocr_logprobs/\n  <page_id>/\n    ocr_logprobs.json   # full per-token… See the full description on the dataset page: https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs.",
+  "alternateName": [
+    "puku128/omnidocbench-qwen-ocr-logprobs"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "Kshitij S",
+    "url": "https://huggingface.co/puku128"
+  },
+  "keywords": [
+    "other",
+    "multilingual",
+    "English",
+    "Chinese",
+    "cc-by-nc-4.0",
+    "1K<n<10K",
+    "arxiv:2412.07626",
+    "🇺🇸 Region: US",
+    "ocr",
+    "document-understanding",
+    "logprobs",
+    "reference-free-metric",
+    "qwen",
+    "document-quality"
+  ],
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "url": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs",
+  "rai:dataLimitations": "This dataset is limited to token-level log-probabilities produced by a single OCR model, Qwen3.5-122B-A10B. Log-probability magnitudes are calibrated to this specific model's tokenizer and output distribution and cannot be compared to or transferred to other OCR systems. Coverage is restricted to the 1,355 pages of OmniDocBench (English and Chinese only); generalisation to other languages, scripts, or document domains outside this distribution has not been validated. The dataset is not suitable for: training OCR systems; evaluating OCR accuracy (logprobs reflect model confidence, not transcription correctness); or deployment in production OCR pipelines. A high-confidence token may still be transcribed incorrectly. Formula and CJK character tokenisation artefacts from the Qwen tokenizer affect per-token statistics for those content types.",
+  "rai:dataBiases": "All log-probabilities originate from a single model (Qwen3.5-122B-A10B), introducing model-specific calibration bias: pages on which this model is systematically over- or under-confident will skew aggregate statistics. The underlying OmniDocBench covers ten document categories with the following approximate page counts derived from page-ID prefix analysis across the 1,355 pages: textbooks / course materials 226 pages, research reports and financial documents 319 pages (covering Chinese financial research reports and EastMoney financial platform documents), newspapers 151 pages, academic papers 209 pages, study / lecture notes 116 pages, slide presentations 108 pages, books 72 pages, exam papers 70 pages, magazines 43 pages, and mixed-layout coloured documents 42 pages. English documents are more numerous than Chinese. Information-dense layouts (newspapers, dense financial tables) tend to produce more variable logprob distributions due to OCR model uncertainty on complex page structure. No annotation was performed by human raters; all logprob values are machine-generated.",
+  "rai:personalSensitiveInformation": "No personally identifiable information (PII) was intentionally collected. OmniDocBench draws from public academic and professional documents. Financial report pages may incidentally reference company names or executive names. No medical, legal, biometric, or demographic data is present. Applicable sensitive categories: none intentionally present. No de-identification steps were applied beyond what is already present in the source OmniDocBench dataset.",
+  "rai:dataUseCases": "Intended uses: (1) research on reference-free OCR quality estimation using model-internal confidence signals as a proxy for transcription difficulty; (2) studying OCR uncertainty patterns across diverse real-world document types (textbooks, research reports, newspapers, academic papers, notes, slides, books, exams, magazines) in English and Chinese; (3) development and evaluation of log-probability-based document quality metrics that do not require ground-truth annotations. Out-of-scope uses: extracting or reconstructing the text content of copyrighted documents; using logprob values as a ground-truth measure of OCR accuracy; training OCR models; applying calibration thresholds derived from this dataset to other OCR systems without re-calibration.",
+  "rai:dataSocialImpact": "Positive impacts: enables development of reference-free OCR evaluation metrics, reducing dependency on expensive manual annotation and lowering barriers to OCR quality assessment in resource-constrained settings. Potential risks: the logprob signal could be misused to identify regions where the model is uncertain and to craft adversarial inputs. The CC-BY-NC-4.0 license restricts commercial use, reducing risk of incorporation into commercial pipelines without proper evaluation. The absence of ground-truth text limits direct utility for misuse as a training corpus.",
+  "rai:hasSyntheticData": false,
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://huggingface.co/datasets/opendatalab/OmniDocBench",
+      "prov:label": "OmniDocBench",
+      "description": "OmniDocBench: Benchmarking Document Parsing with Diverse Layouts on Real-World Data. Published by OpenDataLab / Shanghai Jiao Tong University.",
+      "sc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "prov:wasAttributedTo": {
+        "@id": "https://huggingface.co/opendatalab",
+        "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+      }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q4929239"
+      },
+      "prov:label": "Source image collection",
+      "description": "Original page scan images from OmniDocBench (opendatalab/OmniDocBench) were used as input without modification.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:Agent",
+          "@id": "https://huggingface.co/opendatalab",
+          "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "OCR inference with log-probability extraction",
+      "description": "Each page image was processed by Qwen3.5-122B-A10B served via vLLM with logprobs=True and top_logprobs=5, using the standard OmniDocBench HTML-output OCR prompt (system role + page image). Outputs include the full per-token logprob sequence and the top-5 alternative tokens at each position.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+          "prov:label": "Qwen3.5-122B-A10B (served via vLLM)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1783551"
+      },
+      "prov:label": "Per-bounding-box logprob aggregation",
+      "description": "Tokens were attributed to bounding boxes by matching token character-offset ranges against the HTML <div data-bbox='...'> structure produced by the OCR model. Per-bbox aggregate statistics (mean, min, max logprob; mean and max Shannon entropy computed from the top-5 logprob distributions) were computed from the attributed token sequences. Fully automated; no human annotation or quality review was performed.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-qwen-ocr-logprobs",
+          "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
+        }
+      ]
+    }
+  ]
+}

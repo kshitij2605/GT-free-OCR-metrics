@@ -1,0 +1,29 @@
+id: P1_131_all_nm_tablecell_beta05
+name: "D131 — all_no_mask table_cell β reduction 0.10→0.05"
+category: composite
+script: scripts/methods/P1_131_all_nm_tablecell_beta05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.05
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_table_cell_all_no_mask: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_131_all_nm_tablecell_beta05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_131_all_nm_tablecell_beta05/correlations.json
+description: >
+  D131 — all_no_mask table_cell β reduction 0.10→0.05. Based on D128 stack (NEW BEST 0.4918).
+  Reduces table_cell β for all_no_mask from 0.10→0.05 (frees 0.05 to DocSim: 0.40→0.45).
+  Rationale: table_cell_score=0 on pages without table bboxes, but the weight is still
+  allocated, reducing DocSim weight on those pages. Less β_t = more DocSim on non-table pages.
+  all_no_mask: 0.45*DocSim + 0.40*entropy + 0.05*table_cell + 0.10*ssim
+  KEEP if spearman_mean > 0.4918 (D128 NEW BEST).
+date: "2026-05-02"

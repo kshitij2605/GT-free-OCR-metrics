@@ -1,0 +1,36 @@
+id: P1_120c2_table_4quad_clip
+name: "H6.0 Table-cc-specialist: 5-crop CLIP cosine average for variant=table"
+category: deep_feature
+script: scripts/methods/P1_120c2_table_4quad_clip.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32_5crop_table
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c2_table_4quad_clip/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c2_table_4quad_clip/correlations.json
+description: >
+  H6.0 (Branch 6, table-cc-specialist): For variant=table only, replace single full-image
+  CLIP cosine with mean of 5 CLIP cosines computed at: full image + top-half + bottom-half
+  + left-half + right-half. The 4 spatial halves capture local cell-grid structure that
+  single 224x224 CLIP CLS pooling fails to resolve. This is a poor-man's MaskCLIP / dense
+  per-pixel similarity (digest H8 recommendation) using only existing CLIP weights.
+
+  Architecture (delta vs P1_120b H5.b):
+    variant=table: cc = mean(CLIP(full), CLIP(top), CLIP(bottom), CLIP(left), CLIP(right))
+                   mc = original 0.4*SSIM + 0.3*(1-MSE) + 0.3*(1-LPIPS) (UNCHANGED, was already original)
+    variant=all: cc = 0.5*CLIP(full) + 0.5*DINOv2_CLS(full) (UNCHANGED H4.e)
+                 mc = 0.3*SSIM + 0.2*(1-MSE) + 0.2*(1-LPIPS) + 0.3*(1-DISTS) (UNCHANGED H5.b)
+    variant=text/formula/all_no_mask: cc = 0.5*CLIP+0.5*DINOv2 (UNCHANGED H4.e)
+                                       mc = original 0.4/0.3/0.3 (UNCHANGED)
+
+  Rationale: spearman_mean=0.3581 ceiling under H5.b is set by table cc=0.268 (CLIP-only).
+  mc 4th-term tweaks (DISTS, MS-SWD) cannot break it because table mc < cc=0.268. Must
+  improve table cc itself. Spatial multi-crop CLIP averaging adds local structure signal
+  without changing encoder weights or pipeline.
+
+  Control: H5.b (bedac9a, spearman_mean=0.3581, table_best=0.268).
+  Predicted: table cc 0.268 -> 0.275-0.290; spearman_mean 0.3581 -> 0.360-0.366.
+date: "2026-04-26"

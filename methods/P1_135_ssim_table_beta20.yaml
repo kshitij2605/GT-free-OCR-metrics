@@ -1,0 +1,27 @@
+id: P1_135_ssim_table_beta20
+name: "D135 — SSIM table β sweep 0.15→0.20"
+category: composite
+script: scripts/methods/P1_135_ssim_table_beta20.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.20
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_135_ssim_table_beta20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_135_ssim_table_beta20/correlations.json
+description: >
+  D135 — SSIM table β sweep step 4: 0.15→0.20. Based on D133 (NEW BEST 0.4927).
+  Diminishing returns observed: β=0.05/0.10/0.15 → +0.005/+0.003/+0.002 per step.
+  table: 0.70*per_cell_MIN + 0.10*IQ + 0.20*ssim
+  Expected: ~+0.001 or peak reached at β=0.15-0.20.
+  KEEP if spearman_mean > 0.4927 (D133 NEW BEST).
+date: "2026-05-02"

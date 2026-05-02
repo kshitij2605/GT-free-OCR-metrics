@@ -1,0 +1,37 @@
+id: P2_060j_docsim_text_all_anomask
+name: "D60.j — DocSim cc for {text, all, all_no_mask}; baseline H4.e/H6.1 for {formula, table}"
+category: deep_feature
+script: scripts/methods/P2_060j_docsim_text_all_anomask.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  docsim_variants: "text, all, all_no_mask"
+  baseline_variants: "formula (H4.e fusion), table (H6.1 CLIP-only)"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060j_docsim_text_all_anomask/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060j_docsim_text_all_anomask/correlations.json
+description: >
+  D60.j — extend D60.b's variant-conditional DocSim by adding variant=text
+  to the DocSim-cc set. Other variants unchanged from D60.b stack
+  (baseline H4.e for formula, baseline H6.1 CLIP-only for table).
+  Empirical justification (from post-fix dataset audit re-run of D60 uniform):
+  DocSim cc on variant=text yields spearman=0.4139 — substantially above
+  baseline text mc=0.3886 and far above baseline text cc=0.1579. The
+  D60 uniform digest had labelled variant=text as ~tie with baseline
+  ("0.3887 vs 0.3889") because the pre-fix dataset compressed the
+  measurable signal; the post-fix audit reveals the true cc value at 0.4139.
+  Predicted spearman_mean (back-of-envelope from per-variant): 0.4093
+  (= avg(0.4139, 0.5488, 0.2966, 0.3934, 0.3937)). Δ vs D60.b post-fix
+  anchor (0.4042): +0.0051 — clearly above noise.
+  KEEP if >= 0.406. Kill switch: text DocSim cc <= 0.39 (would mean the
+  per-variant audit number 0.4139 didn't reproduce when used in this
+  variant-conditional configuration).
+  Control: D60.b post-fix (P2_060b_docsim_variant_conditional, 0.4042).
+date: "2026-04-29"

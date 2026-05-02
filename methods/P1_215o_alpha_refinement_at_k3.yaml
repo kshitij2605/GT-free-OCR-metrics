@@ -1,0 +1,30 @@
+id: P1_215o_alpha_refinement_at_k3
+name: "D215.o — α refinement at K=3 (α=0.5 for text/all_no_mask, α=0.4 for all)"
+category: self_uncertainty
+script: scripts/methods/P1_215o_alpha_refinement_at_k3.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.4
+  alpha_text: 0.5
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.5
+  k_text: 3
+  k_all: 3
+  k_all_no_mask: 3
+  k_formula: 20
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215o_alpha_refinement_at_k3/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215o_alpha_refinement_at_k3/correlations.json
+description: >
+  D215.o — α refinement at K=3 boundary. Original α-sweep (D215.b/c/d/f)
+  was at K=10; D215.f (α=0.5 uniform K=10) showed all 5 variants peaked
+  at α<=0.4. But at K=3 the entropy signal is more discriminative (smaller
+  window captures shorter error bursts), so the optimal α may shift higher.
+  Test α=0.5 for text/all_no_mask and α=0.4 for all (was 0.3 at K=10) at K=3.
+  Predicted: 0.465-0.475, most likely 0.470. KEEP if >= 0.473.
+  Control: D215.k (α=0.4/0.4/0.3/0.4 at K=3, 0.4701).
+date: "2026-04-30"

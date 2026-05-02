@@ -1,0 +1,24 @@
+id: P1_215d_alpha040_fusion
+name: "D215.d — D60.p cc + window-MIN confidence fusion at alpha=0.4"
+category: self_uncertainty
+script: scripts/methods/P1_215d_alpha040_fusion.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_entropy: 0.4
+  window_k: 10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215d_alpha040_fusion/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215d_alpha040_fusion/correlations.json
+description: >
+  D215.d — alpha sweep step 2: clip_cosine_new = 0.6 * production_cc + 0.4 *
+  window_min_confidence. Parallel sibling of D215.c, tests whether the
+  fusion peak is at alpha=0.3 or higher (alpha=0.4). Beyond alpha=0.5 the
+  entropy noise dominates production signal and we expect monotonic decay.
+  Predicted: 0.455-0.470, most likely 0.464. KEEP if >= 0.460. Kill switch:
+  NONE.
+  Control: D215.b (alpha=0.2, 0.4577).
+date: "2026-04-30"

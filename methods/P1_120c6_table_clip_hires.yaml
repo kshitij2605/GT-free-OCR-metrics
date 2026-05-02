@@ -1,0 +1,29 @@
+id: P1_120c6_table_clip_hires
+name: "H6.4 Table-CLIP ViT-B/32 @ 336x336 hi-res input (more patches at coarse encoder) — resolution upgrade over H6.1"
+category: deep_feature
+script: scripts/methods/P1_120c6_table_clip_hires.py
+script_args: ""
+parameters:
+  vram_gb: 5
+  encoder: dinov2_vitb14+openclip_vitb32_hires336_table_only
+  dino_size: 224
+  clip_hires_size: 336
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c6_table_clip_hires/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c6_table_clip_hires/correlations.json
+description: >
+  H6.4: REFINE of H6.1. Keep proven OpenCLIP ViT-B/32 (laion2b_s34b_b79k) encoder for
+  variant=table but increase input resolution 224->336 via force_image_size=336.
+  At 336x336, ViT-B/32 processes ~(336/32)^2=110 patches vs ~(224/32)^2=49 patches
+  at 224 — ~2.25x more spatial detail flowing into the same global CLS pool.
+  H6.2 proved ViT-L/14 (finer 14px patches) catastrophically hurt table cc (0.277->0.189),
+  confirming encoder family must stay ViT-B/32. H6.4 instead increases resolution at the
+  same coarse-patch encoder.
+  For variant=table: ViT-B/32 @ 336x336 + H6.1 baseline preprocessing
+  (grayscale+SHARPEN+autocontrast->RGB). For all other variants: ViT-B/32 @ 224 + 50/50
+  DINO+CLIP fusion (raw RGB) — unchanged from H6.1. multi_composite formulas unchanged
+  from H5.b/H6.1 (DISTS-augmented for variant=all, original 0.4/0.3/0.3 for others).
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
+  Predicted: spearman_mean ~ 0.361-0.365 (table cc 0.277->0.285-0.305, +0.008-0.028).
+date: "2026-04-26"

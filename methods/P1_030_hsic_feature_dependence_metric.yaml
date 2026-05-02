@@ -1,0 +1,36 @@
+id: P1_030_hsic_feature_dependence_metric
+name: "D30 HSIC feature dependence metric replacing cosine for variant=all_no_mask cc only"
+category: deep_feature
+script: scripts/methods/P1_030_hsic_feature_dependence_metric.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_030_hsic_feature_dependence_metric/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_030_hsic_feature_dependence_metric/correlations.json
+description: >
+  D30: Replace cosine inside clip_cosine slot with normalized HSIC (Centered Kernel
+  Alignment, CKA, with Gaussian/RBF kernels) for variant=all_no_mask cc only. Per-page
+  HSIC treats the GT and reconstruction feature vectors (D-dim each from DINOv2-CLS
+  and OpenCLIP CLS, after H11.2 preprocessing) as D 1D samples each; constructs RBF
+  kernel matrices with median-heuristic bandwidth; computes normalized HSIC =
+  trace(Kx_c Ky_c) / sqrt(trace(Kx_c Kx_c) * trace(Ky_c Ky_c)), where Kx_c, Ky_c are
+  centered. Result is in [0, 1] for non-negative kernels. Substitutes for the cosine
+  in the 50/50 fusion: all_no_mask_cc_score = 0.5 * HSIC(DINOv2_GT, DINOv2_recon)
+  + 0.5 * HSIC(CLIP_GT, CLIP_recon). All other variants (text, formula, table, all)
+  use the unmodified P1_120c3b stack (H4.e CLIP+DINOv2 50/50 cosine + H5.b DISTS-as-
+  4th-term mc + H6.1 / H11.2 preprocessing). Mechanism class: kernel-based statistical
+  dependence of feature distributions across paired dimensions, distinct from pointwise
+  cosine, distance correlation (DeepDC), Wasserstein over distributions (DeepWSD), and
+  PCA orthogonalisation. Hypothesis: cosine flattens distributional alignment to a
+  single inner product; HSIC captures higher-order moments (kurtosis, joint shape) that
+  may correlate with rendering fidelity in the all_no_mask variant whose signal lives
+  outside text regions. Control: H11.2 (P1_120c3b, spearman_mean=0.3600).
+  Predicted: spearman_mean ~ 0.355-0.365 (most likely 0.358); KEEP if >= 0.362.
+  HARD KILL SWITCH: if all_no_mask cc <= 0.295 AND spearman_mean < 0.359, the slot-
+  interior cc-replacement axis is QUADRUPLE-confirmed exhausted across all 5 variants;
+  emit COMPLETE per pre-committed digest escalation rule.
+date: "2026-04-27"

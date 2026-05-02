@@ -1,0 +1,25 @@
+id: P1_107b_beta_table_cell_20
+name: "D107b — per-table-cell MIN DocSim supplement β=0.20 sweep (from D107 β=0.10 KEEP)"
+category: per_element_structure
+script: scripts/methods/P1_107b_beta_table_cell_20.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_all: 0.3
+  alpha_all_no_mask: 0.4
+  beta_table_cell: 0.20
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_107b_beta_table_cell_20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_107b_beta_table_cell_20/correlations.json
+description: >
+  D107b — sweeps β=0.20 for per-table-cell MIN DocSim supplement on all/all_no_mask.
+  D107 at β=0.10 KEEPed with all end_to_end 0.4209→0.4228 (+0.0019), spearman_mean
+  0.4814→0.4818. Hypothesis: higher β=0.20 continues the lift (more weight on
+  content-homogeneous cell-level signal). For pages with table bboxes:
+    all: 0.50*page_DocSim + 0.30*entropy + 0.20*cell_MIN
+    all_no_mask: 0.40*page_DocSim + 0.40*entropy + 0.20*cell_MIN
+  KEEP if > 0.4818. Decision: KEEP→sweep β=0.30; REVERT-tie→β peak at 0.10.
+date: "2026-05-01"

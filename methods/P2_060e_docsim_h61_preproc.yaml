@@ -1,0 +1,33 @@
+id: P2_060e_docsim_h61_preproc
+name: "D60.e — DocSim with H6.1 preprocessing for {all, all_no_mask}"
+category: deep_feature
+script: scripts/methods/P2_060e_docsim_h61_preproc.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  preproc: "H6.1 (grayscale+SHARPEN+autocontrast->RGB) before DocSim feature extraction"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060e_docsim_h61_preproc/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060e_docsim_h61_preproc/correlations.json
+description: >
+  D60.e — refinement of D60.b. For variants {all, all_no_mask}, apply
+  H6.1 preprocessing (grayscale + ImageFilter.SHARPEN + autocontrast -> RGB)
+  to the input before computing DocSim cosine. Other variants unchanged.
+  Tests interaction between supervised LoRA head and the H11.2-confirmed
+  preprocessing transform.
+  Risk: DocSim was TRAINED on raw RGB triplets. Changing the inference
+  distribution could degrade performance if the LoRA features are
+  preprocessing-sensitive.
+  Predicted spearman_mean: 0.388-0.399 (Synthesizer recommended 0.395-0.399).
+  KEEP if >= 0.395.
+  Kill switch: spearman_mean <= 0.391 closes the preprocessing+supervised
+  interaction axis (DocSim is preprocessing-invariant or fragile).
+  Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
+date: "2026-04-28"

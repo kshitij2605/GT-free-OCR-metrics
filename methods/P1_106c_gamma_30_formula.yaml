@@ -1,0 +1,28 @@
+id: P1_106c_gamma_30_formula
+name: "D106.c — gamma sweep step: gamma=0.3 D106 IQ on formula (was 0.2 in D106.b)"
+category: self_uncertainty
+script: scripts/methods/P1_106c_gamma_30_formula.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  gamma_diqa_formula: 0.3
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106c_gamma_30_formula/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106c_gamma_30_formula/correlations.json
+description: >
+  D106.c — gamma-sweep step. Increase gamma_diqa from 0.2 (D106.b NEW
+  BEST 0.4804) to 0.3, keeping alpha_entropy=0.3 unchanged. New formula
+  weights: prod_cc=0.4, entropy=0.3, D106=0.3 (was prod_cc=0.5,
+  entropy=0.3, D106=0.2 in D106.b). Tests if D106 weight 0.2 was below
+  optimum.
+  Predicted formula: 0.595-0.610 (could exceed 0.6011 or decay if past
+  peak). Predicted spearman_mean: 0.478-0.483. KEEP if > 0.4804.
+  Decision: KEEP -> NEW BEST -> sweep gamma=0.4 next; REVERT-tie ->
+  D106.b's 0.2 was at-or-near peak; PROCEED to D106.e (broader fusion
+  scope, e.g., D106 on text or all_no_mask).
+  Control: D106.b (0.4804, formula gamma=0.2).
+date: "2026-05-01"

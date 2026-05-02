@@ -1,0 +1,38 @@
+id: P2_060b_docsim_variant_conditional
+name: "D60.b — Variant-conditional DocSim (DocSim cc only for {all, all_no_mask})"
+category: deep_feature
+script: scripts/methods/P2_060b_docsim_variant_conditional.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060b_docsim_variant_conditional/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060b_docsim_variant_conditional/correlations.json
+description: >
+  D60.b — variant-conditional refinement of D60. Reuses the trained DocSim
+  LoRA head unchanged; switches deployment strategy from uniform-replace to
+  variant-conditional based on D60's per-variant breakdown.
+  Logic per variant:
+    text:        baseline H4.e (50/50 CLIP+DINOv2 fusion, raw RGB)
+    formula:     baseline H4.e (50/50 CLIP+DINOv2 fusion, raw RGB)
+    table:       baseline H6.1 (CLIP-only with grayscale+SHARPEN+autocontrast preproc)
+    all:         DocSim (LoRA-projected CLIP+DINOv2 fusion, raw RGB)              ← changed
+    all_no_mask: DocSim (LoRA-projected CLIP+DINOv2 fusion, raw RGB)              ← changed
+  multi_composite (SSIM/MSE/LPIPS [+ DISTS for variant=all]) UNCHANGED from
+  P1_120c3b. Only clip_compare.clip_cosine differs for {all, all_no_mask}.
+  D60 (uniform-replace) per-variant Spearmans showed:
+    all: 0.3689 (+0.0855 vs 0.2834 baseline)
+    all_no_mask: 0.3901 (+0.0819 vs 0.3082 baseline)
+  Combined with baseline-best for the other 3 variants:
+    spearman_mean = (0.3889 + 0.5429 + 0.2766 + 0.3689 + 0.3901)/5 = 0.3935
+  This would be the FIRST improvement above 0.3600 in 18+ experiments.
+  Control: H11.2 / P1_120c3b (89aee86, spearman_mean=0.3600).
+  Predicted: spearman_mean ≈ 0.3935. KEEP if ≥ 0.361.
+date: "2026-04-28"

@@ -1,0 +1,23 @@
+id: P1_084c_dinov2_clip_avg
+name: "H4.c CLIP+DINOv2 average cosine fusion in clip_cosine slot"
+category: deep_feature
+script: scripts/methods/P1_084c_dinov2_clip_avg.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084c_dinov2_clip_avg/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084c_dinov2_clip_avg/correlations.json
+description: >
+  H4.c: clip_cosine = 0.5 * DINOv2_vitb14_CLS_cosine + 0.5 * OpenCLIP_ViT-B/32_cosine.
+  Attempts to recover CLIP's table strength (H4 regressed table -0.027) while keeping
+  DINOv2's formula gain (+0.117). multi_composite (SSIM/MSE/LPIPS) UNCHANGED vs baseline.
+  Hypothesis: averaging the two encoders hedges their per-variant specializations.
+  DINOv2 pre-cached at /home/mac/.cache/torch/hub/facebookresearch_dinov2_main.
+  OpenCLIP ViT-B-32 laion2b_s34b_b79k uses its own preprocess pipeline (224x224 + CLIP norm).
+  Control: H4 DINOv2 CLS (6b4aafc, spearman_mean=0.3486).
+  Predicted: spearman_mean ~ 0.345-0.355.
+date: "2026-04-25"

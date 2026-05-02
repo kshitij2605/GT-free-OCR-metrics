@@ -1,0 +1,33 @@
+id: P1_106m_iq_fusion_all_05
+name: "D106.m — first IQ-fusion on all/all_no_mask at γ=0.05 (from D106.h best 0.4814)"
+category: self_uncertainty
+script: scripts/methods/P1_106m_iq_fusion_all_05.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  alpha_table: 0.0
+  gamma_diqa_formula: 0.5
+  gamma_diqa_table: 0.1
+  gamma_diqa_all: 0.05
+  gamma_diqa_all_no_mask: 0.05
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106m_iq_fusion_all_05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106m_iq_fusion_all_05/correlations.json
+description: >
+  D106.m — first IQ-fusion on variant=all and all_no_mask at γ=0.05.
+  D106 standalone: all=0.2909 (vs prod_cc 0.4209, gap -0.130), all_no_mask=
+  0.2802 (vs 0.4394, gap -0.159). Both weaker than table's standalone 0.2966
+  (gap -0.178) which benefited from γ=0.10. Very small γ=0.05 (half of table
+  baseline) tests whether any complementary orthogonal signal exists.
+  formula stays γ=0.50 (D106.h peak), table stays γ=0.10 (D106.d), text γ=0.
+  At γ=0.05: all = 0.65*prod_cc + 0.30*entropy + 0.05*IQ;
+             all_no_mask = 0.55*prod_cc + 0.40*entropy + 0.05*IQ.
+  Predicted: 0.4812-0.4820 (most likely tie or +0.001).
+  KEEP if > 0.4814. Decision: KEEP→sweep γ=0.10 on all/all_no_mask;
+  REVERT-tie→IQ signal on all/all_no_mask exhausted, D106 axis CLOSED.
+  Control: D106.h (0.4814, formula γ=0.50, table γ=0.10).
+date: "2026-05-01"

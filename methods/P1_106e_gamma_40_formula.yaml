@@ -1,0 +1,30 @@
+id: P1_106e_gamma_40_formula
+name: "D106.e — gamma=0.4 D106 IQ on formula (boundary push from D106.c gamma=0.3)"
+category: self_uncertainty
+script: scripts/methods/P1_106e_gamma_40_formula.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  gamma_diqa_formula: 0.4
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106e_gamma_40_formula/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106e_gamma_40_formula/correlations.json
+description: >
+  D106.e — gamma boundary push to 0.4 on variant=formula. Formula
+  trajectory so far: gamma=0 (D224.e) 0.5872 → gamma=0.20 (D106.b)
+  0.6011 → gamma=0.30 (D106.c) 0.6028. Diminishing returns suggest
+  peak is near 0.30-0.40. Test gamma=0.40 to bracket the peak.
+  Formula clip_cosine = 0.3*prod_cc + 0.3*window_min_shannon +
+  0.4*D106_iq_similarity. Other variants byte-equal to D106.c.
+  Predicted formula: 0.595-0.610 (mostly likely peak or slight decay).
+  Predicted spearman_mean: 0.480-0.484. KEEP if > 0.4807.
+  Decision: KEEP -> sweep gamma=0.5; REVERT-tie -> peak bracketed at
+  gamma in [0.30, 0.40]; PROCEED to D106.f (try IQ fusion on a
+  different variant, e.g., text where D106 alone=0.3886 weak but
+  small gamma may add).
+  Control: D106.c (0.4807, formula gamma=0.3).
+date: "2026-05-01"

@@ -1,0 +1,25 @@
+id: P1_120d_table_dists_4th_term
+name: "H5.e Variant-conditional multi_composite: DISTS-augmented for variant=all AND variant=table"
+category: deep_feature
+script: scripts/methods/P1_120d_table_dists_4th_term.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120d_table_dists_4th_term/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120d_table_dists_4th_term/correlations.json
+description: >
+  H5.e: Extends H5.b's variant-conditional composite to also cover variant=table.
+  For variant=all and variant=table: use DISTS-augmented rebalanced composite
+  (0.3*SSIM + 0.2*(1-MSE) + 0.2*(1-LPIPS) + 0.3*(1-DISTS)) — table mc (0.250) is
+  below clip_cosine (0.268); DISTS may push table mc above that threshold.
+  For all other variants (text, formula, all_no_mask): keep original composite
+  (0.4*SSIM + 0.3*(1-MSE) + 0.3*(1-LPIPS)) — no rebalancing cost.
+  clip_cosine strategy from H4.e UNCHANGED: variant=table uses CLIP-only;
+  all others use 50/50 CLIP+DINOv2 average.
+  Control: H5.b (bedac9a, spearman_mean=0.3581).
+  Predicted: spearman_mean ~ 0.358-0.367 (+0.000 to +0.009 vs H5.b).
+date: "2026-04-26"

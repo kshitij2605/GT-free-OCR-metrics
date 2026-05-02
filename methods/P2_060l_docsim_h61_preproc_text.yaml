@@ -1,0 +1,37 @@
+id: P2_060l_docsim_h61_preproc_text
+name: "D60.l — H6.1 preprocessing applied before DocSim head for variant=text only (atop D60.j stack)"
+category: deep_feature
+script: scripts/methods/P2_060l_docsim_h61_preproc_text.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  docsim_variants_cc: "text, all, all_no_mask"
+  preproc_docsim_variants: "text"
+  baseline_variants: "formula (H4.e fusion), table (H6.1 CLIP-only)"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060l_docsim_h61_preproc_text/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060l_docsim_h61_preproc_text/correlations.json
+description: >
+  D60.l — extends D60.j by routing variant=text DocSim inputs through H6.1
+  preprocessing (grayscale -> SHARPEN -> autocontrast -> 3-channel RGB)
+  BEFORE the frozen CLIP+DINOv2 encoder pair. Other 4 variants byte-equal
+  to D60.j (raw RGB into DocSim for {all, all_no_mask}, H4.e fusion for
+  formula, H6.1 + CLIP-only for table).
+  Hypothesis: D60.e showed H6.1-on-DocSim was a near-noise tie for
+  {all, all_no_mask} (post-fix 0.4052 vs 0.4042 anchor). variant=text
+  pages are dominated by clean line-text content, the regime H6.1 was
+  originally tuned to enhance — so H6.1-on-DocSim might lift text DocSim
+  cc above 0.4139 (the D60.j confirmed value).
+  Predicted spearman_mean: 0.4093 (tie if text DocSim is preproc-invariant)
+  to 0.414 (if H6.1 lifts text DocSim cc to 0.43-0.44). Most-likely outcome
+  ~0.411, within 0.4093-0.413 band. KEEP if >= 0.412. Kill switch: text
+  DocSim cc <= 0.40.
+  Control: D60.j post-fix (P2_060j_docsim_text_all_anomask, 0.4093).
+date: "2026-04-29"

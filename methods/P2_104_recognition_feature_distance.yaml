@@ -1,0 +1,75 @@
+id: P2_104_recognition_feature_distance
+name: "D104 TrOCR recognition-feature distance for variant=text+all (Phase 2)"
+category: ocr_perceptual
+script: scripts/methods/P2_104_recognition_feature_distance.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  model: microsoft/trocr-small-printed
+  encoder_hidden_size: 384
+  crop_batch_size: 32
+  min_crop_px: 4
+  neutral_score: 0.5
+  scope_variants: "text+all active; formula/table/all_no_mask pass through H11.2 baseline"
+dependencies:
+  - transformers
+results_path: results/method_runs/ocr_{variant}/P2_104_recognition_feature_distance/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_104_recognition_feature_distance/correlations.json
+description: >
+  D104 (Phase 2, Priority medium, Expected Impact Very High): Recognition-feature
+  distance / Content-Perceptual loss.
+
+  Hypothesis: Distance in TrOCR encoder feature space measures text-character fidelity
+  better than CLIP/DINOv2 cosine for variant=text and variant=all, because TrOCR was
+  trained to recognise characters and its internal representations are font-invariant
+  and character-discriminative — exactly the signal CLIP/DINOv2 lack (Phase 1's
+  information-absence ceiling on text cc=0.143 and all cc=0.203 stems from this gap).
+
+  Mechanism:
+    1. Per-page text bboxes from cached ocr_elements.json.
+    2. Crop each element from masked_original.png and reconstructed.png.
+    3. TrOCR encoder forward pass (mean of last_hidden_state, batch=32).
+       NO text decoding — encoder features only, 10-100x faster than generation.
+    4. Per-element cosine similarity between GT-crop and recon-crop features.
+    5. Per-page score = mean(cosines), or 0.5 neutral if no text elements.
+    6. Score written to BOTH multi_composite.composite AND clip_compare.clip_cosine
+       so eval's best_over_metrics(mc, cc) evaluates both channels.
+
+  Scope: variant=text and variant=all only. For formula, table, all_no_mask this
+  script reads H11.2 baseline (P1_120c3b_all_no_mask_baseline_preproc/results.json)
+  and writes verbatim — protecting those 4 per-variant ceilings from regression.
+
+  Why this is not gated by Phase 1 dead-ends:
+    - NOT a slot-replacement of mc or cc inside the CLIP+DINOv2 pipeline.
+    - NOT an encoder swap (TrOCR is a wholly different feature extractor class).
+    - NOT subtractive preprocessing (operates on crop-level features, not pixels).
+    - The slot-interior axis exhaustion applies only within the CLIP+DINOv2 feature
+      space; TrOCR features come from a recognizer trained for character-level
+      discrimination, entirely outside that space.
+
+  Expected lift: variant=text current cc=0.143 << mc=0.389. If TrOCR cc lifts
+  above 0.389, text variant best moves. variant=all current cc=0.203 << mc=0.283;
+  if TrOCR cc > 0.283, all variant best moves.
+
+  Control: H11.2 (P1_120c3b_all_no_mask_baseline_preproc), spearman_mean=0.3600.
+
+  Predicted spearman_mean: 0.358-0.370 (conservative), most likely 0.362-0.368.
+  Kill switch: if spearman_mean <= 0.358, TrOCR feature space does not encode OCR
+  quality variation better than the incumbent CLIP+DINOv2 fusion for document pages
+  at this corpus scale. Revert and record dead_end recognition_feature_distance.
+
+  Sanity test (3 pages, variant=text, 2026-04-28):
+    Device: cuda. TrOCR encoder hidden_size=384.
+    Page 1 (PPT_1001115_eng_page_003): 6 elements, 5 crops, feature std=0.2221,
+      cosines=[0.785, 0.974, 0.962, 0.974, 0.978], page_score=0.9345.
+    Page 2 (PPT_1001115_eng_page_005): 8 elements, 5 crops, feature std=0.1792,
+      cosines=[0.980, 0.761, 0.958, 0.795, 0.984], page_score=0.8956.
+    Page 3 (PPT_1001115_eng_page_011): 14 elements, 5 crops, feature std=0.1991,
+      cosines=[0.954, 0.980, 0.928, 0.857, 0.525], page_score=0.8486.
+    Non-degenerate (std ~0.18-0.22), discriminative (cosines 0.52-0.98 range).
+    Features are NOT all-zeros, NOT all-ones — sanity PASSED.
+
+  Model: microsoft/trocr-small-printed (ViT-S/16 encoder, 384-dim, ~239 MB).
+  Weights cached to /home/mac/.cache/huggingface/hub after first run.
+
+date: "2026-04-28"

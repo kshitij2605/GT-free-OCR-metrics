@@ -1,0 +1,27 @@
+id: P1_084d_variant_conditional
+name: "H4.d variant-conditional encoder (DINOv2 for formula/all_no_mask, CLIP for text/table/all)"
+category: deep_feature
+script: scripts/methods/P1_084d_variant_conditional.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14_or_openclip_vitb32_per_variant
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084d_variant_conditional/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084d_variant_conditional/correlations.json
+description: >
+  H4.d: variant-conditional encoder selection in clip_cosine slot.
+  USE_DINOV2 = variant in {formula, all_no_mask} (DINOv2 wins these in H4/H4.c).
+  USE_CLIP   = variant in {text, table, all}    (CLIP wins or ties these).
+  Only the winning encoder is loaded per variant, saving VRAM.
+  clip_cosine = DINOv2_vitb14_CLS_cosine  if USE_DINOV2 else OpenCLIP_ViT-B/32_cosine.
+  multi_composite (SSIM/MSE/LPIPS) UNCHANGED vs baseline / H4.c.
+  Hypothesis: removes the 50/50 averaging dilution that hurt table (H4.c table=0.2500 vs
+  CLIP-only table=0.278), while preserving formula strength (DINOv2=0.5429).
+  Control: H4.c CLIP+DINOv2 50/50 average (5a6ea4c, spearman_mean=0.3526).
+  Predicted: spearman_mean ~ 0.355 (table recovers +0.028, formula unchanged).
+  DINOv2 pre-cached at /home/mac/.cache/torch/hub/facebookresearch_dinov2_main.
+  OpenCLIP ViT-B-32 laion2b_s34b_b79k uses its own preprocess pipeline (224x224 + CLIP norm).
+date: "2026-04-25"

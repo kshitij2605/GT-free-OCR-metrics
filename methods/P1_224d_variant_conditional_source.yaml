@@ -1,0 +1,53 @@
+id: P1_224d_variant_conditional_source
+name: "D224.d — variant-conditional entropy SOURCE routing (text=class-filtered, others=window-MIN)"
+category: self_uncertainty
+script: scripts/methods/P1_224d_variant_conditional_source.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  window_k_text: 3
+  window_k_all: 3
+  window_k_all_no_mask: 3
+  window_k_formula: 20
+  source_text: "class_filtered_per_bbox_max_entropy_min"
+  source_formula: "window_min_mean_shannon"
+  source_table: "window_min_mean_shannon"
+  source_all: "window_min_mean_shannon"
+  source_all_no_mask: "window_min_mean_shannon"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_224d_variant_conditional_source/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_224d_variant_conditional_source/correlations.json
+description: >
+  D224.d — variant-conditional ENTROPY SOURCE routing. The first
+  experiment to combine D224.c's class-filtered text-uncertainty signal
+  with D215.l's window-MIN signal where it dominates. Per-variant:
+    - text: D224.c source (class-filtered MIN over per-bbox
+      shannon_entropy_max, target_classes = text/title/header/footer/
+      caption + Chinese variants). D224.c proved +0.0151 on text alone.
+    - formula, all, all_no_mask: D215.l source (rolling-K window-MIN of
+      per-token mean Shannon-confidence). D215.l per-variant best on
+      these three.
+    - table: alpha=0, source moot (D60.p per-cell-MIN unchanged).
+  Per-variant alpha (table=0/all=0.3/others=0.4) and window K
+  (text/all/all_no_mask=3, formula=20) match D215.l/D215.k.
+  Sum-of-per-variant-bests projection (per-variant independence proven
+  exact in D215.e/i/k): (0.4640 + 0.5872 + 0.4767 + 0.4221 + 0.4382)/5
+  = 0.4776 (+0.0034 vs D215.l 0.4742).
+  Predicted: 0.474-0.481, most likely 0.478. KEEP if > 0.4742.
+  Decision: KEEP -> NEW BEST -> PROCEED to D224.e (try class-filter MIN
+  with mean-entropy reduction for formula; or class-filter MEAN
+  reduction for variant=all/all_no_mask; or per-variant K refinement on
+  the new stack). REVERT-or-tie within ±0.003 -> per-variant SOURCE
+  selection axis CONFIRMED but lift is in noise; consider closing the
+  axis and PIVOTing to a non-entropy mechanism class (D104 / D165 /
+  D106).
+  Control: D215.l (uniform window-MIN source for all 4 fused variants, 0.4742).
+date: "2026-05-01"

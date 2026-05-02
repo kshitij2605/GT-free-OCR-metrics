@@ -1,0 +1,24 @@
+id: P1_112_ssim_page_supplement_10
+name: "D112 — SSIM page supplement β=0.10 sweep (D111b)"
+category: composite
+script: scripts/methods/P1_112_ssim_page_supplement_10.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_112_ssim_page_supplement_10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_112_ssim_page_supplement_10/correlations.json
+description: >
+  D112 — D111b: SSIM β_ssim=0.10 sweep. Given D111 (β=0.05) KEEP at 0.4847,
+  test whether doubling SSIM weight to 0.10 improves further.
+  all: (1-0.30-0.20-0.10)*DocSim + 0.30*entropy + 0.20*table_cell + 0.10*ssim
+  all_no_mask: (1-0.40-0.20-0.10)*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim
+  text/formula/table: unchanged from D111 (β_ssim=0.0).
+  KEEP if spearman_mean > 0.4847 (D111 new best).
+date: "2026-05-01"

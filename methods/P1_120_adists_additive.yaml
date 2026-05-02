@@ -1,0 +1,24 @@
+id: P1_120_adists_additive
+name: "H5 DISTS additive 4th term in multi_composite (0.3/0.2/0.2/0.3, A-DISTS unavailable in pyiqa 0.1.15)"
+category: deep_feature
+script: scripts/methods/P1_120_adists_additive.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+  dists_source: pyiqa_dists
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120_adists_additive/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120_adists_additive/correlations.json
+description: >
+  H5: A-DISTS unavailable in pyiqa 0.1.15 (only 'dists' listed). Falls back to pyiqa DISTS
+  as additive 4th term in multi_composite (not slot replacement — this is ADDITIVE reweighting):
+  composite = 0.3*SSIM + 0.2*(1-MSE) + 0.2*(1-LPIPS) + 0.3*(1-DISTS).
+  Prior dead-end (H3.alt 9eb477a) replaced LPIPS with DISTS (slot replacement, -0.053).
+  This experiment keeps ALL original terms and adds DISTS as 4th with rebalanced weights.
+  clip_cosine logic: variant=table uses CLIP only; others use 50/50 CLIP+DINOv2 (H4.e strategy).
+  Control: H4.e (spearman_mean=0.3562).
+  Predicted: spearman_mean ~ 0.358-0.371.
+date: "2026-04-25"

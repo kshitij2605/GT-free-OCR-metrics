@@ -1,0 +1,30 @@
+id: P1_141_elem_p10_text_beta10
+name: "D141 — per-element CLIP P10 extended to text variant at β=0.10"
+category: composite
+script: scripts/methods/P1_141_elem_p10_text_beta10.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_text: 0.10
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_141_elem_p10_text_beta10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_141_elem_p10_text_beta10/correlations.json
+description: >
+  D141 — Apply per-element CLIP P10 to text variant at β=0.10 (D137 only applied to all/all_no_mask).
+  text has ocr_elements.json bboxes; per-block CLIP P10 may capture per-block text quality.
+  text: (1-0.40-0.15-0.10)*DocSim + 0.40*entropy + 0.15*ssim + 0.10*elem_p10
+       = 0.35*DocSim + 0.40*entropy + 0.15*ssim + 0.10*elem_p10
+  KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
+date: "2026-05-02"

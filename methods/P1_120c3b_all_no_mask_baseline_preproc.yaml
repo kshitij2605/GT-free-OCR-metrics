@@ -1,0 +1,25 @@
+id: P1_120c3b_all_no_mask_baseline_preproc
+name: "H11.2 H6.1-style preprocessing for variant=all_no_mask cc only — symmetry test"
+category: deep_feature
+script: scripts/methods/P1_120c3b_all_no_mask_baseline_preproc.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_120c3b_all_no_mask_baseline_preproc/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_120c3b_all_no_mask_baseline_preproc/correlations.json
+description: >
+  H11.2: REFINE of H6.1. Extends H6.1's grayscale+SHARPEN+autocontrast->RGB preprocessing
+  to variant=all_no_mask in addition to variant=table. For variant=all_no_mask the
+  preprocessing is applied to both CLIP and DINOv2 encoders before feature extraction;
+  the 50/50 CLIP+DINOv2 fusion for all_no_mask is preserved unchanged. For variant=table
+  the existing H6.1 CLIP-only path with preprocessing is STILL used (bit-for-bit identical).
+  All other variants (text, formula, all) remain unchanged from H6.1 (P1_120c3).
+  Hypothesis: all_no_mask is full-page mixed content similar in texture to table pages;
+  the high-contrast preprocessing that lifted table cc 0.268->0.277 may similarly lift
+  all_no_mask cc 0.3073->0.31-0.32. Control: H6.1 (P1_120c3, spearman_mean=0.3598).
+  Predicted: spearman_mean ~ 0.360-0.362 (all_no_mask cc 0.3073->0.31-0.32, +0.003-0.013).
+date: "2026-04-26"

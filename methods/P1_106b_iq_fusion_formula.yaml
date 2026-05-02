@@ -1,0 +1,49 @@
+id: P1_106b_iq_fusion_formula
+name: "D106.b — three-way fusion (prod_cc + entropy + D106 IQ) on variant=formula only"
+category: self_uncertainty
+script: scripts/methods/P1_106b_iq_fusion_formula.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.3
+  alpha_all_no_mask: 0.4
+  gamma_diqa_formula: 0.2
+  source_text: "class_filtered_per_bbox_max_entropy_min"
+  source_formula: "window_min_mean_shannon"
+  source_table: "window_min_mean_shannon"
+  source_all: "token_class_filtered_window_min"
+  source_all_no_mask: "token_class_filtered_window_min"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106b_iq_fusion_formula/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106b_iq_fusion_formula/correlations.json
+description: >
+  D106.b — first cross-class fusion. D106 alone showed
+  spearman_ocr_formula=0.5702 (only -0.017 below D224.e fused 0.5872 and
+  +0.021 above prod_cc baseline 0.5488), confirming hand-crafted IQ
+  features (sharpness/edges/contrast/grad_mag) capture math-glyph
+  fidelity orthogonally to learned encoders. D106.b tests three-way
+  fusion ON FORMULA ONLY:
+      clip_cosine_formula = 0.5 * prod_cc + 0.3 * window_min_shannon
+                                          + 0.2 * D106_iq_similarity
+  Other variants byte-equal to D224.e (gamma=0). Per-variant alpha:
+  formula reduced from 0.4 to 0.3 to make room for gamma_diqa=0.2.
+  Hypothesis: hand-crafted IQ features carry signal orthogonal to both
+  prod_cc (general visual semantics) and Shannon entropy (token
+  uncertainty); 3-way fusion lifts formula spearman by +0.005-0.020
+  when sources are independent.
+  Predicted spearman_mean: 0.477-0.482 (most likely 0.479, +0.001-0.006
+  vs D224.e 0.4776). KEEP if > 0.4776.
+  Decision: KEEP -> NEW BEST -> PROCEED to D106.c (gamma sweep
+  on formula 0.15/0.20/0.25; or test D106 fusion on variant=table
+  where D106 alone=0.2966 below table baseline but might still add
+  small lift via independence). REVERT-or-tie -> D106 redundant with
+  current stack on formula; PIVOT to D104 recognition-feature
+  distance via TrOCR encoder.
+  Control: D224.e (0.4776, formula=0.5872 entropy-fused only).
+date: "2026-05-01"

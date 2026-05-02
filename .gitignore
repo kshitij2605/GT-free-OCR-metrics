@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Data (downloaded via download_data.sh)
+data/omnidocbench/
+data/ocr_logprobs/
+
+# Models (downloaded via download_models.sh)
+models/
+
+# Large result artefacts
+results/method_runs/*/run.log
+results/method_runs/*/logs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MLflow
+mlruns/
+
+# Misc
+*.tmp
+*.bak
+
+# Root-level run logs
+*.log
+
+# Lock file for uv (optional: reviewers can regenerate)
+# uv.lock
+
+# Notebooks (kept for dev, not committed)
+notebooks/
+
+# Data extras (local only)
+data/annotations/
+data/sample_pages/
+data/sample_pages2/
+data/sample_pdfs/
+data/sample_test_pdfs/
+data/ocr_logprobs/
+data/ocr_logprobs_per_bbox/

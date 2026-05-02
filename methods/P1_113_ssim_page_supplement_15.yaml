@@ -1,0 +1,24 @@
+id: P1_113_ssim_page_supplement_15
+name: "D113 — SSIM page supplement β=0.15 sweep (D111c)"
+category: composite
+script: scripts/methods/P1_113_ssim_page_supplement_15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim: 0.15
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_113_ssim_page_supplement_15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_113_ssim_page_supplement_15/correlations.json
+description: >
+  D113 — D111c: SSIM β_ssim=0.15 sweep. Tests β=0.15 SSIM supplement for
+  all/all_no_mask variants. Compares with D111 (β=0.05, 0.4847) and D112 (β=0.10).
+  all: (1-0.30-0.20-0.15)*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*ssim
+  all_no_mask: (1-0.40-0.20-0.15)*DocSim + 0.40*entropy + 0.20*table_cell + 0.15*ssim
+  text/formula/table: unchanged from D111 (β_ssim=0.0).
+  KEEP if spearman_mean > 0.4847 (D111 new best).
+date: "2026-05-01"

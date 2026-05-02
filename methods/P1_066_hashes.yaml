@@ -1,0 +1,19 @@
+id: P1_066_hashes
+name: "Perceptual hash composite (pHash+wHash+dHash) drop-in"
+category: hash
+script: scripts/methods/P1_066_hashes.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  hash_size: 16
+  hash_bits: 256
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_066_hashes/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_066_hashes/correlations.json
+description: >
+  Replaces the SSIM slot in multi_composite with an average of 3 perceptual
+  hashes (pHash, wHash, dHash) at 16x16 (256-bit) resolution. Similarity =
+  1 - normalized Hamming distance, weighted 0.4 (pHash), 0.3 (wHash),
+  0.3 (dHash). Composite = 0.4*hash_sim + 0.3*(1-mse) + 0.3*(1-lpips).
+  CPU-fast hash extraction; LPIPS+CLIP retained for cross-method consistency.
+date: "2026-04-25"

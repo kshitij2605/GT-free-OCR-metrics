@@ -1,0 +1,549 @@
+#!/usr/bin/env python3
+"""P1_213 — sliding-window Shannon-confidence heat-map → bbox-MEAN, area-weighted.
+
+For each Qwen-OCR HTML element (identified by `data-bbox="x1,y1,x2,y2"`
+markers in the token stream), compute the per-token Shannon-confidence
+(1 - H/log_K), apply a sliding-window MEAN of size K over the per-token
+confidences (variant-conditional K matching D215.k/l), then take the
+MEAN of the windowed values within each element. Aggregate per-page via
+area-weighted MEAN across elements (weights = bbox area parsed from the
+data-bbox string).
+
+Mechanism is structurally complementary to D215.l (window-MEAN -> MIN
+across windows) and D224.b (raw-token MEAN within element -> MIN across
+elements). D213 = window-MEAN -> element-MEAN -> area-weighted-MEAN.
+
+Per-variant alpha unchanged from D215.l (table=0, all=0.3, others=0.4).
+multi_composite preserved from D60.p so eval has the production fallback.
+"""
+
+import json
+import logging
+import math
+import re
+import sys
+import time
+from pathlib import Path
+
+import lpips as lpips_lib
+import numpy as np
+import open_clip
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torchvision.transforms as T
+from PIL import Image, ImageFilter, ImageOps
+from skimage.metrics import structural_similarity
+
+sys.path.insert(0, "/home/mac/test/r1-p2/src")
+from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
+
+METHOD_ID = "P1_213_sliding_window_heatmap_area_weighted"
+SSIM_SIZE = 512
+BATCH_SIZE = 16
+DINO_SIZE = 224
+
+ADAPTER_DIR = Path("/home/mac/test/r1-p2/models/docsim_lora/lora_adapter_best")
+HEAD_STATE_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/head_state_best.pt")
+HEAD_CONFIG_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/config.json")
+LOGPROBS_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
+
+if len(sys.argv) < 2:
+    print(f"Usage: {sys.argv[0]} <variant>", file=sys.stderr)
+    sys.exit(1)
+
+variant = sys.argv[1]
+if variant not in {"all", "text", "formula", "table", "all_no_mask"}:
+    print(f"Unknown variant: {variant}", file=sys.stderr)
+    sys.exit(1)
+
+USE_DISTS = variant == "all"
+USE_PREPROC = variant in ("table", "all_no_mask")
+USE_DOCSIM_PAGE = variant in ("text", "all", "all_no_mask")
+USE_DOCSIM_BBOX = variant == "table"
+NEED_DOCSIM = USE_DOCSIM_PAGE or USE_DOCSIM_BBOX
+NEED_DINO = variant != "table" or USE_DOCSIM_BBOX
+
+ALPHA_ENTROPY = {
+    "table": 0.0,
+    "all": 0.3,
+    "text": 0.4,
+    "formula": 0.4,
+    "all_no_mask": 0.4,
+}[variant]
+
+# Variant-conditional sliding-window K (matches D215.k/l findings: K=3 for
+# text/all/all_no_mask, K=20 for formula). Table is alpha=0 so K is moot.
+WINDOW_K = {
+    "table": 3,
+    "all": 3,
+    "text": 3,
+    "formula": 20,
+    "all_no_mask": 3,
+}[variant]
+
+BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+var_root = BASE / f"ocr_{variant}"
+OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(name)s] %(levelname)-5s %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    stream=sys.stdout,
+)
+log = logging.getLogger(f"{variant}_{METHOD_ID}")
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+log.info(
+    "device=%s variant=%s method=%s alpha=%.2f use_dists=%s use_preproc=%s use_docsim_page=%s use_docsim_bbox=%s",
+    device, variant, METHOD_ID, ALPHA_ENTROPY,
+    USE_DISTS, USE_PREPROC, USE_DOCSIM_PAGE, USE_DOCSIM_BBOX,
+)
+
+_preprocessor = ImagePreprocessor()
+
+# ── DISTS setup ───────────────────────────────────────────────────────────────
+if USE_DISTS:
+    import pyiqa
+    _dists_metric = pyiqa.create_metric("dists", as_loss=False).to(device)
+    _dists_transform = T.Compose([
+        T.Resize((256, 256), interpolation=T.InterpolationMode.BICUBIC),
+        T.ToTensor(),
+    ])
+else:
+    _dists_metric = None
+    _dists_transform = None
+
+
+def _dists_score(orig_pil, recon_pil):
+    orig_t = _dists_transform(orig_pil.convert("RGB")).unsqueeze(0).to(device)
+    recon_t = _dists_transform(recon_pil.convert("RGB")).unsqueeze(0).to(device)
+    with torch.no_grad():
+        return float(np.clip(_dists_metric(orig_t, recon_t).item(), 0.0, 1.0))
+
+
+# ── DINOv2 ────────────────────────────────────────────────────────────────────
+if NEED_DINO:
+    log.info("Loading DINOv2 vitb14...")
+    _dino_model = torch.hub.load("facebookresearch/dinov2", "dinov2_vitb14", trust_repo=True)
+    _dino_model = _dino_model.eval().to(device)
+    for p in _dino_model.parameters():
+        p.requires_grad = False
+    _dino_transform = T.Compose([
+        T.Resize((DINO_SIZE, DINO_SIZE), interpolation=T.InterpolationMode.BICUBIC),
+        T.ToTensor(),
+        T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+else:
+    _dino_model = None
+    _dino_transform = None
+
+log.info("Loading OpenCLIP ViT-B-32 (laion2b_s34b_b79k)...")
+_clip_model, _, _clip_preprocess = open_clip.create_model_and_transforms(
+    "ViT-B-32", pretrained="laion2b_s34b_b79k"
+)
+_clip_model = _clip_model.eval().to(device)
+for p in _clip_model.parameters():
+    p.requires_grad = False
+
+log.info("Loading LPIPS (alex)...")
+_lpips_fn = lpips_lib.LPIPS(net="alex").to(device)
+
+
+# ── DocSim head ───────────────────────────────────────────────────────────────
+class DocSimHead(nn.Module):
+    def __init__(self, in_dim, hidden_dim, embed_dim):
+        super().__init__()
+        self.proj = nn.Sequential(
+            nn.Linear(in_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, embed_dim),
+        )
+
+    def forward(self, x):
+        return F.normalize(self.proj(x), dim=-1)
+
+
+_docsim_head = None
+if NEED_DOCSIM:
+    from peft import LoraConfig, get_peft_model
+
+    with HEAD_CONFIG_PATH.open("r") as f:
+        head_cfg = json.load(f)
+
+    clip_dim = _clip_model.visual.output_dim
+    dino_dim = 768
+
+    _docsim_head = DocSimHead(
+        in_dim=clip_dim + dino_dim,
+        hidden_dim=head_cfg["hidden_dim"],
+        embed_dim=head_cfg["embed_dim"],
+    )
+    lora_cfg = LoraConfig(
+        r=head_cfg["lora_r"],
+        lora_alpha=head_cfg["lora_alpha"],
+        lora_dropout=head_cfg["lora_dropout"],
+        target_modules=["0", "2"],
+        bias="none",
+    )
+    _docsim_head.proj = get_peft_model(_docsim_head.proj, lora_cfg)
+    state = torch.load(HEAD_STATE_PATH, map_location=device, weights_only=True)
+    _docsim_head.load_state_dict(state)
+    _docsim_head = _docsim_head.eval().to(device)
+    for p in _docsim_head.parameters():
+        p.requires_grad = False
+
+
+def _to_gray_small(pil):
+    return pil.convert("L").resize((SSIM_SIZE, SSIM_SIZE), Image.BILINEAR)
+
+
+def _ssim_mse(orig_pil, recon_pil):
+    orig_small = _to_gray_small(orig_pil)
+    recon_small = _to_gray_small(recon_pil)
+    orig_b = _preprocessor.adaptive_binarize(orig_small.convert("RGB"))
+    recon_b = _preprocessor.adaptive_binarize(recon_small.convert("RGB"))
+    if recon_b.size != orig_b.size:
+        recon_b = recon_b.resize(orig_b.size, Image.BILINEAR)
+    og = np.array(orig_b, dtype=np.float64) / 255.0
+    rg = np.array(recon_b, dtype=np.float64) / 255.0
+    return float(structural_similarity(og, rg, data_range=1.0)), float(np.mean((og - rg) ** 2))
+
+
+def _lpips_score(orig_pil, recon_pil):
+    def _to_t(p):
+        g = p.convert("L").resize((SSIM_SIZE, SSIM_SIZE), Image.BILINEAR)
+        arr = np.array(g, dtype=np.float32) / 255.0
+        t = torch.from_numpy(arr).unsqueeze(0).repeat(3, 1, 1)
+        return (t * 2.0 - 1.0).unsqueeze(0).to(device)
+    with torch.no_grad():
+        return float(np.clip(_lpips_fn(_to_t(orig_pil), _to_t(recon_pil)).item(), 0.0, 1.0))
+
+
+def _baseline_clip_preprocess(img):
+    img = img.convert("L").filter(ImageFilter.SHARPEN)
+    img = ImageOps.autocontrast(img).convert("RGB")
+    return img
+
+
+def _dinov2_cosine_batch(orig_pils, recon_pils):
+    def _enc(pils):
+        batch = torch.stack([_dino_transform(p.convert("RGB")) for p in pils]).to(device)
+        with torch.no_grad():
+            feats = _dino_model(batch)
+        return F.normalize(feats.float(), dim=-1)
+    return (_enc(orig_pils) * _enc(recon_pils)).sum(dim=-1).cpu().tolist()
+
+
+def _clip_cosine_batch(orig_pils, recon_pils):
+    def _enc(pils):
+        if USE_PREPROC:
+            processed = [_baseline_clip_preprocess(p) for p in pils]
+        else:
+            processed = [p.convert("RGB") for p in pils]
+        batch = torch.stack([_clip_preprocess(p) for p in processed]).to(device)
+        with torch.no_grad():
+            feats = _clip_model.encode_image(batch)
+        return F.normalize(feats.float(), dim=-1)
+    return (_enc(orig_pils) * _enc(recon_pils)).sum(dim=-1).cpu().tolist()
+
+
+def _docsim_cosine_batch(orig_pils, recon_pils):
+    def _encode(pils):
+        clip_batch = torch.stack([_clip_preprocess(p.convert("RGB")) for p in pils]).to(device)
+        dino_batch = torch.stack([_dino_transform(p.convert("RGB")) for p in pils]).to(device)
+        with torch.no_grad():
+            f_clip = F.normalize(_clip_model.encode_image(clip_batch).float(), dim=-1)
+            f_dino = F.normalize(_dino_model(dino_batch).float(), dim=-1)
+            x = torch.cat([f_clip, f_dino], dim=-1)
+            return _docsim_head(x)
+    return (_encode(orig_pils) * _encode(recon_pils)).sum(dim=-1).cpu().tolist()
+
+
+def _crop_bbox(pil, bbox):
+    if not bbox or len(bbox) != 4:
+        return None
+    x1, y1, x2, y2 = map(int, bbox)
+    W, H = pil.size
+    x1 = max(0, min(x1, W)); x2 = max(0, min(x2, W))
+    y1 = max(0, min(y1, H)); y2 = max(0, min(y2, H))
+    if x2 - x1 < 4 or y2 - y1 < 4:
+        return None
+    return pil.crop((x1, y1, x2, y2))
+
+
+def _docsim_per_bbox_score(orig_pil, recon_pil, bboxes):
+    orig_crops, recon_crops = [], []
+    for bb in bboxes:
+        oc = _crop_bbox(orig_pil, bb); rc = _crop_bbox(recon_pil, bb)
+        if oc is None or rc is None:
+            continue
+        orig_crops.append(oc); recon_crops.append(rc)
+    if not orig_crops:
+        return None
+    cos_sims = _docsim_cosine_batch(orig_crops, recon_crops)
+    return float(np.min(cos_sims))
+
+
+_BBOX_OPEN_RE = re.compile(r'data-bbox="([^"]*)"')
+
+
+def _heatmap_bbox_area_weighted_confidence(page_name):
+    """Sliding-window heat-map -> per-bbox MEAN -> area-weighted page MEAN.
+
+    1. Per-token Shannon-confidence c_t = 1 - H_t / log(K_top).
+    2. Heat-map: rolling-K MEAN of c_t (replicate-padding so heat[t] is
+       defined for every token; window-K matches D215.k/l).
+    3. Element segmentation via `data-bbox="x1,y1,x2,y2"` markers:
+       tokens between marker[i] and marker[i+1] belong to element i.
+       Element score = MEAN(heat[t]) over that token range.
+    4. Page score = sum(area_i * score_i) / sum(area_i).
+       Area parsed from the bbox string; missing/invalid areas drop the
+       element. Leading pre-bbox tokens get the median element area.
+
+    Returns 0.5 if logprobs missing or no usable confidences.
+    """
+    lp_path = LOGPROBS_ROOT / page_name / "ocr_logprobs.json"
+    if not lp_path.exists():
+        return 0.5
+    with open(lp_path) as f:
+        data = json.load(f)
+    tokens = data.get("tokens", [])
+    if not tokens:
+        return 0.5
+
+    # Per-token Shannon-confidence (use None for unavailable; replicate
+    # nearest-valid for heat-map smoothing later).
+    confs = []
+    for t in tokens:
+        top = t.get("top_logprobs", [])
+        if not top:
+            confs.append(None); continue
+        probs = [math.exp(tt.get("logprob", -100.0)) for tt in top]
+        s = sum(probs)
+        if s <= 0:
+            confs.append(None); continue
+        probs = [p / s for p in probs]
+        H = -sum(p * math.log(p + 1e-12) for p in probs if p > 0)
+        log_k = math.log(len(top)) if len(top) > 1 else 0.0
+        if log_k <= 0:
+            confs.append(None); continue
+        confs.append(1.0 - H / log_k)
+
+    valid_idx = [i for i, c in enumerate(confs) if c is not None]
+    if not valid_idx:
+        return 0.5
+    # Forward-fill confs at None positions for the heat-map (use last valid;
+    # if none yet, use the first valid).
+    last = confs[valid_idx[0]]
+    filled = []
+    for c in confs:
+        if c is not None:
+            last = c
+        filled.append(last)
+    arr = np.array(filled, dtype=np.float64)
+
+    # Rolling-K MEAN heat-map. For windows shorter than K at the edges, fall
+    # back to the cumulative mean over the available prefix/suffix.
+    n = len(arr)
+    if n == 0:
+        return 0.5
+    k = min(WINDOW_K, n)
+    csum = np.cumsum(np.insert(arr, 0, 0.0))
+    # Centered window of length k for each position; clamp at edges.
+    heat = np.empty(n, dtype=np.float64)
+    half = k // 2
+    for i in range(n):
+        lo = max(0, i - half)
+        hi = min(n, lo + k)
+        lo = max(0, hi - k)
+        heat[i] = (csum[hi] - csum[lo]) / (hi - lo)
+
+    # Element segmentation via data-bbox markers in joined text.
+    text_chars = []  # char position at start of each token
+    pos = 0
+    for t in tokens:
+        text_chars.append(pos)
+        pos += len(t["token"])
+    full = "".join(t["token"] for t in tokens)
+    matches = list(_BBOX_OPEN_RE.finditer(full))
+
+    if not matches:
+        # No structured elements -> page-level mean of heat-map
+        return float(heat.mean())
+
+    token_starts = np.array(text_chars)
+    bbox_token_indices = []
+    bbox_areas = []
+    for m in matches:
+        cp = m.start()
+        idx = int(np.searchsorted(token_starts, cp, side="right") - 1)
+        if idx < 0:
+            idx = 0
+        bbox_token_indices.append(idx)
+        # Parse coords; tolerate floats and extra whitespace.
+        try:
+            parts = [float(p.strip()) for p in m.group(1).split(",")]
+            if len(parts) == 4:
+                x1, y1, x2, y2 = parts
+                area = max(0.0, (x2 - x1) * (y2 - y1))
+            else:
+                area = 0.0
+        except Exception:
+            area = 0.0
+        bbox_areas.append(area)
+
+    # Median area as fallback for leading-segment / zero-area elements.
+    pos_areas = [a for a in bbox_areas if a > 0]
+    median_area = float(np.median(pos_areas)) if pos_areas else 1.0
+
+    # Element ranges and weights
+    element_ranges = []
+    element_weights = []
+    if bbox_token_indices[0] > 0:
+        element_ranges.append((0, bbox_token_indices[0]))
+        element_weights.append(median_area)  # leading prefix
+    for i, start in enumerate(bbox_token_indices):
+        end = bbox_token_indices[i + 1] if i + 1 < len(bbox_token_indices) else n
+        element_ranges.append((start, end))
+        a = bbox_areas[i] if bbox_areas[i] > 0 else median_area
+        element_weights.append(a)
+
+    weighted_sum = 0.0
+    weight_total = 0.0
+    for (s, e), w in zip(element_ranges, element_weights):
+        if e <= s:
+            continue
+        seg_mean = float(heat[s:e].mean())
+        weighted_sum += w * seg_mean
+        weight_total += w
+    if weight_total <= 0:
+        return float(heat.mean())
+    return weighted_sum / weight_total
+
+
+def _fuse(prod_cc, page_name):
+    conf = _heatmap_bbox_area_weighted_confidence(page_name)
+    return (1.0 - ALPHA_ENTROPY) * prod_cc + ALPHA_ENTROPY * conf
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+page_dirs = sorted(d for d in var_root.iterdir() if d.is_dir())
+log.info("Found %d pages", len(page_dirs))
+
+results = []
+orig_pils_buf, recon_pils_buf, meta_buf, name_buf = [], [], [], []
+
+
+def _flush_batch():
+    global orig_pils_buf, recon_pils_buf, meta_buf, name_buf
+    if not orig_pils_buf:
+        return
+    if USE_DOCSIM_PAGE:
+        cos_sims = _docsim_cosine_batch(orig_pils_buf, recon_pils_buf)
+        for meta, cs, name in zip(meta_buf, cos_sims, name_buf):
+            meta["clip_compare"] = {"clip_cosine": float(_fuse(float(cs), name))}
+            results.append(meta)
+    elif variant == "table":
+        clip_sims = _clip_cosine_batch(orig_pils_buf, recon_pils_buf)
+        for meta, clip_cos, name in zip(meta_buf, clip_sims, name_buf):
+            meta["clip_compare"] = {"clip_cosine": float(_fuse(float(clip_cos), name))}
+            results.append(meta)
+    else:
+        clip_sims = _clip_cosine_batch(orig_pils_buf, recon_pils_buf)
+        dino_sims = _dinov2_cosine_batch(orig_pils_buf, recon_pils_buf)
+        for meta, dino_cos, clip_cos, name in zip(meta_buf, dino_sims, clip_sims, name_buf):
+            avg_cos = 0.5 * dino_cos + 0.5 * clip_cos
+            meta["clip_compare"] = {"clip_cosine": float(_fuse(float(avg_cos), name))}
+            results.append(meta)
+    orig_pils_buf, recon_pils_buf, meta_buf, name_buf = [], [], [], []
+
+
+t0 = time.time()
+n_bbox_pages = 0
+n_fallback_pages = 0
+for i, page_dir in enumerate(page_dirs):
+    orig_path = page_dir / "masked_original.png"
+    recon_path = page_dir / "reconstructed.png"
+    if not orig_path.exists() or not recon_path.exists():
+        continue
+
+    orig_pil = Image.open(orig_path).convert("RGB")
+    recon_pil = Image.open(recon_path).convert("RGB")
+
+    ssim_val, mse_val = _ssim_mse(orig_pil, recon_pil)
+    lpips_val = _lpips_score(orig_pil, recon_pil)
+
+    if USE_DISTS:
+        dists_val = _dists_score(orig_pil, recon_pil)
+        composite = (
+            0.3 * ssim_val
+            + 0.2 * max(0.0, 1.0 - mse_val)
+            + 0.2 * max(0.0, 1.0 - lpips_val)
+            + 0.3 * max(0.0, 1.0 - dists_val)
+        )
+        multi_metric = {"ssim": ssim_val, "mse": mse_val, "lpips": lpips_val, "dists": dists_val, "composite": composite}
+    else:
+        composite = 0.4 * ssim_val + 0.3 * max(0.0, 1.0 - mse_val) + 0.3 * max(0.0, 1.0 - lpips_val)
+        multi_metric = {"ssim": ssim_val, "mse": mse_val, "lpips": lpips_val, "composite": composite}
+
+    meta = {
+        "image": page_dir.name,
+        "text_elements": 0, "image_regions": 0, "table_regions": 0,
+        "text_length": 0, "plain_text_length": 0,
+        "multi_metric": multi_metric,
+        "lm_perplexity": {
+            "ngram_score": 0.0, "transformer_score": 0.0,
+            "perplexity": 0.0, "composite": 0.0,
+        },
+    }
+
+    if USE_DOCSIM_BBOX:
+        bbox_path = page_dir / "ocr_table_elements.json"
+        bboxes = []
+        if bbox_path.exists():
+            try:
+                with bbox_path.open("r") as f:
+                    elems = json.load(f)
+                bboxes = [e.get("bbox") for e in elems if e.get("bbox")]
+            except Exception as e:
+                log.warning("page=%s bbox load failed: %s", page_dir.name, e)
+                bboxes = []
+        score = _docsim_per_bbox_score(orig_pil, recon_pil, bboxes) if bboxes else None
+        if score is not None:
+            n_bbox_pages += 1
+            meta["clip_compare"] = {"clip_cosine": float(_fuse(float(score), page_dir.name))}
+            results.append(meta)
+        else:
+            n_fallback_pages += 1
+            orig_pils_buf.append(orig_pil)
+            recon_pils_buf.append(recon_pil)
+            meta_buf.append(meta)
+            name_buf.append(page_dir.name)
+    else:
+        orig_pils_buf.append(orig_pil)
+        recon_pils_buf.append(recon_pil)
+        meta_buf.append(meta)
+        name_buf.append(page_dir.name)
+
+    if len(orig_pils_buf) >= BATCH_SIZE:
+        _flush_batch()
+
+    if (i + 1) % 100 == 0:
+        elapsed = time.time() - t0
+        log.info("[%d/%d] %.1fs elapsed (%.2fs/page)",
+                 i + 1, len(page_dirs), elapsed, elapsed / (i + 1))
+
+_flush_batch()
+
+if USE_DOCSIM_BBOX:
+    log.info("variant=table bbox-path pages: %d / fallback pages: %d", n_bbox_pages, n_fallback_pages)
+
+out_path = OUT_DIR / "results.json"
+with open(out_path, "w") as f:
+    json.dump(results, f, indent=2)
+
+log.info("Done. %d pages -> %s (alpha=%.2f, K=%d, source=heatmap_bbox_area_weighted)",
+         len(results), out_path, ALPHA_ENTROPY, WINDOW_K)

@@ -1,0 +1,24 @@
+id: P1_084f_dinov2_only_all
+name: "H8.1 DINOv2 CLS-only for variant=all (replace 50/50 CLIP+DINOv2 fusion)"
+category: deep_feature
+script: scripts/methods/P1_084f_dinov2_only_all.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_084f_dinov2_only_all/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_084f_dinov2_only_all/correlations.json
+description: >
+  H8.1: REFINE of H6.1 (current best, spearman_mean=0.3598). Replace the 50/50 CLIP+DINOv2
+  fusion in the clip_cosine slot with DINOv2 CLS-only for variant=all only. Hypothesis:
+  DINOv2 CLS captures semantic document structure better than the 50/50 fusion for full-page
+  end-to-end comparison, potentially lifting variant=all cc above the current 0.203 (fusion)
+  toward DINOv2's per-element formula strength (0.543). All other variants unchanged from H6.1.
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
+  Predicted: spearman_mean ~ 0.358-0.362 (variant=all cc from 0.203 toward DINOv2 strength).
+  Risk: P1_084b patch-mean DINOv2 gave variant=all cc=0.1746 — patch-mean HURTS. CLS pooling
+  is different and this is the first test of CLS-only (no CLIP blend) for variant=all.
+date: "2026-04-26"

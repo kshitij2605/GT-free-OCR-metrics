@@ -1,0 +1,40 @@
+id: P2_060s_docsim_bbox_min_padded
+name: "D60.s — D60.p + 24px context padding around per-table-bbox crops"
+category: deep_feature
+script: scripts/methods/P2_060s_docsim_bbox_min_padded.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox_padded24
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MIN, +24px pad)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  bbox_padding_px: 24
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060s_docsim_bbox_min_padded/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060s_docsim_bbox_min_padded/correlations.json
+description: >
+  D60.s — refine D60.p by padding each per-table-bbox crop by 24 px on
+  every side (clipped to image bounds) before passing to the DocSim head.
+  Hypothesis: DocSim was trained on page-level scenes; tight cell crops
+  may be off-distribution and starve the head of context cues. Adding
+  24 px of surrounding pixels brings each crop closer to the training
+  distribution while preserving cell-locality. MIN aggregation preserved
+  (D60.p winner). Other 4 variants byte-equal to D60.p.
+  Predicted spearman_mean: 0.443-0.470, most likely 0.450 (+0.005).
+  Justification: per-bbox MIN already lifted table cc 0.2966->0.4767;
+  context-padding adds ~25-50% pixel area (cell-size dependent) of
+  surrounding text/whitespace. If supervised head benefits from training-
+  distribution context, table cc could lift +0.01 to +0.03.
+  KEEP if >= 0.450. Kill switch: table cc <= 0.45 (regression — context
+  dilutes cell signal).
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, table cc 0.4767).
+date: "2026-04-29"

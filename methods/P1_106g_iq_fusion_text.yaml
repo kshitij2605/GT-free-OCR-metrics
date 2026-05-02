@@ -1,0 +1,35 @@
+id: P1_106g_iq_fusion_text
+name: "D106.g — first IQ-fusion on variant=text at gamma=0.10"
+category: self_uncertainty
+script: scripts/methods/P1_106g_iq_fusion_text.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_text: 0.4
+  gamma_diqa_text: 0.1
+  gamma_diqa_formula: 0.2
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106g_iq_fusion_text/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106g_iq_fusion_text/correlations.json
+description: >
+  D106.g — first IQ-fusion attempt on variant=text. text has been
+  alpha_entropy=0.4 since D224.d (class-filtered MIN entropy from
+  D224.c source). D106 alone on text=0.3886 — weaker than prod_cc
+  0.4271 but possibly orthogonal. Test small gamma=0.10:
+      text clip_cosine = 0.5*prod_cc + 0.4*entropy + 0.1*D106_iq
+  Other variants byte-equal to D106.b (formula gamma=0.20 baseline,
+  table gamma=0).
+  D106 alone on text underperforms prod_cc by -0.039, much weaker than
+  on formula where D106 alone was within -0.017. Lower probability of
+  lift than D106.d (table) but cheap diagnostic. If text cc lifts even
+  +0.005 → spearman_mean +0.001.
+  Predicted text cc: 0.4640-0.4690 (most likely tied at 0.4640).
+  Predicted spearman_mean: 0.4805-0.4815. KEEP if > 0.4809.
+  Decision: KEEP -> PROCEED to D106.h gamma_text=0.20 sweep + try
+  all/all_no_mask; REVERT-tie -> text fusion infeasible at small
+  gamma; cross-variant axis closes at table only.
+  Control: D106.b (0.4804, all variants γ=0 except formula γ=0.2).
+date: "2026-05-01"

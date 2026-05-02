@@ -1,0 +1,26 @@
+id: P1_165_maskclip_table_dense
+name: "H9.1 MaskCLIP dense per-patch cosine for variant=table (Branch 9 root)"
+category: deep_feature
+script: scripts/methods/P1_165_maskclip_table_dense.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  encoder: maskclip_vitb32+openclip_vitb32+dinov2_vitb14
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_165_maskclip_table_dense/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_165_maskclip_table_dense/correlations.json
+description: >
+  H9.1: MaskCLIP-style dense per-patch cosine for variant=table only. Replaces CLS-token
+  global pooling (encode_image) with direct extraction of per-patch last-layer features from
+  OpenCLIP ViT-B/32. For each image, extracts [B, 49, D_proj] patch features (7x7=49 patches
+  at 224/32 patch size), L2-normalizes per patch, computes per-patch cosine similarity between
+  recon and original, then averages over 49 patches -> scalar score. Baseline preprocessing
+  (grayscale+SHARPEN+autocontrast->RGB from H6.1) preserved before patch extraction.
+  All other variants (text/formula/all/all_no_mask) keep H6.1 logic unchanged (50/50 CLIP+DINOv2
+  fusion via CLS). multi_composite formula unchanged for all variants.
+  Reference: Zhou et al. "Extract Free Dense Labels from CLIP" (ECCV 2022).
+  Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598, table cc=0.2766).
+  Predicted: spearman_mean ~ 0.362-0.367 (table cc 0.277 -> 0.30-0.33).
+date: "2026-04-26"

@@ -1,0 +1,30 @@
+id: P1_215m_variant_k2_20
+name: "D215.m — variant-conditional α + K=2/20 (extreme K boundary push)"
+category: self_uncertainty
+script: scripts/methods/P1_215m_variant_k2_20.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  k_text: 2
+  k_all: 2
+  k_all_no_mask: 2
+  k_formula: 20
+  k_table: 10
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215m_variant_k2_20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215m_variant_k2_20/correlations.json
+description: >
+  D215.m — extreme K boundary push: K=2 for text/all/all_no_mask. Tests
+  whether K trajectory continues to descend (peak at K=1 single-token MIN)
+  or starts to introduce single-token noise. Diagnostic; if K=2 wins
+  vs K=3, run K=1 next. If K=2 ties or regresses, K=3 is the lower bound.
+  Predicted: 0.465-0.472, most likely 0.469. KEEP if >= 0.470.
+  Control: D215.i (K=5/20, 0.4669).
+date: "2026-04-30"

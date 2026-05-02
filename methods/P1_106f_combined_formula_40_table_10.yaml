@@ -1,0 +1,39 @@
+id: P1_106f_combined_formula_40_table_10
+name: "D106.f — combine gamma_formula=0.40 (D106.e KEEP) + gamma_table=0.10 (D106.d KEEP)"
+category: self_uncertainty
+script: scripts/methods/P1_106f_combined_formula_40_table_10.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_formula: 0.3
+  alpha_table: 0.0
+  gamma_diqa_formula: 0.4
+  gamma_diqa_table: 0.1
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_106f_combined_formula_40_table_10/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_106f_combined_formula_40_table_10/correlations.json
+description: >
+  D106.f — combine the two cross-class fusion KEEPs that target
+  different variants. D106.e proved gamma_formula=0.40 lifts formula
+  to 0.6036 (peak of γ-sweep). D106.d proved gamma_table=0.10 lifts
+  table to 0.4784 (first ever table fusion lift). Both lifts are on
+  byte-deterministic variants → real signal, not noise. Compose them:
+      formula clip_cosine = 0.3*prod_cc + 0.3*entropy + 0.4*D106_iq
+      table   clip_cosine = 0.9*prod_cc + 0.1*D106_iq
+      others  unchanged from D106.b
+  Per-variant independence has held exactly for α/K (D215.e/i/k) and
+  for SOURCE routing (D224.d). Sum-of-per-variant-bests projection:
+  text=0.4640 + formula=0.6036 + table=0.4784 + all=0.4209 +
+  all_no_mask=0.4394 = 0.4813 (+0.0004 vs D106.e 0.4809).
+  Predicted spearman_mean: 0.4810-0.4815 (most likely 0.4813).
+  KEEP if > 0.4809.
+  Decision: KEEP -> NEW BEST -> PROCEED to D106.h cross-variant
+  IQ-fusion on the THREE remaining variants (text/all/all_no_mask)
+  using D106.g result; REVERT-tie -> per-variant independence broken
+  (unexpected; first-ever interaction effect under cross-class fusion);
+  PROCEED to investigate.
+  Control: D106.e (0.4809, formula γ=0.40 only).
+date: "2026-05-01"

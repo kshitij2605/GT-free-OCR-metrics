@@ -1,0 +1,16 @@
+id: baseline
+name: "Full-page, no background normalisation"
+category: baseline
+script: scripts/compute_variant_metrics.py
+script_args: ""
+parameters: {}
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/baseline/results.json
+correlations_path: results/method_runs/ocr_{variant}/baseline/correlations.json
+description: >
+  Full-page SSIM/MSE/LPIPS and CLIP comparison between masked_original.png
+  (original page with image/table regions white-filled) and reconstructed.png
+  (OCR text rendered at detected bboxes on white background). No preprocessing
+  applied to either image. This is the reference baseline all other techniques
+  are compared against.
+date: "2026-04-23"

@@ -1,0 +1,29 @@
+id: P1_128_ssim_table_beta05
+name: "D128 — SSIM table β=0.05 supplement (unexplored axis)"
+category: composite
+script: scripts/methods/P1_128_ssim_table_beta05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.05
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_128_ssim_table_beta05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_128_ssim_table_beta05/correlations.json
+description: >
+  D128 — SSIM table supplement at β=0.05. Based on D124 stack (NEW BEST 0.49084).
+  Table variant currently: 0.90*per_cell_min_DocSim + 0.10*IQ (no SSIM supplement).
+  SSIM proved effective for text (β=0.15, +0.003) and formula (β=0.05, +0.002).
+  D128 tests: 0.85*per_cell_min_DocSim + 0.10*IQ + 0.05*SSIM.
+  Hypothesis: table rendering artifacts (cell borders, missed lines) show SSIM signal
+  complementary to per-cell DocSim.
+  KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
+date: "2026-05-02"

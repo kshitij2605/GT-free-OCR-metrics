@@ -1,0 +1,30 @@
+id: P1_215j_window_k3
+name: "D215.j — variant-conditional alpha with WINDOW_K=3 uniform (push smaller K boundary)"
+category: self_uncertainty
+script: scripts/methods/P1_215j_window_k3.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  window_k: 3
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215j_window_k3/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215j_window_k3/correlations.json
+description: >
+  D215.j — variant-conditional alpha (table=0, all=0.3, others=0.4) with
+  uniform WINDOW_K=3. K-sweep showed K=5 > K=10 > K=20 for text/all/all_no_mask.
+  Tests whether even smaller K (single-token-trigram-ish) lifts further OR
+  introduces single-token noise.
+  Predicted: 0.460-0.466, most likely 0.463 (K=3 likely too noisy).
+  KEEP if >= 0.466.
+  Diagnostic: if K=3 outperforms K=5 on text/all/all_no_mask, that informs
+  D215.k variant-conditional with K=3 for those three. If K=3 worse than
+  K=5, K=5 is the lower bound and D215.i is the optimal point in this axis.
+  Control: D215.e (K=10, 0.4638).
+date: "2026-04-30"

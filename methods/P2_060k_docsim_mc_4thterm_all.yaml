@@ -1,0 +1,37 @@
+id: P2_060k_docsim_mc_4thterm_all
+name: "D60.k — DocSim mc 5th-term for variant=all (atop D60.j stack)"
+category: deep_feature
+script: scripts/methods/P2_060k_docsim_mc_4thterm_all.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_conditional
+  docsim_variants_cc: "text, all, all_no_mask"
+  docsim_variants_mc_5thterm: "all"
+  mc_weights_all: "0.25 SSIM, 0.15 MSE, 0.15 LPIPS, 0.25 DISTS, 0.20 DocSim"
+  baseline_variants: "formula (H4.e fusion), table (H6.1 CLIP-only)"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060k_docsim_mc_4thterm_all/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060k_docsim_mc_4thterm_all/correlations.json
+description: >
+  D60.k — extends D60.j by re-using the DocSim cosine output as a 5th term
+  in the multi_composite formula for variant=all only. The DocSim cosine
+  is already computed for the cc slot (D60.j keeps); D60.k threads the
+  same per-page value through the mc composite to test whether mc-DocSim
+  can lift variant=all mc above the current cc=0.3934 ceiling.
+  Variant=all multi_composite formula:
+    mc = 0.25*SSIM + 0.15*(1-MSE) + 0.15*(1-LPIPS)
+       + 0.25*(1-DISTS) + 0.20*max(0, DocSim_cos)
+  Other variants unchanged from D60.j stack.
+  Predicted spearman_mean: 0.4093 (tie if mc-DocSim cannot beat cc=0.3934)
+  to 0.412 (if mc-DocSim lifts mc above 0.40). Most likely tie-or-marginal.
+  KEEP if >= 0.412 (~+0.003 over D60.j). Kill switch: variant=all mc <= 0.32
+  (DocSim-mc destabilizes the composite — abandon mc-side DocSim class).
+  Control: D60.j post-fix (P2_060j_docsim_text_all_anomask, 0.4093).
+date: "2026-04-29"

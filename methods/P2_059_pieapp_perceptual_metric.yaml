@@ -1,0 +1,20 @@
+id: P2_059_pieapp_perceptual_metric
+name: "D59 — PieAPP learned perceptual metric (PIM/MILO_L proxy)"
+category: perceptual_latent
+script: scripts/methods/P2_059_pieapp_perceptual_metric.py
+script_args: ""
+parameters:
+  vram_gb: 4
+  img_size: 256
+dependencies:
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P2_059_pieapp_perceptual_metric/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_059_pieapp_perceptual_metric/correlations.json
+description: >
+  D59 — PieAPP (Perceptual Image-Error Assessment through Pairwise Preference)
+  as proxy for PIM/MILO_L. Tests whether a learned human-preference perceptual
+  distance metric correlates with document OCR quality (edit distance).
+  Standalone metric at 256x256 resolution. clip_cosine = max(0, 1 - pieapp/2).
+  Programmatic requirement from program.md D59 (critical priority).
+  KEEP if spearman_mean > 0.4820 (D107b best).
+date: "2026-05-01"

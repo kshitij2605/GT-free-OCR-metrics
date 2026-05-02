@@ -1,0 +1,40 @@
+id: P2_060t_docsim_bbox_min_filter_small
+name: "D60.t — D60.p + filter bboxes shorter-side < 32px before MIN"
+category: deep_feature
+script: scripts/methods/P2_060t_docsim_bbox_min_filter_small.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox_min_filtered
+  docsim_variants: "text, all, all_no_mask (page-level); table (per-bbox MIN, sides>=32px)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  bbox_min_side_px: 32
+  empty_bbox_fallback: clip_only_h61
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060t_docsim_bbox_min_filter_small/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060t_docsim_bbox_min_filter_small/correlations.json
+description: >
+  D60.t — refine D60.p by dropping bboxes whose shorter side is < 32 px
+  before MIN aggregation. Hypothesis: very small bboxes (artifacts, ruled
+  lines, single characters) are visually noisy at the DocSim head's input
+  scale; their per-cell scores may be unreliable and drag MIN below the
+  true cell-quality signal. Filtering removes noise sources. Pages with
+  zero usable bboxes after filter fall back to D60.p baseline (H6.1
+  CLIP-only). Other 4 variants byte-equal to D60.p.
+  Predicted spearman_mean: 0.443-0.460, most likely 0.448 (+0.003).
+  Justification: small-cell artifacts in OmniDocBench tables are typically
+  a minority but contribute to MIN by definition. If they are noise, MIN
+  excluding them should be slightly higher and more aligned with edit
+  distance.
+  KEEP if >= 0.450. Kill switch: table cc <= 0.45 (filter dropped real
+  signal — small bboxes carried discriminative information).
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, table cc 0.4767).
+date: "2026-04-29"

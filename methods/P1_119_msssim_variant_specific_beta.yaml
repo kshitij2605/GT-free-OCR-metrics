@@ -1,0 +1,26 @@
+id: P1_119_msssim_variant_specific_beta
+name: "D119 — MS-SSIM structural supplement (all=0.15, all_no_mask=0.10, multi-scale SSIM)"
+category: composite
+script: scripts/methods/P1_119_msssim_variant_specific_beta.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_msssim_all: 0.15
+  beta_msssim_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_119_msssim_variant_specific_beta/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_119_msssim_variant_specific_beta/correlations.json
+description: >
+  D119 — MS-SSIM (Multi-Scale SSIM via piq.multi_scale_ssim) as structural supplement,
+  replacing single-scale SSIM at the same variant-specific β as D116 (all=0.15, all_no_mask=0.10).
+  MS-SSIM uses 5 scales for better spatial frequency coverage and more shift tolerance than single-scale SSIM.
+  Direct comparison to D116 (single-scale SSIM same β): if MS-SSIM > SSIM, it's the preferred structural metric.
+  all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*ms_ssim
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ms_ssim
+  KEEP if spearman_mean > 0.4877 (D116 single-scale SSIM baseline).
+date: "2026-05-01"

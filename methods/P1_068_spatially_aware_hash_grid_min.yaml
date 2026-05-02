@@ -1,0 +1,28 @@
+id: P1_068_spatially_aware_hash_grid_min
+name: "D68 — 4x4 spatially-aware pHash grid MIN supplement β_grid=0.05"
+category: per_element_structure
+script: scripts/methods/P1_068_spatially_aware_hash_grid_min.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_all: 0.3
+  alpha_all_no_mask: 0.4
+  beta_table_cell: 0.20
+  beta_grid_hash: 0.05
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+  - data/omnidocbench/
+results_path: results/method_runs/ocr_{variant}/P1_068_spatially_aware_hash_grid_min/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_068_spatially_aware_hash_grid_min/correlations.json
+description: >
+  D68 — adds 4x4 spatially-aware pHash grid MIN as β_grid=0.05 supplement on top of D107b.
+  Divides each page image into 16 uniform cells (4 rows x 4 cols), computes pHash
+  similarity per cell (imagehash, hash_size=8 → 64-bit), takes MIN as the spatial
+  distortion signal. Unlike per-semantic-bbox DocSim (k40 dead end), uniform grid
+  doesn't require element detection and applies to all pages.
+  For all/all_no_mask:
+    all: 0.45*page_DocSim + 0.30*entropy + 0.20*table_cell + 0.05*grid_hash
+    all_no_mask: 0.35*page_DocSim + 0.40*entropy + 0.20*table_cell + 0.05*grid_hash
+  KEEP if > 0.4820 (D107b best). Decision: KEEP→sweep β_grid=0.10; REVERT→spatial grid closed.
+date: "2026-05-01"

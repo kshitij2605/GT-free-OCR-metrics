@@ -1,0 +1,39 @@
+id: P1_215l_shannon_top_logprobs
+name: "D215.l — Shannon entropy of top_logprobs as alternative source (D213-style)"
+category: self_uncertainty
+script: scripts/methods/P1_215l_shannon_top_logprobs.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  alpha_table: 0.0
+  alpha_all: 0.3
+  alpha_text: 0.4
+  alpha_formula: 0.4
+  alpha_all_no_mask: 0.4
+  k_text: 3
+  k_all: 3
+  k_all_no_mask: 3
+  k_formula: 20
+  source: "shannon_entropy_top_logprobs"
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - data/ocr_logprobs/
+results_path: results/method_runs/ocr_{variant}/P1_215l_shannon_top_logprobs/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_215l_shannon_top_logprobs/correlations.json
+description: >
+  D215.l — alternative entropy SOURCE: replaces per-token mean confidence
+  exp(top_logprob) with 1 - H/log(K_top) where H is Shannon entropy over
+  the renormalized top_logprobs distribution. Captures distribution SHAPE
+  (peaked vs spread) rather than just the mean. Same variant-conditional
+  alpha + K (3/20) as D215.k.
+  Hypothesis: Shannon H captures different uncertainty information than
+  mean confidence — distribution can be high-mean but spread (uncertain
+  among similar candidates) or low-mean but peaked (confidently wrong).
+  Predicted: 0.460-0.475, most likely 0.467 (could tie or slightly improve
+  D215.k 0.4701; if worse, mean confidence is the better source).
+  KEEP if >= 0.473.
+  Diagnostic: even if REVERT, per-variant cc compared to D215.k tells us
+  WHICH variant benefits most from each source — informs three-way fusion
+  D215.n (D215.k + Shannon term) viability.
+  Control: D215.k (variant-cond α+K=3/20, mean confidence source, 0.4701).
+date: "2026-04-30"

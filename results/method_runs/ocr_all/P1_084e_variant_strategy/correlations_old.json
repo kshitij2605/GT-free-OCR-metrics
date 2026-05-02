@@ -1,0 +1,1016 @@
+{
+  "n_pages_matched": 1355,
+  "n_pages_text": 1355,
+  "n_pages_formula": 1355,
+  "n_pages_table": 351,
+  "focus": null,
+  "correlations": {
+    "multi_composite": {
+      "text_accuracy": {
+        "pearson": 0.21735927050612422,
+        "spearman": 0.21323901634011275,
+        "n_samples": 1355
+      },
+      "formula_cdm": {
+        "pearson": null,
+        "spearman": null,
+        "n_samples": 0
+      },
+      "formula_edit": {
+        "pearson": -0.15138447054882323,
+        "spearman": -0.20335860899193717,
+        "n_samples": 1355
+      },
+      "table": {
+        "pearson": 0.22049316009204425,
+        "spearman": 0.2923373601077338,
+        "n_samples": 351
+      },
+      "table_edit": {
+        "pearson": 0.07154311513600882,
+        "spearman": 0.16860878878783084,
+        "n_samples": 1355
+      },
+      "end_to_end": {
+        "pearson": 0.2414475279959647,
+        "spearman": 0.2739599759216183,
+        "n_samples": 1355
+      }
+    },
+    "clip_cosine": {
+      "text_accuracy": {
+        "pearson": 0.25325817856304167,
+        "spearman": 0.17085926255351483,
+        "n_samples": 1355
+      },
+      "formula_cdm": {
+        "pearson": null,
+        "spearman": null,
+        "n_samples": 0
+      },
+      "formula_edit": {
+        "pearson": -0.12388646036195208,
+        "spearman": -0.29371796608024864,
+        "n_samples": 1355
+      },
+      "table": {
+        "pearson": 0.3511508989601595,
+        "spearman": 0.21926683080516826,
+        "n_samples": 351
+      },
+      "table_edit": {
+        "pearson": 0.02466013258241138,
+        "spearman": -0.06152934053622922,
+        "n_samples": 1355
+      },
+      "end_to_end": {
+        "pearson": 0.2791278824970599,
+        "spearman": 0.20306339685721908,
+        "n_samples": 1355
+      }
+    },
+    "lm_composite": {
+      "text_accuracy": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 1355
+      },
+      "formula_cdm": {
+        "pearson": null,
+        "spearman": null,
+        "n_samples": 0
+      },
+      "formula_edit": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 1355
+      },
+      "table": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 351
+      },
+      "table_edit": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 1355
+      },
+      "end_to_end": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 1355
+      }
+    }
+  },
+  "by_category": {
+    "PPT2PDF": {
+      "n_pages": 241,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": 0.044074908142210274,
+            "spearman": 0.08100281184522384,
+            "n_samples": 241
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.14035370566281577,
+            "spearman": -0.13644514911936628,
+            "n_samples": 241
+          },
+          "table": {
+            "pearson": 0.07300686838784815,
+            "spearman": 0.23245260985922903,
+            "n_samples": 22
+          },
+          "table_edit": {
+            "pearson": -0.013086569493686537,
+            "spearman": 0.15158707851113307,
+            "n_samples": 241
+          },
+          "end_to_end": {
+            "pearson": 0.07514635060033102,
+            "spearman": 0.13558460366311662,
+            "n_samples": 241
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": -0.02252384342009839,
+            "spearman": -0.05342055573645767,
+            "n_samples": 241
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.19357527803063287,
+            "spearman": -0.3029528631322432,
+            "n_samples": 241
+          },
+          "table": {
+            "pearson": 0.28452389177111737,
+            "spearman": 0.5755690566539601,
+            "n_samples": 22
+          },
+          "table_edit": {
+            "pearson": -0.0056187805062686185,
+            "spearman": -0.00407546306138715,
+            "n_samples": 241
+          },
+          "end_to_end": {
+            "pearson": -0.009254495431736277,
+            "spearman": -0.036533082334147676,
+            "n_samples": 241
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 241
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 241
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 22
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 241
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 241
+          }
+        }
+      }
+    },
+    "academic_literature": {
+      "n_pages": 129,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": -0.12680578078475552,
+            "spearman": -0.06375064695605992,
+            "n_samples": 129
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.11661283207939432,
+            "spearman": -0.1340300169788579,
+            "n_samples": 129
+          },
+          "table": {
+            "pearson": 0.11825922299986212,
+            "spearman": 0.022886674060293346,
+            "n_samples": 58
+          },
+          "table_edit": {
+            "pearson": 0.2439898820523056,
+            "spearman": 0.39919057228008037,
+            "n_samples": 129
+          },
+          "end_to_end": {
+            "pearson": -0.04526945228994636,
+            "spearman": 0.08651943090684582,
+            "n_samples": 129
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.11298944967728923,
+            "spearman": 0.0773117505312999,
+            "n_samples": 129
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.11400125285756402,
+            "spearman": -0.050829410055128636,
+            "n_samples": 129
+          },
+          "table": {
+            "pearson": 0.15887435334333538,
+            "spearman": -0.034391534407806394,
+            "n_samples": 58
+          },
+          "table_edit": {
+            "pearson": 0.30801375367056644,
+            "spearman": 0.3382934832508252,
+            "n_samples": 129
+          },
+          "end_to_end": {
+            "pearson": 0.1859674911681212,
+            "spearman": 0.1973497371906443,
+            "n_samples": 129
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 129
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 129
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 58
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 129
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 129
+          }
+        }
+      }
+    },
+    "book": {
+      "n_pages": 176,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": -0.027411369845460793,
+            "spearman": -0.0258412894807963,
+            "n_samples": 176
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.03688119383668804,
+            "spearman": -0.022714643120625315,
+            "n_samples": 176
+          },
+          "table": {
+            "pearson": 0.3209466568468869,
+            "spearman": 0.30544576950025665,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": 0.18042689549230462,
+            "spearman": 0.2590760371183376,
+            "n_samples": 176
+          },
+          "end_to_end": {
+            "pearson": 0.03923673851486754,
+            "spearman": 0.13096771029360527,
+            "n_samples": 176
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.11581210370857636,
+            "spearman": 0.005382608559749364,
+            "n_samples": 176
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.08061955736531384,
+            "spearman": -0.18898468421743153,
+            "n_samples": 176
+          },
+          "table": {
+            "pearson": 0.3863946400619931,
+            "spearman": 0.3211148956260644,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": 0.37424479194102034,
+            "spearman": 0.11294518363643885,
+            "n_samples": 176
+          },
+          "end_to_end": {
+            "pearson": 0.19067564766883105,
+            "spearman": 0.11029140375373973,
+            "n_samples": 176
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 176
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 176
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 176
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 176
+          }
+        }
+      }
+    },
+    "colorful_textbook": {
+      "n_pages": 138,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": 0.1388000134728314,
+            "spearman": 0.20857346032048463,
+            "n_samples": 138
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.12710558223443577,
+            "spearman": -0.07724064967836687,
+            "n_samples": 138
+          },
+          "table": {
+            "pearson": 0.02460217044236087,
+            "spearman": 0.2975534260122277,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": 0.15224448698394646,
+            "spearman": 0.3126288204618831,
+            "n_samples": 138
+          },
+          "end_to_end": {
+            "pearson": 0.15266574836734145,
+            "spearman": 0.2626523105609518,
+            "n_samples": 138
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": -0.19486847325879622,
+            "spearman": -0.25786914304226566,
+            "n_samples": 138
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.04319875160302702,
+            "spearman": -0.06210834070188164,
+            "n_samples": 138
+          },
+          "table": {
+            "pearson": 0.13600644972308087,
+            "spearman": 0.12834172059991394,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": 0.002805091458894906,
+            "spearman": 0.030189198268367076,
+            "n_samples": 138
+          },
+          "end_to_end": {
+            "pearson": -0.1699153768830527,
+            "spearman": -0.2151174149332161,
+            "n_samples": 138
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 138
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 138
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 138
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 138
+          }
+        }
+      }
+    },
+    "exam_paper": {
+      "n_pages": 184,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": 0.08386351206455721,
+            "spearman": 0.07567935783703998,
+            "n_samples": 184
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.12638562871175285,
+            "spearman": -0.1104553100214545,
+            "n_samples": 184
+          },
+          "table": {
+            "pearson": 0.37139572680819816,
+            "spearman": 0.38754785502998884,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": 0.14291956769652692,
+            "spearman": 0.11716506503601273,
+            "n_samples": 184
+          },
+          "end_to_end": {
+            "pearson": 0.12817544678239626,
+            "spearman": 0.13449856154979523,
+            "n_samples": 184
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.46220086755828005,
+            "spearman": 0.5351751414116557,
+            "n_samples": 184
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.11781410367907966,
+            "spearman": -0.5405952187867848,
+            "n_samples": 184
+          },
+          "table": {
+            "pearson": 0.4004965368721494,
+            "spearman": 0.3361404192245337,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": 0.20421885847536908,
+            "spearman": 0.15430693966067424,
+            "n_samples": 184
+          },
+          "end_to_end": {
+            "pearson": 0.5138269273306139,
+            "spearman": 0.5801582178678837,
+            "n_samples": 184
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 184
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 184
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 184
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 184
+          }
+        }
+      }
+    },
+    "magazine": {
+      "n_pages": 139,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": -0.12055720753210813,
+            "spearman": 0.18471238915221247,
+            "n_samples": 139
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          },
+          "table": {
+            "pearson": 0.8148975646031211,
+            "spearman": 0.3188740696088466,
+            "n_samples": 6
+          },
+          "table_edit": {
+            "pearson": 0.15210007417144977,
+            "spearman": 0.07101593693133185,
+            "n_samples": 139
+          },
+          "end_to_end": {
+            "pearson": -0.10917343148939238,
+            "spearman": 0.20527270887629503,
+            "n_samples": 139
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.20719959870628948,
+            "spearman": 0.05278658765292202,
+            "n_samples": 139
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          },
+          "table": {
+            "pearson": -0.24251639159573074,
+            "spearman": -0.5797710356524485,
+            "n_samples": 6
+          },
+          "table_edit": {
+            "pearson": -0.05509850140168746,
+            "spearman": -0.09071152048971522,
+            "n_samples": 139
+          },
+          "end_to_end": {
+            "pearson": 0.20986409800650382,
+            "spearman": 0.05069224951416231,
+            "n_samples": 139
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 6
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 139
+          }
+        }
+      }
+    },
+    "newspaper": {
+      "n_pages": 151,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": 0.4592023884186225,
+            "spearman": 0.5729228753010589,
+            "n_samples": 151
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          },
+          "table": {
+            "pearson": 0.5469542269209983,
+            "spearman": 0.4986848218501285,
+            "n_samples": 14
+          },
+          "table_edit": {
+            "pearson": 0.020462812990521047,
+            "spearman": -0.11620393928423255,
+            "n_samples": 151
+          },
+          "end_to_end": {
+            "pearson": 0.456751180126938,
+            "spearman": 0.5794547907138397,
+            "n_samples": 151
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.5405298367143021,
+            "spearman": 0.5604968996091892,
+            "n_samples": 151
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          },
+          "table": {
+            "pearson": 0.8660839117791687,
+            "spearman": 0.7640400481557015,
+            "n_samples": 14
+          },
+          "table_edit": {
+            "pearson": 0.19068767945246953,
+            "spearman": -0.0021962527204114897,
+            "n_samples": 151
+          },
+          "end_to_end": {
+            "pearson": 0.5551843914667653,
+            "spearman": 0.5895454497960169,
+            "n_samples": 151
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 14
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 151
+          }
+        }
+      }
+    },
+    "note": {
+      "n_pages": 116,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": -0.06944435787469902,
+            "spearman": -0.19991545702124341,
+            "n_samples": 116
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": 0.040882705089862297,
+            "spearman": 0.05430433042085564,
+            "n_samples": 116
+          },
+          "table": {
+            "pearson": 0.08503521526819281,
+            "spearman": 0.311159685308888,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": -0.025173591043208043,
+            "spearman": 0.16578080863764386,
+            "n_samples": 116
+          },
+          "end_to_end": {
+            "pearson": -0.05806707654810446,
+            "spearman": -0.1771487988993373,
+            "n_samples": 116
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": 0.16969167538106902,
+            "spearman": 0.13121929354707418,
+            "n_samples": 116
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": -0.09012550459272305,
+            "spearman": -0.12114042940037029,
+            "n_samples": 116
+          },
+          "table": {
+            "pearson": -0.15130070271022988,
+            "spearman": 0.1083183140976753,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": -0.10584687873934268,
+            "spearman": -0.1367159364354676,
+            "n_samples": 116
+          },
+          "end_to_end": {
+            "pearson": 0.2209873495458148,
+            "spearman": 0.19157254104121071,
+            "n_samples": 116
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 116
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 116
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 116
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 116
+          }
+        }
+      }
+    },
+    "research_report": {
+      "n_pages": 81,
+      "correlations": {
+        "multi_composite": {
+          "text_accuracy": {
+            "pearson": 0.051643213022684334,
+            "spearman": -0.013608635942288401,
+            "n_samples": 81
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          },
+          "table": {
+            "pearson": 0.16910137458152508,
+            "spearman": 0.24645047392893882,
+            "n_samples": 79
+          },
+          "table_edit": {
+            "pearson": 0.13128443022853664,
+            "spearman": 0.20679332697460892,
+            "n_samples": 81
+          },
+          "end_to_end": {
+            "pearson": 0.1724433848061392,
+            "spearman": 0.2333743766816649,
+            "n_samples": 81
+          }
+        },
+        "clip_cosine": {
+          "text_accuracy": {
+            "pearson": -0.1414726605982711,
+            "spearman": -0.16903907174290808,
+            "n_samples": 81
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          },
+          "table": {
+            "pearson": 0.09882976704422748,
+            "spearman": 0.17784303092084797,
+            "n_samples": 79
+          },
+          "table_edit": {
+            "pearson": 0.06297281841074316,
+            "spearman": 0.21740021198088444,
+            "n_samples": 81
+          },
+          "end_to_end": {
+            "pearson": 0.002138518855088977,
+            "spearman": -0.003009822264112624,
+            "n_samples": 81
+          }
+        },
+        "lm_composite": {
+          "text_accuracy": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          },
+          "formula_cdm": {
+            "pearson": null,
+            "spearman": null,
+            "n_samples": 0
+          },
+          "formula_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          },
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 79
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          },
+          "end_to_end": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 81
+          }
+        }
+      }
+    }
+  }
+}

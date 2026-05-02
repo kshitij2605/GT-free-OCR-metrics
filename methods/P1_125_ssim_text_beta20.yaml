@@ -1,0 +1,28 @@
+id: P1_125_ssim_text_beta20
+name: "D125 — SSIM text β=0.20 (text=0.20, all=0.15, all_no_mask=0.10)"
+category: composite
+script: scripts/methods/P1_125_ssim_text_beta20.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_text: 0.20
+  beta_ssim_all: 0.15
+  beta_ssim_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_125_ssim_text_beta20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_125_ssim_text_beta20/correlations.json
+description: >
+  D125 — SSIM text β sweep step 4: text=0.20 (up from D122's 0.15).
+  D122 KEEP 0.4908 (text β=0.15, +0.0023). Diminishing: β=0.05 +0.0070, β=0.10 +0.0059, β=0.15 +0.0023.
+  D125 tests whether β=0.20 continues or plateaus/reverses.
+  text: 0.40*DocSim + 0.40*entropy + 0.20*ssim (reduces DocSim 0.45→0.40)
+  all: 0.35*DocSim + 0.30*entropy + 0.15*table_cell + 0.15*ssim (unchanged from D122)
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim (unchanged from D122)
+  formula: 0.0 SSIM (independent of D124 formula test)
+  KEEP if spearman_mean > 0.4908 (D122 new best).
+date: "2026-05-02"

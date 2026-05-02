@@ -1,0 +1,26 @@
+id: P1_166_siglip_table_clip
+name: "H12.1 SigLIP-base for variant=table cc only (Branch 12 root)"
+category: deep_feature
+script: scripts/methods/P1_166_siglip_table_clip.py
+script_args: ""
+parameters:
+  vram_gb: 5
+  encoder: siglip_base_patch16_224+dinov2_vitb14+openclip_vitb32
+  dino_size: 224
+  batch_size: 16
+dependencies: []
+results_path: results/method_runs/ocr_{variant}/P1_166_siglip_table_clip/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_166_siglip_table_clip/correlations.json
+description: >
+  H12.1: Branch 12 root. Replace OpenCLIP ViT-B/32 with SigLIP-base-patch16-224 for
+  variant=table CLIP path ONLY. SigLIP uses sigmoid contrastive loss (vs softmax) and
+  was pretrained on WebLI 4B image-text pairs, which may encode spatial document structure
+  differently than OpenCLIP. H6.1 baseline preprocessing (grayscale+SHARPEN+autocontrast->RGB)
+  is applied before SigLIP processor, same as H6.1 applied before OpenCLIP.
+  Branch 6 exhausted OpenCLIP encoder/resolution swaps (H6.2 ViT-L/14->cc=0.250,
+  H6.4 ViT-B/32@336->cc=0.252). H12.1 tries a fundamentally different contrastive
+  pretraining regime to break the table cc=0.277 ceiling.
+  All other variants keep H4.e+H5.b+H6.1 (50/50 OpenCLIP+DINOv2) UNCHANGED.
+  Control: H6.1 (P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598, table cc=0.277).
+  Predicted: table cc 0.277 -> 0.29-0.32; spearman_mean 0.3598 -> 0.362-0.367.
+date: "2026-04-27"

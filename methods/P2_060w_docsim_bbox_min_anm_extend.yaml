@@ -1,0 +1,43 @@
+id: P2_060w_docsim_bbox_min_anm_extend
+name: "D60.w — extend D60.p per-table-bbox MIN DocSim from variant=table to variant=all_no_mask (mirror of D60.q test for variant=all)"
+category: deep_feature
+script: scripts/methods/P2_060w_docsim_bbox_min_anm_extend.py
+script_args: ""
+parameters:
+  vram_gb: 10
+  encoder: dinov2_vitb14+openclip_vitb32+lora_head_per_bbox_anm_extend
+  docsim_variants: "text, all (page-level); table, all_no_mask (per-bbox MIN with page-level DocSim fallback)"
+  baseline_variants: "formula (H4.e fusion); table-fallback (H6.1 CLIP-only when no bboxes)"
+  bbox_source: ocr_table_elements.json
+  bbox_aggregation: min
+  empty_bbox_fallback: "page-level DocSim cc (all_no_mask) / H6.1 CLIP-only (table)"
+  dino_size: 224
+  batch_size: 16
+  adapter_path: models/docsim_lora/lora_adapter_best
+  head_state_path: models/docsim_lora/head_state_best.pt
+dependencies:
+  - models/docsim_lora/head_state_best.pt
+  - models/docsim_lora/config.json
+results_path: results/method_runs/ocr_{variant}/P2_060w_docsim_bbox_min_anm_extend/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_060w_docsim_bbox_min_anm_extend/correlations.json
+description: >
+  D60.w — extends D60.p per-table-bbox MIN DocSim aggregation from
+  variant=table to variant=all_no_mask. Mirror test of D60.q (which
+  failed for variant=all because pages-with-tables (per-cell scale)
+  vs pages-without (page-level scale) creates ranking noise).
+  Hypothesis: variant=all_no_mask differs from variant=all in that
+  it uses the no-mask render pipeline; its label distribution may
+  be sufficiently different that scale-mismatch is less problematic.
+  KEY DIFFERENCE FROM D60.q: fallback for pages WITHOUT tables is
+  page-level DocSim cc (preserves D60.j routing), NOT H6.1 CLIP-only.
+  This is the all_no_mask analogue.
+  Other 4 variants (text, formula, all, table) byte-equal to D60.p.
+  Predicted spearman_mean: 0.435-0.450, most likely 0.4400 (-0.005).
+  Per the synthesizer digest: "Same structural failure mode expected:
+  344/1349 pages get per-cell, 1011 fallback to page-level DocSim —
+  scale mismatch persists." Hit prob 15-20%.
+  KEEP if >= 0.448. Kill switch: all_no_mask cc <= 0.380 (current
+  D60.p baseline 0.3937).
+  Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, all_no_mask
+  cc 0.3937).
+date: "2026-04-30"

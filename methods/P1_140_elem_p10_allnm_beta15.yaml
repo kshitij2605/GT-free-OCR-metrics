@@ -1,0 +1,28 @@
+id: P1_140_elem_p10_allnm_beta15
+name: "D140 — per-element CLIP P10 β sweep: all_no_mask β=0.10→0.15"
+category: composite
+script: scripts/methods/P1_140_elem_p10_allnm_beta15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.15
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_140_elem_p10_allnm_beta15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_140_elem_p10_allnm_beta15/correlations.json
+description: >
+  D140 — per-element CLIP P10 β sweep for all_no_mask: β=0.10→0.15.
+  D137 showed all_no_mask unchanged at 0.4461 at β=0.10. Testing higher β.
+  all_no_mask: 0.25*DocSim + 0.40*entropy + 0.10*table_cell + 0.10*ssim + 0.15*elem_p10
+  KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
+date: "2026-05-02"

@@ -1,0 +1,26 @@
+id: P1_138_ssim_all_beta25
+name: "D138 — all SSIM β sweep 0.20→0.25"
+category: composite
+script: scripts/methods/P1_138_ssim_all_beta25.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.25
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_138_ssim_all_beta25/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_138_ssim_all_beta25/correlations.json
+description: >
+  D138 — all SSIM β sweep step 2: 0.20→0.25. Based on D136 KEEP NEW BEST (0.4928).
+  D136 showed all variant marginally responsive to SSIM β increase (0.4458→0.4461 at β=0.20).
+  all: 0.25*DocSim + 0.30*entropy + 0.15*table_cell + 0.25*ssim (DocSim reduced to 0.25)
+  KEEP if spearman_mean > 0.4928 (D136 NEW BEST).
+date: "2026-05-02"
