@@ -78,6 +78,7 @@ def _rows_for_variant(
                 p = dim_data.get("pearson")
                 s = dim_data.get("spearman")
                 n = dim_data.get("n_samples", 0)
+                sp = dim_data.get("spearman_pvalue")
             except (KeyError, TypeError):
                 continue
             key = (entry["technique_id"], metric)
@@ -100,6 +101,7 @@ def _rows_for_variant(
                     "pearson": p,
                     "spearman": s,
                     "n": n,
+                    "spearman_pvalue": sp,
                     "date": entry.get("date", ""),
                 }
 
@@ -134,8 +136,8 @@ def _print_table(rows: list, rank_label: str) -> None:
     """Print a single ranked table with Pearson, Spearman, and delta columns."""
     print(f"  --- Ranked by {rank_label} ---")
     print(f"  {'#':<3}  {'technique':<32}  {'metric':<18}  {'Pearson':>8}  "
-          f"{'Spearman':>9}  {'D(P-S)':>8}  {'!':>1}  {'N':>6}  {'date'}")
-    print(f"  {'-'*3}  {'-'*32}  {'-'*18}  {'-'*8}  {'-'*9}  {'-'*8}  {'-'*1}  {'-'*6}  {'-'*10}")
+          f"{'Spearman':>9}  {'p-val':>7}  {'D(P-S)':>8}  {'!':>1}  {'N':>6}  {'date'}")
+    print(f"  {'-'*3}  {'-'*32}  {'-'*18}  {'-'*8}  {'-'*9}  {'-'*7}  {'-'*8}  {'-'*1}  {'-'*6}  {'-'*10}")
     for i, r in enumerate(rows, 1):
         p, s = r["pearson"], r["spearman"]
         if p is not None and s is not None:
@@ -145,8 +147,10 @@ def _print_table(rows: list, rank_label: str) -> None:
         else:
             delta_str = "  n/a  "
             flag = " "
+        sp_p = r.get("spearman_pvalue")
+        pval_str = f"{sp_p:.4f}" if sp_p is not None else "  n/a "
         print(f"  {i:<3}  {r['technique']:<32}  {r['metric']:<18}  "
-              f"{_fmt(p):>8}  {_fmt(s):>9}  {delta_str:>8}  {flag:>1}  "
+              f"{_fmt(p):>8}  {_fmt(s):>9}  {pval_str:>7}  {delta_str:>8}  {flag:>1}  "
               f"{r['n']:>6}  {r['date']}")
 
 

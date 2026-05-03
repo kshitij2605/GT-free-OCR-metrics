@@ -147,18 +147,22 @@ class ComparisonResult:
     pearson: float
     spearman: float
     n_samples: int
+    pearson_pvalue: float = 1.0
+    spearman_pvalue: float = 1.0
 
 
 def compute_correlation(ref_scores: list, our_scores: list) -> ComparisonResult:
     """Compute Pearson and Spearman correlation between two score lists."""
     if len(ref_scores) < 3 or len(our_scores) < 3:
         return ComparisonResult(pearson=0.0, spearman=0.0, n_samples=len(ref_scores))
-    pearson_r, _ = stats.pearsonr(ref_scores, our_scores)
-    spearman_r, _ = stats.spearmanr(ref_scores, our_scores)
+    pearson_r, pearson_p = stats.pearsonr(ref_scores, our_scores)
+    spearman_r, spearman_p = stats.spearmanr(ref_scores, our_scores)
     return ComparisonResult(
         pearson=float(pearson_r),
         spearman=float(spearman_r),
         n_samples=len(ref_scores),
+        pearson_pvalue=float(pearson_p),
+        spearman_pvalue=float(spearman_p),
     )
 
 

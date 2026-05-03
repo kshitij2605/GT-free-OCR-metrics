@@ -332,6 +332,8 @@ def main():
                 "pearson": corr.pearson,
                 "spearman": corr.spearman,
                 "n_samples": corr.n_samples,
+                "pearson_pvalue": corr.pearson_pvalue,
+                "spearman_pvalue": corr.spearman_pvalue,
             }
 
         log.info("--- %s ---", ref_metric_name)
@@ -384,6 +386,8 @@ def main():
                     "pearson": corr.pearson,
                     "spearman": corr.spearman,
                     "n_samples": corr.n_samples,
+                    "pearson_pvalue": corr.pearson_pvalue,
+                    "spearman_pvalue": corr.spearman_pvalue,
                 }
         by_category[cat] = {"n_pages": len(cat_pairs), "correlations": cat_corrs}
     log.info("Per-category breakdown computed for %d categories", len(by_category))
