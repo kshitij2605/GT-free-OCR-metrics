@@ -1,0 +1,27 @@
+id: P1_151_text_ssim_beta20
+name: "D151 — text SSIM β=0.20 (vs β=0.15 in D137)"
+category: composite
+script: scripts/methods/P1_151_text_ssim_beta20.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_text: 0.20
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_151_text_ssim_beta20/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_151_text_ssim_beta20/correlations.json
+description: >
+  D151 — text SSIM β 0.15→0.20. All other weights from D137.
+  text: 0.40*DocSim + 0.40*entropy + 0.20*ssim (DocSim 0.45→0.40).
+  Text SSIM β-axis was: 0.05→+0.0070, 0.10→+0.0059, 0.15→+0.0023 (diminishing but positive).
+  β=0.20 never tested. If still positive, DocSim reduction at 0.40 is acceptable.
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-03"

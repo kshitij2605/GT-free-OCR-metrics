@@ -1,0 +1,29 @@
+id: P2_206_vlm_page_score
+name: "D206 — VLM page comparison score (Qwen3.5-122B visual judge)"
+category: composite
+script: scripts/methods/P2_206_vlm_page_score.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  vlm_max_workers: 8
+  vlm_max_img_dim: 1024
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_206_vlm_page_score/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_206_vlm_page_score/correlations.json
+description: >
+  D206 — VLM page score: replace DocSim prod_cc with Qwen3.5-122B-A10B visual judge
+  for text/all/all_no_mask variants. VLM compares original page image vs reconstructed
+  page image and outputs 0-1 fidelity score. Formula stays CLIP+DINOv2 50/50+DIQA.
+  Table stays per-cell DocSim. VLM calls via ThreadPoolExecutor(max_workers=8) with
+  JSON caching. All other weights identical to D137.
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-03"

@@ -1,0 +1,31 @@
+id: P1_146_ssim768
+name: "D146 — SSIM resolution 512→768"
+category: composite
+script: scripts/methods/P1_146_ssim768.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 768
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_146_ssim768/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_146_ssim768/correlations.json
+description: >
+  D146 — SSIM resolution sweep: 512→768. All weights identical to D137.
+  Hypothesis: higher SSIM resolution better captures fine-grained structural detail
+  in dense document pages (text layouts, formula rendering, table borders).
+  text: 0.45*DocSim + 0.40*entropy + 0.15*ssim@768
+  all: 0.25*DocSim + 0.30*entropy + 0.15*table_cell + 0.20*ssim@768 + 0.10*elem_p10
+  all_no_mask: 0.30*DocSim + 0.40*entropy + 0.10*table_cell + 0.10*ssim@768 + 0.10*elem_p10
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-02"

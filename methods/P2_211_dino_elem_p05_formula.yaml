@@ -1,0 +1,35 @@
+id: P2_211_dino_elem_p05_formula
+name: "D211 — D147 + DINOv2 CLS element P5 supplement for formula variant (β=0.05)"
+category: composite
+script: scripts/methods/P2_211_dino_elem_p05_formula.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.00
+  beta_content_elem_formula: 0.05
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_211_dino_elem_p05_formula/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_211_dino_elem_p05_formula/correlations.json
+description: >
+  D211 — D147 base (P5 elem CLIP for all/all_no_mask) + DINOv2 element-level P5 for formula at β=0.05.
+  D147: text=0.4792, formula=0.6047, table=0.4877, all=0.4512, all_no_mask=0.4461, mean=0.4938.
+  DINOv2 is formula-specialist (CLS Spearman 0.5407 on formula vs CLIP 0.4235).
+  D211 formula: 0.10*DocSim + 0.30*entropy + 0.50*IQ + 0.05*SSIM + 0.05*DINOv2_elem_p5.
+  DINOv2 elem P5 uses per-formula-bbox DINOv2 CLS cosine, P5 percentile aggregation.
+  Hypothesis: element-level DINOv2 captures fine-grained formula rendering errors that
+  page-level DINOv2 fusion misses; P5 is robust to sparse formula pages.
+  Expected: formula→0.6060-0.6090 (+0.0013-0.0043), mean≈0.4941-0.4947.
+  KEEP if spearman_mean > 0.4938 (D147 current best).
+date: "2026-05-03"

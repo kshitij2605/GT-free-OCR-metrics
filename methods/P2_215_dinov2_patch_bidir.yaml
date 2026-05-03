@@ -1,0 +1,35 @@
+id: P2_215_dinov2_patch_bidir
+name: "D215 — DINOv2 patch bidirectional soft-NN cosine for formula"
+category: composite
+script: scripts/methods/P2_215_dinov2_patch_bidir.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.00
+  beta_content_elem_formula: 0.00
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_215_dinov2_patch_bidir/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_215_dinov2_patch_bidir/correlations.json
+description: >
+  D215 — Tests bidirectional (symmetric) DINOv2 patch soft-NN cosine for formula variant.
+  D214 uses GT→OCR only: for each GT patch, find max cosine with any OCR patch.
+  D215 adds OCR→GT direction: for each OCR patch, find max cosine with any GT patch.
+  Final score = avg(GT→OCR_softNN, OCR→GT_softNN).
+  Symmetric: penalizes both OCR coverage gaps (GT→OCR) and hallucinations (OCR→GT).
+  D214 is asymmetric — it only penalizes coverage gaps, not hallucinations.
+  All other variants (text/all/all_no_mask/table) identical to D147/D214.
+  KEEP if D214 kept and spearman_mean > D214 result.
+  Only run after D214 result is known.
+date: "2026-05-03"

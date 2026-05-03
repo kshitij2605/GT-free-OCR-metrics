@@ -1,0 +1,33 @@
+id: P2_210_elem_p05_table_text_elemclip
+name: "D210 — D209 + elem CLIP P5 supplement for text variant (β=0.05)"
+category: composite
+script: scripts/methods/P2_210_elem_p05_table_text_elemclip.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.05
+  beta_content_elem_text: 0.05
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_210_elem_p05_table_text_elemclip/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_210_elem_p05_table_text_elemclip/correlations.json
+description: >
+  D210 — stack D209 (P5+table_elemclip) + add elem_clip_p5 to text variant at β=0.05.
+  D209: text=0.4792 (no elemclip), table=0.4899, all=0.4512.
+  Text variant currently: 0.45*DocSim + 0.40*entropy + 0.15*SSIM.
+  D210 text: 0.40*DocSim + 0.40*entropy + 0.15*SSIM + 0.05*elem_clip_p5.
+  Hypothesis: elem_clip_p5 adds complementary signal to DocSim for text pages.
+  Expected: text→0.4815-0.4830, mean≈0.4945 (uncertain - DocSim/CLIP may overlap).
+  KEEP if spearman_mean > 0.4942 (D209 expected best).
+date: "2026-05-03"

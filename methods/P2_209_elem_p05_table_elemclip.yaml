@@ -1,0 +1,30 @@
+id: P2_209_elem_p05_table_elemclip
+name: "D209 — P5 base + elem CLIP P5 supplement for table variant (β=0.05)"
+category: composite
+script: scripts/methods/P2_209_elem_p05_table_elemclip.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.05
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_209_elem_p05_table_elemclip/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_209_elem_p05_table_elemclip/correlations.json
+description: >
+  D209 — stack D147 (P5 element CLIP) + add elem_clip_p5 to table variant at β=0.05.
+  D147 base: table=0.4877, all=0.4512. D148 showed table_beta05 gives +0.0022 on table.
+  This applies same table CLIP supplement but on D147 (P5) base so all stays at 0.4512.
+  Expected: table→0.4899, all→0.4512, mean≈0.4942 (new best vs D147=0.4938).
+  KEEP if spearman_mean > 0.4938 (D147).
+date: "2026-05-03"

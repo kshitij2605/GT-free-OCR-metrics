@@ -1,0 +1,36 @@
+id: P2_213_elem_p05_table_fixed
+name: "D213 — D209 bug-fixed: table elem CLIP P5 actually wired into _fuse (3 locations)"
+category: composite
+script: scripts/methods/P2_213_elem_p05_table_fixed.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.05
+  beta_content_elem_formula: 0.00
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_213_elem_p05_table_fixed/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_213_elem_p05_table_fixed/correlations.json
+description: >
+  D213 — Fixes D209 bug: table _flush_batch + 2 primary/fallback paths did not wire
+  content_elem_score into _fuse. D209 was a no-op for table (≡ D147).
+  Fix 1: primary table path now computes ces_t=_content_element_clip_p10() and passes
+         content_elem_score=ces_t to _fuse.
+  Fix 2: fallback table path now computes ces (not hardcoded 0.0).
+  Fix 3: _flush_batch table branch adds ces to zip and passes content_elem_score=ces.
+  D213 table: 0.70*DocSim_bbox + 0.10*IQ + 0.15*SSIM + 0.05*CLIP_elem_P5.
+  CLIP elem P5 = P5 percentile over all content bboxes (text+formula+table elements).
+  D147 base: table=0.4877. Expected: table→0.4899-0.4910, mean≈0.4941-0.4944.
+  KEEP if spearman_mean > 0.4938 (D147 current best).
+date: "2026-05-03"

@@ -1,0 +1,35 @@
+id: P2_214_dinov2_patch_cosine
+name: "D214 — DINOv2 patch soft-NN cosine for formula (D83 direction)"
+category: composite
+script: scripts/methods/P2_214_dinov2_patch_cosine.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.00
+  beta_content_elem_formula: 0.00
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_214_dinov2_patch_cosine/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_214_dinov2_patch_cosine/correlations.json
+description: >
+  D214 — Tests DINOv2 patch-level soft-NN cosine for the formula variant (D83 direction).
+  D147 formula uses 50/50 CLIP_CLS + DINOv2_CLS page-level cosine. D214 replaces
+  DINOv2_CLS with DINOv2 patch soft-NN: for each GT patch token, find the max cosine
+  with any OCR patch token; aggregate by mean over GT patches. Uses 224x224 input (16x16
+  patches), same as the existing DINOv2_CLS transform — zero overhead vs CLS.
+  Shift-tolerant: content that reflows by a few pixels finds a nearby patch match.
+  All other variants (text/all/all_no_mask/table) are identical to D147.
+  Expected: formula→0.610-0.620 if patch cosine is more discriminative than CLS.
+  KEEP if spearman_mean > 0.4938 (D147 current best).
+date: "2026-05-03"

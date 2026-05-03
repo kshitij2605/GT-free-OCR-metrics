@@ -1,0 +1,29 @@
+id: P1_147_elem_p05
+name: "D147 — per-element CLIP P5 (vs P10)"
+category: composite
+script: scripts/methods/P1_147_elem_p05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_147_elem_p05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_147_elem_p05/correlations.json
+description: >
+  D147 — per-element CLIP percentile sweep: P10→P5. All weights identical to D137.
+  Hypothesis: 5th percentile (more aggressive than 10th) better penalizes pages
+  where even a small fraction of elements are poorly reproduced.
+  Only change: np.percentile(sims, 10) → np.percentile(sims, 5) in _content_element_clip_p10().
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-02"

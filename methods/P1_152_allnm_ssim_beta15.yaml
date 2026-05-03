@@ -1,0 +1,25 @@
+id: P1_152_allnm_ssim_beta15
+name: "D152 — all_no_mask SSIM β=0.15 (vs β=0.10 in D137)"
+category: composite
+script: scripts/methods/P1_152_allnm_ssim_beta15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_all_no_mask: 0.15
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_152_allnm_ssim_beta15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_152_allnm_ssim_beta15/correlations.json
+description: >
+  D152 — all_no_mask SSIM β 0.10→0.15. All other weights from D137.
+  all_no_mask: 0.25*DocSim + 0.40*entropy + 0.10*table_cell + 0.15*ssim + 0.10*elem_p10.
+  DocSim 0.30→0.25. The all variant uses β=0.20 for SSIM (high).
+  all_no_mask SSIM was set at 0.10 (D137). Testing if all_no_mask has similar headroom.
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-03"

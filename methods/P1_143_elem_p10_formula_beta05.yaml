@@ -1,0 +1,32 @@
+id: P1_143_elem_p10_formula_beta05
+name: "D143 — per-element CLIP P10 extended to formula variant at β=0.05"
+category: composite
+script: scripts/methods/P1_143_elem_p10_formula_beta05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_text: 0.10
+  beta_content_elem_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  ssim_size: 512
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_143_elem_p10_formula_beta05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_143_elem_p10_formula_beta05/correlations.json
+description: >
+  D143 — Apply per-element CLIP P10 to formula variant at β=0.05 (D141 added text, D137 added all/all_no_mask).
+  Formula pages have ocr_formula_elements.json bboxes; P10 over formula crops captures per-formula rendering quality.
+  formula: (1-0.3-0.5-0.05-0.05)*DocSim + 0.3*entropy + 0.5*IQ + 0.05*ssim + 0.05*elem_p10
+         = 0.10*DocSim + 0.30*entropy + 0.50*IQ + 0.05*ssim + 0.05*elem_p10
+  text/all/all_no_mask: unchanged from D141.
+  KEEP if spearman_mean > 0.4932 (D137/D140 best).
+date: "2026-05-02"

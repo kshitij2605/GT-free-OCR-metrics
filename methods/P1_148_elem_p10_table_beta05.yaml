@@ -1,0 +1,32 @@
+id: P1_148_elem_p10_table_beta05
+name: "D148 — per-element CLIP P10 for table variant β=0.05"
+category: composite
+script: scripts/methods/P1_148_elem_p10_table_beta05.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_table: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_148_elem_p10_table_beta05/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_148_elem_p10_table_beta05/correlations.json
+description: >
+  D148 — table variant elem_p10 β=0.05. All other weights from D137.
+  Table pages have ocr_formula_elements.json and ocr_elements.json bboxes.
+  Per-element CLIP P10 over all element crops tests whether visual rendering quality
+  per element predicts table OCR accuracy beyond per-cell MIN DocSim.
+  table: 0.70*per_cell_min_DocSim + 0.10*IQ + 0.15*ssim + 0.05*elem_p10
+  text/all/all_no_mask/formula: unchanged from D137.
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-02"

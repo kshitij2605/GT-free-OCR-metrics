@@ -1,0 +1,28 @@
+id: P1_150_elem_p15
+name: "D150 — per-element CLIP P15 (vs P10)"
+category: composite
+script: scripts/methods/P1_150_elem_p15.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  percentile: 15
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P1_150_elem_p15/results.json
+correlations_path: results/method_runs/ocr_{variant}/P1_150_elem_p15/correlations.json
+description: >
+  D150 — per-element CLIP P15 (vs P10 in D137). All weights from D137.
+  Single change: percentile 10 → 15 in _content_element_clip_p10().
+  P15 = less aggressive than P10 (D137 kept) and P5 (D147 testing).
+  Hypothesis: P10 may be slightly too aggressive; P15 captures worst ~15%
+  of elements which might be more stable / less noisy.
+  KEEP if spearman_mean > 0.4932 (D137).
+date: "2026-05-03"

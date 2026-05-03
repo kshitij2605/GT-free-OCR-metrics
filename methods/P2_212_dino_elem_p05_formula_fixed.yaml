@@ -1,0 +1,35 @@
+id: P2_212_dino_elem_p05_formula_fixed
+name: "D212 — D211 bug-fixed: DINOv2 CLS element P5 for formula actually wired into _fuse"
+category: composite
+script: scripts/methods/P2_212_dino_elem_p05_formula_fixed.py
+script_args: ""
+parameters:
+  vram_gb: 8
+  ssim_size: 512
+  beta_ssim_table: 0.15
+  beta_ssim_text: 0.15
+  beta_ssim_all: 0.20
+  beta_ssim_all_no_mask: 0.10
+  beta_ssim_formula: 0.05
+  beta_content_elem_all: 0.10
+  beta_content_elem_all_no_mask: 0.10
+  beta_content_elem_table: 0.00
+  beta_content_elem_formula: 0.05
+dependencies:
+  - data/omnidocbench/
+  - models/docsim_lora/
+  - data/ocr_logprobs/
+  - data/ocr_logprobs_per_bbox/
+results_path: results/method_runs/ocr_{variant}/P2_212_dino_elem_p05_formula_fixed/results.json
+correlations_path: results/method_runs/ocr_{variant}/P2_212_dino_elem_p05_formula_fixed/correlations.json
+description: >
+  D212 — Fixes D211 bug: formula _flush_batch did not pass content_elem_score=ces to _fuse.
+  D211 was a no-op (≡ D147) because the DINOv2 elem P5 CES was computed but never used.
+  Fix: add ces to zip in _flush_batch formula branch and pass content_elem_score=ces.
+  D212 formula: 0.10*DocSim + 0.30*entropy + 0.50*IQ + 0.05*SSIM + 0.05*DINOv2_elem_p5 = 1.0
+  DINOv2 elem P5 uses per-formula-bbox DINOv2 CLS cosine, P5 percentile aggregation.
+  DINOv2 is formula-specialist (CLS Spearman 0.5407 on formula vs CLIP 0.4235).
+  Hypothesis: element-level DINOv2 captures fine-grained formula rendering errors.
+  Expected: formula→0.6060-0.6090, mean≈0.4941-0.4947.
+  KEEP if spearman_mean > 0.4938 (D147 current best).
+date: "2026-05-03"
