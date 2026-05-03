@@ -7,8 +7,8 @@ how closely it matches the original page scan — no transcriptions needed.
 Validated on [OmniDocBench](https://arxiv.org/abs/2412.07626) (1 355 pages, EN/ZH,
 10 document categories) against reference-based edit distance.
 
-**Best single-metric result:** Spearman ρ ≈ 0.49 (element-patch SSIM + text coverage,
-`P1_137_elem_p10_all`).
+**Best single-metric result:** Spearman ρ ≈ 0.494 (element-patch CLIP P5 with table correction,
+`P2_213_elem_p05_table_fixed`; mean across all 5 variants).
 
 ---
 
@@ -66,14 +66,15 @@ See **[REPRODUCING.md](REPRODUCING.md)** for a full step-by-step reproduction gu
 
 ## Methods
 
-109 method implementations are included in `methods/` + `scripts/methods/`.
+147 method implementations are included in `methods/` + `scripts/methods/`.
 See [methods/README.md](methods/README.md) for a categorized index with headline scores.
 
 Key result families:
 
 | Category | Best method | Spearman (`all` variant) |
 |---|---|---|
-| Element-patch SSIM | `P1_137_elem_p10_all` | **0.493** |
+| Element-patch CLIP P5 (table fix) | `P2_213_elem_p05_table_fixed` | **0.494** |
+| Element-patch SSIM + text coverage | `P1_137_content_elem_p10_all` | 0.493 |
 | DocSim LoRA (CLIP+DINOv2) | `P1_084` series | ~0.46 |
 | ST-LPIPS shift-tolerant | `P1_082_st_lpips` | ~0.44 |
 | OCR log-probabilities | `P1_107c` series | ~0.45 |

@@ -86,7 +86,7 @@ Weights are placed in `models/docsim_lora/`.
 
 ```bash
 # Run the best-performing method (element-patch SSIM + text coverage β=0.10):
-bash scripts/run_method.sh P1_137_elem_p10_all
+bash scripts/run_method.sh P2_213_elem_p05_table_fixed
 
 # Run the baseline:
 bash scripts/run_method.sh baseline
@@ -109,7 +109,7 @@ for the `text`, `formula`, and `table` reference dimensions.
 
 ---
 
-## Step 5 — Run all 109 methods
+## Step 5 — Run all 147 methods
 
 ```bash
 bash scripts/run_all_correlations.sh
@@ -142,11 +142,11 @@ The top-5 methods by `spearman_mean` (averaged across all variants):
 
 | Rank | Method | Spearman mean |
 |---|---|---|
-| 1 | `P1_137_elem_p10_all` | ~0.493 |
-| 2 | `P1_136_*` | ~0.490 |
-| 3 | `P1_133_*` | ~0.488 |
-| 4 | `P1_084c_dinov2_clip_avg` | ~0.480 |
-| 5 | `P1_082_st_lpips` | ~0.475 |
+| 1 | `P2_213_elem_p05_table_fixed` | 0.4938 |
+| 2 | `P2_210_elem_p05_table_text_elemclip` | 0.4938 |
+| 3 | `P1_137_content_elem_p10_all` | 0.4932 |
+| 4 | `P1_150_elem_p15` | 0.4930 |
+| 5 | `P1_136_ssim_all_beta20` | 0.4928 |
 
 Exact values depend on the variant weighting used in `update_leaderboard.py`.
 The `results/leaderboard.json` committed to this repo is the authoritative reference.
@@ -155,7 +155,7 @@ The `results/leaderboard.json` committed to this repo is the authoritative refer
 
 ## Re-running OCR (optional)
 
-Pre-computed artifacts are sufficient for all 109 methods.
+Pre-computed artifacts are sufficient for all 147 methods.
 If you want to re-run OCR inference with your own model endpoint:
 
 1. Copy `.env.example` to `.env` and fill in `OCR_ENDPOINT_URL`.
