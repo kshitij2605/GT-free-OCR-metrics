@@ -4,19 +4,16 @@
 # Usage: bash download_data.sh
 #
 # Required disk: ~50 GB
-# Requires: huggingface-cli  (pip install huggingface-hub)
+# Requires: uv  (pip install uv && uv sync)
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_ROOT"
 
-command -v huggingface-cli >/dev/null 2>&1 || {
-    echo "ERROR: huggingface-cli not found. Install via: pip install huggingface-hub"
-    exit 1
-}
+UV=$(command -v uv 2>/dev/null || echo uv)
 
 echo "=== Downloading OmniDocBench (ground-truth annotations + page images) ==="
-huggingface-cli download opendatalab/OmniDocBench \
+$UV run huggingface-cli download opendatalab/OmniDocBench \
     --repo-type dataset \
     --local-dir data/omnidocbench \
     --local-dir-use-symlinks False
@@ -26,14 +23,14 @@ echo "=== Downloading pre-computed render-and-compare OCR artifacts ==="
 # Contains: masked_original.png, reconstructed.png, ocr_html.html,
 #           ocr_elements.json, ocr_formula_elements.json, ocr_table_elements.json
 # Also includes OmniDocBench.json for convenience.
-huggingface-cli download gt-free-ocr-metrics/omnidocbench-render-compare \
+$UV run huggingface-cli download gt-free-ocr-metrics/omnidocbench-render-compare \
     --repo-type dataset \
     --local-dir data/omnidocbench/ocr \
     --local-dir-use-symlinks False
 
 echo ""
 echo "=== Downloading OCR log-probabilities ==="
-huggingface-cli download gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs \
+$UV run huggingface-cli download gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs \
     --repo-type dataset \
     --local-dir data/omnidocbench/ocr_logprobs \
     --local-dir-use-symlinks False

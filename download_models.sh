@@ -4,20 +4,17 @@
 # derived from the OmniDocBench render-and-compare dataset.
 #
 # Usage: bash download_models.sh
+# Requires: uv  (pip install uv && uv sync)
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_ROOT"
 
-command -v huggingface-cli >/dev/null 2>&1 || {
-    echo "ERROR: huggingface-cli not found. Install via: pip install huggingface-hub"
-    exit 1
-}
-
+UV=$(command -v uv 2>/dev/null || echo uv)
 HF_MODEL_REPO="gt-free-ocr-metrics/docsim-lora"
 
 echo "=== Downloading DocSim LoRA weights ==="
-huggingface-cli download "$HF_MODEL_REPO" \
+$UV run huggingface-cli download "$HF_MODEL_REPO" \
     --repo-type model \
     --local-dir models/docsim_lora \
     --local-dir-use-symlinks False

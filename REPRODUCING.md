@@ -23,10 +23,10 @@ git clone https://github.com/kshitij2605/GT-free-OCR-metrics
 cd gt-free-ocr-metrics
 
 # With uv (recommended):
-pip install uv huggingface_hub[cli]  # huggingface-cli needed for download_data.sh
-uv pip install -e .
+pip install uv     # install uv package manager
+uv sync            # creates .venv and installs all dependencies
 
-# Or with pip:
+# Or with plain pip:
 pip install -e .
 ```
 
