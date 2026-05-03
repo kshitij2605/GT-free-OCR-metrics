@@ -32,4 +32,5 @@ class BaseMetric(ABC):
         pass
 
     def __repr__(self) -> str:
+        """Return a class-name string representation of the metric."""
         return f"{self.__class__.__name__}()"

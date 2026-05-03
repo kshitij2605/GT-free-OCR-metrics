@@ -43,6 +43,7 @@ _PREPROCESS_JS = _JS_DIR / "preprocess_formula.js"
 # ---------------------------------------------------------------------------
 
 def _gen_color_list(num: int = 5800, gap: int = 15) -> list[tuple[int, int, int]]:
+    """Generate a palette of ``num`` distinct RGB colors spaced ``gap`` apart for CDM token colorization."""
     single_num = 255 // gap + 1
     max_num = single_num ** 3
     num = min(num + 1, max_num)
@@ -63,6 +64,7 @@ _COLOR_LIST = _gen_color_list()
 # ---------------------------------------------------------------------------
 
 def _run_cmd(cmd: str, timeout_sec: int = 30) -> None:
+    """Run a shell command with a timeout, killing the process if it exceeds the limit."""
     proc = subprocess.Popen(cmd, shell=True)
     timer = Timer(timeout_sec, proc.kill)
     try:
@@ -147,6 +149,10 @@ _ONE_TAIL_INVISB_TOKENS = [
 def _find_matching_brace(
     seq: list[str], start: int, brace: tuple[str, str] = ("{", "}")
 ) -> int:
+    """Return the index of the closing brace in ``seq`` matching the opening brace at ``start``.
+
+    Returns -1 if no matching brace is found.
+    """
     left, right = brace
     depth = 0
     for i, tok in enumerate(seq[start:], start=start):
@@ -260,6 +266,7 @@ def _normalize_latex(l: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _color_cmd(idx: int) -> str:
+    """Return the opening textcolor RGB command string for color slot ``idx``."""
     return f"\\textcolor[RGB]{{<color_{idx}>}}{{"
 
 
@@ -438,6 +445,7 @@ _INLINE_DOLLAR_RE = re.compile(r"^\$([^$].+[^$])\$$", re.DOTALL)
 
 
 def _strip_math_delimiters(latex: str) -> str:
+    """Strip outer math-mode delimiters ($$, brackets) from a LaTeX string."""
     text = latex.strip()
     for pat in (_DISPLAY_DOLLAR_RE, _DISPLAY_BRACKET_RE, _INLINE_DOLLAR_RE):
         m = pat.match(text)
@@ -470,6 +478,7 @@ def _latex_to_token_bboxes(
 # ---------------------------------------------------------------------------
 
 def _norm_same_token(token: str) -> str:
+    """Normalize equivalent LaTeX token representations to a canonical form for CDM matching."""
     special = {
         "\\cdot": ".", "\\mid": "|", "\\to": "\\rightarrow", "\\top": "T",
         "\\Tilde": "\\tilde", "\\cdots": "\\dots", "\\prime": "'",
@@ -531,6 +540,7 @@ def _hungarian_match(
 
     # Position cost (L1, normalised coords)
     def _box_centers(boxes: list[dict], W: int, H: int) -> np.ndarray:
+        """Return normalized (x1/W, y1/H, x2/W, y2/H) coordinate arrays for a list of bbox dicts."""
         arr = []
         for d in boxes:
             x1, y1, x2, y2 = d["bbox"]
@@ -560,10 +570,12 @@ class _SimpleAffineTransform:
     """Translation + uniform scale transform (no rotation)."""
 
     def __init__(self) -> None:
+        """Initialize with zero translation and unit scale."""
         self.translation = np.zeros(2)
         self.scale = 1.0
 
     def estimate(self, src: np.ndarray, dst: np.ndarray) -> bool:
+        """Estimate translation and uniform scale from corresponding src/dst point arrays."""
         src_c = np.mean(src, axis=0)
         dst_c = np.mean(dst, axis=0)
         self.translation = dst_c - src_c
@@ -573,9 +585,11 @@ class _SimpleAffineTransform:
         return True
 
     def __call__(self, coords: np.ndarray) -> np.ndarray:
+        """Apply the estimated affine transform to an array of coordinates."""
         return self.scale * (coords - np.mean(coords, axis=0)) + np.mean(coords, axis=0) + self.translation
 
     def residuals(self, src: np.ndarray, dst: np.ndarray) -> np.ndarray:
+        """Return per-point Euclidean residuals between the transformed src and dst arrays."""
         return np.sqrt(np.sum((self(src) - dst) ** 2, axis=1))
 
 
@@ -657,6 +671,7 @@ def compute_cdm_pair(gt_latex: str, ocr_latex: str) -> float | None:
     # Need rendered image sizes for normalised position cost
     # Approximate from bbox extents (sufficient for cost normalisation)
     def _img_size(boxes: list[dict]) -> tuple[int, int]:
+        """Return (width, height) extent from a list of bbox dicts."""
         xs = [b for d in boxes for b in (d["bbox"][0], d["bbox"][2])]
         ys = [b for d in boxes for b in (d["bbox"][1], d["bbox"][3])]
         return max(xs) + 2, max(ys) + 2

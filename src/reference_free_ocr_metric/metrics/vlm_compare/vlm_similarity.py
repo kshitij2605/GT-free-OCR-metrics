@@ -17,6 +17,7 @@ class VLMSimilarityMetric(BaseMetric):
     an original document image and a reconstructed text-only image."""
 
     def __init__(self, api_base: str, api_key: str, model_name: str) -> None:
+        """Initialize with an OpenAI-compatible API base URL, key, and model name."""
         self._client = OpenAI(
             base_url=api_base,
             api_key=api_key,
@@ -26,6 +27,7 @@ class VLMSimilarityMetric(BaseMetric):
 
     @property
     def name(self) -> str:
+        """Return the metric identifier string."""
         return "vlm_similarity"
 
     def _encode_image_to_base64(self, image: Image.Image) -> str:

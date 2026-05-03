@@ -145,6 +145,7 @@ class QwenVLClient(BaseOCRClient):
     """
 
     def __init__(self, api_base: str, api_key: str, model_name: str) -> None:
+        """Initialize the Qwen OCR client with API base URL, key, and model name."""
         self.model_name = model_name
         self._client = openai.OpenAI(base_url=api_base, api_key=api_key)
 
@@ -225,6 +226,7 @@ class QwenVLClient(BaseOCRClient):
         temperature: float,
         top_logprobs: int,
     ) -> tuple[str, list[dict]]:
+        """Send a single VLM request and return (html_content, logprobs_list)."""
         messages: list[dict[str, object]] = [
             {
                 "role": "user",

@@ -47,6 +47,7 @@ class ParsedDocument:
         def convert_bbox(
             bbox: tuple[int, int, int, int],
         ) -> tuple[int, int, int, int]:
+            """Scale a normalized [0,999] bbox to pixel coordinates."""
             x1 = int(bbox[0] / 1000 * image_width)
             y1 = int(bbox[1] / 1000 * image_height)
             x2 = int(bbox[2] / 1000 * image_width)
@@ -94,6 +95,7 @@ class QwenVLHTMLParser:
         # Escape only the LaTeX content between the inner <div> and </div> tags,
         # preserving the surrounding HTML structure.
         def _escape_formula(m: re.Match) -> str:
+            """Escape < and > in LaTeX formula divs to prevent BeautifulSoup misinterpreting them."""
             return m.group(1) + m.group(2).replace('<', '&lt;').replace('>', '&gt;') + m.group(3)
         html = re.sub(
             r'(<div[^>]*class="(?:formula|equation)"[^>]*>(?:<img[^>]*/>\s*)?<div>)(.*?)(</div>\s*</div>)',

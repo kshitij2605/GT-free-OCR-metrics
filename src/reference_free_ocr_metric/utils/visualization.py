@@ -28,6 +28,7 @@ _FONT_PATHS = [
 
 
 def _load_font(size: int = 11) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    """Load or return cached PIL font at the given size."""
     for path in _FONT_PATHS:
         if os.path.exists(path):
             try:

@@ -22,6 +22,7 @@ class VisualReconstructionMetric(BaseMetric):
         mse_weight: float = 0.3,
         lpips_weight: float = 0.3,
     ) -> None:
+        """Initialize with per-sub-metric weights for SSIM, MSE, and LPIPS (should sum to 1.0)."""
         self.ssim_weight = ssim_weight
         self.mse_weight = mse_weight
         self.lpips_weight = lpips_weight
@@ -29,6 +30,7 @@ class VisualReconstructionMetric(BaseMetric):
 
     @property
     def name(self) -> str:
+        """Return the metric identifier string."""
         return "visual_reconstruction"
 
     @property

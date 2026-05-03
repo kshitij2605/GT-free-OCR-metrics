@@ -21,6 +21,7 @@ class CLIPSimilarityMetric(BaseMetric):
         model_name: str = "ViT-B-32",
         pretrained: str = "laion2b_s34b_b79k",
     ) -> None:
+        """Initialize with model name and pretrained weights identifier."""
         self.model_name = model_name
         self.pretrained = pretrained
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -29,9 +30,11 @@ class CLIPSimilarityMetric(BaseMetric):
 
     @property
     def name(self) -> str:
+        """Return the metric identifier string."""
         return "clip_similarity"
 
     def _load_model(self) -> None:
+        """Lazy-load the OpenCLIP model and preprocessing transforms on first use."""
         import open_clip
 
         model, _, preprocess_val = open_clip.create_model_and_transforms(
@@ -42,6 +45,7 @@ class CLIPSimilarityMetric(BaseMetric):
         self.preprocess_val = preprocess_val
 
     def _preprocess_for_comparison(self, image: Image.Image) -> Image.Image:
+        """Convert image to grayscale, sharpen, and auto-contrast for stable CLIP comparison."""
         image = image.convert("L")
         image = image.filter(ImageFilter.SHARPEN)
         image = ImageOps.autocontrast(image)
@@ -51,6 +55,7 @@ class CLIPSimilarityMetric(BaseMetric):
     def compute_from_images(
         self, original: Image.Image, reconstructed: Image.Image
     ) -> Dict[str, float]:
+        """Compute CLIP cosine similarity between two PIL images."""
         if self.model is None:
             self._load_model()
 
@@ -70,6 +75,7 @@ class CLIPSimilarityMetric(BaseMetric):
         return {"clip_cosine": float(cosine_sim)}
 
     def compute(self, ocr_output: str, **kwargs: Any) -> float:
+        """Compute CLIP similarity; requires original_image and reconstructed_image in kwargs."""
         original = kwargs.get("original_image")
         reconstructed = kwargs.get("reconstructed_image")
         if original is None or reconstructed is None:

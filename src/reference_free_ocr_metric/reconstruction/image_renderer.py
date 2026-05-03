@@ -220,6 +220,7 @@ class ImageRenderer:
     """Renders OCR text elements onto a blank image."""
 
     def __init__(self) -> None:
+        """Initialize font caches for size-based and style-based font lookups."""
         self._font_cache: dict[int, ImageFont.FreeTypeFont | ImageFont.ImageFont] = {}
         self._styled_font_cache: dict[
             tuple[int, str, bool, bool, bool], ImageFont.FreeTypeFont | ImageFont.ImageFont
@@ -335,6 +336,7 @@ class ImageRenderer:
                 _x_w = max(1, self._text_width("X", font, font_size_px))
                 _fcache: dict[str, int] = {}
                 def _fproxy(m: re.Match) -> str:  # noqa: E731
+                    """Return a font-loading proxy for the given path and size."""
                     latex = m.group(0).strip("$")
                     if latex not in _fcache:
                         fi = self._render_inline_formula(latex, _ref_lh)
@@ -537,6 +539,7 @@ class ImageRenderer:
         v_edges = binary_opening(xmask, structure=np.ones((vk, 1)))
 
         def cluster(positions: np.ndarray, min_gap: int = 8) -> list[int]:
+            """Cluster a sorted array of pixel positions by proximity (min_gap threshold)."""
             if len(positions) == 0:
                 return []
             out: list[list[int]] = [[int(positions[0]), int(positions[0])]]
@@ -552,6 +555,7 @@ class ImageRenderer:
         v_lines = cluster(np.where(v_edges.any(axis=0))[0])
 
         def _drop_close(lines: list[int], target: int) -> list[int]:
+            """Remove spuriously close lines while the list has at least ``target`` entries."""
             # Detected lines whose neighbour gap is < 1/3 of the median
             # gap are almost always spurious (e.g. internal stripes inside
             # a coloured header band). Drop the smaller-margin one only
@@ -601,6 +605,7 @@ class ImageRenderer:
         # (real continuing content), not just bbox slack.
         gray_for_density = gray
         def _ink_density(y_lo: int, y_hi: int, x_lo: int, x_hi: int) -> float:
+            """Return the fraction of dark pixels in a rectangular crop of the gray image."""
             y_lo = max(0, y_lo); y_hi = min(gray_for_density.shape[0], y_hi)
             x_lo = max(0, x_lo); x_hi = min(gray_for_density.shape[1], x_hi)
             if y_hi <= y_lo or x_hi <= x_lo:
@@ -608,6 +613,7 @@ class ImageRenderer:
             sub = gray_for_density[y_lo:y_hi, x_lo:x_hi]
             return float((sub < 200).mean())
         def _add_outer_h(lines: list[int], target: int) -> list[int]:
+            """Append a missing outer horizontal border when ink density supports it."""
             if not lines:
                 return lines
             if len(lines) >= 2:
@@ -656,6 +662,7 @@ class ImageRenderer:
                 lines = lines + [H - 1]
             return lines
         def _add_outer_v(lines: list[int], target: int) -> list[int]:
+            """Append a missing outer vertical border when ink density supports it."""
             if not lines:
                 return lines
             if len(lines) >= 2:
@@ -865,11 +872,13 @@ class ImageRenderer:
                     visible_col_xs = None
 
         def _col_x(ci: int) -> int:
+            """Return the pixel x-coordinate of column ci using detected grid lines or uniform fallback."""
             if grid_col_xs is not None:
                 return x1 + grid_col_xs[ci]
             return int(x1 + ci * (bbox_w / n_cols))
 
         def _row_y(ri: int) -> int:
+            """Return the pixel y-coordinate of row ri using detected grid lines or uniform fallback."""
             if grid_row_ys is not None:
                 return y1 + grid_row_ys[ri]
             return int(y1 + ri * (bbox_h / n_rows))
@@ -1161,6 +1170,7 @@ class ImageRenderer:
             # Substitute commands unsupported by matplotlib mathtext.
             _INLINE_SUBS = [(r"\bmod", r"\operatorname{mod}"), (r"\pmod", r"\operatorname{mod}")]
             def _apply(f):
+                """Apply inline LaTeX command substitutions to formula string f."""
                 for a, b in _INLINE_SUBS:
                     f = f.replace(a, b)
                 return f
@@ -1470,6 +1480,7 @@ class ImageRenderer:
         # STIX font set has all glyphs needed for LaTeX-style math.
         _has_cjk = bool(_CJK_RE.search(formula))
         def _try_render(f: str) -> Image.Image | None:
+            """Try rendering formula f as a matplotlib mathtext PNG; return Image or None on failure."""
             try:
                 buf = io.BytesIO()
                 if _has_cjk or _CJK_RE.search(f):
@@ -1484,6 +1495,7 @@ class ImageRenderer:
                 return None
 
         def _apply_subs(f: str) -> str:
+            """Apply the inline LaTeX substitution list to formula string f."""
             for old, new in _SUBS:
                 f = f.replace(old, new)
             return f
@@ -1843,6 +1855,7 @@ class ImageRenderer:
 
     @staticmethod
     def _text_width(text: str, font: ImageFont.FreeTypeFont | ImageFont.ImageFont, font_size: int) -> int:
+        """Return the rendered pixel width of text using font metrics, with a length-based fallback."""
         try:
             bb = font.getbbox(text)
             return int(bb[2] - bb[0])

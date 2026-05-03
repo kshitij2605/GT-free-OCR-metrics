@@ -11,6 +11,7 @@ from datetime import datetime
 
 
 def run_cmd(cmd, timeout_sec=30):
+    """Run a shell command with a timeout, killing the process if it exceeds the limit."""
     proc = subprocess.Popen(cmd, shell=True)
     kill_proc = lambda p: p.kill()
     timer = Timer(timeout_sec, kill_proc, [proc])
@@ -21,6 +22,10 @@ def run_cmd(cmd, timeout_sec=30):
         timer.cancel()
         
 def tokenize_latex(latex_code, latex_type="", middle_file=""):
+    """Tokenize a LaTeX formula or tabular expression via KaTeX/Node.js.
+
+    Returns (success, tokenized_or_original_string).
+    """
     if not latex_code:
         return False, latex_code
     if not latex_type:

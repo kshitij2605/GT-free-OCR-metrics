@@ -18,12 +18,14 @@ class LMPerplexityMetric(BaseMetric):
     """
 
     def __init__(self, transformer_model: str = "gpt2") -> None:
+        """Initialize with a HuggingFace causal-LM model name (default: gpt2)."""
         self._model_name = transformer_model
         self._model = None
         self._tokenizer = None
 
     @property
     def name(self) -> str:
+        """Return the metric identifier string."""
         return "lm_perplexity"
 
     def _load_model(self) -> None:

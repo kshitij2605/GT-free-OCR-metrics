@@ -44,6 +44,7 @@ class _TableNode:
         rowspan: int = 1,
         content: str = "",
     ) -> None:
+        """Initialize a table tree node with tag, span attributes, text content, and empty children list."""
         self.tag = tag
         self.colspan = colspan
         self.rowspan = rowspan
@@ -55,6 +56,7 @@ class _TEDSConfig(APTEDConfig):
     """APTED cost config mirroring OmniDocBench CustomConfig."""
 
     def rename(self, node1: _TableNode, node2: _TableNode) -> float:  # type: ignore[override]
+        """Return rename cost between two nodes: 0 for identical structure/content, 1 otherwise."""
         if node1.tag != node2.tag or node1.colspan != node2.colspan or node1.rowspan != node2.rowspan:
             return 1.0
         if node1.tag == "td" and (node1.content or node2.content):
@@ -65,6 +67,7 @@ class _TEDSConfig(APTEDConfig):
         return 0.0
 
     def children(self, node: _TableNode) -> list[_TableNode]:
+        """Return the children list of a _TableNode (required by the APTED Config interface)."""
         return node.children
 
 
@@ -118,6 +121,7 @@ def _build_table_tree(html_content: str) -> _TableNode:
 
 
 def _count_nodes(node: _TableNode) -> int:
+    """Count all nodes in the _TableNode tree recursively (root + all descendants)."""
     return 1 + sum(_count_nodes(c) for c in node.children)
 
 
@@ -171,6 +175,7 @@ class OmniDocBenchBridge:
     """Bridge to OmniDocBench for comparing reference-free and reference-based metrics."""
 
     def __init__(self, omnidocbench_path: str | None = None, annotations_path: str | None = None):
+        """Initialize bridge with annotations JSON path or full OmniDocBench dataset directory."""
         if annotations_path:
             self._annotations_path = Path(annotations_path)
             self.dataset_path = None
@@ -202,6 +207,7 @@ class OmniDocBenchBridge:
     def _textblock2unicode(text: str) -> str:
         """Convert inline LaTeX formulas to Unicode (mirrors OmniDocBench textblock2unicode)."""
         def _convert(formula: str) -> str:
+            """Convert inline LaTeX to Unicode text; return the original string on failure."""
             try:
                 return _LATEX_CONVERTER.latex_to_text(formula)
             except Exception:
@@ -264,12 +270,14 @@ class OmniDocBenchBridge:
         parent: dict[int, int] = {}
 
         def find(x: int) -> int:
+            """Path-compression find for union-find over annotation IDs."""
             parent.setdefault(x, x)
             if parent[x] != x:
                 parent[x] = find(parent[x])
             return parent[x]
 
         def union(x: int, y: int) -> None:
+            """Union two annotation IDs in the truncation union-find structure."""
             parent[find(x)] = find(y)
 
         for src, tgt in truncated_pairs:
@@ -299,6 +307,7 @@ class OmniDocBenchBridge:
 
     @staticmethod
     def _poly_to_bbox(poly: list[float]) -> tuple[float, float, float, float]:
+        """Convert a flat polygon coordinate list [x0,y0,...] to an axis-aligned bounding box."""
         xs = poly[0::2]
         ys = poly[1::2]
         return min(xs), min(ys), max(xs), max(ys)
@@ -308,6 +317,7 @@ class OmniDocBenchBridge:
         a: tuple[float, float, float, float],
         b: tuple[float, float, float, float],
     ) -> float:
+        """Compute intersection-over-union of two axis-aligned bounding boxes."""
         ax1, ay1, ax2, ay2 = a
         bx1, by1, bx2, by2 = b
         ix1, iy1 = max(ax1, bx1), max(ay1, by1)
@@ -569,6 +579,7 @@ class OmniDocBenchBridge:
         ]
 
         def _score_pair(gt: str, ocr: str | None) -> float | None:
+            """Score a (gt_latex, ocr_latex|None) formula pair with CDM; return None if GT fails to compile."""
             if ocr is None:
                 return 0.0  # no OCR match for this GT formula
             result = _cdm_scorer_pair(gt, ocr)
@@ -589,6 +600,7 @@ class OmniDocBenchBridge:
     # ------------------------------------------------------------------
 
     def extract_text_blocks(self, page_data: dict) -> list[str]:
+        """Return ordered text strings from text-category layout_dets."""
         elements = []
         for det in page_data.get("layout_dets", []):
             if det.get("category_type") in self._TEXT_CATEGORIES:
@@ -599,10 +611,12 @@ class OmniDocBenchBridge:
         return [text for _, text in elements]
 
     def get_page_text(self, page_data: dict) -> str:
+        """Return all text blocks on the page joined by newlines."""
         return "\n".join(self.extract_text_blocks(page_data))
 
     @staticmethod
     def compute_edit_distance(text_a: str, text_b: str) -> float:
+        """Normalized character-level edit distance in [0, 1] between two strings (0 = identical)."""
         a = OmniDocBenchBridge._clean_string(text_a)
         b = OmniDocBenchBridge._clean_string(text_b)
         if not a and not b:
@@ -617,4 +631,5 @@ class OmniDocBenchBridge:
         ref_free_scores: list,
         ref_based_scores: list,
     ) -> ComparisonResult:
+        """Correlate reference-free and reference-based score lists; returns a ComparisonResult."""
         return compute_correlation(ref_based_scores, ref_free_scores)
