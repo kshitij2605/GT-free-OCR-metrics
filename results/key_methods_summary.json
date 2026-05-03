@@ -1,0 +1,776 @@
+{
+  "baseline": {
+    "variants": {
+      "ocr_text": {
+        "primary_dim": "text_accuracy",
+        "n_pages": 1349,
+        "spearman": 0.15789501605850095,
+        "spearman_pvalue": 5.525547931420166e-09,
+        "pearson": 0.20487417703293523,
+        "pearson_pvalue": 2.995094950479044e-14,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 239,
+            "spearman": 0.020982304842715713,
+            "spearman_pvalue": 0.746912259503426,
+            "pearson": 0.03427133512386287,
+            "pearson_pvalue": 0.5980552904632906,
+            "n_samples": 239
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.10286080236628987,
+            "spearman_pvalue": 0.24605589529484764,
+            "pearson": 0.13798422662546075,
+            "pearson_pvalue": 0.11889830472476505,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 175,
+            "spearman": 0.11287188646355784,
+            "spearman_pvalue": 0.1369591250979561,
+            "pearson": 0.2663308732930744,
+            "pearson_pvalue": 0.0003672810487039934,
+            "n_samples": 175
+          },
+          "colorful_textbook": {
+            "n_pages": 136,
+            "spearman": -0.06853729158994497,
+            "spearman_pvalue": 0.4278765045455045,
+            "pearson": -0.060927260667160955,
+            "pearson_pvalue": 0.48104396283574286,
+            "n_samples": 136
+          },
+          "exam_paper": {
+            "n_pages": 183,
+            "spearman": 0.15510431178981726,
+            "spearman_pvalue": 0.03603434316312934,
+            "pearson": 0.2912850718087326,
+            "pearson_pvalue": 6.320071048032285e-05,
+            "n_samples": 183
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.226789833444629,
+            "spearman_pvalue": 0.0072585612812067,
+            "pearson": 0.23171693388414033,
+            "pearson_pvalue": 0.006056771595862647,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.4641668322329772,
+            "spearman_pvalue": 1.9374576353661473e-09,
+            "pearson": 0.41077431345874815,
+            "pearson_pvalue": 1.6158773758117874e-07,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": 0.07408409786430015,
+            "spearman_pvalue": 0.4293199045859347,
+            "pearson": 0.13695875764433849,
+            "pearson_pvalue": 0.14263902173471246,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": -0.3975181625440873,
+            "spearman_pvalue": 0.00023811977517319195,
+            "pearson": -0.23698655519713105,
+            "pearson_pvalue": 0.03315724998936249,
+            "n_samples": 81
+          }
+        }
+      },
+      "ocr_formula": {
+        "primary_dim": "formula_edit",
+        "n_pages": 200,
+        "spearman": 0.4387746524721506,
+        "spearman_pvalue": 8.09124746790498e-11,
+        "pearson": 0.46081252218752894,
+        "pearson_pvalue": 6.5904297454584966e-12,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 35,
+            "spearman": 0.41681860269599214,
+            "spearman_pvalue": 0.01274152141128373,
+            "pearson": 0.3551431315394847,
+            "pearson_pvalue": 0.03630077990532456,
+            "n_samples": 35
+          },
+          "academic_literature": {
+            "n_pages": 10,
+            "spearman": -0.6848484848484848,
+            "spearman_pvalue": 0.028882797506732765,
+            "pearson": -0.5287493262494507,
+            "pearson_pvalue": 0.11609639144429483,
+            "n_samples": 10
+          },
+          "book": {
+            "n_pages": 62,
+            "spearman": 0.2620903165699525,
+            "spearman_pvalue": 0.03960681126844273,
+            "pearson": 0.1765079875347656,
+            "pearson_pvalue": 0.1699566648454178,
+            "n_samples": 62
+          },
+          "colorful_textbook": {
+            "n_pages": 12,
+            "spearman": 0.2954204360100439,
+            "spearman_pvalue": 0.3512135572038077,
+            "pearson": 0.4108412323653576,
+            "pearson_pvalue": 0.18460821043195058,
+            "n_samples": 12
+          },
+          "exam_paper": {
+            "n_pages": 80,
+            "spearman": 0.35092758052590706,
+            "spearman_pvalue": 0.0014151518819109157,
+            "pearson": 0.6947331943095401,
+            "pearson_pvalue": 8.800310919955993e-13,
+            "n_samples": 80
+          },
+          "note": {
+            "skipped": "fewer than 3 pages, skipped"
+          }
+        }
+      },
+      "ocr_table": {
+        "primary_dim": "table",
+        "n_pages": 351,
+        "spearman": 0.26777051864385537,
+        "spearman_pvalue": 3.541776185691265e-07,
+        "pearson": 0.5018537483459473,
+        "pearson_pvalue": 8.636440812960346e-24,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 22,
+            "spearman": 0.48071433928067264,
+            "spearman_pvalue": 0.023533430513716435,
+            "pearson": 0.3748740462813574,
+            "pearson_pvalue": 0.08561213628463087,
+            "n_samples": 22
+          },
+          "academic_literature": {
+            "n_pages": 58,
+            "spearman": 0.03596037900064909,
+            "spearman_pvalue": 0.7887062267572906,
+            "pearson": 0.4199569126283806,
+            "pearson_pvalue": 0.0010313245409592194,
+            "n_samples": 58
+          },
+          "book": {
+            "n_pages": 57,
+            "spearman": 0.5149011098211085,
+            "spearman_pvalue": 4.1675627086299706e-05,
+            "pearson": 0.5053658896120662,
+            "pearson_pvalue": 6.0837540896140906e-05,
+            "n_samples": 57
+          },
+          "colorful_textbook": {
+            "n_pages": 29,
+            "spearman": 0.15700055141348696,
+            "spearman_pvalue": 0.41601964470135505,
+            "pearson": 0.5127307819442564,
+            "pearson_pvalue": 0.004454972777558614,
+            "n_samples": 29
+          },
+          "exam_paper": {
+            "n_pages": 57,
+            "spearman": 0.309024834198481,
+            "spearman_pvalue": 0.01933724998245995,
+            "pearson": 0.41641995755253924,
+            "pearson_pvalue": 0.0012731951771474753,
+            "n_samples": 57
+          },
+          "magazine": {
+            "n_pages": 6,
+            "spearman": -0.34786262139146906,
+            "spearman_pvalue": 0.4992532181146331,
+            "pearson": -0.4283918022499989,
+            "pearson_pvalue": 0.3967214290629,
+            "n_samples": 6
+          },
+          "newspaper": {
+            "n_pages": 14,
+            "spearman": 0.7686151382644182,
+            "spearman_pvalue": 0.001317789384044893,
+            "pearson": 0.9343200828389848,
+            "pearson_pvalue": 1.0049937188262366e-06,
+            "n_samples": 14
+          },
+          "note": {
+            "n_pages": 29,
+            "spearman": -0.03525454562613017,
+            "spearman_pvalue": 0.8559306866478977,
+            "pearson": 0.1505493548044726,
+            "pearson_pvalue": 0.4356677479671108,
+            "n_samples": 29
+          },
+          "research_report": {
+            "n_pages": 79,
+            "spearman": 0.2725073432348851,
+            "spearman_pvalue": 0.015112738595874375,
+            "pearson": 0.35248260734486997,
+            "pearson_pvalue": 0.001442986633034764,
+            "n_samples": 79
+          }
+        }
+      },
+      "ocr_all": {
+        "primary_dim": "end_to_end",
+        "n_pages": 1355,
+        "spearman": 0.20990518986882598,
+        "spearman_pvalue": 5.871623500582766e-15,
+        "pearson": 0.2285347404728282,
+        "pearson_pvalue": 1.6283825629489002e-17,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 241,
+            "spearman": 0.04057619584977923,
+            "spearman_pvalue": 0.5307279374152433,
+            "pearson": 0.04021622107598677,
+            "pearson_pvalue": 0.5343830967254167,
+            "n_samples": 241
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.1540285176826799,
+            "spearman_pvalue": 0.08136576650616076,
+            "pearson": 0.12270922000205164,
+            "pearson_pvalue": 0.1659348120209483,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 176,
+            "spearman": 0.21261346731357705,
+            "spearman_pvalue": 0.004611310717541709,
+            "pearson": 0.264218000729787,
+            "pearson_pvalue": 0.0003949239899432596,
+            "n_samples": 176
+          },
+          "colorful_textbook": {
+            "n_pages": 138,
+            "spearman": -0.052663859947941934,
+            "spearman_pvalue": 0.5395729483551388,
+            "pearson": -0.019914190703981396,
+            "pearson_pvalue": 0.8166670516935648,
+            "n_samples": 138
+          },
+          "exam_paper": {
+            "n_pages": 184,
+            "spearman": 0.36883457269299963,
+            "spearman_pvalue": 2.579641132323582e-07,
+            "pearson": 0.42088378810579236,
+            "pearson_pvalue": 2.6996237690879724e-09,
+            "n_samples": 184
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.2669226405182406,
+            "spearman_pvalue": 0.0014912081852946403,
+            "pearson": 0.2542708435392377,
+            "pearson_pvalue": 0.0025232058823545823,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.48908500901311036,
+            "spearman_pvalue": 1.8663567869191106e-10,
+            "pearson": 0.4180698011363951,
+            "pearson_pvalue": 9.226957546851958e-08,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": 0.2641569061793842,
+            "spearman_pvalue": 0.004165814811830229,
+            "pearson": 0.2451675978019316,
+            "pearson_pvalue": 0.007988612406916963,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": 0.10937196242448355,
+            "spearman_pvalue": 0.3310665131765439,
+            "pearson": 0.024849545928975116,
+            "pearson_pvalue": 0.8257124319541409,
+            "n_samples": 81
+          }
+        }
+      },
+      "ocr_all_no_mask": {
+        "primary_dim": "end_to_end",
+        "n_pages": 1355,
+        "spearman": 0.271532395363901,
+        "spearman_pvalue": 2.491651682906365e-24,
+        "pearson": 0.2772564370663788,
+        "pearson_pvalue": 2.4520529689238624e-25,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 241,
+            "spearman": 0.1027082893184515,
+            "spearman_pvalue": 0.111749117903591,
+            "pearson": 0.041650025145912456,
+            "pearson_pvalue": 0.5198997791124809,
+            "n_samples": 241
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.08811294504723945,
+            "spearman_pvalue": 0.32072814092563545,
+            "pearson": 0.07395936242556617,
+            "pearson_pvalue": 0.40485472154393737,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 176,
+            "spearman": 0.24010191609834186,
+            "spearman_pvalue": 0.0013287411734890443,
+            "pearson": 0.2696177892351814,
+            "pearson_pvalue": 0.0002961513587655509,
+            "n_samples": 176
+          },
+          "colorful_textbook": {
+            "n_pages": 138,
+            "spearman": 0.198703082351989,
+            "spearman_pvalue": 0.019473130698017663,
+            "pearson": 0.17662329663047502,
+            "pearson_pvalue": 0.03823724594592618,
+            "n_samples": 138
+          },
+          "exam_paper": {
+            "n_pages": 184,
+            "spearman": 0.25331904572410374,
+            "spearman_pvalue": 0.0005213595082000388,
+            "pearson": 0.36816759053782616,
+            "pearson_pvalue": 2.7212650737099304e-07,
+            "n_samples": 184
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.23353531839896363,
+            "spearman_pvalue": 0.005660182750749795,
+            "pearson": 0.023899118962499986,
+            "pearson_pvalue": 0.7800438176055274,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.5266836064291541,
+            "spearman_pvalue": 3.749424522803692e-12,
+            "pearson": 0.47333336447863916,
+            "pearson_pvalue": 8.372254082725544e-10,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": 0.23742603293566686,
+            "spearman_pvalue": 0.010279897413191491,
+            "pearson": 0.21710264115869518,
+            "pearson_pvalue": 0.019235365794909778,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": 0.008384504878599453,
+            "spearman_pvalue": 0.9407804590901829,
+            "pearson": -0.09385574056075488,
+            "pearson_pvalue": 0.40461101678490086,
+            "n_samples": 81
+          }
+        }
+      }
+    },
+    "spearman_mean": 0.269176,
+    "spearman_pvalue_mean": 7e-08
+  },
+  "P1_137_content_elem_p10_all": {
+    "variants": {
+      "ocr_text": {
+        "primary_dim": "text_accuracy",
+        "n_pages": 1349,
+        "spearman": 0.4792166549185281,
+        "spearman_pvalue": 2.1904212844342734e-78,
+        "pearson": 0.3993720011130158,
+        "pearson_pvalue": 8.146448953766789e-53,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 239,
+            "spearman": 0.2677577397525041,
+            "spearman_pvalue": 2.7338211146155398e-05,
+            "pearson": 0.21813077322782493,
+            "pearson_pvalue": 0.0006849825662304426,
+            "n_samples": 239
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.1366261555816465,
+            "spearman_pvalue": 0.12260770068486575,
+            "pearson": 0.0740332534364282,
+            "pearson_pvalue": 0.40438423436803494,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 175,
+            "spearman": 0.37731624036715766,
+            "spearman_pvalue": 2.644150354067483e-07,
+            "pearson": 0.19588083896688158,
+            "pearson_pvalue": 0.009379399117456761,
+            "n_samples": 175
+          },
+          "colorful_textbook": {
+            "n_pages": 136,
+            "spearman": 0.355696412434838,
+            "spearman_pvalue": 2.1411543170807552e-05,
+            "pearson": 0.30198182174274274,
+            "pearson_pvalue": 0.00035296154236041434,
+            "n_samples": 136
+          },
+          "exam_paper": {
+            "n_pages": 183,
+            "spearman": 0.6031682032178949,
+            "spearman_pvalue": 1.6311684168020553e-19,
+            "pearson": 0.5171728005024451,
+            "pearson_pvalue": 6.598012480606835e-14,
+            "n_samples": 183
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.12108561798796022,
+            "spearman_pvalue": 0.15563179537379204,
+            "pearson": -0.16887770410868694,
+            "pearson_pvalue": 0.04688282346043375,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.5925151359922224,
+            "spearman_pvalue": 1.109903651222986e-15,
+            "pearson": 0.5209248060609655,
+            "pearson_pvalue": 7.039373955013998e-12,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": 0.08590676532607312,
+            "spearman_pvalue": 0.359184237174051,
+            "pearson": 0.15093098213077794,
+            "pearson_pvalue": 0.10582413487683033,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": 0.2310078986295355,
+            "spearman_pvalue": 0.03799477598725772,
+            "pearson": 0.1618873533285401,
+            "pearson_pvalue": 0.14877167683058778,
+            "n_samples": 81
+          }
+        }
+      },
+      "ocr_formula": {
+        "primary_dim": "formula_edit",
+        "n_pages": 200,
+        "spearman": 0.6046984967660786,
+        "spearman_pvalue": 2.4986186778402177e-21,
+        "pearson": 0.6597764483304596,
+        "pearson_pvalue": 2.2933607435481483e-26,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 35,
+            "spearman": 0.3883672992839927,
+            "spearman_pvalue": 0.021138649736013457,
+            "pearson": 0.4048540973718635,
+            "pearson_pvalue": 0.015844789224026226,
+            "n_samples": 35
+          },
+          "academic_literature": {
+            "n_pages": 10,
+            "spearman": -0.07878787878787878,
+            "spearman_pvalue": 0.8287173946974606,
+            "pearson": 0.18862566021754054,
+            "pearson_pvalue": 0.601751442446191,
+            "n_samples": 10
+          },
+          "book": {
+            "n_pages": 62,
+            "spearman": 0.4549254359400312,
+            "spearman_pvalue": 0.00020339379887620437,
+            "pearson": 0.4578803128914273,
+            "pearson_pvalue": 0.00018259174310721274,
+            "n_samples": 62
+          },
+          "colorful_textbook": {
+            "n_pages": 12,
+            "spearman": 0.74389001356746,
+            "spearman_pvalue": 0.0055389382065045775,
+            "pearson": 0.8204612894409289,
+            "pearson_pvalue": 0.0010776077409391913,
+            "n_samples": 12
+          },
+          "exam_paper": {
+            "n_pages": 80,
+            "spearman": 0.4187971998540152,
+            "spearman_pvalue": 0.00011054857820132819,
+            "pearson": 0.8142115960535763,
+            "pearson_pvalue": 4.184079668672463e-20,
+            "n_samples": 80
+          },
+          "note": {
+            "skipped": "fewer than 3 pages, skipped"
+          }
+        }
+      },
+      "ocr_table": {
+        "primary_dim": "table",
+        "n_pages": 351,
+        "spearman": 0.4877285214552423,
+        "spearman_pvalue": 2.2455597964258406e-22,
+        "pearson": 0.5311087971415418,
+        "pearson_pvalue": 6.1315921389931786e-27,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 22,
+            "spearman": 0.6165556629263681,
+            "spearman_pvalue": 0.002243671673096907,
+            "pearson": 0.5399740374271896,
+            "pearson_pvalue": 0.009486179354913254,
+            "n_samples": 22
+          },
+          "academic_literature": {
+            "n_pages": 58,
+            "spearman": 0.04595791807268583,
+            "spearman_pvalue": 0.7319242361383367,
+            "pearson": 0.3003992236665617,
+            "pearson_pvalue": 0.021953723793067707,
+            "n_samples": 58
+          },
+          "book": {
+            "n_pages": 57,
+            "spearman": 0.526380447874146,
+            "spearman_pvalue": 2.6029864951642927e-05,
+            "pearson": 0.4947384173092148,
+            "pearson_pvalue": 9.154248456842485e-05,
+            "n_samples": 57
+          },
+          "colorful_textbook": {
+            "n_pages": 29,
+            "spearman": 0.19263718451210385,
+            "spearman_pvalue": 0.3167451421835162,
+            "pearson": 0.4745302206558791,
+            "pearson_pvalue": 0.009297994086345464,
+            "n_samples": 29
+          },
+          "exam_paper": {
+            "n_pages": 57,
+            "spearman": 0.5999468241855602,
+            "spearman_pvalue": 8.131213344846565e-07,
+            "pearson": 0.6384413633154356,
+            "pearson_pvalue": 9.140386698265383e-08,
+            "n_samples": 57
+          },
+          "magazine": {
+            "n_pages": 6,
+            "spearman": 0.3188740696088466,
+            "spearman_pvalue": 0.537900560470205,
+            "pearson": 0.5146662268777585,
+            "pearson_pvalue": 0.2961633957602247,
+            "n_samples": 6
+          },
+          "newspaper": {
+            "n_pages": 14,
+            "spearman": 0.8189411294603027,
+            "spearman_pvalue": 0.00034014586001264696,
+            "pearson": 0.9538588706513885,
+            "pearson_pvalue": 1.260920370103546e-07,
+            "n_samples": 14
+          },
+          "note": {
+            "n_pages": 29,
+            "spearman": 0.4756808982308288,
+            "spearman_pvalue": 0.00910490928550538,
+            "pearson": 0.4532962078458603,
+            "pearson_pvalue": 0.013528490340952163,
+            "n_samples": 29
+          },
+          "research_report": {
+            "n_pages": 79,
+            "spearman": 0.3788041864890769,
+            "spearman_pvalue": 0.0005764537170852045,
+            "pearson": 0.3035141420558272,
+            "pearson_pvalue": 0.006544863748983358,
+            "n_samples": 79
+          }
+        }
+      },
+      "ocr_all": {
+        "primary_dim": "end_to_end",
+        "n_pages": 1355,
+        "spearman": 0.4483603782063256,
+        "spearman_pvalue": 5.575403716203515e-68,
+        "pearson": 0.4330367217066608,
+        "pearson_pvalue": 4.856190802173225e-63,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 241,
+            "spearman": 0.17398171590827194,
+            "spearman_pvalue": 0.006777974291269207,
+            "pearson": 0.1525704671506258,
+            "pearson_pvalue": 0.01778286041609065,
+            "n_samples": 241
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.17879787782985107,
+            "spearman_pvalue": 0.042626150743018426,
+            "pearson": 0.09834869647763995,
+            "pearson_pvalue": 0.2674972175162435,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 176,
+            "spearman": 0.3919491644334131,
+            "spearman_pvalue": 7.466882233242791e-08,
+            "pearson": 0.2702766913467876,
+            "pearson_pvalue": 0.00028581272324002904,
+            "n_samples": 176
+          },
+          "colorful_textbook": {
+            "n_pages": 138,
+            "spearman": 0.3284268861185832,
+            "spearman_pvalue": 8.399376358106418e-05,
+            "pearson": 0.2859178643328769,
+            "pearson_pvalue": 0.0006751514855670101,
+            "n_samples": 138
+          },
+          "exam_paper": {
+            "n_pages": 184,
+            "spearman": 0.6404190216607738,
+            "spearman_pvalue": 1.258633213946887e-22,
+            "pearson": 0.6076955527703609,
+            "pearson_pvalue": 5.8605709523453e-20,
+            "n_samples": 184
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.20756890492530353,
+            "spearman_pvalue": 0.014211677639642923,
+            "pearson": -0.009894802413518144,
+            "pearson_pvalue": 0.9079637164993031,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.5791376059205828,
+            "spearman_pvalue": 6.714877071317517e-15,
+            "pearson": 0.5030384033048328,
+            "pearson_pvalue": 4.626189035853851e-11,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": 0.11664835860787744,
+            "spearman_pvalue": 0.21239844818170522,
+            "pearson": 0.1448950942427187,
+            "pearson_pvalue": 0.1206935662765846,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": 0.1867108164666256,
+            "spearman_pvalue": 0.09511920961739229,
+            "pearson": 0.2918158475122463,
+            "pearson_pvalue": 0.00820970349768397,
+            "n_samples": 81
+          }
+        }
+      },
+      "ocr_all_no_mask": {
+        "primary_dim": "end_to_end",
+        "n_pages": 1355,
+        "spearman": 0.4460665521919777,
+        "spearman_pvalue": 3.1765948743941354e-67,
+        "pearson": 0.45937457350611693,
+        "pearson_pvalue": 1.0867696421139012e-71,
+        "by_category": {
+          "PPT2PDF": {
+            "n_pages": 241,
+            "spearman": 0.03501085168211373,
+            "spearman_pvalue": 0.5886077914031882,
+            "pearson": 0.014938333311955175,
+            "pearson_pvalue": 0.8175381914449744,
+            "n_samples": 241
+          },
+          "academic_literature": {
+            "n_pages": 129,
+            "spearman": 0.11204920481925747,
+            "spearman_pvalue": 0.2061465677485159,
+            "pearson": 0.08761471424767354,
+            "pearson_pvalue": 0.32348272481455764,
+            "n_samples": 129
+          },
+          "book": {
+            "n_pages": 176,
+            "spearman": 0.3959160656559074,
+            "spearman_pvalue": 5.361241246543509e-08,
+            "pearson": 0.28718025595239705,
+            "pearson_pvalue": 0.0001113389173270575,
+            "n_samples": 176
+          },
+          "colorful_textbook": {
+            "n_pages": 138,
+            "spearman": 0.4606956011131071,
+            "spearman_pvalue": 1.3023735688528346e-08,
+            "pearson": 0.3769775406149568,
+            "pearson_pvalue": 5.1766147001654764e-06,
+            "n_samples": 138
+          },
+          "exam_paper": {
+            "n_pages": 184,
+            "spearman": 0.5847751400146464,
+            "spearman_pvalue": 2.8888795911255356e-18,
+            "pearson": 0.5542833226386386,
+            "pearson_pvalue": 3.2810395976632996e-16,
+            "n_samples": 184
+          },
+          "magazine": {
+            "n_pages": 139,
+            "spearman": 0.1828881807914616,
+            "spearman_pvalue": 0.03116508247943197,
+            "pearson": 0.07278014135927256,
+            "pearson_pvalue": 0.3945213193630125,
+            "n_samples": 139
+          },
+          "newspaper": {
+            "n_pages": 151,
+            "spearman": 0.5863945151465217,
+            "spearman_pvalue": 2.5551375135446873e-15,
+            "pearson": 0.549143058340849,
+            "pearson_pvalue": 2.8589878711074026e-13,
+            "n_samples": 151
+          },
+          "note": {
+            "n_pages": 116,
+            "spearman": -0.0020819755866471473,
+            "spearman_pvalue": 0.9823037765750721,
+            "pearson": 0.04592490773172471,
+            "pearson_pvalue": 0.6244678129598513,
+            "n_samples": 116
+          },
+          "research_report": {
+            "n_pages": 81,
+            "spearman": 0.002941931536350685,
+            "spearman_pvalue": 0.9792047751766813,
+            "pearson": 0.0817272229982312,
+            "pearson_pvalue": 0.46825131272779147,
+            "n_samples": 81
+          }
+        }
+      }
+    },
+    "spearman_mean": 0.493214,
+    "spearman_pvalue_mean": 0.0
+  }
+}
