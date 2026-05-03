@@ -19,11 +19,11 @@ from data download through to the final leaderboard.
 ## Step 1 — Install the package
 
 ```bash
-git clone https://github.com/PLACEHOLDER/gt-free-ocr-metrics
+git clone https://github.com/kshitij2605/GT-free-OCR-metrics
 cd gt-free-ocr-metrics
 
 # With uv (recommended):
-pip install uv
+pip install uv huggingface_hub[cli]  # huggingface-cli needed for download_data.sh
 uv pip install -e .
 
 # Or with pip:
@@ -102,6 +102,7 @@ results/method_runs/ocr_all/<method_id>/correlations.json
 results/method_runs/ocr_text/<method_id>/correlations.json
 results/method_runs/ocr_formula/<method_id>/correlations.json
 results/method_runs/ocr_table/<method_id>/correlations.json
+results/method_runs/ocr_all_no_mask/<method_id>/correlations.json
 ```
 
 `correlations.json` contains Pearson and Spearman correlation with edit distance

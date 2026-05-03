@@ -16,7 +16,7 @@ GPU="${2:-0}"
 YAML_PATH="methods/${METHOD_ID}.yaml"
 ANNOT="data/omnidocbench/OmniDocBench.json"
 OCR_DIR="data/omnidocbench/ocr"
-VARIANTS="all text formula table"
+VARIANTS="all text formula table all_no_mask"
 UV=$(command -v uv 2>/dev/null || echo uv)
 
 [ ! -f "$YAML_PATH" ] && { echo "ERROR: $YAML_PATH not found"; exit 1; }

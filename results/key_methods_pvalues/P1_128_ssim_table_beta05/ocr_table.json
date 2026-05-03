@@ -1,0 +1,536 @@
+{
+  "n_pages_matched": 351,
+  "n_pages_text": 0,
+  "n_pages_formula": 0,
+  "n_pages_table": 351,
+  "focus": "table",
+  "correlations": {
+    "multi_composite": {
+      "table": {
+        "pearson": 0.26464726356136714,
+        "spearman": 0.2965640775521402,
+        "n_samples": 351,
+        "pearson_pvalue": 4.893273772771855e-07,
+        "spearman_pvalue": 1.4768215243788582e-08
+      },
+      "table_edit": {
+        "pearson": 0.15855813469335633,
+        "spearman": 0.17075751375563017,
+        "n_samples": 351,
+        "pearson_pvalue": 0.002893270929865292,
+        "spearman_pvalue": 0.0013211456302554302
+      }
+    },
+    "clip_cosine": {
+      "table": {
+        "pearson": 0.5409029394029025,
+        "spearman": 0.4833405964762702,
+        "n_samples": 351,
+        "pearson_pvalue": 4.605524574036605e-28,
+        "spearman_pvalue": 5.993565231834208e-22
+      },
+      "table_edit": {
+        "pearson": 0.49836670017581286,
+        "spearman": 0.34375447172309936,
+        "n_samples": 351,
+        "pearson_pvalue": 1.9578527181580012e-23,
+        "spearman_pvalue": 3.58990942231905e-11
+      }
+    },
+    "lm_composite": {
+      "table": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 351,
+        "pearson_pvalue": NaN,
+        "spearman_pvalue": NaN
+      },
+      "table_edit": {
+        "pearson": NaN,
+        "spearman": NaN,
+        "n_samples": 351,
+        "pearson_pvalue": NaN,
+        "spearman_pvalue": NaN
+      }
+    }
+  },
+  "by_category": {
+    "PPT2PDF": {
+      "n_pages": 22,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.129109719817922,
+            "spearman": 0.28514967506661093,
+            "n_samples": 22,
+            "pearson_pvalue": 0.5668918964500339,
+            "spearman_pvalue": 0.19833716112029925
+          },
+          "table_edit": {
+            "pearson": -0.25002116242368944,
+            "spearman": 0.002924952054944486,
+            "n_samples": 22,
+            "pearson_pvalue": 0.26178215378250885,
+            "spearman_pvalue": 0.9896929059570141
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.5867143069141012,
+            "spearman": 0.6493449479442946,
+            "n_samples": 22,
+            "pearson_pvalue": 0.0041019357972501905,
+            "spearman_pvalue": 0.001075051980245899
+          },
+          "table_edit": {
+            "pearson": 0.38882987029405786,
+            "spearman": 0.3398794287845493,
+            "n_samples": 22,
+            "pearson_pvalue": 0.07370249184956018,
+            "spearman_pvalue": 0.12171605336376916
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 22,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 22,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "academic_literature": {
+      "n_pages": 58,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.01279098837811822,
+            "spearman": -0.10689676392408519,
+            "n_samples": 58,
+            "pearson_pvalue": 0.924079279491135,
+            "spearman_pvalue": 0.4244807505613628
+          },
+          "table_edit": {
+            "pearson": -0.09435356049083715,
+            "spearman": -0.21628358819515153,
+            "n_samples": 58,
+            "pearson_pvalue": 0.48111716138606475,
+            "spearman_pvalue": 0.10295887490392372
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.34258605054062863,
+            "spearman": 0.0875169189536755,
+            "n_samples": 58,
+            "pearson_pvalue": 0.008477312293367881,
+            "spearman_pvalue": 0.5135918137375622
+          },
+          "table_edit": {
+            "pearson": 0.25970538030365947,
+            "spearman": 0.04920151622194441,
+            "n_samples": 58,
+            "pearson_pvalue": 0.048984646521994205,
+            "spearman_pvalue": 0.7137883962599423
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 58,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 58,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "book": {
+      "n_pages": 57,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.4151986530804696,
+            "spearman": 0.5201809240591524,
+            "n_samples": 57,
+            "pearson_pvalue": 0.0013202183723925764,
+            "spearman_pvalue": 3.3634207495387344e-05
+          },
+          "table_edit": {
+            "pearson": 0.2757861294370153,
+            "spearman": 0.26847616460157614,
+            "n_samples": 57,
+            "pearson_pvalue": 0.03785073275769351,
+            "spearman_pvalue": 0.04345780521596056
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.46311232574633143,
+            "spearman": 0.49688161477642956,
+            "n_samples": 57,
+            "pearson_pvalue": 0.0002860948592783004,
+            "spearman_pvalue": 8.439302622604985e-05
+          },
+          "table_edit": {
+            "pearson": 0.5430060893126237,
+            "spearman": 0.4951314761880956,
+            "n_samples": 57,
+            "pearson_pvalue": 1.2763169097587559e-05,
+            "spearman_pvalue": 9.019102554491624e-05
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "colorful_textbook": {
+      "n_pages": 29,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.3263833358963585,
+            "spearman": 0.3344360952331738,
+            "n_samples": 29,
+            "pearson_pvalue": 0.08398897110883485,
+            "spearman_pvalue": 0.07618998568608412
+          },
+          "table_edit": {
+            "pearson": 0.1901563174350326,
+            "spearman": 0.12742612906402778,
+            "n_samples": 29,
+            "pearson_pvalue": 0.32313665137005565,
+            "spearman_pvalue": 0.5100758015079255
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.47566452392160585,
+            "spearman": 0.1714545704325064,
+            "n_samples": 29,
+            "pearson_pvalue": 0.009107633058748442,
+            "spearman_pvalue": 0.3738374620438206
+          },
+          "table_edit": {
+            "pearson": 0.41888385072871903,
+            "spearman": 0.12417163067928834,
+            "n_samples": 29,
+            "pearson_pvalue": 0.02371697461275911,
+            "spearman_pvalue": 0.5210275823378792
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "exam_paper": {
+      "n_pages": 57,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.5094457917287379,
+            "spearman": 0.5304752254597532,
+            "n_samples": 57,
+            "pearson_pvalue": 5.181723524357739e-05,
+            "spearman_pvalue": 2.1915400655768348e-05
+          },
+          "table_edit": {
+            "pearson": 0.44995027373505203,
+            "spearman": 0.4122945939086858,
+            "n_samples": 57,
+            "pearson_pvalue": 0.0004453798469809119,
+            "spearman_pvalue": 0.0014383469002521023
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.6232063580382224,
+            "spearman": 0.558983336963606,
+            "n_samples": 57,
+            "pearson_pvalue": 2.2489999823805006e-07,
+            "spearman_pvalue": 6.203033210386027e-06
+          },
+          "table_edit": {
+            "pearson": 0.5399379332473438,
+            "spearman": 0.2615724768357731,
+            "n_samples": 57,
+            "pearson_pvalue": 1.4598743058364782e-05,
+            "spearman_pvalue": 0.04936284269098094
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 57,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "magazine": {
+      "n_pages": 6,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.7555808210217551,
+            "spearman": 0.17393131069573453,
+            "n_samples": 6,
+            "pearson_pvalue": 0.08231021187206677,
+            "spearman_pvalue": 0.7417339277316278
+          },
+          "table_edit": {
+            "pearson": 0.8383212830161351,
+            "spearman": 0.21251185925162072,
+            "n_samples": 6,
+            "pearson_pvalue": 0.0370968698489834,
+            "spearman_pvalue": 0.686030866008896
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.3752996665550877,
+            "spearman": 0.20291986247835694,
+            "n_samples": 6,
+            "pearson_pvalue": 0.4634809491073123,
+            "spearman_pvalue": 0.699797968157019
+          },
+          "table_edit": {
+            "pearson": 0.46101763067057616,
+            "spearman": -0.030358837035945815,
+            "n_samples": 6,
+            "pearson_pvalue": 0.3574652650406969,
+            "spearman_pvalue": 0.9544757346935634
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 6,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 6,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "newspaper": {
+      "n_pages": 14,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.800467565080664,
+            "spearman": 0.7182891470685338,
+            "n_samples": 14,
+            "pearson_pvalue": 0.0005837985335736059,
+            "spearman_pvalue": 0.003807712231961721
+          },
+          "table_edit": {
+            "pearson": 0.8140191896016883,
+            "spearman": 0.7365895075034008,
+            "n_samples": 14,
+            "pearson_pvalue": 0.00039502346707559423,
+            "spearman_pvalue": 0.002658738269111555
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.9585997135749539,
+            "spearman": 0.8509667602213201,
+            "n_samples": 14,
+            "pearson_pvalue": 6.64763856833524e-08,
+            "spearman_pvalue": 0.00011383999071387685
+          },
+          "table_edit": {
+            "pearson": 0.9609479219385217,
+            "spearman": 0.8601169404387538,
+            "n_samples": 14,
+            "pearson_pvalue": 4.706873690194333e-08,
+            "spearman_pvalue": 7.947124315221753e-05
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 14,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 14,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "note": {
+      "n_pages": 29,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.2172391478917563,
+            "spearman": 0.342071279662234,
+            "n_samples": 29,
+            "pearson_pvalue": 0.2576373806246391,
+            "spearman_pvalue": 0.06932160139289475
+          },
+          "table_edit": {
+            "pearson": -0.17009118590880634,
+            "spearman": 0.1028380802406896,
+            "n_samples": 29,
+            "pearson_pvalue": 0.3777059976710845,
+            "spearman_pvalue": 0.5955221763730105
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.4356652426382637,
+            "spearman": 0.31805731380095703,
+            "n_samples": 29,
+            "pearson_pvalue": 0.01816114612984834,
+            "spearman_pvalue": 0.09267861633593828
+          },
+          "table_edit": {
+            "pearson": -0.28200272206975047,
+            "spearman": -0.09701227766547812,
+            "n_samples": 29,
+            "pearson_pvalue": 0.13831319182347032,
+            "spearman_pvalue": 0.6166311649949772
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 29,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    },
+    "research_report": {
+      "n_pages": 79,
+      "correlations": {
+        "multi_composite": {
+          "table": {
+            "pearson": 0.007529359874312646,
+            "spearman": 0.11406002706056863,
+            "n_samples": 79,
+            "pearson_pvalue": 0.9474919614833961,
+            "spearman_pvalue": 0.3168752556562783
+          },
+          "table_edit": {
+            "pearson": -0.05084485203784169,
+            "spearman": 0.12154014610950176,
+            "n_samples": 79,
+            "pearson_pvalue": 0.6563170695629017,
+            "spearman_pvalue": 0.2859648906627791
+          }
+        },
+        "clip_cosine": {
+          "table": {
+            "pearson": 0.3174782776177095,
+            "spearman": 0.38042049605128786,
+            "n_samples": 79,
+            "pearson_pvalue": 0.004358411589013042,
+            "spearman_pvalue": 0.000543484775832437
+          },
+          "table_edit": {
+            "pearson": 0.28318351047350065,
+            "spearman": 0.14487123315066863,
+            "n_samples": 79,
+            "pearson_pvalue": 0.011443175280794422,
+            "spearman_pvalue": 0.20271593823665532
+          }
+        },
+        "lm_composite": {
+          "table": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 79,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          },
+          "table_edit": {
+            "pearson": NaN,
+            "spearman": NaN,
+            "n_samples": 79,
+            "pearson_pvalue": NaN,
+            "spearman_pvalue": NaN
+          }
+        }
+      }
+    }
+  }
+}
