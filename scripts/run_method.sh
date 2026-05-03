@@ -15,7 +15,7 @@ METHOD_ID="${1:?Usage: run_method.sh <method_id> [gpu_id]}"
 GPU="${2:-0}"
 YAML_PATH="methods/${METHOD_ID}.yaml"
 ANNOT="data/omnidocbench/OmniDocBench.json"
-OCR_DIR="data/omnidocbench/ocr"
+OCR_DIR="data/omnidocbench/ocr_all"
 VARIANTS="all text formula table all_no_mask"
 UV=$(command -v uv 2>/dev/null || echo uv)
 

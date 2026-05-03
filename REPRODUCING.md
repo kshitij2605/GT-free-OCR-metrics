@@ -44,10 +44,10 @@ bash download_data.sh
 This downloads:
 - `data/omnidocbench/OmniDocBench.json` — ground-truth annotations (1 355 pages)
 - `data/omnidocbench/images/` — original page scans (~30 GB)
-- `data/omnidocbench/ocr/` — pre-computed OCR artifacts for all 5 variants (~18 GB):
+- `data/omnidocbench/ocr_{all,text,formula,table,all_no_mask}/<page_id>/` — per-variant OCR artifacts (~18 GB total):
   `masked_original.png`, `reconstructed.png`, `ocr_html.html`,
   `ocr_elements.json`, `ocr_formula_elements.json`, `ocr_table_elements.json`
-- `data/omnidocbench/ocr_logprobs/` — per-token log-probabilities (~2 GB)
+- `data/ocr_logprobs/` — per-token log-probabilities (~2 GB)
 
 **Note on HuggingFace auth:** if the datasets are gated, set `HF_TOKEN` first:
 ```bash

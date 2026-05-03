@@ -6,7 +6,7 @@ set -uo pipefail
 cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/..
 
 ANNOT="data/omnidocbench/OmniDocBench.json"
-OCR_DIR="data/omnidocbench/ocr"
+OCR_DIR="data/omnidocbench/ocr_all"
 VARIANTS="all text formula table all_no_mask"
 
 UV=$(command -v uv 2>/dev/null || echo uv)
