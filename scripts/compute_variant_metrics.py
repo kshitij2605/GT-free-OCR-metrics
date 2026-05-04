@@ -84,7 +84,8 @@ clip_model, _, clip_preprocess = open_clip.create_model_and_transforms(
 clip_model = clip_model.eval().to(device)
 log.info("models loaded in %.1fs", time.time() - t_model)
 
-base_results = json.load(open(BASE / "ocr/results.json", encoding="utf-8"))
+_base_path = BASE / "ocr/results.json"
+base_results = json.load(open(_base_path, encoding="utf-8")) if _base_path.exists() else []
 base_by_dir = {Path(e["image"]).stem: e for e in base_results}
 
 preprocessor = ImagePreprocessor()
