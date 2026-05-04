@@ -1,0 +1,226 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "arrayShape": "cr:arrayShape",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "containedIn": "cr:containedIn",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isArray": "cr:isArray",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@type": "sc:Dataset",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "repo",
+      "name": "repo",
+      "description": "The Hugging Face git repository.",
+      "contentUrl": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet/tree/refs%2Fconvert%2Fparquet",
+      "encodingFormat": "git+https",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-default",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "default/*/*.parquet"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "default_splits/split_name"
+      },
+      "@id": "default_splits",
+      "name": "default_splits",
+      "description": "Splits for the default config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "default_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "default_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "default",
+      "description": "gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet - 'default' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "default/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "default/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "default_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ocr_logprobs",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "ocr_logprobs"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/per_bbox_logprobs",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-default"
+            },
+            "extract": {
+              "column": "per_bbox_logprobs"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "omnidocbench-qwen-ocr-logprobs-parquet",
+  "description": "\n\t\n\t\t\n\t\tOmniDocBench Qwen OCR Logprobs — Parquet Edition\n\t\n\nParquet-shard repackaging of\ngt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs.\nThe original dataset stores per-token and per-bbox logprob artifacts as\n~4,065 individual files (3 files × 1,355 pages). Bulk download trips the\nHuggingFace 5,000 resolver-cache requests / 5-min limit, the same problem\nthe render-compare dataset has.\nThis repackaging stores the same artifacts as 7 zstd-compressed parquet\nshards (~115 MB total), which… See the full description on the dataset page: https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet.",
+  "alternateName": [
+    "gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "gt-free-ocr-metrics",
+    "url": "https://huggingface.co/gt-free-ocr-metrics"
+  },
+  "keywords": [
+    "other",
+    "multilingual",
+    "English",
+    "Chinese",
+    "cc-by-nc-4.0",
+    "1K - 10K",
+    "parquet",
+    "Text",
+    "Datasets",
+    "Dask",
+    "Polars",
+    "Croissant",
+    "🇺🇸 Region: US",
+    "ocr",
+    "logprobs",
+    "confidence-estimation",
+    "render-and-compare",
+    "reference-free-metric"
+  ],
+  "license": "https://choosealicense.com/licenses/cc-by-nc-4.0/",
+  "url": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet",
+  "rai:dataLimitations": "All logprobs are produced by a single OCR model, Qwen3.5-122B-A10B; the miscalibration patterns, hallucination tendencies, and formula-vs-text confidence biases of this specific model are baked into the data. Per-token top_logprobs is capped at the model serving-time top_logprobs setting (typically 5); the full vocabulary distribution is not available. Per-bbox aggregations (entropy, min/mean logprob, etc.) are pre-computed and cannot be changed without re-running the aggregation script over ocr_logprobs. Coverage is restricted to the 1,355 OmniDocBench pages (English and Chinese only); results should not be generalised to other languages or document types not present in OmniDocBench. The underlying OCR model also exhibits OCR-misclassification blindness (Case-2 errors): when the model silently misclassifies a region, the logprob distribution still reflects high confidence on the chosen but wrong class, providing limited signal for these failures.",
+  "rai:dataBiases": "All logprobs originate from a single model (Qwen3.5-122B-A10B), so confidence miscalibration specific to this model is present systematically across the entire dataset. The underlying OmniDocBench covers ten document categories with English documents more numerous than Chinese. Information-dense categories — particularly newspapers and dense multi-column financial tables — exhibit higher detection noise from the OCR model, producing systematically lower confidence scores for those categories which may not reflect true OCR error rates.",
+  "rai:personalSensitiveInformation": "No personally identifiable information (PII) was intentionally collected. OmniDocBench draws from public academic and professional documents. Financial report pages may incidentally reference company names or executive names. No medical, legal, biometric, or demographic data is present.",
+  "rai:dataUseCases": "Intended uses: (1) reference-free OCR confidence estimation; (2) multi-signal metric design combining logprob entropy with visual similarity to build hybrid metrics; (3) OCR uncertainty studies using per-token top-N logprobs. Out-of-scope uses: treating these logprobs as ground-truth confidence (they reflect a single model distribution); using as a substitute for human review of OCR output quality; clinical, legal, or safety-critical applications.",
+  "rai:dataSocialImpact": "Positive impacts: enables reference-free OCR quality assessment using OCR-internal confidence signals, complementing visual-similarity metrics. Potential risks: confidence estimates from this dataset may be misapplied beyond document OCR evaluation. The CC-BY-NC-4.0 license restricts commercial use.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://huggingface.co/datasets/opendatalab/OmniDocBench",
+      "prov:label": "OmniDocBench",
+      "description": "OmniDocBench: Benchmarking Document Parsing with Diverse Layouts on Real-World Data. Published by OpenDataLab / Shanghai Jiao Tong University.",
+      "sc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "prov:wasAttributedTo": {
+        "@id": "https://huggingface.co/opendatalab",
+        "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+      }
+    }
+  ]
+}

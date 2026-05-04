@@ -120,9 +120,11 @@ research/                        # Literature review and technical notes
 | Dataset | Description | HF link |
 |---|---|---|
 | OmniDocBench | 1 355 real-world document pages, GT annotations | [opendatalab/OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench) |
-| Render-and-Compare | Pre-computed OCR artifacts for all 5 variants | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
+| Render-and-Compare (parquet, **recommended**) | 64 zstd-parquet shards (~9.4 GB) of all 5 variants - one HTTP request per shard, no rate limits | [gt-free-ocr-metrics/omnidocbench-render-compare-parquet](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet) |
+| Render-and-Compare (raw per-page) | Original per-page directory layout | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
 | Render-and-Compare (sample) | 60-page stratified sample (~370 MB) for quick exploration | [gt-free-ocr-metrics/omnidocbench-render-compare-sample](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample) |
-| OCR Log-probabilities | Token-level Qwen OCR confidence scores | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
+| OCR Log-probabilities (parquet, **recommended**) | 7 zstd-parquet shards (~115 MB), token-level Qwen OCR confidence scores | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet) |
+| OCR Log-probabilities (raw per-page) | Original per-page directory layout | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
 
 **Collection page:** <https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models>
 

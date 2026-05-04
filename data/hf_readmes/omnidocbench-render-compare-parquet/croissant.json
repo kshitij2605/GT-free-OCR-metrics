@@ -1,0 +1,1010 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "arrayShape": "cr:arrayShape",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "containedIn": "cr:containedIn",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataBiases": "cr:dataBiases",
+    "dataCollection": "cr:dataCollection",
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isArray": "cr:isArray",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "personalSensitiveInformation": "cr:personalSensitiveInformation",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dataLimitations": "cr:dataLimitations"
+  },
+  "@type": "sc:Dataset",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "repo",
+      "name": "repo",
+      "description": "The Hugging Face git repository.",
+      "contentUrl": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet/tree/refs%2Fconvert%2Fparquet",
+      "encodingFormat": "git+https",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-ocr_all",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "ocr_all/*/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-ocr_all_no_mask",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "ocr_all_no_mask/*/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-ocr_formula",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "ocr_formula/*/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-ocr_table",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "ocr_table/*/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "parquet-files-for-config-ocr_text",
+      "containedIn": {
+        "@id": "repo"
+      },
+      "encodingFormat": "application/x-parquet",
+      "includes": "ocr_text/*/*.parquet"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "ocr_all_splits/split_name"
+      },
+      "@id": "ocr_all_splits",
+      "name": "ocr_all_splits",
+      "description": "Splits for the ocr_all config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "ocr_all_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ocr_all",
+      "description": "gt-free-ocr-metrics/omnidocbench-render-compare-parquet - 'ocr_all' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "ocr_all/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "ocr_all_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/variant",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "variant"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/masked_original",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "masked_original"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/reconstructed",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "reconstructed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/ocr_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "ocr_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/ocr_formula_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "ocr_formula_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all/ocr_table_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all"
+            },
+            "extract": {
+              "column": "ocr_table_elements"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "ocr_all_no_mask_splits/split_name"
+      },
+      "@id": "ocr_all_no_mask_splits",
+      "name": "ocr_all_no_mask_splits",
+      "description": "Splits for the ocr_all_no_mask config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "ocr_all_no_mask_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ocr_all_no_mask",
+      "description": "gt-free-ocr-metrics/omnidocbench-render-compare-parquet - 'ocr_all_no_mask' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "ocr_all_no_mask/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "ocr_all_no_mask_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/variant",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "variant"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/masked_original",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "masked_original"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/reconstructed",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "reconstructed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/ocr_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "ocr_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/ocr_formula_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "ocr_formula_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_all_no_mask/ocr_table_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_all_no_mask"
+            },
+            "extract": {
+              "column": "ocr_table_elements"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "ocr_formula_splits/split_name"
+      },
+      "@id": "ocr_formula_splits",
+      "name": "ocr_formula_splits",
+      "description": "Splits for the ocr_formula config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "ocr_formula_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ocr_formula",
+      "description": "gt-free-ocr-metrics/omnidocbench-render-compare-parquet - 'ocr_formula' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "ocr_formula/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "ocr_formula_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/variant",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "variant"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/masked_original",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "masked_original"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/reconstructed",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "reconstructed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/ocr_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "ocr_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/ocr_formula_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "ocr_formula_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_formula/ocr_table_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_formula"
+            },
+            "extract": {
+              "column": "ocr_table_elements"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "ocr_table_splits/split_name"
+      },
+      "@id": "ocr_table_splits",
+      "name": "ocr_table_splits",
+      "description": "Splits for the ocr_table config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "ocr_table_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ocr_table",
+      "description": "gt-free-ocr-metrics/omnidocbench-render-compare-parquet - 'ocr_table' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "ocr_table/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "ocr_table_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/variant",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "variant"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/masked_original",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "masked_original"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/reconstructed",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "reconstructed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/ocr_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "ocr_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/ocr_formula_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "ocr_formula_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_table/ocr_table_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_table"
+            },
+            "extract": {
+              "column": "ocr_table_elements"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "dataType": "cr:Split",
+      "key": {
+        "@id": "ocr_text_splits/split_name"
+      },
+      "@id": "ocr_text_splits",
+      "name": "ocr_text_splits",
+      "description": "Splits for the ocr_text config.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text_splits/split_name",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "ocr_text_splits/split_name": "train"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "ocr_text",
+      "description": "gt-free-ocr-metrics/omnidocbench-render-compare-parquet - 'ocr_text' subset",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/split",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            },
+            "transform": {
+              "regex": "ocr_text/(?:partial-)?(train)/.+parquet$"
+            }
+          },
+          "references": {
+            "field": {
+              "@id": "ocr_text_splits/split_name"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/page_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "page_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/variant",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "variant"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/masked_original",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "masked_original"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/reconstructed",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "reconstructed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/ocr_html",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "ocr_html"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/ocr_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "ocr_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/ocr_formula_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "ocr_formula_elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "ocr_text/ocr_table_elements",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "parquet-files-for-config-ocr_text"
+            },
+            "extract": {
+              "column": "ocr_table_elements"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "omnidocbench-render-compare-parquet",
+  "description": "\n\t\n\t\t\n\t\tOmniDocBench Render-and-Compare — Parquet Edition\n\t\n\nParquet-shard repackaging of\ngt-free-ocr-metrics/omnidocbench-render-compare.\nThe original dataset stores per-page artifacts as ~23,600 individual files\n(6 files × 5 OCR variants × 200–1,355 pages). Bulk download of that layout\ntrips HuggingFace's 5,000 resolver-cache requests / 5-minute rate limit and\nneeds an authenticated token to complete.\nThis repackaging stores the same artifacts as 64 zstd-compressed parquet\nshards (~9.4 GB… See the full description on the dataset page: https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet.",
+  "alternateName": [
+    "gt-free-ocr-metrics/omnidocbench-render-compare-parquet"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "gt-free-ocr-metrics",
+    "url": "https://huggingface.co/gt-free-ocr-metrics"
+  },
+  "keywords": [
+    "other",
+    "multilingual",
+    "English",
+    "Chinese",
+    "cc-by-nc-4.0",
+    "1K - 10K",
+    "parquet",
+    "Text",
+    "Datasets",
+    "Dask",
+    "Polars",
+    "Croissant",
+    "arxiv:2412.07626",
+    "🇺🇸 Region: US",
+    "ocr",
+    "document-understanding",
+    "render-and-compare",
+    "reference-free-metric",
+    "document-quality",
+    "visual-similarity"
+  ],
+  "license": "https://choosealicense.com/licenses/cc-by-nc-4.0/",
+  "url": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet",
+  "rai:dataLimitations": "All HTML reconstructions are produced by a single OCR model, Qwen3.5-122B-A10B. Coverage is restricted to the 1,355 pages of OmniDocBench (English and Chinese only); results should not be generalised to other languages, scripts, or document types not present in OmniDocBench. Because the OCR model both classifies and extracts document elements, misclassification errors (e.g. a formula region tagged as text) propagate silently: both the masked original and the reconstruction erase the misclassified region consistently, so visual similarity remains artificially high while reference-based metrics correctly score low. This OCR-misclassification blindness creates an information-theoretic ceiling on reference-free correlation that cannot be lifted by better visual metrics alone. Additionally, bounding box detection by Qwen3.5-122B-A10B is imperfect, particularly on information-dense pages such as newspapers and dense multi-column financial layouts; this produces noisy element-level segmentation and results in lower average correlations with ground-truth-based metrics (edit distance, CDM, TEDS) for those document categories. The ocr_formula subset covers only 200 pages where the OCR model detected at least one formula; the ocr_table subset covers only 351 such pages. HTML-to-PNG rendering uses a headless browser at a fixed viewport; font substitution, rendering artefacts, and DPI differences from the original scans are present throughout. No human verification of OCR outputs or rendered images was performed.",
+  "rai:dataBiases": "All reconstructions originate from a single model (Qwen3.5-122B-A10B), so errors and hallucinations specific to this model are present systematically across the entire dataset. The underlying OmniDocBench covers ten document categories with the following approximate page counts derived from page-ID prefix analysis across the 1,355 pages: textbooks / course materials 226 pages, research reports and financial documents 319 pages (covering Chinese financial research reports and EastMoney financial platform documents), newspapers 151 pages, academic papers 209 pages, study / lecture notes 116 pages, slide presentations 108 pages, books 72 pages, exam papers 70 pages, magazines 43 pages, and mixed-layout coloured documents 42 pages. English documents are more numerous than Chinese. Information-dense categories — particularly newspapers (151 pages) and dense financial tables within research/financial report pages (319 pages) — exhibit higher bounding-box detection noise from the OCR model, biasing visual similarity scores for those categories downward relative to their true OCR fidelity. The DocSim triplet training set (docsim_triplets config, 20,280 triplets) is derived from the same 1,355-page pool and inherits all distributional biases described above.",
+  "rai:personalSensitiveInformation": "No personally identifiable information (PII) was intentionally collected. OmniDocBench draws from public academic and professional documents. Financial report pages may incidentally reference company names or executive names. No medical, legal, biometric, or demographic data is present. Applicable sensitive categories: none intentionally present. No de-identification steps were applied beyond what is already present in the source OmniDocBench dataset.",
+  "rai:dataUseCases": "Intended uses: (1) research on reference-free OCR evaluation using visual similarity between original page scans and rendered HTML reconstructions, without requiring ground-truth text annotations; (2) development and evaluation of perceptual document similarity metrics across diverse real-world layouts in English and Chinese; (3) training document similarity models using the DocSim triplet manifold (docsim_triplets config, 20,280 triplets with Hungarian-matched edit-distance supervision). Validity of the visual similarity signal as a proxy for OCR quality has been examined for correlation with edit distance, CDM, and TEDS on OmniDocBench pages. Out-of-scope uses: extracting or reproducing copyrighted document text from reconstructed images or OCR HTML outputs; using this as a ground-truth OCR corpus (reconstructed content is model output, not a verified transcript); training general-purpose OCR models; clinical, legal, or safety-critical applications.",
+  "rai:dataSocialImpact": "Positive impacts: enables reference-free OCR quality assessment without requiring annotated ground truth, reducing barriers to OCR evaluation in resource-constrained settings. The DocSim triplets enable training of lightweight document similarity heads for downstream evaluation tooling. Potential risks: visual similarity metrics developed on this dataset may be misapplied beyond document OCR evaluation. Reconstructed images and OCR HTML outputs must not be used to extract or redistribute copyrighted text. The CC-BY-NC-4.0 license restricts commercial use. The known correlation ceiling caused by OCR misclassification blindness (see rai:dataLimitations) means scores from this dataset should not be treated as upper bounds on OCR system quality.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "https://huggingface.co/datasets/opendatalab/OmniDocBench",
+      "prov:label": "OmniDocBench",
+      "description": "OmniDocBench: Benchmarking Document Parsing with Diverse Layouts on Real-World Data. Published by OpenDataLab / Shanghai Jiao Tong University.",
+      "sc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "prov:wasAttributedTo": {
+        "@id": "https://huggingface.co/opendatalab",
+        "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+      }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q4929239"
+      },
+      "prov:label": "Source image and annotation collection",
+      "description": "Original page scan images and the ground-truth annotation file (OmniDocBench.json, containing bounding boxes and text/formula/table ground truth) from OmniDocBench (opendatalab/OmniDocBench) were used as input without modification.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:Agent",
+          "@id": "https://huggingface.co/opendatalab",
+          "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1783551"
+      },
+      "prov:label": "Region masking",
+      "description": "For the ocr_all and element-specific variants (ocr_text, ocr_formula, ocr_table), non-target element regions were grayed out using bounding-box annotations from OmniDocBench.json to produce masked_original.png. For ocr_all_no_mask, no masking was applied. Performed programmatically; no human annotation was added in this step.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "OCR inference",
+      "description": "Each page image was processed by Qwen3.5-122B-A10B served via vLLM using the standard OmniDocBench HTML-output OCR prompt (system role + page image). The model produced structured HTML with <div data-bbox='...'> elements, saved as ocr_html.html. Element-level bounding boxes and extracted content were parsed into ocr_elements.json (text), ocr_formula_elements.json (LaTeX formulas), and ocr_table_elements.json (HTML tables). No human review or correction of OCR outputs was performed.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+          "prov:label": "Qwen3.5-122B-A10B (served via vLLM)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1783551"
+      },
+      "prov:label": "HTML-to-PNG rendering",
+      "description": "The OCR HTML output (ocr_html.html) was rendered to a PNG screenshot (reconstructed.png) using a headless browser at 1x DPI and a fixed viewport width. Font rendering, DPI, and colour profile may differ from the original page scans.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "prov:label": "Headless browser renderer (OmniDocBench Render-and-Compare pipeline)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1783551"
+      },
+      "prov:label": "DocSim triplet construction",
+      "description": "Training triplets for the docsim_triplets config were constructed by: (1) computing Hungarian-matched edit distance between OCR-extracted text and OmniDocBench ground-truth text for each page to obtain a numeric fidelity score; (2) pairing each anchor page (masked_original.png from ocr_all_no_mask) with a positive (its own reconstructed.png) and a hard negative (a reconstructed.png from a different page selected to maximise edit-distance contrast). The edit distance uses element-level Levenshtein distance with linear-sum-assignment matching, normalised by maximum string length. 20,280 triplets were generated from the 1,355-page pool. Fully automated; no human annotation was performed.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
+        }
+      ]
+    }
+  ]
+}
