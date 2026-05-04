@@ -43,7 +43,7 @@ from openai import OpenAI
 from PIL import Image, ImageFilter, ImageOps
 from skimage.metrics import structural_similarity
 
-sys.path.insert(0, "/home/mac/test/r1-p2/src")
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from reference_free_ocr_metric.reconstruction.image_preprocessor import ImagePreprocessor
 
 METHOD_ID = "P2_206_vlm_page_score"
@@ -107,9 +107,9 @@ BETA_CONTENT_ELEM = {
     "table": 0.0, "text": 0.0, "formula": 0.0, "all": 0.10, "all_no_mask": 0.10,
 }[variant]
 
-BASE = Path("/home/mac/test/r1-p2/data/omnidocbench")
+BASE = Path(__file__).parent.parent.parent / "data/omnidocbench"
 var_root = BASE / f"ocr_{variant}"
-OUT_DIR = Path("/home/mac/test/r1-p2/results/method_runs") / f"ocr_{variant}" / METHOD_ID
+OUT_DIR = Path(__file__).parent.parent.parent / "results/method_runs" / f"ocr_{variant}" / METHOD_ID
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
@@ -184,11 +184,11 @@ class DocSimHead(nn.Module):
         return F.normalize(self.proj(x), dim=-1)
 
 
-ADAPTER_DIR = Path("/home/mac/test/r1-p2/models/docsim_lora/lora_adapter_best")
-HEAD_STATE_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/head_state_best.pt")
-HEAD_CONFIG_PATH = Path("/home/mac/test/r1-p2/models/docsim_lora/config.json")
-LOGPROBS_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs")
-PER_BBOX_ROOT = Path("/home/mac/test/r1-p2/data/ocr_logprobs_per_bbox")
+ADAPTER_DIR = Path(__file__).parent.parent.parent / "models/docsim_lora/lora_adapter_best"
+HEAD_STATE_PATH = Path(__file__).parent.parent.parent / "models/docsim_lora/head_state_best.pt"
+HEAD_CONFIG_PATH = Path(__file__).parent.parent.parent / "models/docsim_lora/config.json"
+LOGPROBS_ROOT = Path(__file__).parent.parent.parent / "data/ocr_logprobs"
+PER_BBOX_ROOT = Path(__file__).parent.parent.parent / "data/ocr_logprobs_per_bbox"
 TOP_K = 5
 _LOG_K_TOP = math.log(TOP_K)
 

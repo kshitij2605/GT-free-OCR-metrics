@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 PROJECT = Path(__file__).parent.parent
-R1P2 = Path("/home/mac/test/r1-p2")
+R1P2 = Path(__file__).parent.parent
 ANNOTATIONS_JSON = PROJECT / "data" / "omnidocbench" / "OmniDocBench.json"
 VARIANTS = ["text", "formula", "table", "all", "all_no_mask"]
 DIM = {"text": "text_accuracy", "formula": "formula_edit", "table": "table",

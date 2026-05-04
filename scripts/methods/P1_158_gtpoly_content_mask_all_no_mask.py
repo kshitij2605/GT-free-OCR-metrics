@@ -56,7 +56,7 @@ METHOD_ID = "P1_158_gtpoly_content_mask_all_no_mask"
 SSIM_SIZE = 512
 BATCH_SIZE = 16
 DINO_SIZE = 224
-GT_JSON_PATH = "/home/mac/test/r1-p2/data/omnidocbench/OmniDocBench.json"
+GT_JSON_PATH = str(Path(__file__).parent.parent.parent / "data/omnidocbench/OmniDocBench.json")
 
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <variant>", file=sys.stderr)
