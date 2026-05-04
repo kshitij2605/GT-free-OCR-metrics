@@ -49,20 +49,34 @@ This downloads:
   `ocr_elements.json`, `ocr_formula_elements.json`, `ocr_table_elements.json`
 - `data/ocr_logprobs/` — per-token log-probabilities (~2 GB)
 
-**Note on HuggingFace rate limits:** unauthenticated requests are throttled at
-5,000 resolver-cache requests per 5-minute window, and the render-compare dataset
-contains ~23,600 small files. Without authentication the download will repeatedly
-hit `429 Too Many Requests`, exit, and need to be re-run after the window resets.
-The download is resumable, so re-running picks up where it left off, but supplying
-an HF token is strongly recommended:
+**Two data formats are available:**
+
+- **`parquet` (default, recommended)** — 64 zstd-compressed parquet shards
+  (~9.4 GB) hosted at
+  [`gt-free-ocr-metrics/omnidocbench-render-compare-parquet`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet).
+  `download_data.sh` fetches the shards and runs
+  `scripts/extract_parquet_to_disk.py` to materialise them into the same
+  per-page directory layout the methods expect. 64 HTTP requests instead of
+  23,600 — well inside HuggingFace's unauthenticated rate limits, no
+  `HF_TOKEN` needed.
+
+- **`raw` (legacy)** — original per-page-directory layout at
+  [`gt-free-ocr-metrics/omnidocbench-render-compare`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare).
+  Triggers `429 Too Many Requests` for unauthenticated users (5,000
+  resolver-cache requests / 5-min window vs. ~23,600 files). Supply an HF
+  token to avoid the rate limit. The download is resumable.
 
 ```bash
-export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Default (parquet):
 bash download_data.sh
-```
 
-Either set `HF_TOKEN` in the environment or run `huggingface-cli login` once
-before the first download.
+# Legacy raw layout:
+DATA_FORMAT=raw bash download_data.sh
+
+# With HF auth (helps for raw layout):
+export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+DATA_FORMAT=raw bash download_data.sh
+```
 
 > **Quick exploration (no full download required):** a 60-page stratified sample (~370 MB)
 > is available at
