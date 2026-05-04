@@ -82,6 +82,28 @@ Key result families:
 
 ---
 
+## Robustness check: character-level sensitivity
+
+A controlled perturbation experiment (paper Appendix C) verifies that the
+reference-free metric responds to **character-level** content, not just to
+gross page layout. Holding bounding boxes and the rendering pipeline fixed,
+we corrupt OCR text at increasing character edit distances and measure the
+per-element CLIP cosine (P10 aggregation, the dominant signal in the top
+methods). The score drops monotonically with the corruption fraction:
+
+| Corruption | Mean P10 | 95% bootstrap CI |
+|---|---|---|
+| 0% | 0.557 | [0.527, 0.584] |
+| 5% | 0.543 | [0.515, 0.568] |
+| 10% | 0.538 | [0.509, 0.563] |
+| 20% | 0.517 | [0.487, 0.544] |
+| 50% | 0.491 | [0.463, 0.516] |
+
+(`n = 100` OmniDocBench pages, seed 42, ~10 min on one RTX 6000 Ada).
+Reproduction instructions are in [REPRODUCING.md § Step 7](REPRODUCING.md).
+
+---
+
 ## Repository Structure
 
 ```

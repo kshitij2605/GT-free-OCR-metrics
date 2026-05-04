@@ -190,6 +190,42 @@ The `results/leaderboard.json` committed to this repo is the authoritative refer
 
 ---
 
+## Step 7 — Character-level sensitivity experiment (paper Appendix C)
+
+A controlled perturbation study confirming that the reference-free metric
+responds to character-level content, not only to gross page layout. Bounding
+boxes and the rendering pipeline are held fixed; only the displayed
+characters change across the five conditions.
+
+```bash
+# 1. Run the perturbation sweep (~10 minutes on a single RTX 6000 Ada).
+#    Samples 100 OmniDocBench pages, corrupts OCR text at 0/5/10/20/50%
+#    character fractions, and computes per-element CLIP-cosine P10
+#    against the cached masked_original.
+CUDA_VISIBLE_DEVICES=0 uv run python scripts/charsens_perturbation.py
+# Writes results/charsens/results.json
+
+# 2. Render the figure used in the paper appendix.
+uv run python paper/build_charsens_fig.py
+# Writes paper/figures/fig_charsens.pdf
+```
+
+Expected output (seed 42, 100 pages):
+
+| Corruption fraction | Mean per-element CLIP P10 | 95% bootstrap CI |
+|---|---|---|
+| 0% | 0.557 | [0.527, 0.584] |
+| 5% | 0.543 | [0.515, 0.568] |
+| 10% | 0.538 | [0.509, 0.563] |
+| 20% | 0.517 | [0.487, 0.544] |
+| 50% | 0.491 | [0.463, 0.516] |
+
+The strict monotonic drop is evidence that the reference-free metric measures
+character-level fidelity rather than only document-level structure, since
+layout and rendering are identical across the five points on the curve.
+
+---
+
 ## Re-running OCR (optional)
 
 Pre-computed artifacts are sufficient for all 147 methods.
