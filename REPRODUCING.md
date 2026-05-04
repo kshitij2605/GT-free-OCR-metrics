@@ -51,20 +51,30 @@ This downloads:
 
 **Two data formats are available:**
 
-- **`parquet` (default, recommended)** — 64 zstd-compressed parquet shards
-  (~9.4 GB) hosted at
-  [`gt-free-ocr-metrics/omnidocbench-render-compare-parquet`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet).
-  `download_data.sh` fetches the shards and runs
-  `scripts/extract_parquet_to_disk.py` to materialise them into the same
-  per-page directory layout the methods expect. 64 HTTP requests instead of
-  23,600 — well inside HuggingFace's unauthenticated rate limits, no
-  `HF_TOKEN` needed.
+- **`parquet` (default, recommended)** — zstd-compressed parquet shards. The
+  render-compare artifacts ship as 64 shards (~9.4 GB) at
+  [`gt-free-ocr-metrics/omnidocbench-render-compare-parquet`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet),
+  and the OCR logprobs as 7 shards (~115 MB) at
+  [`gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet).
+  `download_data.sh` fetches the shards and runs the extract scripts to
+  materialise them into the same per-page directory layout the methods expect.
+  71 HTTP requests instead of ~27,000 — well inside HuggingFace's unauthenticated
+  rate limits, no `HF_TOKEN` needed for these two datasets.
 
-- **`raw` (legacy)** — original per-page-directory layout at
-  [`gt-free-ocr-metrics/omnidocbench-render-compare`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare).
+- **`raw` (legacy)** — original per-page-directory layouts at
+  [`gt-free-ocr-metrics/omnidocbench-render-compare`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare)
+  and
+  [`gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs`](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs).
   Triggers `429 Too Many Requests` for unauthenticated users (5,000
-  resolver-cache requests / 5-min window vs. ~23,600 files). Supply an HF
-  token to avoid the rate limit. The download is resumable.
+  resolver-cache requests / 5-min window vs. ~23,600 + ~4,000 files).
+  Supply an HF token to avoid the rate limit. The download is resumable.
+
+> **Note on OmniDocBench (the upstream dataset):** the `opendatalab/OmniDocBench`
+> source dataset contains 1,659 individual image files. Even unauthenticated
+> reviewers can hit a 1,000-API-requests/5-min limit while listing them.
+> `download_data.sh` does not yet repackage this upstream dataset, so this step
+> may need a single retry after a 5-min wait. Authenticating with
+> `huggingface-cli login` (or `export HF_TOKEN=...`) avoids it entirely.
 
 ```bash
 # Default (parquet):
