@@ -49,11 +49,20 @@ This downloads:
   `ocr_elements.json`, `ocr_formula_elements.json`, `ocr_table_elements.json`
 - `data/ocr_logprobs/` — per-token log-probabilities (~2 GB)
 
-**Note on HuggingFace auth:** if the datasets are gated, set `HF_TOKEN` first:
+**Note on HuggingFace rate limits:** unauthenticated requests are throttled at
+5,000 resolver-cache requests per 5-minute window, and the render-compare dataset
+contains ~23,600 small files. Without authentication the download will repeatedly
+hit `429 Too Many Requests`, exit, and need to be re-run after the window resets.
+The download is resumable, so re-running picks up where it left off, but supplying
+an HF token is strongly recommended:
+
 ```bash
 export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 bash download_data.sh
 ```
+
+Either set `HF_TOKEN` in the environment or run `huggingface-cli login` once
+before the first download.
 
 > **Quick exploration (no full download required):** a 60-page stratified sample (~370 MB)
 > is available at
@@ -117,7 +126,10 @@ bash scripts/run_all_correlations.sh
 ```
 
 This runs all method YAMLs sequentially. On a single RTX 6000 Ada (48 GB),
-expect ~2–5 minutes per method, ~4–8 hours total.
+expect ~25–30 minutes per method (each method runs the full 1,355-page pipeline
+across 5 OCR variants), ~50–70 hours total for the full 141-method sweep.
+Use the per-GPU split below for parallelism, or run only the top-30 methods
+listed in `results/leaderboard.json` for a faster sanity check.
 
 For parallel execution across multiple GPUs, split the method list manually
 and specify GPU IDs as the second argument to `run_method.sh`.
