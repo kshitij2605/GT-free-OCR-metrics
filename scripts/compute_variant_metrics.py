@@ -3,6 +3,7 @@
 Usage: CUDA_VISIBLE_DEVICES=N uv run python compute_variant_metrics.py <variant>
 """
 import json
+import os
 import logging
 import sys
 import time

@@ -38,6 +38,7 @@ dependencies = [
     "piq>=0.8.0",
     "pot>=0.9.6.post1",
     "torchmetrics>=1.8.2",
+    "pyiqa>=0.1.15",
     "termcolor>=3.1.0",
     "colpali-engine>=0.3.13",
     "pyyaml>=6.0",
