@@ -68,3 +68,6 @@ results/.commit.lock
 # Paper/preprint kept locally, not on GitHub
 paper/
 preprint/
+
+# Research notes (local only)
+research/
