@@ -198,17 +198,17 @@ boxes and the rendering pipeline are held fixed; only the displayed
 characters change across the five conditions.
 
 ```bash
-# 1. Run the perturbation sweep (~10 minutes on a single RTX 6000 Ada).
-#    Samples 100 OmniDocBench pages, corrupts OCR text at 0/5/10/20/50%
-#    character fractions, and computes per-element CLIP-cosine P10
-#    against the cached masked_original.
+# Run the perturbation sweep (~10 minutes on a single RTX 6000 Ada).
+# Samples 100 OmniDocBench pages, corrupts OCR text at 0/5/10/20/50%
+# character fractions, and computes per-element CLIP-cosine P10
+# against the cached masked_original.
 CUDA_VISIBLE_DEVICES=0 uv run python scripts/charsens_perturbation.py
 # Writes results/charsens/results.json
-
-# 2. Render the figure used in the paper appendix.
-uv run python paper/build_charsens_fig.py
-# Writes paper/figures/fig_charsens.pdf
 ```
+
+The rendered figure (Appendix E in the paper) is already included in the
+released PDF; rebuilding it requires the paper-side build script which is
+kept locally (not in this code repository).
 
 Expected output (seed 42, 100 pages):
 
