@@ -7,8 +7,7 @@ how closely it matches the original page scan — no transcriptions needed.
 Validated on [OmniDocBench](https://arxiv.org/abs/2412.07626) (1 355 pages, EN/ZH,
 10 document categories) against reference-based edit distance.
 
-**Best single-metric result:** Spearman ρ ≈ 0.494 (element-patch CLIP P5 with table correction,
-`P2_213_elem_p05_table_fixed`; mean across all 5 variants).
+**Best composite result:** Spearman ρ = 0.494 (`P2_210`, a five-mechanism composite stacking DocSim + Shannon-entropy + IQ + SSIM + per-element CLIP; mean across all 5 OCR-output variants).
 
 ---
 
@@ -66,7 +65,7 @@ See **[REPRODUCING.md](REPRODUCING.md)** for a full step-by-step reproduction gu
 
 ## Methods
 
-147 method implementations are included in `methods/` + `scripts/methods/`.
+146 method implementations are included in `methods/` + `scripts/methods/`.
 See [methods/README.md](methods/README.md) for a categorized index with headline scores.
 
 Key result families:
@@ -123,8 +122,8 @@ scripts/
   build_docsim_triplets.py       # Build training triplets from render-compare pairs
   ...
 
-methods/                         # 109 method spec YAML files
-scripts/methods/                 # 109 method Python implementations
+methods/                         # 146 method spec YAML files
+scripts/methods/                 # 146 method Python implementations
 
 results/
   leaderboard.json               # Final ranked results

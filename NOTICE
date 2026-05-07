@@ -1,5 +1,5 @@
 GT-Free OCR Metrics
-Copyright [year] [Author(s)]
+Copyright 2026 Anonymous
 
 This product includes or is derived from the following third-party works:
 
@@ -9,7 +9,7 @@ OmniDocBench
            https://creativecommons.org/licenses/by-nc/4.0/
   Source:  https://huggingface.co/datasets/opendatalab/OmniDocBench
 
-Qwen2.5 / Qwen3.5 (used for OCR inference; pre-computed outputs included)
+Qwen3.5-122B-A10B (used for OCR inference; pre-computed outputs included)
   Copyright 2024 Alibaba Cloud
   License: Apache 2.0
   Source:  https://huggingface.co/Qwen
