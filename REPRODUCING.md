@@ -234,7 +234,7 @@ If you want to re-run OCR inference with your own model endpoint:
 1. Copy `.env.example` to `.env` and fill in `OCR_ENDPOINT_URL`.
 2. Run: `python scripts/run_omnidocbench_ocr.py`
 
-This requires a Qwen2.5-72B-Instruct or compatible model via an OpenAI-compatible API.
+This requires Qwen3.5-122B-A10B (or a compatible vision-language model) via an OpenAI-compatible API.
 
 ---
 
