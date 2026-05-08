@@ -7,7 +7,7 @@ For each (method, variant) pair:
   - Saves to results/key_methods_pvalues/<method_id>/ocr_<v>.json
 
 Usage:
-    cd /home/mac/test/GT-free-ocr-metrics
+    cd <path-to-repo>
     uv run python scripts/compute_pvalues_top_methods.py [--top N] [--method <id>]
 """
 import argparse

@@ -19,7 +19,7 @@ from data download through to the final leaderboard.
 ## Step 1 — Install the package
 
 ```bash
-git clone https://github.com/kshitij2605/GT-free-OCR-metrics
+git clone https://anonymous.4open.science/r/GT-free-OCR-metrics-E0A9
 cd gt-free-ocr-metrics
 
 # With uv (recommended):

@@ -98,7 +98,7 @@ To run the official methods which read on-disk PNG/JSON files, materialise
 the parquet shards into the original per-page layout:
 
 ```bash
-git clone https://github.com/kshitij2605/GT-free-OCR-metrics
+git clone https://anonymous.4open.science/r/GT-free-OCR-metrics-E0A9
 cd GT-free-OCR-metrics
 bash download_data.sh    # default: parquet (this dataset) → extracts on-disk
 ```

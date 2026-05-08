@@ -956,7 +956,7 @@
       "prov:wasAttributedTo": [
         {
           "@type": "prov:SoftwareAgent",
-          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "@id": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare",
           "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
         }
       ]
@@ -986,7 +986,7 @@
       "prov:wasAttributedTo": [
         {
           "@type": "prov:SoftwareAgent",
-          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "@id": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare",
           "prov:label": "Headless browser renderer (OmniDocBench Render-and-Compare pipeline)"
         }
       ]
@@ -1001,7 +1001,7 @@
       "prov:wasAttributedTo": [
         {
           "@type": "prov:SoftwareAgent",
-          "@id": "https://huggingface.co/datasets/puku128/omnidocbench-render-compare",
+          "@id": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare",
           "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
         }
       ]

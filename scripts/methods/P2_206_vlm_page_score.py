@@ -53,7 +53,7 @@ DINO_SIZE = 224
 VLM_MAX_WORKERS = 8
 VLM_MAX_IMG_DIM = 1024  # resize images before sending to VLM (speed)
 
-VLM_API_BASE = "http://difgpu01.tdc.otsuka-shokai.co.jp:9000/v1"
+VLM_API_BASE = "http://your-vlm-server:9000/v1"  # replace with your endpoint
 VLM_API_KEY = "tensorflow"
 VLM_MODEL = "Qwen/Qwen3.5-122B-A10B"
 
