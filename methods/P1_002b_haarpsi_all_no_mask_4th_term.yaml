@@ -15,7 +15,7 @@ description: >
   H13.1 (linear-strategy queue, builds on P1_120c3b H11.2 best=0.3600): adds piq.haarpsi
   as a 4th term in multi_composite for variant=all_no_mask only. HaarPSI uses 6 discrete
   2D Haar wavelet filters and weights local similarity by low-frequency coefficients —
-  responds to horizontal/vertical edges (text glyph edges). Direction D2 in program.md
+  responds to horizontal/vertical edges (text glyph edges).
   (priority #2, Low effort, High expected impact). HaarPSI was previously dead-ended ONLY
   as SSIM-slot replacement (-0.04 to -0.06 on text); additive use as a 4th term in mc has
   not been tested. H5.b proved DISTS-as-4th-term for variant=all lifted mc by +0.065;

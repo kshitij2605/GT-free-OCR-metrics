@@ -15,6 +15,6 @@ description: >
   as proxy for PIM/MILO_L. Tests whether a learned human-preference perceptual
   distance metric correlates with document OCR quality (edit distance).
   Standalone metric at 256x256 resolution. clip_cosine = max(0, 1 - pieapp/2).
-  Programmatic requirement from program.md D59 (critical priority).
+  High-priority direction in our method catalog.
   KEEP if spearman_mean > 0.4820 (D107b best).
 date: "2026-05-01"

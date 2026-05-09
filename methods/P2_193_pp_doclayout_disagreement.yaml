@@ -44,7 +44,7 @@ description: >
   Predicted spearman_mean: 0.358-0.366 (conservative). The layout-profile disagreement
   is a fundamentally different mechanism class (cross-model layout-classifier) not
   subject to the slot-interior or preprocessing axis closures documented in
-  knowledge.jsonl. If variant=all cc (=mc via duplication) rises above 0.283, overall
+  prior method-catalog notes. If variant=all cc (=mc via duplication) rises above 0.283, overall
   spearman_mean improves.
 
   Kill switch: if variant=all mc+cc <= 0.267 (worse than current best by >0.016), the

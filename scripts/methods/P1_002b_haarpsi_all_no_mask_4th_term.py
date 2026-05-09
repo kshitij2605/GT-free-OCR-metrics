@@ -4,7 +4,7 @@
 H13.1 hypothesis: HaarPSI (Reisenhofer et al. 2018, Signal Processing) is a Haar-wavelet
 perceptual similarity index. It uses 6 discrete 2D Haar wavelet filters and weights local
 similarity by low-frequency coefficients — strongly responsive to horizontal/vertical edges
-where text glyphs live. Direction D2 in program.md (priority #2, Low effort, High impact).
+where text glyphs live (Low effort, High impact direction).
 
 HaarPSI was previously dead-ended ONLY as SSIM-slot replacement (regressed text/all by 0.05).
 Additive use as a 4th term in multi_composite has not been tested. The mechanism that worked

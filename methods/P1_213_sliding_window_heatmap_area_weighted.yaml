@@ -46,7 +46,7 @@ description: >
   elements with heat-map smoothing, or alternative weight schemes).
   If REVERT, ENTROPY-axis fully exhausted → PIVOT to non-entropy
   mechanism class (next candidates: D207 K=3 OCR resample [needs
-  operator OCR resample, defer], or new direction from program.md
+  operator OCR resample, defer], or a new method direction.
   Phase 2 backlog).
   Control: D215.l (window-MIN of mean-confidence, alpha=variant-cond, 0.4742).
 date: "2026-04-30"
