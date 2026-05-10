@@ -136,14 +136,12 @@ bash scripts/run_method.sh baseline
 bash scripts/run_method.sh P1_137_elem_p10_all 1
 ```
 
-Output is written to:
+Output is written per variant. For each of the 5 variants (`ocr_all`, `ocr_text`, `ocr_formula`, `ocr_table`, `ocr_all_no_mask`), the runner produces three files:
+
 ```
-results/method_runs/ocr_all/<method_id>/results.json
-results/method_runs/ocr_all/<method_id>/correlations.json
-results/method_runs/ocr_text/<method_id>/correlations.json
-results/method_runs/ocr_formula/<method_id>/correlations.json
-results/method_runs/ocr_table/<method_id>/correlations.json
-results/method_runs/ocr_all_no_mask/<method_id>/correlations.json
+results/method_runs/<variant>/<method_id>/results.json       — per-page metric scores (~1,349 entries)
+results/method_runs/<variant>/<method_id>/comparison.json    — aggregated comparison data (matched pairs, by-category breakdown)
+results/method_runs/<variant>/<method_id>/correlations.json  — Pearson and Spearman correlation summary
 ```
 
 `correlations.json` contains Pearson and Spearman correlation with edit distance
