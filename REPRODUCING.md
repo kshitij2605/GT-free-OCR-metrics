@@ -126,9 +126,9 @@ Weights are placed in `models/docsim_lora/`.
 ## Step 4 — Run a single method
 
 ```bash
-# Run a top method (per-element CLIP at P5 percentile + table-bbox fix):
-# (Note: P2_209-P2_213 are §-equivalent at spearman_mean=0.4938 — see Expected results below.)
-bash scripts/run_method.sh P2_213_elem_p05_table_fixed
+# Run the rank-1 method (per-element CLIP at P5 percentile, with table-bbox + text-elem-CLIP fixes):
+# (Note: P2_209-P2_213 are §-equivalent at spearman_mean=0.4938 — same per-page scores; see Expected results below.)
+bash scripts/run_method.sh P2_210_elem_p05_table_text_elemclip
 
 # Run the baseline:
 bash scripts/run_method.sh baseline
