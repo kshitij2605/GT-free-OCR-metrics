@@ -16,11 +16,27 @@ cd "$REPO_ROOT"
 UV=$(command -v uv 2>/dev/null || echo uv)
 FORMAT="${DATA_FORMAT:-parquet}"
 
-echo "=== Downloading OmniDocBench (ground-truth annotations + page images) ==="
+# Default: only download the GT annotations JSON (~65 MB). The original page
+# scans (~1.2 GB) are NOT needed for any of the 146 method evaluations -- the
+# methods read pre-computed `masked_original.png` / `reconstructed.png` from the
+# render-compare dataset (downloaded below). The originals are only needed for
+# the optional "Re-running OCR" flow. Opt in with WITH_IMAGES=1.
+echo "=== Downloading OmniDocBench (ground-truth annotations only by default) ==="
 $UV run huggingface-cli download opendatalab/OmniDocBench \
     --repo-type dataset \
     --local-dir data/omnidocbench \
+    --include "OmniDocBench.json" \
     --local-dir-use-symlinks False
+
+if [ "${WITH_IMAGES:-0}" = "1" ]; then
+    echo ""
+    echo "=== Also downloading original page scans (only needed for re-running OCR) ==="
+    $UV run huggingface-cli download opendatalab/OmniDocBench \
+        --repo-type dataset \
+        --local-dir data/omnidocbench \
+        --include "images/*" \
+        --local-dir-use-symlinks False
+fi
 
 echo ""
 if [ "$FORMAT" = "parquet" ]; then
@@ -71,9 +87,11 @@ fi
 echo ""
 echo "=== Download complete ==="
 echo "Data layout:"
-echo "  data/omnidocbench/OmniDocBench.json     — GT annotations"
-echo "  data/omnidocbench/images/               — original page scans"
+echo "  data/omnidocbench/OmniDocBench.json     — GT annotations (~65 MB)"
 echo "  data/omnidocbench/ocr_{all,text,formula,table,all_no_mask}/<page_id>/"
-echo "                                          — pre-computed OCR artifacts"
-echo "  data/ocr_logprobs/<page_id>/            — per-token OCR log-probabilities"
+echo "                                          — pre-computed OCR artifacts (~40 GB)"
+echo "  data/ocr_logprobs/<page_id>/            — per-token OCR log-probabilities (~2 GB)"
 echo "  data/ocr_logprobs_per_bbox/<page_id>/   — per-bbox aggregated logprobs"
+if [ "${WITH_IMAGES:-0}" = "1" ]; then
+echo "  data/omnidocbench/images/               — original page scans (~1.2 GB, only needed for re-running OCR)"
+fi

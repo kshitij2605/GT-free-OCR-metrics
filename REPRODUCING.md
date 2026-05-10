@@ -41,13 +41,21 @@ You do **not** need access to a Qwen inference endpoint.
 bash download_data.sh
 ```
 
-This downloads:
-- `data/omnidocbench/OmniDocBench.json` — ground-truth annotations (1 355 pages)
-- `data/omnidocbench/images/` — original page scans (~30 GB)
-- `data/omnidocbench/ocr_{all,text,formula,table,all_no_mask}/<page_id>/` — per-variant OCR artifacts (~18 GB total):
+This downloads (default — what you need to reproduce the 146 method evaluations):
+- `data/omnidocbench/OmniDocBench.json` — ground-truth annotations (~65 MB, 1 355 pages)
+- `data/omnidocbench/ocr_{all,text,formula,table,all_no_mask}/<page_id>/` — per-variant OCR artifacts (~40 GB total):
   `masked_original.png`, `reconstructed.png`, `ocr_html.html`,
   `ocr_elements.json`, `ocr_formula_elements.json`, `ocr_table_elements.json`
 - `data/ocr_logprobs/` — per-token log-probabilities (~2 GB)
+
+The original page scans (`data/omnidocbench/images/`, ~1.2 GB) are **not required** for
+the 146 method evaluations — the methods read pre-computed `masked_original.png` /
+`reconstructed.png` from the render-compare dataset above. The originals are only
+needed for the optional "Re-running OCR" flow at the bottom of this guide; opt in with:
+
+```bash
+WITH_IMAGES=1 bash download_data.sh
+```
 
 **Two data formats are available:**
 
