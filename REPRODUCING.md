@@ -126,14 +126,15 @@ Weights are placed in `models/docsim_lora/`.
 ## Step 4 — Run a single method
 
 ```bash
-# Run the best-performing method (element-patch SSIM + text coverage β=0.10):
+# Run a top method (per-element CLIP at P5 percentile + table-bbox fix):
+# (Note: P2_209-P2_213 are §-equivalent at spearman_mean=0.4938 — see Expected results below.)
 bash scripts/run_method.sh P2_213_elem_p05_table_fixed
 
 # Run the baseline:
 bash scripts/run_method.sh baseline
 
 # Run on a specific GPU (default: 0):
-bash scripts/run_method.sh P1_137_elem_p10_all 1
+bash scripts/run_method.sh P1_137_content_elem_p10_all 1
 ```
 
 Output is written per variant. For each of the 5 variants (`ocr_all`, `ocr_text`, `ocr_formula`, `ocr_table`, `ocr_all_no_mask`), the runner produces three files:
@@ -149,7 +150,7 @@ for the `text`, `formula`, and `table` reference dimensions.
 
 ---
 
-## Step 5 — Run all 147 methods
+## Step 5 — Run all 146 methods
 
 ```bash
 bash scripts/run_all_correlations.sh
@@ -157,7 +158,7 @@ bash scripts/run_all_correlations.sh
 
 This runs all method YAMLs sequentially. On a single RTX 6000 Ada (48 GB),
 expect ~25–30 minutes per method (each method runs the full 1,355-page pipeline
-across 5 OCR variants), ~50–70 hours total for the full 141-method sweep.
+across 5 OCR variants), ~50–70 hours total for the full 146-method sweep.
 Use the per-GPU split below for parallelism, or run only the top-30 methods
 listed in `results/leaderboard.json` for a faster sanity check.
 
@@ -168,8 +169,14 @@ and specify GPU IDs as the second argument to `run_method.sh`.
 
 ## Step 6 — Update and view the leaderboard
 
+`update_leaderboard.py` is invoked **once per method** with the method's YAML
+(this is also printed at the end of every `run_method.sh` run as `Next: …`):
+
 ```bash
-python scripts/update_leaderboard.py
+# After each run_method.sh, append that method's row to the leaderboard:
+python scripts/update_leaderboard.py --technique-yaml methods/<method_id>.yaml
+
+# Then view:
 python scripts/show_leaderboard.py
 ```
 
@@ -185,11 +192,16 @@ The top-5 methods by `spearman_mean` (averaged across all variants):
 
 | Rank | Method | Spearman mean |
 |---|---|---|
-| 1 | `P2_213_elem_p05_table_fixed` | 0.4938 |
-| 2 | `P2_210_elem_p05_table_text_elemclip` | 0.4938 |
-| 3 | `P1_137_content_elem_p10_all` | 0.4932 |
-| 4 | `P1_150_elem_p15` | 0.4930 |
-| 5 | `P1_136_ssim_all_beta20` | 0.4928 |
+| 1 | `P2_210_elem_p05_table_text_elemclip` | 0.4938 |
+| 2 | `P2_213_elem_p05_table_fixed`         | 0.4938 |
+| 3 | `P2_212_dino_elem_p05_formula_fixed`  | 0.4938 |
+| 4 | `P2_211_dino_elem_p05_formula`        | 0.4938 |
+| 5 | `P2_209_elem_p05_table_elemclip`      | 0.4938 |
+
+(Methods ranked 1-5 are §-equivalent — they share byte-identical per-page scores
+to ≥4 decimal places across all 5 variants and differ only in bug-fix or
+DINOv2-vs-CLIP implementation alternatives of the same composite stack.
+See paper Table 3 for the full top-15.)
 
 Exact values depend on the variant weighting used in `update_leaderboard.py`.
 The `results/leaderboard.json` committed to this repo is the authoritative reference.
@@ -234,7 +246,7 @@ layout and rendering are identical across the five points on the curve.
 
 ## Re-running OCR (optional)
 
-Pre-computed artifacts are sufficient for all 147 methods.
+Pre-computed artifacts are sufficient for all 146 methods.
 If you want to re-run OCR inference with your own model endpoint:
 
 1. Copy `.env.example` to `.env` and fill in `OCR_ENDPOINT_URL`.
