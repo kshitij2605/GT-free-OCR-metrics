@@ -40,7 +40,7 @@ sys.path.insert(0, str(REPO / "src"))
 from reference_free_ocr_metric.reconstruction.html_parser import TextElement
 from reference_free_ocr_metric.reconstruction.image_renderer import ImageRenderer
 
-OCR_DIR = REPO / "data" / "omnidocbench" / "ocr"
+OCR_DIR = REPO / "data" / "omnidocbench" / "ocr_all"  # parquet-extracted layout uses variant-suffixed dirs
 OUT_DIR = REPO / "results" / "charsens"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
