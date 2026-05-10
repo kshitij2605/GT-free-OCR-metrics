@@ -11,7 +11,6 @@ Usage:
     uv run python scripts/show_leaderboard.py --summary
     uv run python scripts/show_leaderboard.py --history --category metric_new
     uv run python scripts/show_leaderboard.py --history --min-spearman 0.35
-    uv run python scripts/show_leaderboard.py --history --since 2026-04-24
 """
 import argparse
 import json

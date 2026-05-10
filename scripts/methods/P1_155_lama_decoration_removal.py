@@ -25,8 +25,7 @@ Pipeline (metric side): identical to P1_120c3b_all_no_mask_baseline_preproc (H11
     others = 50/50 CLIP+DINOv2 raw RGB
 
 LaMa model: big-lama (simple_lama_inpainting 0.1.2), Places2 prior.
-Sanity probe result (2026-04-27): inpainted region mean [254,254,254], std [6,7,6],
-time 1.0s/page — clean white-fill, no hallucinations. File hash differs from input.
+Sanity probe: inpainted region is clean white-fill (mean ~254, std ~6, ~1.0s/page), no hallucinations; output hash differs from input.
 """
 
 import json
