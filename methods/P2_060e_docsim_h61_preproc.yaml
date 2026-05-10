@@ -30,4 +30,3 @@ description: >
   Kill switch: spearman_mean <= 0.391 closes the preprocessing+supervised
   interaction axis (DocSim is preprocessing-invariant or fragile).
   Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
-date: "2026-04-28"

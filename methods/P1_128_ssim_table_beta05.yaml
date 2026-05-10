@@ -26,4 +26,3 @@ description: >
   Hypothesis: table rendering artifacts (cell borders, missed lines) show SSIM signal
   complementary to per-cell DocSim.
   KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
-date: "2026-05-02"

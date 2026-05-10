@@ -20,4 +20,3 @@ description: >
   OpenCLIP ViT-B-32 laion2b_s34b_b79k uses its own preprocess pipeline (224x224 + CLIP norm).
   Control: H4 DINOv2 CLS (6b4aafc, spearman_mean=0.3486).
   Predicted: spearman_mean ~ 0.345-0.355.
-date: "2026-04-25"

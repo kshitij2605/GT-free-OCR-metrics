@@ -21,4 +21,3 @@ description: >
   Predicted: 0.455-0.470, most likely 0.464. KEEP if >= 0.460. Kill switch:
   NONE.
   Control: D215.b (alpha=0.2, 0.4577).
-date: "2026-04-30"

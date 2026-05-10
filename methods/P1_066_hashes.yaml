@@ -16,4 +16,3 @@ description: >
   1 - normalized Hamming distance, weighted 0.4 (pHash), 0.3 (wHash),
   0.3 (dHash). Composite = 0.4*hash_sim + 0.3*(1-mse) + 0.3*(1-lpips).
   CPU-fast hash extraction; LPIPS+CLIP retained for cross-method consistency.
-date: "2026-04-25"

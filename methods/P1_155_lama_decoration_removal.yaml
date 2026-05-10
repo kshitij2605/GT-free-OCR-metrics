@@ -44,4 +44,3 @@ description: >
   - all_no_mask cc 0.3082 -> 0.32-0.36
   - table cc 0.277 -> unchanged (pass-through)
   - all mc 0.283 -> 0.29-0.31
-date: "2026-04-27"

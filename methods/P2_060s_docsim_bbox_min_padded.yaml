@@ -37,4 +37,3 @@ description: >
   KEEP if >= 0.450. Kill switch: table cc <= 0.45 (regression — context
   dilutes cell signal).
   Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, table cc 0.4767).
-date: "2026-04-29"

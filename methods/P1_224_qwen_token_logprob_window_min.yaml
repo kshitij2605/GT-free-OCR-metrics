@@ -39,4 +39,3 @@ description: >
   D213 (sliding-window heat-map area-weighted) or emit COMPLETE.
   Kill switch: NONE (purely diagnostic).
   Control: D215 (commit 213f53a journaled REVERT 0.3290).
-date: "2026-04-30"

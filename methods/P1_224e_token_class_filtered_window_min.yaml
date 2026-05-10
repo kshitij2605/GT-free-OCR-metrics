@@ -54,4 +54,3 @@ description: >
   doesn't generalize past variant=text; D224.d is the entropy-axis
   ceiling; PIVOT to non-entropy class (D104 / D165 / D106).
   Control: D224.d (window-MIN unfiltered for all/all_no_mask, 0.4772).
-date: "2026-05-01"

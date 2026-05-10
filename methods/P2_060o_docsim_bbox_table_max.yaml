@@ -33,4 +33,3 @@ description: >
   to pin down which aggregation aligns best with edit-distance.
   KEEP if >= 0.450. Kill switch: table cc <= 0.40.
   Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
-date: "2026-04-29"

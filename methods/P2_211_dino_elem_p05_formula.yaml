@@ -32,4 +32,3 @@ description: >
   page-level DINOv2 fusion misses; P5 is robust to sparse formula pages.
   Expected: formula→0.6060-0.6090 (+0.0013-0.0043), mean≈0.4941-0.4947.
   KEEP if spearman_mean > 0.4938 (D147 current best).
-date: "2026-05-03"

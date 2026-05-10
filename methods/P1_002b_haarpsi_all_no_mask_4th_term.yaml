@@ -27,4 +27,3 @@ description: >
   H6.1+H11.2 preprocessing for table+all_no_mask cc paths preserved.
   Predicted: all_no_mask mc 0.264->0.29-0.32; spearman_mean 0.3600->0.361-0.371.
   Control: H11.2 P1_120c3b (best=0.3600).
-date: "2026-04-27"

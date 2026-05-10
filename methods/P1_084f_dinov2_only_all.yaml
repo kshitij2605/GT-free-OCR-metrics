@@ -21,4 +21,3 @@ description: >
   Predicted: spearman_mean ~ 0.358-0.362 (variant=all cc from 0.203 toward DINOv2 strength).
   Risk: P1_084b patch-mean DINOv2 gave variant=all cc=0.1746 — patch-mean HURTS. CLS pooling
   is different and this is the first test of CLS-only (no CLIP blend) for variant=all.
-date: "2026-04-26"

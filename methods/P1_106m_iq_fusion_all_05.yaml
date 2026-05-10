@@ -30,4 +30,3 @@ description: >
   KEEP if > 0.4814. Decision: KEEP→sweep γ=0.10 on all/all_no_mask;
   REVERT-tie→IQ signal on all/all_no_mask exhausted, D106 axis CLOSED.
   Control: D106.h (0.4814, formula γ=0.50, table γ=0.10).
-date: "2026-05-01"

@@ -20,4 +20,3 @@ description: >
   for table only should recover that.
   Control: H5.b (bedac9a, P1_120b, spearman_mean=0.3581).
   Predicted: spearman_mean ~ 0.3597-0.3605 (table cc 0.268->0.276-0.280, +0.008-0.012).
-date: "2026-04-26"

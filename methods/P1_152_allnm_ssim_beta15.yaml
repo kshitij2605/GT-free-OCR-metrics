@@ -22,4 +22,3 @@ description: >
   DocSim 0.30→0.25. The all variant uses β=0.20 for SSIM (high).
   all_no_mask SSIM was set at 0.10 (D137). Testing if all_no_mask has similar headroom.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-03"

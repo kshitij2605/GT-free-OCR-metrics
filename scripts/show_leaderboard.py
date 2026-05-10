@@ -102,7 +102,6 @@ def _rows_for_variant(
                     "spearman": s,
                     "n": n,
                     "spearman_pvalue": sp,
-                    "date": entry.get("date", ""),
                 }
 
     rows = list(best.values())
@@ -114,9 +113,6 @@ def _rows_for_variant(
         rows = [r for r in rows if r["spearman"] is not None and r["spearman"] >= min_spearman]
     if min_pearson is not None:
         rows = [r for r in rows if r["pearson"] is not None and r["pearson"] >= min_pearson]
-    if since is not None:
-        rows = [r for r in rows if r["date"] >= since]
-
     if rank_by == "pearson":
         rows.sort(key=lambda r: (r["pearson"] is None, -(r["pearson"] or 0)))
     elif rank_by == "spearman":
@@ -136,7 +132,7 @@ def _print_table(rows: list, rank_label: str) -> None:
     """Print a single ranked table with Pearson, Spearman, and delta columns."""
     print(f"  --- Ranked by {rank_label} ---")
     print(f"  {'#':<3}  {'technique':<32}  {'metric':<18}  {'Pearson':>8}  "
-          f"{'Spearman':>9}  {'p-val':>7}  {'D(P-S)':>8}  {'!':>1}  {'N':>6}  {'date'}")
+          f"{'Spearman':>9}  {'p-val':>7}  {'D(P-S)':>8}  {'!':>1}  {'N':>6}")
     print(f"  {'-'*3}  {'-'*32}  {'-'*18}  {'-'*8}  {'-'*9}  {'-'*7}  {'-'*8}  {'-'*1}  {'-'*6}  {'-'*10}")
     for i, r in enumerate(rows, 1):
         p, s = r["pearson"], r["spearman"]
@@ -151,7 +147,7 @@ def _print_table(rows: list, rank_label: str) -> None:
         pval_str = f"{sp_p:.4f}" if sp_p is not None else "  n/a "
         print(f"  {i:<3}  {r['technique']:<32}  {r['metric']:<18}  "
               f"{_fmt(p):>8}  {_fmt(s):>9}  {pval_str:>7}  {delta_str:>8}  {flag:>1}  "
-              f"{r['n']:>6}  {r['date']}")
+              f"{r['n']:>6}")
 
 
 def print_variant(
@@ -213,7 +209,6 @@ def main():
     parser.add_argument("--category", help="Filter history to methods with this YAML category")
     parser.add_argument("--min-spearman", type=float, help="Hide rows with Spearman below this threshold")
     parser.add_argument("--min-pearson", type=float, help="Hide rows with Pearson below this threshold")
-    parser.add_argument("--since", help="Hide rows with date before YYYY-MM-DD")
     args = parser.parse_args()
 
     # --summary is shorthand for --history --top 3
@@ -242,7 +237,6 @@ def main():
             category_map=category_map,
             min_spearman=args.min_spearman,
             min_pearson=args.min_pearson,
-            since=args.since,
         )
 
     print()

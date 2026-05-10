@@ -27,4 +27,3 @@ description: >
   - If small baseline adds info: ~0.395-0.40 (lift)
   KEEP if >= 0.395.
   Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
-date: "2026-04-28"

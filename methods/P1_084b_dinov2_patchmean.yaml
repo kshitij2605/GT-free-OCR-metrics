@@ -21,4 +21,3 @@ description: >
   recovering the table regression (-0.027 in H4) while maintaining the formula gain
   (+0.117 in H4). multi_composite (SSIM/MSE/LPIPS) is UNCHANGED vs baseline.
   Image preprocessing: RGB, resize to 224x224, ImageNet mean/std normalisation.
-date: "2026-04-25"

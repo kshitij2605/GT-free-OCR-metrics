@@ -29,4 +29,3 @@ description: >
   table: 0.70*per_cell_min_DocSim + 0.10*IQ + 0.15*ssim + 0.05*elem_p10
   text/all/all_no_mask/formula: unchanged from D137.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-02"

@@ -21,4 +21,3 @@ description: >
   clip_cosine logic: variant=table uses CLIP only; others use 50/50 CLIP+DINOv2 (H4.e strategy).
   Control: H4.e (spearman_mean=0.3562).
   Predicted: spearman_mean ~ 0.358-0.371.
-date: "2026-04-25"

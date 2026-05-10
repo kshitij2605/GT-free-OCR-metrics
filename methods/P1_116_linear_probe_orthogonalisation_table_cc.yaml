@@ -33,4 +33,3 @@ description: >
 
   Control: H11.2 P1_120c3b (spearman_mean=0.3600, table cc=0.2766).
   Predicted: spearman_mean ~ 0.362-0.366. KEEP threshold >= 0.3618.
-date: "2026-04-27"

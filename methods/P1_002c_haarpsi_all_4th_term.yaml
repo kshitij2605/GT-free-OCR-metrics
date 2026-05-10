@@ -29,4 +29,3 @@ description: >
   Predicted: variant=all mc 0.283 -> 0.27-0.30 (HaarPSI may match or beat DISTS).
   spearman_mean 0.3600 -> 0.357-0.366.
   Control: H11.2 P1_120c3b (best=0.3600).
-date: "2026-04-27"

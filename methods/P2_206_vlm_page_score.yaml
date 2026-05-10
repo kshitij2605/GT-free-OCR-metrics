@@ -26,4 +26,3 @@ description: >
   Table stays per-cell DocSim. VLM calls via ThreadPoolExecutor(max_workers=8) with
   JSON caching. All other weights identical to D137.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-03"

@@ -25,4 +25,3 @@ description: >
   D137 showed all_no_mask unchanged at 0.4461 at β=0.10. Testing higher β.
   all_no_mask: 0.25*DocSim + 0.40*entropy + 0.10*table_cell + 0.10*ssim + 0.15*elem_p10
   KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
-date: "2026-05-02"

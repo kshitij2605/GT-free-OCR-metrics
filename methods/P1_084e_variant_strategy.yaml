@@ -20,4 +20,3 @@ description: >
   multi_composite (SSIM/MSE/LPIPS) UNCHANGED vs baseline.
   Control: H4.c (5a6ea4c, spearman_mean=0.3526).
   Predicted: spearman_mean ~ 0.357.
-date: "2026-04-25"

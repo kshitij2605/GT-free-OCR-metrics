@@ -24,4 +24,3 @@ description: >
   clip_cosine path UNCHANGED for all variants (H6.1 logic preserved).
   Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598, all mc=0.2834).
   Predicted: variant=all mc 0.2834 → 0.285-0.295; spearman_mean 0.3598 → 0.360-0.362.
-date: "2026-04-26"

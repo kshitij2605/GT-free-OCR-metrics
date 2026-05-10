@@ -20,4 +20,3 @@ description: >
   variant=table uses CLIP-only; all others use 50/50 CLIP+DINOv2 average.
   Control: H4.e (9d0067f, spearman_mean=0.3562).
   Predicted: spearman_mean ~ 0.358 (+0.002 vs H4.e).
-date: "2026-04-26"

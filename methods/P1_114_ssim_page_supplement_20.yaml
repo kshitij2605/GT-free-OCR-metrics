@@ -20,4 +20,3 @@ description: >
   all_no_mask: (1-0.40-0.20-0.20)*DocSim + 0.40*entropy + 0.20*table_cell + 0.20*ssim
   text/formula/table: unchanged from D111 (β_ssim=0.0).
   KEEP if spearman_mean > D112 result (expected new best if β-axis still rising).
-date: "2026-05-01"

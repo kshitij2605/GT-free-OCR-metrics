@@ -23,4 +23,3 @@ description: >
   patches (~50 tokens) — finer spatial resolution should better capture table cell-grid structure.
   Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
   Predicted: spearman_mean ~ 0.363-0.369 (table cc 0.277->0.29-0.32).
-date: "2026-04-26"

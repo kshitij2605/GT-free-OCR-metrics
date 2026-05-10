@@ -26,4 +26,3 @@ description: >
   local reconstruction failures better than page-level for all/all_no_mask.
   26% of pages have table bboxes. Predicted +0.002-0.005 on all/all_no_mask cc.
   KEEP if > 0.4814. Decision: KEEP→sweep β; REVERT→close D107 axis.
-date: "2026-05-01"

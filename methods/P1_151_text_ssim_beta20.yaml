@@ -24,4 +24,3 @@ description: >
   Text SSIM β-axis was: 0.05→+0.0070, 0.10→+0.0059, 0.15→+0.0023 (diminishing but positive).
   β=0.20 never tested. If still positive, DocSim reduction at 0.40 is acceptable.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-03"

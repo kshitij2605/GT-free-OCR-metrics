@@ -25,4 +25,3 @@ description: >
     all: 0.45*page_DocSim + 0.30*entropy + 0.20*table_cell + 0.05*grid_hash
     all_no_mask: 0.35*page_DocSim + 0.40*entropy + 0.20*table_cell + 0.05*grid_hash
   KEEP if > 0.4820 (D107b best). Decision: KEEP→sweep β_grid=0.10; REVERT→spatial grid closed.
-date: "2026-05-01"

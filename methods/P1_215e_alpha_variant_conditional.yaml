@@ -28,4 +28,3 @@ description: >
   Kill switch: if ANY variant regresses below the corresponding sweep best,
   the per-variant routing is wrong (route assignment failure).
   Control: D215.c (commit just before, alpha=0.3 uniform 0.4600).
-date: "2026-04-30"

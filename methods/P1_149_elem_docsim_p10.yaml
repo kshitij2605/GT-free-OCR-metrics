@@ -27,4 +27,3 @@ description: >
   Hypothesis: document-specific DocSim features predict per-element OCR quality better
   than generic CLIP features for mixed-content document pages.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-02"

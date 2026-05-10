@@ -27,4 +27,3 @@ description: >
   text: (1-0.40-0.15-0.10)*DocSim + 0.40*entropy + 0.15*ssim + 0.10*elem_p10
        = 0.35*DocSim + 0.40*entropy + 0.15*ssim + 0.10*elem_p10
   KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
-date: "2026-05-02"

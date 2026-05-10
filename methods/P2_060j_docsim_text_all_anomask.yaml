@@ -34,4 +34,3 @@ description: >
   per-variant audit number 0.4139 didn't reproduce when used in this
   variant-conditional configuration).
   Control: D60.b post-fix (P2_060b_docsim_variant_conditional, 0.4042).
-date: "2026-04-29"

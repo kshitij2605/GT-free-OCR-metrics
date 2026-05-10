@@ -33,4 +33,3 @@ description: >
   CLIP elem P5 = P5 percentile over all content bboxes (text+formula+table elements).
   D147 base: table=0.4877. Expected: table→0.4899-0.4910, mean≈0.4941-0.4944.
   KEEP if spearman_mean > 0.4938 (D147 current best).
-date: "2026-05-03"

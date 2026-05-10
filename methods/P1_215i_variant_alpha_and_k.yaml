@@ -35,4 +35,3 @@ description: >
   Tests whether per-variant K and alpha optima compose without interaction
   effects (D215.e showed alpha routes did so cleanly).
   Control: D215.e (0.4638).
-date: "2026-04-30"

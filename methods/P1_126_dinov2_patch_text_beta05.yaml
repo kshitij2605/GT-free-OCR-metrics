@@ -25,4 +25,3 @@ description: >
   0.40*DocSim + 0.40*entropy + 0.15*ssim + 0.05*dino_patch (reduces DocSim 0.45→0.40).
   Hypothesis: patch features capture local character-level structure complementary to global DocSim.
   KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
-date: "2026-05-02"

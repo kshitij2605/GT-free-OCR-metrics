@@ -23,4 +23,3 @@ description: >
   D124 combines both: text=0.15, formula=0.05, all=0.15, all_no_mask=0.10.
   Expected gain: additive ~+0.0005+0.0001 → ~0.4909.
   KEEP if spearman_mean > 0.4908 (D122 new best).
-date: "2026-05-02"

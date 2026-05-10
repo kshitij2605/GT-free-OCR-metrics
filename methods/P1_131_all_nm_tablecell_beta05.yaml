@@ -26,4 +26,3 @@ description: >
   allocated, reducing DocSim weight on those pages. Less β_t = more DocSim on non-table pages.
   all_no_mask: 0.45*DocSim + 0.40*entropy + 0.05*table_cell + 0.10*ssim
   KEEP if spearman_mean > 0.4918 (D128 NEW BEST).
-date: "2026-05-02"

@@ -18,4 +18,3 @@ description: >
   Unlike D66 (hash composite in multi_composite slot), this is the primary
   clip_cosine signal. High-priority direction in our method catalog.
   CPU-only, very fast. KEEP if spearman_mean > 0.4820 (D107b best).
-date: "2026-05-01"

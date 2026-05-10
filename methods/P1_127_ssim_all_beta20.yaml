@@ -23,4 +23,3 @@ description: >
   all/all_no_mask Spearman stuck at 0.4458/0.4461 for 5 experiments. Tests whether
   increasing SSIM weight for mixed-content pages provides additional structural signal.
   KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
-date: "2026-05-02"

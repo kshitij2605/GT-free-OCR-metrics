@@ -25,4 +25,3 @@ description: >
   should use alpha=0.5 for those three.
   Kill switch: NONE.
   Control: D215.c (alpha=0.3 uniform 0.4600).
-date: "2026-04-30"

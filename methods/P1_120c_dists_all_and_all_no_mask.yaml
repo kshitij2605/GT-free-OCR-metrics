@@ -21,4 +21,3 @@ description: >
   the current clip_cosine winner 0.307, spearman_mean will improve.
   Control: H5.b (bedac9a, spearman_mean=0.3581).
   Predicted: spearman_mean 0.358-0.365 (likely tied if mc still loses to cc; gain if mc beats cc).
-date: "2026-04-26"

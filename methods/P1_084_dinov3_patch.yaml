@@ -23,4 +23,3 @@ description: >
   Hypothesis: DINOv2's stronger patch semantics should improve formula/table
   variants where CLIP already beats multi_composite (formula 0.42, table 0.28),
   while the variant-conditional evaluation prevents regression on text.
-date: "2026-04-25"

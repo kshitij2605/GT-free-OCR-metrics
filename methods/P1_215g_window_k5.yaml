@@ -25,4 +25,3 @@ description: >
   Predicted: 0.460-0.470, most likely 0.464 (+0.001 vs D215.e 0.4638).
   KEEP if >= 0.466.
   Control: D215.e (window K=10, 0.4638).
-date: "2026-04-30"

@@ -21,4 +21,3 @@ description: >
     all: 0.40*page_DocSim + 0.30*entropy + 0.30*cell_MIN
     all_no_mask: 0.30*page_DocSim + 0.40*entropy + 0.30*cell_MIN
   KEEP if > D107b result. Decision: KEEP→sweep β=0.40; REVERT→β peaked earlier.
-date: "2026-05-01"

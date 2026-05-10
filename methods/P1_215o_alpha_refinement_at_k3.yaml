@@ -27,4 +27,3 @@ description: >
   Test α=0.5 for text/all_no_mask and α=0.4 for all (was 0.3 at K=10) at K=3.
   Predicted: 0.465-0.475, most likely 0.470. KEEP if >= 0.473.
   Control: D215.k (α=0.4/0.4/0.3/0.4 at K=3, 0.4701).
-date: "2026-04-30"

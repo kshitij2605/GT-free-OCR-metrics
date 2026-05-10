@@ -29,4 +29,3 @@ description: >
          = 0.10*DocSim + 0.30*entropy + 0.50*IQ + 0.05*ssim + 0.05*elem_p10
   text/all/all_no_mask: unchanged from D141.
   KEEP if spearman_mean > 0.4932 (D137/D140 best).
-date: "2026-05-02"

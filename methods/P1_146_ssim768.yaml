@@ -28,4 +28,3 @@ description: >
   all: 0.25*DocSim + 0.30*entropy + 0.15*table_cell + 0.20*ssim@768 + 0.10*elem_p10
   all_no_mask: 0.30*DocSim + 0.40*entropy + 0.10*table_cell + 0.10*ssim@768 + 0.10*elem_p10
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-02"

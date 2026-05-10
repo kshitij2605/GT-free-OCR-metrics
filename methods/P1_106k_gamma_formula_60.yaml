@@ -26,4 +26,3 @@ description: >
   KEEP if > 0.4814 (current best). Decision: KEEP → sweep γ=0.70 (very rare,
   prod_cc weight = 0.0 — likely diminishing); REVERT or tie → peak bracketed,
   formula γ-axis closes at D106.h (γ=0.50). Control: D106.h (0.4814).
-date: "2026-05-01"

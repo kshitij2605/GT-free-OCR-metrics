@@ -24,4 +24,3 @@ description: >
   learned features + token-level Shannon entropy). Pure-OpenCV Python,
   no GPU model.
   Predicted spearman_mean: 0.15-0.30 (below 0.4776, REVERT expected).
-date: "2026-05-01"

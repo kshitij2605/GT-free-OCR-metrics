@@ -32,4 +32,3 @@ description: >
   All other variants (text/all/all_no_mask/table) are identical to D147.
   Expected: formula→0.610-0.620 if patch cosine is more discriminative than CLS.
   KEEP if spearman_mean > 0.4938 (D147 current best).
-date: "2026-05-03"

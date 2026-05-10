@@ -37,4 +37,3 @@ description: >
   Kill switch: NONE — this is purely diagnostic; we want the per-variant
   numbers regardless of overall direction.
   Control: D60.p (commit 0770856, spearman_mean 0.4453).
-date: "2026-04-30"

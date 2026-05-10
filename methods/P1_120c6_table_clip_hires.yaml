@@ -26,4 +26,3 @@ description: >
   from H5.b/H6.1 (DISTS-augmented for variant=all, original 0.4/0.3/0.3 for others).
   Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
   Predicted: spearman_mean ~ 0.361-0.365 (table cc 0.277->0.285-0.305, +0.008-0.028).
-date: "2026-04-26"

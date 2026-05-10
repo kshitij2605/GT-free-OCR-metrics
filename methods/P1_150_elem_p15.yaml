@@ -25,4 +25,3 @@ description: >
   Hypothesis: P10 may be slightly too aggressive; P15 captures worst ~15%
   of elements which might be more stable / less noisy.
   KEEP if spearman_mean > 0.4932 (D137).
-date: "2026-05-03"

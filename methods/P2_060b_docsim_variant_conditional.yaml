@@ -35,4 +35,3 @@ description: >
   This would be the FIRST improvement above 0.3600 in 18+ experiments.
   Control: H11.2 / P1_120c3b (89aee86, spearman_mean=0.3600).
   Predicted: spearman_mean ≈ 0.3935. KEEP if ≥ 0.361.
-date: "2026-04-28"

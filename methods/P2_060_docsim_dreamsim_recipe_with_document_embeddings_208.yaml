@@ -34,4 +34,3 @@ description: >
   H4.e static-fusion baseline (0.3562).
   Control: H4.e (541a8c9, spearman_mean=0.3562).
   Predicted: spearman_mean ~ 0.36-0.38. KEEP if >= 0.361.
-date: "2026-04-28"

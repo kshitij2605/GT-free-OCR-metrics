@@ -39,4 +39,3 @@ description: >
   granularity hypothesis on entropy axis is closed and we PIVOT to
   D213 (sliding-window heat-map area-weighted) as last entropy probe.
   Control: D215.l (Shannon + variant-cond alpha + rolling-K window-MIN, 0.4742).
-date: "2026-04-30"

@@ -24,4 +24,3 @@ description: >
   table: 0.70*per_cell_MIN + 0.10*IQ + 0.20*ssim
   Expected: ~+0.001 or peak reached at β=0.15-0.20.
   KEEP if spearman_mean > 0.4927 (D133 NEW BEST).
-date: "2026-05-02"

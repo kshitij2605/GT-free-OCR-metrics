@@ -30,4 +30,3 @@ description: >
   Hypothesis: elem_clip_p5 adds complementary signal to DocSim for text pages.
   Expected: text→0.4815-0.4830, mean≈0.4945 (uncertain - DocSim/CLIP may overlap).
   KEEP if spearman_mean > 0.4942 (D209 expected best).
-date: "2026-05-03"

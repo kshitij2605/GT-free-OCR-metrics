@@ -25,4 +25,3 @@ description: >
   if per-bbox IQ is more targeted; could tie or regress if crop IQ is noisy.
   KEEP if > 0.4814. Decision: KEEP→sweep γ on per-bbox IQ axis;
   REVERT-tie→per-bbox IQ doesn't improve on page-level IQ for formula, close axis.
-date: "2026-05-01"

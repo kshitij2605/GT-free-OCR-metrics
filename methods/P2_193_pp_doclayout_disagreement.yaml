@@ -55,4 +55,3 @@ description: >
   ~/.cache/huggingface/hub/models--juliozhao--DocLayout-YOLO-DocStructBench/
   No download needed at eval time. Package: doclayout-yolo==0.0.4 (installed 2026-04-28).
 
-date: "2026-04-28"

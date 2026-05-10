@@ -21,4 +21,3 @@ description: >
   All other variants keep H6.1 logic exactly.
   Control: H6.1 (7331048, P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598).
   Predicted: text Spearman 0.389->0.392+; spearman_mean 0.3598->0.359-0.362.
-date: "2026-04-26"

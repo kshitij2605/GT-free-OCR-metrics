@@ -19,4 +19,3 @@ description: >
   shifts (font reflow, OCR re-layout) do not dominate the perceptual distance
   signal. SSIM computed via skimage on binarized 512x512 grayscale images.
   Backbone: AlexNet. CLIP cosine batch unchanged.
-date: "2026-04-25"

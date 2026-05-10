@@ -25,4 +25,3 @@ description: >
   all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ssim (unchanged from D122)
   formula: 0.0 SSIM (independent of D124 formula test)
   KEEP if spearman_mean > 0.4908 (D122 new best).
-date: "2026-05-02"

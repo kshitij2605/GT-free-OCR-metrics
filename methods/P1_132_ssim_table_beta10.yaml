@@ -24,4 +24,3 @@ description: >
   table: 0.80*per_cell_MIN + 0.10*IQ + 0.10*ssim (vs 0.85/0.10/0.05 in D128).
   Predicted: marginal gain if table β-axis has headroom; revert if 0.05 is optimal.
   KEEP if spearman_mean > 0.4918 (D128 NEW BEST).
-date: "2026-05-02"

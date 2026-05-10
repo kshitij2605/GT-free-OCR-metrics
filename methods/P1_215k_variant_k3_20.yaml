@@ -29,4 +29,3 @@ description: >
   Predicted: 0.4690-0.4710. KEEP if >= 0.470. Tests whether the K=3 lifts
   for text/all/all_no_mask compose with K=20 for formula.
   Control: D215.i (variant α + K=5/20, 0.4669).
-date: "2026-04-30"

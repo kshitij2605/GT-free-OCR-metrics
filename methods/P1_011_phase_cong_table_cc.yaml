@@ -31,4 +31,3 @@ description: >
   byte-identical to H11.2. Decision rule: KEEP only if spearman_mean >= 0.3618
   (clear lift above noise floor); else REFUTED-TIE / REFUTED.
   Predicted: spearman_mean ~ 0.358-0.366 (most likely 0.358-0.362).
-date: "2026-04-27"

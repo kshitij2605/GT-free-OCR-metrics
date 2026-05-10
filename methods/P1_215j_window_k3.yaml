@@ -27,4 +27,3 @@ description: >
   D215.k variant-conditional with K=3 for those three. If K=3 worse than
   K=5, K=5 is the lower bound and D215.i is the optimal point in this axis.
   Control: D215.e (K=10, 0.4638).
-date: "2026-04-30"

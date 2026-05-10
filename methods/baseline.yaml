@@ -13,4 +13,3 @@ description: >
   (OCR text rendered at detected bboxes on white background). No preprocessing
   applied to either image. This is the reference baseline all other techniques
   are compared against.
-date: "2026-04-23"

@@ -46,4 +46,3 @@ description: >
   a neutral fill for binarized-SSIM computation.
 
   Control: H11.2 (P1_120c3b_all_no_mask_baseline_preproc, spearman_mean=0.3600, commit 89aee86).
-date: "2026-04-27"

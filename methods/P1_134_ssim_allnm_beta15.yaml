@@ -24,4 +24,3 @@ description: >
   Test whether matching text's SSIM weight on all_no_mask helps: 0.35*DocSim + 0.40*entropy
   + 0.10*table_cell + 0.15*ssim (vs 0.40/0.40/0.10/0.10 in D132).
   KEEP if spearman_mean > 0.4924 (D132 NEW BEST).
-date: "2026-05-02"

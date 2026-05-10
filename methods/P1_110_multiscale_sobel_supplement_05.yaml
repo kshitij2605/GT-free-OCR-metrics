@@ -25,4 +25,3 @@ description: >
     all: 0.45*page_DocSim + 0.30*entropy + 0.20*table_cell + 0.05*ms_sobel
     all_no_mask: 0.35*page_DocSim + 0.40*entropy + 0.20*table_cell + 0.05*ms_sobel
   KEEP if > 0.4820 (D107b best). Decision: KEEP→sweep β_ms_edge=0.10; REVERT→multi-scale Sobel closed.
-date: "2026-05-01"

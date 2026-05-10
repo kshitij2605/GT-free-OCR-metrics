@@ -30,4 +30,3 @@ description: >
   Predicted: spearman_mean ~ 0.360-0.365
   (all_no_mask cc 0.3073->0.310, +0.003; other variants unchanged;
    delta to mean = +0.003/5 = ~+0.001 to +0.006 depending on gap magnitude).
-date: "2026-04-26"

@@ -28,4 +28,3 @@ description: >
   Decision: KEEP -> NEW BEST -> try γ_table=0.30; REVERT-tie ->
   peak at γ_table=0.10, table γ-axis closes at D106.f.
   Control: D106.f (0.4812, table γ=0.10).
-date: "2026-05-01"

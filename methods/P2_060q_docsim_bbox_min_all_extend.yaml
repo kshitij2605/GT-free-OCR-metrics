@@ -38,4 +38,3 @@ description: >
   distance scores include text/formula content too — could regress.
   KEEP if >= 0.450. Kill switch: variant=all cc <= 0.38 (regression).
   Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453).
-date: "2026-04-29"

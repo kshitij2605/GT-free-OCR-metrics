@@ -33,4 +33,3 @@ description: >
   count. Run as parallel sibling to D60.o (MAX).
   KEEP if >= 0.450. Kill switch: table cc <= 0.40.
   Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
-date: "2026-04-29"

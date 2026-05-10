@@ -17,4 +17,3 @@ description: >
   Standalone metric at 256x256 resolution. clip_cosine = max(0, 1 - pieapp/2).
   High-priority direction in our method catalog.
   KEEP if spearman_mean > 0.4820 (D107b best).
-date: "2026-05-01"

@@ -33,4 +33,3 @@ description: >
 
   Control: H5.b (bedac9a, spearman_mean=0.3581, table_best=0.268).
   Predicted: table cc 0.268 -> 0.275-0.290; spearman_mean 0.3581 -> 0.360-0.366.
-date: "2026-04-26"

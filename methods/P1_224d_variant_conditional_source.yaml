@@ -50,4 +50,3 @@ description: >
   axis and PIVOTing to a non-entropy mechanism class (D104 / D165 /
   D106).
   Control: D215.l (uniform window-MIN source for all 4 fused variants, 0.4742).
-date: "2026-05-01"

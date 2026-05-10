@@ -22,4 +22,3 @@ description: >
   all others use 50/50 CLIP+DINOv2 average.
   Control: H5.b (bedac9a, spearman_mean=0.3581).
   Predicted: spearman_mean ~ 0.358-0.367 (+0.000 to +0.009 vs H5.b).
-date: "2026-04-26"

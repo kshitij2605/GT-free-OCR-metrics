@@ -46,4 +46,3 @@ description: >
   exhausted; PIVOT to non-entropy mechanism class (D104 recognition-
   feature distance, D165 MaskCLIP, or D106 Frontiers-DIQA).
   Control: D215.l (window-MIN over all tokens, no class filter, 0.4742).
-date: "2026-04-30"

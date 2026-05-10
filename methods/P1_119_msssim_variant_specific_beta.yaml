@@ -23,4 +23,3 @@ description: >
   all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*ms_ssim
   all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*ms_ssim
   KEEP if spearman_mean > 0.4877 (D116 single-scale SSIM baseline).
-date: "2026-05-01"

@@ -25,4 +25,3 @@ description: >
   D137 (P10) helped all (+0.0023) but not all_no_mask. Testing if MEAN captures different signal.
   Same β=0.10 for all and all_no_mask; only aggregation changes (mean vs percentile).
   KEEP if spearman_mean > 0.4932 (D137 NEW BEST).
-date: "2026-05-02"

@@ -23,4 +23,3 @@ description: >
   All other variants keep H4.e+H5.b+H6.1 (50/50 OpenCLIP+DINOv2) UNCHANGED.
   Control: H6.1 (P1_120c3_table_clip_baseline_preproc, spearman_mean=0.3598, table cc=0.277).
   Predicted: table cc 0.277 -> 0.29-0.32; spearman_mean 0.3598 -> 0.362-0.367.
-date: "2026-04-27"

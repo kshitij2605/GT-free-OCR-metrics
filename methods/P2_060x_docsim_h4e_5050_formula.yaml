@@ -39,4 +39,3 @@ description: >
   KEEP if >= 0.4475. Kill switch: formula cc <= 0.5400 (loses to H4.e
   baseline). Hit prob: 15-20%.
   Control: D60.p (P2_060p_docsim_bbox_table_min, 0.4453, formula cc 0.5488).
-date: "2026-04-30"

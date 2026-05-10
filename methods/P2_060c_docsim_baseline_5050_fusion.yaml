@@ -31,4 +31,3 @@ description: >
   - If baseline pulls down: regress toward (0.3935+0.3600)/2 ~ 0.377
   KEEP if >= 0.395.
   Control: P2_060b D60.b (commit a2e76e1, spearman_mean=0.3935).
-date: "2026-04-28"

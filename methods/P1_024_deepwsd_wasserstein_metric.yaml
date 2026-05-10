@@ -41,4 +41,3 @@ description: >
 
   Control: H11.2 (89aee86, spearman_mean=0.3600).
   Predicted: spearman_mean ~ 0.358 +/- 0.003. KEEP if >= 0.3605.
-date: "2026-04-27"

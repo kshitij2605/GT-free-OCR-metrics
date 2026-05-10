@@ -27,4 +27,3 @@ description: >
   vs K=3, run K=1 next. If K=2 ties or regresses, K=3 is the lower bound.
   Predicted: 0.465-0.472, most likely 0.469. KEEP if >= 0.470.
   Control: D215.i (K=5/20, 0.4669).
-date: "2026-04-30"

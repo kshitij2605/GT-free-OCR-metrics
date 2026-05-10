@@ -46,7 +46,6 @@ def _nan_to_none(obj):
 def _load_leaderboard() -> dict:
     if not LEADERBOARD.exists():
         return {
-            "last_updated": None,
             "ranking_config": RANKING_CONFIG,
             "variants": {v: {"best": {}, "history": []} for v in VARIANTS},
         }
@@ -55,7 +54,6 @@ def _load_leaderboard() -> dict:
 
 
 def _save_leaderboard(lb: dict) -> None:
-    lb["last_updated"] = datetime.now(timezone.utc).isoformat()
     tmp = LEADERBOARD.with_suffix(".tmp")
     tmp.parent.mkdir(parents=True, exist_ok=True)
     with open(tmp, "w") as f:
@@ -119,9 +117,6 @@ def main():
 
     spec = yaml.safe_load(args.technique_yaml.read_text())
     technique_id = spec["id"]
-    date_str = spec.get("date") or datetime.now().strftime("%Y-%m-%d")
-    if hasattr(date_str, "isoformat"):
-        date_str = date_str.isoformat()
 
     code_hash = _code_hash()
 
@@ -163,7 +158,6 @@ def main():
 
         history_entry = {
             "technique_id": technique_id,
-            "date": str(date_str),
             "code_hash": code_hash,
             "correlations": stripped,
             "by_category": stripped_by_cat,

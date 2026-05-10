@@ -26,4 +26,3 @@ description: >
   Hypothesis: formula-bbox MIN DocSim correlates with CDM quality in end_to_end,
   independently from table-cell MIN which correlates with TEDS.
   KEEP if > 0.4820 (D107b best). Decision: KEEP→sweep β_f=0.20; REVERT→formula supplement closed.
-date: "2026-05-01"

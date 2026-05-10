@@ -24,4 +24,3 @@ description: >
   Formula: (1-0.3-0.5-0.10)*avg_cos + 0.30*entropy + 0.50*IQ + 0.10*ssim = 0.10*avg_cos + ...
   Predicted: marginal gain if β-axis has headroom, revert if diminishing returns at 0.05 already.
   KEEP if spearman_mean > 0.4908 (D124 NEW BEST).
-date: "2026-05-02"

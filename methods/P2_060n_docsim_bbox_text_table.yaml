@@ -41,4 +41,3 @@ description: >
   KEEP if >= 0.450. Kill switch: text cc <= 0.40 (per-bbox text
   off-distribution; revert).
   Control: D60.m (P2_060m_docsim_bbox_table, 0.4432).
-date: "2026-04-29"

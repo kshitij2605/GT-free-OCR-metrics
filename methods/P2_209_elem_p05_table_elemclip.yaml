@@ -27,4 +27,3 @@ description: >
   This applies same table CLIP supplement but on D147 (P5) base so all stays at 0.4512.
   Expected: table→0.4899, all→0.4512, mean≈0.4942 (new best vs D147=0.4938).
   KEEP if spearman_mean > 0.4938 (D147).
-date: "2026-05-03"

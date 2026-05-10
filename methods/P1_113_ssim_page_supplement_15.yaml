@@ -21,4 +21,3 @@ description: >
   all_no_mask: (1-0.40-0.20-0.15)*DocSim + 0.40*entropy + 0.20*table_cell + 0.15*ssim
   text/formula/table: unchanged from D111 (β_ssim=0.0).
   KEEP if spearman_mean > 0.4847 (D111 new best).
-date: "2026-05-01"

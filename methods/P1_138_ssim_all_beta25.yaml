@@ -23,4 +23,3 @@ description: >
   D136 showed all variant marginally responsive to SSIM β increase (0.4458→0.4461 at β=0.20).
   all: 0.25*DocSim + 0.30*entropy + 0.15*table_cell + 0.25*ssim (DocSim reduced to 0.25)
   KEEP if spearman_mean > 0.4928 (D136 NEW BEST).
-date: "2026-05-02"

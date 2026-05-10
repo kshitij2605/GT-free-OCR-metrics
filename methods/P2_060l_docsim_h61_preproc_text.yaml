@@ -34,4 +34,3 @@ description: >
   ~0.411, within 0.4093-0.413 band. KEEP if >= 0.412. Kill switch: text
   DocSim cc <= 0.40.
   Control: D60.j post-fix (P2_060j_docsim_text_all_anomask, 0.4093).
-date: "2026-04-29"

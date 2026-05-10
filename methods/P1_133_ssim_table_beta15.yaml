@@ -24,4 +24,3 @@ description: >
   table: 0.75*per_cell_MIN + 0.10*IQ + 0.15*ssim
   Predicted: marginal gain if β-axis continues; revert if peak is β=0.10.
   KEEP if spearman_mean > 0.4924 (D132 NEW BEST).
-date: "2026-05-02"

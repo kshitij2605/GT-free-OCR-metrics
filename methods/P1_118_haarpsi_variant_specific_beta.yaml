@@ -24,4 +24,3 @@ description: >
   all: 0.35*DocSim + 0.30*entropy + 0.20*table_cell + 0.15*haar_psi
   all_no_mask: 0.30*DocSim + 0.40*entropy + 0.20*table_cell + 0.10*haar_psi
   KEEP if spearman_mean > 0.4877 (D116 SSIM baseline). If REVERTS: SSIM confirmed superior to HaarPSI.
-date: "2026-05-01"

@@ -34,4 +34,3 @@ description: >
   KEEP if >= 0.412 (~+0.003 over D60.j). Kill switch: variant=all mc <= 0.32
   (DocSim-mc destabilizes the composite — abandon mc-side DocSim class).
   Control: D60.j post-fix (P2_060j_docsim_text_all_anomask, 0.4093).
-date: "2026-04-29"

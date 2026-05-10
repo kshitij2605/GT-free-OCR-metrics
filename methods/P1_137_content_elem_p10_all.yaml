@@ -28,4 +28,3 @@ description: >
   β_elem=0.10: all = 0.30*DocSim+0.30*entropy+0.15*table_cell+0.15*ssim+0.10*elem_p10
                all_no_mask = 0.30*DocSim+0.40*entropy+0.10*table_cell+0.10*ssim+0.10*elem_p10
   Baseline: D133 (0.4927). KEEP if spearman_mean > 0.4927.
-date: "2026-05-02"
