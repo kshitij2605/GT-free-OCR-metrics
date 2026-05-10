@@ -155,19 +155,6 @@ A **60-page stratified sample** of the full render-and-compare dataset (~370 MB)
 
 ---
 
-## Citation
-
-```bibtex
-@misc{gtfreeocr2026,
-  title   = {GT-Free OCR Metrics: Reference-Free Evaluation via Render-and-Compare},
-  author  = {Anonymous},
-  year    = {2026},
-  note    = {Preprint},
-}
-```
-
----
-
 ## License
 
 Code: **Apache 2.0** — see [LICENSE](LICENSE).
