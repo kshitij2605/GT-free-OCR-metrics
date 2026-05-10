@@ -5,7 +5,7 @@ similarity framework. The pipeline renders OCR output back to an image and measu
 how closely it matches the original page scan — no transcriptions needed.
 
 Validated on [OmniDocBench](https://arxiv.org/abs/2412.07626) (1 355 pages, EN/ZH,
-10 document categories) against reference-based edit distance.
+9 document categories) against reference-based edit distance.
 
 **Best composite result:** Spearman ρ = 0.494 (`P2_210`, a five-mechanism composite stacking DocSim + Shannon-entropy + IQ + SSIM + per-element CLIP; mean across all 5 OCR-output variants).
 
@@ -53,7 +53,7 @@ bash download_data.sh
 bash download_models.sh
 
 # 4. Run a method against all variants
-bash scripts/run_method.sh P1_137_elem_p10_all
+bash scripts/run_method.sh P1_137_content_elem_p10_all
 
 # 5. View the leaderboard
 python scripts/show_leaderboard.py
@@ -68,16 +68,16 @@ See **[REPRODUCING.md](REPRODUCING.md)** for a full step-by-step reproduction gu
 146 method implementations are included in `methods/` + `scripts/methods/`.
 See [methods/README.md](methods/README.md) for a categorized index with headline scores.
 
-Key result families:
+Key result families (mean Spearman across 5 OCR-output variants, computed via paper Eq. (1)):
 
-| Category | Best method | Spearman (`all` variant) |
+| Category | Best method | Spearman mean |
 |---|---|---|
-| Element-patch CLIP P5 (table fix) | `P2_213_elem_p05_table_fixed` | **0.494** |
-| Element-patch SSIM + text coverage | `P1_137_content_elem_p10_all` | 0.493 |
-| DocSim LoRA (CLIP+DINOv2) | `P1_084` series | ~0.46 |
-| ST-LPIPS shift-tolerant | `P1_082_st_lpips` | ~0.44 |
-| OCR log-probabilities | `P1_107c` series | ~0.45 |
-| Baseline (SSIM+MSE+LPIPS) | `baseline` | ~0.40 |
+| Per-element CLIP P5 + table-bbox/text-elem-CLIP fixes (rank 1, paper Table 3) | `P2_210_elem_p05_table_text_elemclip` | **0.494** |
+| Per-element CLIP P10 (Phase-1 anchor) | `P1_137_content_elem_p10_all` | 0.493 |
+| Per-table-cell DocSim supplement (β=0.30) | `P1_107c_beta_table_cell_30` | 0.482 |
+| DINOv2/CLIP encoder fusion (clip\_cosine slot) | `P1_084c_dinov2_clip_avg` | 0.368 |
+| Baseline (per-variant best of CLIP cosine and SSIM+MSE+LPIPS multi-composite) | `baseline` | 0.339 |
+| ST-LPIPS shift-tolerant (refuted as LPIPS replacement) | `P1_082_st_lpips` | 0.319 |
 
 ---
 
@@ -158,10 +158,10 @@ A **60-page stratified sample** of the full render-and-compare dataset (~370 MB)
 ## Citation
 
 ```bibtex
-@misc{gtfreeocr2025,
+@misc{gtfreeocr2026,
   title   = {GT-Free OCR Metrics: Reference-Free Evaluation via Render-and-Compare},
-  author  = {[Authors]},
-  year    = {2025},
+  author  = {Anonymous},
+  year    = {2026},
   note    = {Preprint},
 }
 ```
