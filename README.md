@@ -149,7 +149,7 @@ research/                        # Literature review and technical notes
 
 **Collection page:** <https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models>
 
-A **60-page stratified sample** of the full render-and-compare dataset (~370 MB) is available for reviewers who want to explore the data without downloading the full 10 GB dataset. An interactive exploration notebook (`explore_datasets.ipynb`) is included in this repository.
+A **60-page stratified sample** of the full render-and-compare dataset (~370 MB) is available for users who want to explore the data without downloading the full 10 GB dataset. An interactive exploration notebook (`explore_datasets.ipynb`) is included in this repository.
 
 **How the sample was created:** pages were selected by stratified random sampling. Each of the 1 355 pages in `ocr_all` was assigned to one of 12 document categories (slides, book, academic paper, financial, newspaper, exam, textbook/notes, notes, magazine, DocStructBench, colorful, other) inferred from its `page_id` prefix. Five pages were drawn uniformly at random from each category (random seed 42), giving a 60-page base sample representative of the full distribution. Up to 5 additional pages were added to ensure the sparse `ocr_formula` and `ocr_table` variants each appear at least 5 times in the sample. Full per-category and per-variant counts are documented in the [sample dataset README](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample).
 

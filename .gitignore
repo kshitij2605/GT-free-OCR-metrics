@@ -46,7 +46,7 @@ mlruns/
 # Root-level run logs
 *.log
 
-# Lock file for uv (optional: reviewers can regenerate)
+# Lock file for uv (optional: users can regenerate)
 # uv.lock
 
 # Notebooks (kept for dev, not committed)

@@ -158,7 +158,7 @@ No medical, legal, or biometric data is present.
 This dataset is derived from
 [OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench)
 (OpenDataLab / SJTU, CC-BY-NC-4.0).
-The `OmniDocBench.json` annotation file is reproduced here for reviewer convenience;
+The `OmniDocBench.json` annotation file is reproduced here for user convenience;
 original page scans are available in the source dataset.
 
 ## Citation

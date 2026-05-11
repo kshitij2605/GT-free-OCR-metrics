@@ -79,7 +79,7 @@ WITH_IMAGES=1 bash download_data.sh
 
 > **Note on OmniDocBench (the upstream dataset):** the `opendatalab/OmniDocBench`
 > source dataset contains 1,659 individual image files. Even unauthenticated
-> reviewers can hit a 1,000-API-requests/5-min limit while listing them.
+> users can hit a 1,000-API-requests/5-min limit while listing them.
 > `download_data.sh` does not yet repackage this upstream dataset, so this step
 > may need a single retry after a 5-min wait. Authenticating with
 > `huggingface-cli login` (or `export HF_TOKEN=...`) avoids it entirely.
