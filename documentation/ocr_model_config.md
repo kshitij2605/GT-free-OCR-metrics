@@ -8,8 +8,8 @@ All values are sourced directly from `src/reference_free_ocr_metric/ocr/qwen_cli
 
 | Parameter | Value |
 |-----------|-------|
-| API base | `${OCR_ENDPOINT_URL}/v1` |
-| API key | `tensorflow` |
+| API base | `${OCR_ENDPOINT_URL}` (environment variable; default `http://localhost:9000/v1`) |
+| API key | `${OCR_API_KEY}` (environment variable; `EMPTY` if unset) |
 | Model name | `Qwen/Qwen3.5-122B-A10B` |
 | Protocol | OpenAI-compatible chat completions (`/v1/chat/completions`) |
 | Backend | vLLM |

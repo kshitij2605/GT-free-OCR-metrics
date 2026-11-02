@@ -17,6 +17,7 @@ Usage:
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -34,7 +35,7 @@ from reference_free_ocr_metric.reconstruction.image_renderer import ImageRendere
 from reference_free_ocr_metric.utils.visualization import draw_bbox_visualization  # noqa: E402
 
 VLM_API_BASE = os.environ.get("OCR_ENDPOINT_URL", "http://localhost:9000/v1")
-VLM_API_KEY = "tensorflow"
+VLM_API_KEY = os.environ.get("OCR_API_KEY", "EMPTY")
 VLM_MODEL = "Qwen/Qwen3.5-122B-A10B"
 
 _IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}

@@ -49,7 +49,7 @@ _spec.loader.exec_module(_mod)  # type: ignore[union-attr]
 QwenVLClient = _mod.QwenVLClient
 
 API_BASE = os.environ.get("OCR_ENDPOINT_URL", "http://localhost:9000/v1")
-API_KEY = "tensorflow"
+API_KEY = os.environ.get("OCR_API_KEY", "EMPTY")
 MODEL = "Qwen/Qwen3.5-122B-A10B"
 
 DATA_ROOT = Path(__file__).parent.parent / "data" / "omnidocbench"

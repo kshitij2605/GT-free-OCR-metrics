@@ -12,6 +12,7 @@ Usage:
 
 import argparse
 import json
+import os
 from collections.abc import Generator
 from contextlib import ExitStack, contextmanager
 from pathlib import Path
@@ -69,7 +70,7 @@ def collect_images(input_path: Path) -> Generator[list[Path]]:
         yield images
 
 VLM_API_BASE = os.environ.get("OCR_ENDPOINT_URL", "http://localhost:9000/v1")
-VLM_API_KEY = "tensorflow"
+VLM_API_KEY = os.environ.get("OCR_API_KEY", "EMPTY")
 VLM_MODEL = "Qwen/Qwen3.5-122B-A10B"
 
 
