@@ -1,10 +1,14 @@
 # GT-Free OCR Metrics
 
+Code for **GT-Free OCR Metrics: A Reference-Free Evaluation Framework for Document OCR
+Systems** (Kshitij Singh), NeurIPS 2026, Track on Evaluations and Datasets. To cite it, see
+[Citation](#citation).
+
 **Evaluate OCR quality without ground-truth text** using a render-and-compare visual
 similarity framework. The pipeline renders OCR output back to an image and measures
 how closely it matches the original page scan — no transcriptions needed.
 
-Validated on [OmniDocBench](https://arxiv.org/abs/2412.07626) (1 355 pages, EN/ZH,
+Validated on [OmniDocBench](https://arxiv.org/abs/2412.07626) v1.5 (1 355 pages, EN/ZH,
 9 document categories) against reference-based edit distance.
 
 **Best composite result:** Spearman ρ = 0.494 (`P2_210`, a five-mechanism composite stacking DocSim + Shannon-entropy + IQ + SSIM + per-element CLIP; mean across all 5 OCR-output variants).
@@ -42,8 +46,8 @@ Five OCR extraction variants:
 
 ```bash
 # 1. Clone and install
-git clone https://anonymous.4open.science/r/GT-free-OCR-metrics-E0A9
-cd gt-free-ocr-metrics
+git clone https://github.com/kshitij2605/GT-free-OCR-metrics
+cd GT-free-OCR-metrics
 pip install -e .
 
 # 2. Download pre-computed data (~50 GB)
@@ -140,7 +144,7 @@ research/                        # Literature review and technical notes
 
 | Dataset | Description | HF link |
 |---|---|---|
-| OmniDocBench | 1 355 real-world document pages, GT annotations | [opendatalab/OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench) |
+| OmniDocBench v1.5 | 1 355 real-world document pages, GT annotations (`download_data.sh` pins revision `91fe284`; upstream `main` is now v1.6) | [opendatalab/OmniDocBench](https://huggingface.co/datasets/opendatalab/OmniDocBench) |
 | Render-and-Compare (parquet, **recommended**) | 64 zstd-parquet shards (~9.4 GB) of all 5 variants - one HTTP request per shard, no rate limits | [gt-free-ocr-metrics/omnidocbench-render-compare-parquet](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-parquet) |
 | Render-and-Compare (raw per-page) | Original per-page directory layout | [gt-free-ocr-metrics/omnidocbench-render-compare](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare) |
 | Render-and-Compare (sample) | 60-page stratified sample (~370 MB) for quick exploration | [gt-free-ocr-metrics/omnidocbench-render-compare-sample](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-render-compare-sample) |
@@ -148,6 +152,10 @@ research/                        # Literature review and technical notes
 | OCR Log-probabilities (raw per-page) | Original per-page directory layout | [gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs](https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs) |
 
 **Collection page:** <https://huggingface.co/collections/gt-free-ocr-metrics/gt-free-ocr-metrics-datasets-and-models>
+
+**Overview Space (linked from the paper):** <https://huggingface.co/spaces/gt-free-ocr-metrics/dataset-collection>
+
+**DocSim LoRA model:** [gt-free-ocr-metrics/docsim-lora](https://huggingface.co/gt-free-ocr-metrics/docsim-lora) (fetched by `download_models.sh`)
 
 A **60-page stratified sample** of the full render-and-compare dataset (~370 MB) is available for users who want to explore the data without downloading the full 10 GB dataset. An interactive exploration notebook (`explore_datasets.ipynb`) is included in this repository.
 
@@ -159,3 +167,17 @@ A **60-page stratified sample** of the full render-and-compare dataset (~370 MB)
 
 Code: **Apache 2.0** — see [LICENSE](LICENSE).
 Datasets: **CC-BY-NC-4.0** — see [NOTICE](NOTICE) and individual dataset cards.
+DocSim LoRA weights: **CC-BY-NC-SA-4.0**.
+
+---
+
+## Citation
+
+```bibtex
+@inproceedings{singh2026gtfree,
+  title     = {{GT-Free OCR Metrics}: A Reference-Free Evaluation Framework for Document {OCR} Systems},
+  author    = {Singh, Kshitij},
+  booktitle = {40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets},
+  year      = {2026}
+}
+```

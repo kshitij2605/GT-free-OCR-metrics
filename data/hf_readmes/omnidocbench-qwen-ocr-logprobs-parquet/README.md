@@ -78,7 +78,7 @@ for t in logprobs[:3]:
 To use these alongside the official methods which read per-bbox JSONs:
 
 ```bash
-git clone https://anonymous.4open.science/r/GT-free-OCR-metrics-E0A9
+git clone https://github.com/kshitij2605/GT-free-OCR-metrics
 cd GT-free-OCR-metrics
 bash download_data.sh    # default downloads + extracts both datasets
 ```

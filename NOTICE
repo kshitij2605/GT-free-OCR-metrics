@@ -1,21 +1,48 @@
 GT-Free OCR Metrics
-Copyright 2026 Anonymous
+Copyright 2026 Kshitij Singh
 
 This product includes or is derived from the following third-party works:
 
 OmniDocBench
-  Copyright 2024 OpenDataLab / Shanghai Jiao Tong University
-  License: Creative Commons Attribution-NonCommercial 4.0 International
-           https://creativecommons.org/licenses/by-nc/4.0/
+  Copyright 2024 OpenDataLab
+  Terms:   for research purposes only, not for commercial use (dataset card)
   Source:  https://huggingface.co/datasets/opendatalab/OmniDocBench
+           (v1.5, revision 91fe284bbfacfa687959ae3eb00846ca852aa907)
+  Code:    https://github.com/opendatalab/OmniDocBench (Apache 2.0); its LaTeX
+           normalisation and CDM evaluation are ported in
+           src/reference_free_ocr_metric/comparison/cdm_scorer.py
+
+UniMERNet CDM (Character Detection Matching)
+  Copyright 2024 OpenDataLab
+  License: Apache 2.0
+  Source:  https://github.com/opendatalab/UniMERNet (cdm/modules/tokenize_latex)
+  Files:   src/reference_free_ocr_metric/comparison/cdm_js/preprocess_formula.js,
+           preprocess_tabular.js, tokenize_latex.py (modified) and third_party/
+
+im2markup (origin of tokenize_latex.py and of the KaTeX and match-at copies)
+  Copyright (c) 2016 Harvard NLP
+  License: MIT
+  Source:  https://github.com/harvardnlp/im2markup
+
+KaTeX 0.6.0 (src/reference_free_ocr_metric/comparison/cdm_js/third_party/katex/)
+  Copyright (c) 2015 Khan Academy
+  License: MIT (see LICENSE.txt in that directory)
+  Source:  https://github.com/KaTeX/KaTeX
+
+match-at 0.1.0 (src/reference_free_ocr_metric/comparison/cdm_js/third_party/match-at/)
+  Copyright (c) 2017 Sophie Alpert
+  License: MIT (see LICENSE in that directory)
+  Source:  https://github.com/sophiebits/match-at
 
 Qwen3.5-122B-A10B (used for OCR inference; pre-computed outputs included)
-  Copyright 2024 Alibaba Cloud
+  Copyright 2026 Alibaba Cloud
   License: Apache 2.0
   Source:  https://huggingface.co/Qwen
 
 OpenCLIP
-  Copyright 2021 mlfoundations
+  Copyright (c) 2012-2021 Gabriel Ilharco, Mitchell Wortsman, Nicholas Carlini,
+  Rohan Taori, Achal Dave, Vaishaal Shankar, John Miller, Hongseok Namkoong,
+  Hannaneh Hajishirzi, Ali Farhadi, Ludwig Schmidt
   License: MIT
   Source:  https://github.com/mlfoundations/open_clip
 
@@ -30,15 +57,16 @@ LPIPS (Learned Perceptual Image Patch Similarity)
   Source:  https://github.com/richzhang/PerceptualSimilarity
 
 ST-LPIPS (Shift-Tolerant LPIPS)
-  Copyright 2022 Shuntaro Okada and Justin Johnson
-  License: MIT
+  Copyright (c) 2022, Abhijay Ghildyal, Feng Liu
+  License: BSD 2-Clause
   Source:  https://github.com/abhijay9/ShiftTolerant-LPIPS
 
 DreamSim
-  Copyright 2023 Carnegie Mellon University
+  Copyright (c) 2023 Shobhita Sundaram, Netanel Tamir, Stephanie Fu, Richard Zhang
   License: MIT
   Source:  https://github.com/ssundaram21/dreamsim
 
 The dataset cards in data/hf_readmes/ are released under CC-BY-4.0.
-The source dataset (OmniDocBench) is CC-BY-NC-4.0; users must comply
-with those terms when using the original page scans.
+The source dataset (OmniDocBench) is for research purposes only and not for
+commercial use; users must comply with those terms when using the original
+page scans.

@@ -19,8 +19,8 @@ from data download through to the final leaderboard.
 ## Step 1 — Install the package
 
 ```bash
-git clone https://anonymous.4open.science/r/GT-free-OCR-metrics-E0A9
-cd gt-free-ocr-metrics
+git clone https://github.com/kshitij2605/GT-free-OCR-metrics
+cd GT-free-OCR-metrics
 
 # With uv (recommended):
 pip install uv     # install uv package manager
@@ -42,13 +42,14 @@ bash download_data.sh
 ```
 
 This downloads (default — what you need to reproduce the 146 method evaluations):
-- `data/omnidocbench/OmniDocBench.json` — ground-truth annotations (~65 MB, 1 355 pages)
+- `data/omnidocbench/OmniDocBench.json` — ground-truth annotations (~65 MB, 1 355 pages),
+  from OmniDocBench v1.5 at a pinned upstream revision (see the note below)
 - `data/omnidocbench/ocr_{all,text,formula,table,all_no_mask}/<page_id>/` — per-variant OCR artifacts (~40 GB total):
   `masked_original.png`, `reconstructed.png`, `ocr_html.html`,
   `ocr_elements.json`, `ocr_formula_elements.json`, `ocr_table_elements.json`
 - `data/ocr_logprobs/` — per-token log-probabilities (~2 GB)
 
-The original page scans (`data/omnidocbench/images/`, ~1.2 GB) are **not required** for
+The original page scans (`data/omnidocbench/images/`, ~1.2 GB, same pinned revision) are **not required** for
 the 146 method evaluations — the methods read pre-computed `masked_original.png` /
 `reconstructed.png` from the render-compare dataset above. The originals are only
 needed for the optional "Re-running OCR" flow at the bottom of this guide; opt in with:
@@ -77,8 +78,16 @@ WITH_IMAGES=1 bash download_data.sh
   resolver-cache requests / 5-min window vs. ~23,600 + ~4,000 files).
   Supply an HF token to avoid the rate limit. The download is resumable.
 
-> **Note on OmniDocBench (the upstream dataset):** the `opendatalab/OmniDocBench`
-> source dataset contains 1,659 individual image files. Even unauthenticated
+> **Note on OmniDocBench (the upstream dataset):** `download_data.sh` pins
+> `opendatalab/OmniDocBench` to revision `91fe284bbfacfa687959ae3eb00846ca852aa907`,
+> OmniDocBench v1.5 (1,355 pages), whose `OmniDocBench.json` is the annotation file the
+> paper's results were computed against. Upstream's `main` branch has since moved to v1.6
+> (1,651 pages), which adds a hard subset and corrects some v1.5 table, formula and OCR
+> annotations; evaluating against it gives correlations that differ from the paper's. To
+> fetch another revision anyway, set `OMNIDOCBENCH_REVISION`
+> (e.g. `OMNIDOCBENCH_REVISION=main bash download_data.sh`).
+>
+> At the pinned revision the source dataset contains 1,355 individual image files. Even unauthenticated
 > users can hit a 1,000-API-requests/5-min limit while listing them.
 > `download_data.sh` does not yet repackage this upstream dataset, so this step
 > may need a single retry after a 5-min wait. Authenticating with
@@ -249,8 +258,14 @@ layout and rendering are identical across the five points on the curve.
 Pre-computed artifacts are sufficient for all 146 methods.
 If you want to re-run OCR inference with your own model endpoint:
 
-1. Copy `.env.example` to `.env` and fill in `OCR_ENDPOINT_URL`.
-2. Run: `python scripts/run_omnidocbench_ocr.py`
+1. Download the original page scans (same pinned OmniDocBench revision):
+   `WITH_IMAGES=1 bash download_data.sh`
+2. Set your endpoint and API key as environment variables, e.g.
+   `export OCR_ENDPOINT_URL=http://<host>:<port>/v1` and `export OCR_API_KEY=<your key>`
+   (leave `OCR_API_KEY` unset if your server needs no key). The scripts read the environment
+   and do not load `.env` themselves; to keep the values in `.env`, copy `.env.example`,
+   uncomment and fill in those two lines, and run `set -a; source .env; set +a`.
+3. Run: `python scripts/run_omnidocbench_ocr.py`
 
 This requires Qwen3.5-122B-A10B (or a compatible vision-language model) via an OpenAI-compatible API.
 
