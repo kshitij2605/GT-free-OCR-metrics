@@ -16,14 +16,20 @@ cd "$REPO_ROOT"
 UV=$(command -v uv 2>/dev/null || echo uv)
 FORMAT="${DATA_FORMAT:-parquet}"
 
+# OmniDocBench is pinned to the revision the paper was evaluated against: v1.5,
+# 1,355 pages. Upstream's main branch moved to v1.6 (1,651 pages, some v1.5
+# annotations corrected) on 2026-04-10, which changes the correlations.
+OMNIDOCBENCH_REVISION="${OMNIDOCBENCH_REVISION:-91fe284bbfacfa687959ae3eb00846ca852aa907}"
+
 # Default: only download the GT annotations JSON (~65 MB). The original page
 # scans (~1.2 GB) are NOT needed for any of the 146 method evaluations -- the
 # methods read pre-computed `masked_original.png` / `reconstructed.png` from the
 # render-compare dataset (downloaded below). The originals are only needed for
 # the optional "Re-running OCR" flow. Opt in with WITH_IMAGES=1.
-echo "=== Downloading OmniDocBench (ground-truth annotations only by default) ==="
+echo "=== Downloading OmniDocBench at revision ${OMNIDOCBENCH_REVISION:0:7} (ground-truth annotations only by default) ==="
 $UV run huggingface-cli download opendatalab/OmniDocBench \
     --repo-type dataset \
+    --revision "$OMNIDOCBENCH_REVISION" \
     --local-dir data/omnidocbench \
     --include "OmniDocBench.json" \
     --local-dir-use-symlinks False
@@ -33,6 +39,7 @@ if [ "${WITH_IMAGES:-0}" = "1" ]; then
     echo "=== Also downloading original page scans (only needed for re-running OCR) ==="
     $UV run huggingface-cli download opendatalab/OmniDocBench \
         --repo-type dataset \
+        --revision "$OMNIDOCBENCH_REVISION" \
         --local-dir data/omnidocbench \
         --include "images/*" \
         --local-dir-use-symlinks False
