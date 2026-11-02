@@ -205,11 +205,11 @@
   ],
   "license": "https://choosealicense.com/licenses/cc-by-nc-4.0/",
   "url": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet",
-  "rai:dataLimitations": "All logprobs are produced by a single OCR model, Qwen3.5-122B-A10B; the miscalibration patterns, hallucination tendencies, and formula-vs-text confidence biases of this specific model are baked into the data. Per-token top_logprobs is capped at the model serving-time top_logprobs setting (typically 5); the full vocabulary distribution is not available. Per-bbox aggregations (entropy, min/mean logprob, etc.) are pre-computed and cannot be changed without re-running the aggregation script over ocr_logprobs. Coverage is restricted to the 1,355 OmniDocBench pages (English and Chinese only); results should not be generalised to other languages or document types not present in OmniDocBench. The underlying OCR model also exhibits OCR-misclassification blindness (Case-2 errors): when the model silently misclassifies a region, the logprob distribution still reflects high confidence on the chosen but wrong class, providing limited signal for these failures.",
-  "rai:dataBiases": "All logprobs originate from a single model (Qwen3.5-122B-A10B), so confidence miscalibration specific to this model is present systematically across the entire dataset. The underlying OmniDocBench covers ten document categories with English documents more numerous than Chinese. Information-dense categories — particularly newspapers and dense multi-column financial tables — exhibit higher detection noise from the OCR model, producing systematically lower confidence scores for those categories which may not reflect true OCR error rates.",
+  "rai:dataLimitations": "Per-token top_logprobs is capped at the model serving-time top_logprobs setting (typically 5); the full vocabulary distribution is not available. Per-bbox aggregations (entropy, min/mean logprob, etc.) are pre-computed and cannot be changed without re-running the aggregation script over ocr_logprobs. Coverage is restricted to the 1,355 OmniDocBench pages (English and Chinese only); results should not be generalised to other languages or document types not present in OmniDocBench. The underlying OCR model can occasionally misclassify regions; the logprob distribution still reflects high confidence on the chosen but wrong class, providing limited signal for these failures. Bounding-box detection by Qwen3.5-122B-A10B is not always perfect, particularly on pages which appear to be manually scanned or pages where there is very high information density.",
+  "rai:dataBiases": "The underlying OmniDocBench covers nine document categories; by language, 632 of its 1,355 pages are Chinese, 628 English and 95 mixed English and Chinese. Coverage is therefore weighted toward the page-type and language distribution of the source benchmark, and confidence-score statistics drawn from this dataset should be interpreted as reflecting that distribution rather than a uniform sample of all real-world documents.",
   "rai:personalSensitiveInformation": "No personally identifiable information (PII) was intentionally collected. OmniDocBench draws from public academic and professional documents. Financial report pages may incidentally reference company names or executive names. No medical, legal, biometric, or demographic data is present.",
   "rai:dataUseCases": "Intended uses: (1) reference-free OCR confidence estimation; (2) multi-signal metric design combining logprob entropy with visual similarity to build hybrid metrics; (3) OCR uncertainty studies using per-token top-N logprobs. Out-of-scope uses: treating these logprobs as ground-truth confidence (they reflect a single model distribution); using as a substitute for human review of OCR output quality; clinical, legal, or safety-critical applications.",
-  "rai:dataSocialImpact": "Positive impacts: enables reference-free OCR quality assessment using OCR-internal confidence signals, complementing visual-similarity metrics. Potential risks: confidence estimates from this dataset may be misapplied beyond document OCR evaluation. The CC-BY-NC-4.0 license restricts commercial use.",
+  "rai:dataSocialImpact": "Positive impacts: enables reference-free OCR quality assessment using OCR-internal confidence signals, complementing visual-similarity metrics. Potential risks: high confidence scores may be misinterpreted as indicating transcription correctness rather than model certainty :  confident misrecognitions are possible and expected. The logprob values reflect Qwen3.5-122B-A10B calibration, which is specific to document OCR in English and Chinese; they should not be applied to other languages, scripts, or document types. Applying these scores as a reliability proxy outside the intended evaluation scope :  including in safety-critical, clinical, or legal document processing :  is strongly discouraged. The CC-BY-NC-4.0 license restricts commercial use.",
   "rai:hasSyntheticData": true,
   "prov:wasDerivedFrom": [
     {
@@ -221,6 +221,53 @@
         "@id": "https://huggingface.co/opendatalab",
         "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
       }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q4929239"
+      },
+      "prov:label": "Source image collection",
+      "description": "Original page scan images from OmniDocBench (opendatalab/OmniDocBench) were used as input without modification.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:Agent",
+          "@id": "https://huggingface.co/opendatalab",
+          "prov:label": "OpenDataLab / Shanghai Jiao Tong University"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "OCR inference with log-probability extraction",
+      "description": "Each page image was processed by Qwen3.5-122B-A10B served via vLLM with logprobs=True and top_logprobs=5, using the standard OmniDocBench HTML-output OCR prompt (system role + page image). Outputs include the full per-token logprob sequence and the top-5 alternative tokens at each position.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
+          "prov:label": "Qwen3.5-122B-A10B (served via vLLM)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1783551"
+      },
+      "prov:label": "Per-bounding-box logprob aggregation",
+      "description": "Tokens were attributed to bounding boxes by matching token character-offset ranges against the HTML <div data-bbox='...'> structure produced by the OCR model. Per-bbox aggregate statistics (mean, min, max logprob; mean and max Shannon entropy computed from the top-5 logprob distributions) were computed from the attributed token sequences. Fully automated; no human annotation or quality review was performed.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "@id": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs",
+          "prov:label": "OmniDocBench Render-and-Compare automated pipeline"
+        }
+      ]
     }
   ]
 }
