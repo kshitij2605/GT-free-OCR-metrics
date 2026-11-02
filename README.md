@@ -1,9 +1,5 @@
 # GT-Free OCR Metrics
 
-Code for **GT-Free OCR Metrics: A Reference-Free Evaluation Framework for Document OCR
-Systems** (Kshitij Singh), NeurIPS 2026, Track on Evaluations and Datasets. To cite it, see
-[Citation](#citation).
-
 **Evaluate OCR quality without ground-truth text** using a render-and-compare visual
 similarity framework. The pipeline renders OCR output back to an image and measures
 how closely it matches the original page scan — no transcriptions needed.
@@ -168,16 +164,3 @@ A **60-page stratified sample** of the full render-and-compare dataset (~370 MB)
 Code: **Apache 2.0** — see [LICENSE](LICENSE).
 Datasets: **CC-BY-NC-4.0** — see [NOTICE](NOTICE) and individual dataset cards.
 DocSim LoRA weights: **CC-BY-NC-SA-4.0**.
-
----
-
-## Citation
-
-```bibtex
-@inproceedings{singh2026gtfree,
-  title     = {{GT-Free OCR Metrics}: A Reference-Free Evaluation Framework for Document {OCR} Systems},
-  author    = {Singh, Kshitij},
-  booktitle = {40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets},
-  year      = {2026}
-}
-```
