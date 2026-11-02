@@ -203,7 +203,7 @@
     "render-and-compare",
     "reference-free-metric"
   ],
-  "license": "https://choosealicense.com/licenses/cc-by-nc-4.0/",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
   "url": "https://huggingface.co/datasets/gt-free-ocr-metrics/omnidocbench-qwen-ocr-logprobs-parquet",
   "rai:dataLimitations": "Per-token top_logprobs is capped at the model serving-time top_logprobs setting (typically 5); the full vocabulary distribution is not available. Per-bbox aggregations (entropy, min/mean logprob, etc.) are pre-computed and cannot be changed without re-running the aggregation script over ocr_logprobs. Coverage is restricted to the 1,355 OmniDocBench pages (English and Chinese only); results should not be generalised to other languages or document types not present in OmniDocBench. The underlying OCR model can occasionally misclassify regions; the logprob distribution still reflects high confidence on the chosen but wrong class, providing limited signal for these failures. Bounding-box detection by Qwen3.5-122B-A10B is not always perfect, particularly on pages which appear to be manually scanned or pages where there is very high information density.",
   "rai:dataBiases": "The underlying OmniDocBench covers nine document categories; by language, 632 of its 1,355 pages are Chinese, 628 English and 95 mixed English and Chinese. Coverage is therefore weighted toward the page-type and language distribution of the source benchmark, and confidence-score statistics drawn from this dataset should be interpreted as reflecting that distribution rather than a uniform sample of all real-world documents.",
